@@ -66,3 +66,9 @@ obj=rec.square(5)
 obj.cal()
 obj.fun()
 obj.fun2
+
+
+print( len(dir(rec)), hasattr(rec,'__name__'), rec.__name__, rec.cal.__doc__)
+import math
+print(dir(math))
+help(math.log1p)
