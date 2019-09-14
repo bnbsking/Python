@@ -1,0 +1,11 @@
+#data structure
+#generator vs list
+
+def g(n):
+    i = 0
+    while i < n:
+        yield i    #next time execute from here
+        i+=1
+
+for i in g(3):     #g(3) is generator (dynamic data structure)
+    print(i)
