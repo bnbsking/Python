@@ -4,8 +4,9 @@
 def g(n):
     i = 0
     while i < n:
-        yield i    #next time execute from here
+        yield i     # append i in a Generator g(n) (dynamic data structure)
+                    # next time calling g(n) execute from here
         i+=1
 
-for i in g(3):     #g(3) is generator (dynamic data structure)
+for i in g(3):      # visit elements in g(3)
     print(i)
