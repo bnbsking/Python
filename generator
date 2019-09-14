@@ -11,3 +11,9 @@ def g(n):
 for i in g(3):      # generate an element while vist the element, O(n)
                     # compare to list: generate all elements than visit all elements, O(2*n)
     print(i)
+    
+p = g(3)
+print(next(p))      # 0
+print(next(p))      # 1
+print(next(p))      # 2
+print(next(p))      # error
