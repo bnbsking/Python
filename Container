@@ -110,6 +110,13 @@ if all([i>5 for i in A]): a=True
 if any([i>5 for i in A]): b=True
 print(a,b)
 
+ #copy a local list
+A = [[1,2],[3,4]]
+import copy
+B = copy.deepcopy(A)
+A[0][0]=10
+print(A,B)
+
 #np.array
 import numpy as np
 A=np.array([1,2, 3])
