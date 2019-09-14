@@ -8,5 +8,6 @@ def g(n):
                     # next time calling g(n) execute from here
         i+=1
 
-for i in g(3):      # visit elements in g(3)
+for i in g(3):      # generate an element while vist the element, O(n)
+                    # compare to list: generate all elements than visit all elements, O(2*n)
     print(i)
