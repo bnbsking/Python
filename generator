@@ -16,4 +16,10 @@ p = g(3)
 print(next(p))      # 0
 print(next(p))      # 1
 print(next(p))      # 2
-print(next(p))      # error
+#print(next(p))      # error
+
+A = list(range(1,10))
+B = [i for i in A]
+C = (i for i in A)
+A[0]=-100
+print(A,B,C)
