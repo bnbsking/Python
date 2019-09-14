@@ -4,12 +4,12 @@
 def g(n):
     i = 0
     while i < n:
-        yield i     # append i in a Generator g(n) (dynamic data structure)
+        yield i     # append i in a Generator g(n) (irreversible data structure, O(1) space)
                     # next time calling g(n) execute from here
         i+=1
 
-for i in g(3):      # generate an element while vist the element, O(n)
-                    # compare to list: generate all elements than visit all elements, O(2*n)
+for i in g(3):      # generate an element while vist the element (fast)
+                    # compare to list: generate all elements than visit all element(slow), O(n) space
     print(i)
     
 p = g(3)
