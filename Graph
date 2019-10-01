@@ -57,5 +57,5 @@ class Solution:
         # DFS
         Solution.stack = []
         Solution.DFS(node)
-        print(Solution.DFSval)
+        print(Solution.DFSval) 
         
