@@ -1,0 +1,55 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+        
+class Solution:
+    
+    ans = []
+
+    def f(T):
+        if T==None:
+            return
+        else:
+            Solution.f(T.left)
+            Solution.ans.append(T.val)
+            Solution.f(T.right)
+    
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        Solution.ans = []
+        Solution.f(root)
+        return Solution.ans
+            
+ -------------------------------------------------------------
+ 
+ # Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    
+    ans = []
+    top = -1
+    
+    def f(T,c=-1):
+        if T==None:
+            return
+        else:
+            c+=1
+            if Solution.top < c:
+                Solution.ans.append([])
+                Solution.top += 1
+            Solution.ans[c].append(T.val)
+            Solution.f(T.left,c)
+            Solution.f(T.right,c)
+    
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        Solution.ans, Solution.top = [], -1
+        Solution.f(root)
+        return Solution.ans 
+        
