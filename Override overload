@@ -1,0 +1,28 @@
+# override
+class A:
+    x = 3
+
+class B(A):
+    x = 4
+    pass
+
+class C(B):
+    z = 5
+    pass
+
+print(hex(id(A.x)), hex(id(B.x)), hex(id(C.x)))
+
+#B.x = 6
+
+print(hex(id(A.x)), hex(id(B.x)), hex(id(C.x)))
+
+# overload
+def add(x,y):
+    return x+y
+
+print( hex(id(add)) )
+
+def add(x,y,z):
+    return x+y+z
+
+print( hex(id(add)) )
