@@ -1,0 +1,62 @@
+# has __iter__: iterable
+# has __iter__ and __next__/yield: iterable + iterator
+# dir(): list attributes
+# iter(): transform iterable to iterable + iterator
+# next(): next element of iterator
+
+def test(A):
+    print(A)
+    print('type:{}'.format(type(A)))
+    print('has __iter__:{}'.format('__iter__' in dir(A)))
+    print('has __getitem__:{}'.format('__getitem__' in dir(A)))
+    print('has __next__:{}'.format('__next__' in dir(A)))
+    if '__iter__' in dir(A):
+        for item in A:
+            print(item)
+    print('\n')
+        
+class C:
+    def f1():
+        pass
+    def f2():
+        pass
+L = [4,5,6]
+R = range(3)
+
+test(C)
+test(L)
+test(R)
+test(iter(L))
+
+print(iter(L).__next__())
+print(iter(L).__next__())
+print(next(iter(L)), '\n')
+
+list_iterator = iter(L)
+print(next(list_iterator))
+print(next(list_iterator), '\n')
+
+
+# yield can be exist in function or __iter__method or short code (implicitly)
+# when calling the function/method including that has yield, it generates a generator which is an iterator
+def generator_func(x=0):
+    while x < 3:
+        yield x
+        x+=1
+G = generator_func()
+test(G)
+
+class my_iterator:
+    def __init__(self, x):
+        self.x = x
+    def __iter__(self):
+        num = 1
+        while num <= self.x:
+            yield num
+            num+=1
+G = my_iterator(3)
+test(G)
+
+
+G = (i for i in range(3))
+test(G)
