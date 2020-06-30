@@ -1,0 +1,13 @@
+pyinstaller -F example.py
+cd dist
+example.exe
+cd ..
+改 example.spc 之 hidden_import
+pyinstaller -F example.spec
+cd dist
+example.exe
+(若有打包其他圖片、文件 需剪下到同層資料夾)
+
+***
+無外部套件, pyQt5(PySide2) 可直接打包
+numpy, matplotlib, pandas, opencv 需改spc
