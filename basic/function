@@ -1,0 +1,138 @@
+def A():
+    print("something")
+A()
+
+def add(x,y):
+    return x+y
+print(add(2,3))
+
+def func(obj,x,y):              #function as object
+    return obj(x,y)
+print(func(add, 3, 5))
+
+def f(x,y=1,*arg):
+    print(x,y,arg)
+
+f(2,1,1)
+f(2,1)
+f(2)
+
+#recursion
+def fac(x):
+    if x==1:
+        return 1
+    else:
+        return fac(x-1)*x
+
+for i in range(1,5):
+    print(fac(i))
+    
+a=1
+b=2
+(a,b)=(b,a)
+print(a,b)
+[a,b]=[b,a]
+print(a,b)
+a,b=b,a
+print(a,b)
+
+a=1 
+b=2
+def swap(x,y):
+    t=x
+    x=y
+    y=t
+swap(a,b)
+print(a,b)
+
+import random
+for i in range(5):
+    value = random.randint(3,10) #random integer from x to y
+    print(value)
+    
+import math
+print(math.sqrt(10))
+
+from math import pi, e, sin, log
+print(pi, e, log(e))
+
+from math import sin as si
+print(si(pi/6))
+
+try:
+    num1=7
+    num2=0
+    print(num1/num2)
+    print("Something wrong")
+except ZeroDivisionError:
+    print("An zero division error occurs")
+    print ("???")
+except (TypeError, ValueError):
+    print ("An type/value error occurs")
+except:
+    print("abc")
+finally:
+    print('bobo')
+    
+assert 2+2==4
+print("ABC")
+assert 2+2==5, "Calculate error"
+print("DEF")
+
+file=open("filename.txt","r")
+print(file.read(10))
+print(file.read())
+file.close()
+
+msg="File has been written!!!"
+file=open("filename.txt","w")
+file.write(msg)
+print(file.write(msg))
+file.close()
+
+file=open("filename.txt","r")
+print(file.read())
+file.close()
+
+with open("filename.txt") as f:
+    print(f.read())
+
+print((lambda x: x**2+5*x+4)(-4))
+print((lambda x,y: x+y)(2,4))
+
+def add_five(x):
+    return x+5
+
+nums = [11, 22, 33, 44, 55]
+#print(add_five(nums))
+print(list(map(add_five,nums)))      #map int  argument in function to list
+print(list(map(lambda x: x+5, nums)))
+print(list(filter(lambda x: x%2==0, nums)))
+
+print(None)
+def fun():
+    print("Hi")
+
+var=fun()
+print(var)
+
+from itertools import count, cycle, repeat, accumulate, takewhile, product, permutations
+
+for i in count(3):
+    print(i)
+    if i>=5: break
+print("\n")
+
+mylist=[1,2,3,4,5]
+for i in cycle(mylist):
+    print(mylist)
+    if i==4: break
+print("\n")
+    
+print(list(repeat(mylist,3)))
+print(list(accumulate(range(8))))
+print(list(takewhile(lambda x: x<=4, mylist)),"\n")
+
+L=("A","B",2)
+print(list(product(L,range(2))))
+print(list(permutations(L)))
