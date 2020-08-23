@@ -1,0 +1,51 @@
+import cv2
+import numpy as np
+
+# gif cannot show; jpg thick=3; png thick=4; all:255*255*255(*255) = 32 bit/pixel = 4 byte/pixel
+# cv2.IMREAD_UNCHANGED
+# cv2.IMREAD_COLOR: default thick = 3
+# cv2.IMREAD_GRAYSCALE
+# default=BGR.  white 255, black 0
+
+png0 = cv2.imread('groundhog.png', cv2.IMREAD_GRAYSCALE)
+png3 = cv2.imread('groundhog.png')
+png4 = cv2.imread('groundhog.png', cv2.IMREAD_UNCHANGED)
+
+def show(x, name='A'):
+    cv2.imshow(name, x)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    print(type(x), x.shape)
+    #print(x)
+    
+show(png0); show(png3); show(png4)
+
+reverseImage = 255 - png3
+show(reverseImage)
+cv2.imwrite('reverseImage.png', reverseImage)
+
+head = png3[150:450,175:450,:]
+show( head )
+cv2.imwrite('head.png', head)
+
+udFlip = np.array(png3[:])
+for i in range(len(udFlip)//2):
+    udFlip[[i,-1-i]] = udFlip[[-1-i,i]]
+show( udFlip )
+cv2.imwrite('udFlip.png', udFlip)
+
+lrFlip = np.array(png3[:])
+for i in range(len(lrFlip)//2):
+    lrFlip[:,[i, -1-i]] = lrFlip[:,[-1-i, i]]
+show( lrFlip )
+cv2.imwrite('lrFlip.png', lrFlip)
+
+rot90 = np.array(png3[:])
+for i in range(len(rot90)//2):
+    rot90[[i,-1-i]] = rot90[[-1-i,i]]
+for i in range(len(rot90)):
+    for j in range(i,len(rot90[0])):
+        for k in range(3):
+            rot90[i,j,k], rot90[j,i,k] = rot90[j,i,k], rot90[i,j,k]
+show(rot90)
+cv2.imwrite('rot90.png', rot90)
