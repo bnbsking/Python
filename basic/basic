@@ -1,0 +1,65 @@
+print('Hello world')
+print("Hello world")
+"Hello world"
+
+"Hello world"
+'Hello world'         #only one output, no difference between single and double quotation 
+
+print("Bobo\'s coding technique has been upgraded.\nGood!")
+'Bobo\'s coding technique has upgraded! \n Good'
+
+s1=input("Enter your name: ")                            #cin
+s2=input("Enter your career: ")
+print(s1+" is "+s2)                                                 #concatenate string rather than number 
+print("Hooray"*3)
+print(int("2")+float("3"))
+
+x=2
+print(x)
+del x                  #delete variable
+#print(x)
+
+print(7/2,7//2,7%2,7**2)
+print(round(314.15926,2),round(314.15926,-2))
+
+mybool = True
+print(not mybool)
+print('a'=="a")
+print(7==7.0 and (3!=3 or 3==3))
+print(1+0 and 1)
+print(1+(0 and 1))
+print(1 or 0 and 1)                            #** > negative > */ > +- > == > not > and > or
+
+#if else pair align;  statement separate from condition
+if 7>8:
+    print('YES')
+    if not 7>6:
+        print('YES')
+elif 7>5:
+    print('ABC')
+else:
+    print('NO')
+    
+i=0
+while i<=10:
+    i+=1                             #i++ is invalid
+    if i==2:continue
+    print(i)                    
+    if i==6: break
+print('finish')
+
+A=list(range(3,20,2))
+print(A)
+
+for i in A: print(i)
+for i in enumerate(A,2):
+    print(i)
+
+print("\n")
+for i in range(5):       #for(int i=0;i<5;i++)
+    print(i)
+
+a=7
+b=1 if a>=5 else 42
+print(b)
+
