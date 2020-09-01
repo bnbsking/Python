@@ -1,8 +1,0 @@
-import pickle
-D = {'a':'1', 'b':'2'}
-with open('object', 'wb') as f:
-    pickle.dump(D, f)
-
-with open('object', 'rb') as f:
-    E = pickle.load(f)
-    print(E)
