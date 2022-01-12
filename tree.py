@@ -76,7 +76,7 @@ class DisplayablePath(object):
 def tree(path, maxD=None):
     global maxDepth
     maxDepth = maxD
-    paths = DisplayablePath.make_tree(Path('datasets'))
+    paths = DisplayablePath.make_tree(Path(path))
     for path in paths:
         res = path.displayable()
         if res:
