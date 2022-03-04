@@ -1,0 +1,17 @@
+A = [2,4,6,8]
+
+def binarySearchClosest(A,target):
+    l, r = 0, len(A)-1
+    while l<=r:
+        m = (l+r)//2
+        if A[m]>target:
+            r = m-1
+        elif A[m]==target:
+            l, r = m, m
+            break
+        else:
+            l = m+1
+    return l
+
+for i in range(0,10):
+    print(i, binarySearch(A,i))
