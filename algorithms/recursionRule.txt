@@ -1,0 +1,4 @@
+Argument pass by 3 ways:
++ share out parameters: use if the variable is unique e.g. LDR, DLR, LRD traversal
++ function input: use if the variable is top-down     e.g. level-order traversal
++ function output: use if the variable is bottom-up   e.g. sum, min, max of a tree
