@@ -9,10 +9,12 @@
 
 2. General graph traversal (DFS):
     + For connected/disconnected, undirected/directed. (unweighted/weighted aren't considered) 
+    
     | | connected | disconnected |
     | - | - | - |
     | undirected | f(node,visit) and start from 1 node | f(node) and start until unvisit (global) is empty |
     | directed   | ~~defected~~ | f(node) and start until unvisit (global) is empty |
+    
     + Examples:
         + connected undirected: Maze, Word Search, Clone Graph
         + disconnected undirected: Surrounded Regions, Number of Islands
