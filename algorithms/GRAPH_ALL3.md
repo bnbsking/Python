@@ -8,6 +8,7 @@
 
 
 2. General graph traversal (DFS):
+    + Iteration use stack support. Reucrsion don't.
     + For connected/disconnected, undirected/directed. (unweighted/weighted aren't considered) 
     
     | | connected | disconnected |
