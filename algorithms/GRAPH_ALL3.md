@@ -36,3 +36,11 @@
 4. Repeat path problem for recursion: **delete i from visit/parent/parents at the end of the function !!!**
     + e.g. Course schedule (directed cycle check) e.g. [[0,1],[0,2],[1,2]] will has cycle if forget to delete
     + e.g. Word Search
+
+5. Minimum spanning tree: Prim's algorithm
+    + Pick min adjacent weight of each nodes
+    
+6. Shortest path problem: Dijkstra algorithm
+    + Initialize start to each node distance, and visit
+    + Iterate until all nodes are visited: Find unvisited shortest path node
+    + update the nodes neighbbor distance
