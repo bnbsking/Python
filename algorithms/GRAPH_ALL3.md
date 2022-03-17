@@ -14,7 +14,7 @@
     | | connected | disconnected |
     | - | - | - |
     | undirected | f(node,visit) and start from 1 node | f(node) and start until unvisit (global) is empty |
-    | directed   | ~~defected~~ | f(node) and start until unvisit (global) is empty |
+    | directed   | Tree | f(node) and start until unvisit (global) is empty |
     
     + Examples:
         + connected undirected: Maze, Word Search, Clone Graph
