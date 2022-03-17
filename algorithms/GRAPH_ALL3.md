@@ -7,15 +7,23 @@
     | Node   | O(v+e) | O(v)      |   | complex and rarely seen in disconnected graph |
 
 
-2. General graph traversal (DFS):
-    + Iteration use stack support, but Reucrsion don't.
-    + Acyclic graph (tree) doesn't need to use "visit", but "visit" has to be used in general 
-    + For Recursion is recommended: (unweighted/weighted are not necessary to be considered)
-
-    | | connected | disconnected |
-    | - | - | - |
-    | undirected | f(node,visit) and start from 1 node | f(node) and start until unvisit (global) is empty |
-    | directed   | Tree. f(node) | f(node) and start until unvisit (global) is empty |
+2. General graph traversal:
+    + Graph (cyclic) vs binary tree (directed acyclic): acyclic doesn't need to record "visit"
+    + Traversal not consider unweighted/weighted
+    + Basic paremeters:
+        
+        |   | DFS | BFS |
+        | - | - | - |
+        | recursion input | f(i) | f(i), iterate twice |
+        | iteration condition | len(stack) | len(queue) |
+    
+    + Strategy:
+        | | connected (Given 1 node only) | disconnected (Given all nodes) |
+        | - | - | - |
+        | undirected | f(i,visit) simple recursion | while unvisit + f(i) recursion || while unvisit while stack/queue |
+        | directed   | --- | f(node) and start until unvisit (global) is empty |
+    
+    + Iteration
     
     + Examples:
         + connected undirected: Maze, Word Search, Clone Graph, Minimum of Tree Heights
