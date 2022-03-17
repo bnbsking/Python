@@ -9,12 +9,12 @@
 
 2. General graph traversal (DFS):
     + Iteration use stack support, but Reucrsion don't.
-    + For connected/disconnected, undirected/directed. (unweighted/weighted aren't considered) 
-    
+    + For Recursion is recommended: (unweighted/weighted are not necessary to be considered)
+
     | | connected | disconnected |
     | - | - | - |
     | undirected | f(node,visit) and start from 1 node | f(node) and start until unvisit (global) is empty |
-    | directed   | Tree | f(node) and start until unvisit (global) is empty |
+    | directed   | Tree /  | f(node) and start until unvisit (global) is empty |
     
     + Examples:
         + connected undirected: Maze, Word Search, Clone Graph
