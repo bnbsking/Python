@@ -42,5 +42,6 @@
     
 6. Shortest path problem: Dijkstra algorithm
     + Initialize start to each node distance, and visit
+    + Initialize "getWeights(a,b)" and "parents"
     + Iterate until all nodes are visited: Find unvisited shortest path node
     + update the nodes neighbbor distance
