@@ -16,9 +16,9 @@
         | iteration condition | len(stack) | len(queue) |
     
     + Strategy:
-        | | connected (Given 1 node only) | disconnected (Given all nodes) |
+        | | connected (Given 1 node only) | disconnected (Given all nodes, while unvisit at out loop) |
         | - | - | - |
-        | undirected | f(i,visit) simple recursion | while unvisit + f(i) recursion // while unvisit while stack/queue |
+        | undirected | f(i,visit) simple recursion // while stack/queue | while unvisit + f(i) simple recursion // while unvisit while stack/queue |
         | directed   | --- |  while unvisit + f(i) recursion // while unvisit while stack/queue |
 
     + Examples:
