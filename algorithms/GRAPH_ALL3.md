@@ -17,7 +17,7 @@
     + Strategy:
         | | connected (Given 1 node only) | disconnected (Given all nodes, while unvisit at out loop) |
         | - | - | - |
-        | undirected | recursion: f(i,visit) <br> iteration: while stack/queue | recursion: while unvisit + f(i) <br> iteration: while unvisit while stack/queue |
+        | undirected | recursion: f(i) + global visit <br> iteration: while stack/queue | recursion: while unvisit + f(i) <br> iteration: while unvisit while stack/queue |
         | directed   | --- | recursion: while unvisit + f(i) <br> iteration: while unvisit while stack/queue |
 
     + Examples:
