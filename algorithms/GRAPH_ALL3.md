@@ -17,8 +17,8 @@
     + Strategy:
         | | connected (Given 1 node only) | disconnected (Given all nodes, while unvisit at out loop) |
         | - | - | - |
-        | undirected | recursion: global visit + f(i) <br> iteration: while stack/queue | recursion: global while unvisit + f(i) <br> iteration: while unvisit while stack/queue |
-        | directed   | --- | recursion: global while unvisit + f(i) <br> iteration: while unvisit while stack/queue |
+        | undirected | recursion: global visit + f(i) <br> iteration: while stack/queue | recursion: while global unvisit + f(i) <br> iteration: while unvisit while stack/queue |
+        | directed   | --- | recursion: while global unvisit + f(i) <br> iteration: while unvisit while stack/queue |
 
     + Examples:
         + connected undirected: Maze, Word Search, Clone Graph, Minimum of Tree Heights, Evaluate Division
