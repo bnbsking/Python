@@ -45,8 +45,7 @@
     | concept    | update neighbors from 1 current | update all current from neighbors |
     | time       | O(va) | O(kva) |
     
-    + a: average number of in-degree nodes
-    + k: step restrictions (at most n)
+    + a: average in-degree of nodes; k: step restrictions (at most n)
 
 6. Minimum spanning tree: Prim's algorithm
     + Pick min adjacent weight of each nodes
