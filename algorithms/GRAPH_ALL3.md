@@ -1,17 +1,17 @@
 ### Version3:
 1. Graph data structure:
-    |        | space  | traversal | recommended | restriction |
-    | -      |   -    |  -        | - | - |
-    | Matrix | O(v^2) | O(v^2)    |   |   |
-    | Dict   | O(v\*H)| O(v)      | v | compute getEdge(a,b), parents_dict in advance for some situations |
-    | Node   | O(v+e) | O(v)      |   | complex and rarely seen in disconnected graph |
+    |        | space    | traversal | recommended | restriction |
+    | -      |   -      |  -        | - | - |
+    | Matrix | O(v^2)   | O(v^2)    |   |   |
+    | Dict   | O(v^2\*H)| O(v)      | v | nested dict, compute parents_dict in advance for some situations |
+    | Node   | O(v+e)   | O(v+e)    |   | complex and rarely seen in disconnected graph |
 
 2. General graph traversal:
-    + Graph (cyclic) vs binary tree (directed acyclic): acyclic doesn't need to record "visit"
-    + Basic paremeters: DFS recursion is the best (more precise) in most cases
+    + Graph (cyclic) vs binary tree (directed acyclic): **acyclic doesn't need to record "visit"**
+    + Basic paremeters: **DFS recursion is the best (more precise) in most cases**
         |   | DFS | BFS |
         | - | - | - |
-        | recursion input | f(i) | f(i), iterate twice |
+        | recursion input | f(i), iterate once | f(i), iterate twice |
         | iteration condition | len(stack) | len(queue) |
     
     + Strategy:
@@ -28,20 +28,25 @@
         
     + Traversal not consider unweighted/weighted
 
-3. Cycle determination:
-    + undirected: must add parent (int) argument to f. Has node if a node visit twice excludes parent.
-    + directed: must add parents (list) argument to f. Has node if visiting a node is already in parents.
-    + directed(best): **topological sort - Kahn's algorithm (Iteration)** - remove in degree==0 nodes gradually
-
-4. Repeat path problem for recursion: **delete i from visit/parent/parents at the end of the function !!!**
+3. Repeat path problem for recursion: **delete i from visit/parent/parents at the end of the function !!!**
     + e.g. Course schedule (directed cycle check) e.g. [[0,1],[0,2],[1,2]] will has cycle if forget to delete
     + e.g. Word Search
 
-5. Minimum spanning tree: Prim's algorithm
-    + Pick min adjacent weight of each nodes
+4. Cycle determination:
+    + undirected: must add parent (int) argument to f. Has node if a node visit twice excludes parent.
+    + directed: must add parents (list) argument to f. Has node if visiting a node is already in parents.
+    + directed(best): **topological sort - Kahn's algorithm (Iteration)** - remove in degree==0 nodes gradually
     
-6. Shortest path problem: Dijkstra algorithm
-    + Initialize start to each node distance, and visit
-    + Initialize "getWeights(a,b)" and "parents"
-    + Iterate until all nodes are visited: Find unvisited shortest path node
-    + update the nodes neighbbor distance
+5. Shortest path problem:
+    |            | Dijkstra | Bellman-Ford |
+    | -          | - | - |
+    | situation  | No "Negative cycle" or "step restriction" | has either left |
+    | parameters | iteration,visit | iteration |
+    | concept    | update neighbors from 1 current | update all current from neighbors |
+    | time       | O(va) | O(kva) |
+    
+    + a: average number of in-degree nodes
+    + k: step restrictions (at most n)
+
+6. Minimum spanning tree: Prim's algorithm
+    + Pick min adjacent weight of each nodes
