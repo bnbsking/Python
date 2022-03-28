@@ -41,9 +41,9 @@
     |            | Dijkstra | Bellman-Ford |
     | -          | - | - |
     | situation  | No "Negative cycle" or "step restriction" | has either left |
-    | parameters | iteration,visit | iteration |
     | concept    | update neighbors from 1 current | update all current from neighbors |
     | time       | O(va) | O(kva) |
+    | more | iteration,visit e.g. Network delay time | iteration e.g. Cheapest flights within k steps |
     
     + a: average in-degree of nodes; k: step restrictions (at most n)
 
