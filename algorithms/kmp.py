@@ -1,3 +1,4 @@
+"""
 [x]aababcxabcaabcabxabcabcx
 [a]bcabcf -> lcps=0, match=0 -> starti+=1, startj=0
 
@@ -36,3 +37,16 @@ xaababcxabcaabcabxabcabc[x]
     
 xaababcxabcaabcabxabcabc[x]
                         [a]bcabcf -> lcps=0, match=0 -> starti+=1, startj=0
+
+s     a b c a b c f
+lcps  0 0 0 1 2 3 0
+start 0 0 0 1 2 3 0 
+"""
+
+def getLCPS(s): # O(len(s))
+    L, start  = [0], 0
+    for i in range(1,len(s)):
+        L.append( L[-1]+1 if s[i]==s[start] else 0 )
+        start = start+1 if s[i]==s[start] else 0
+    return L
+getLCPS("abcabcf")
