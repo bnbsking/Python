@@ -36,6 +36,8 @@
     + undirected: must add parent (int) argument to f. Has node if a node visit twice excludes parent.
     + directed: must add parents (list) argument to f. Has node if visiting a node is already in parents.
     + directed(best): **topological sort - Kahn's algorithm (Iteration)** - remove in degree==0 nodes gradually
+
+<span style="color:green"> single entrance convert to multiple; iteration+stack/queue vs recursion+unvisited </span>.
     
 5. Shortest path problem:
     |            | Dijkstra | Bellman-Ford |
