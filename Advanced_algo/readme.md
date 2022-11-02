@@ -13,7 +13,7 @@
     + **DFS** is easier and enough:
         + (Recommended) bottom-up recursion 1 or 2: node, visit/unvisit 
         + stack iteration: while stack, node, visit/unvisit
-        + [Note] Revoke traversal need to pop the node after recursive traversal e.g. Word Search
+        + [Note] Revoke traversal need to pop the node after traversal if use recursive-bu-2 so recursive-bu-1 is better e.g. Word Search
     + Traversal not consider unweighted/weighted
 
 3. Topological sort:
