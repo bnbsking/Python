@@ -5,43 +5,22 @@
     | Matrix | O(v^2)   | O(v^2)    |             |   |
     | Dict   | O(v^2\*H)| O(v)      | v           | nested dict, compute parents_dict in advance for some situations |
     | Node   | O(v+e)   | O(v+e)    |             | complex and rarely seen in disconnected graph |
+    + data structure transformation can use dict as media e.g. clone graph (node->dict->node)
 
 2. General graph traversal:
-    + Graph (general) vs Binary tree (connected+directed+acyclic): **acyclic doesn't need to record "visit"**
-    + Connected (start point can go to every node) -> visit; Disconnected: unvisit
-    + DFS is easier and enough:
-        + bottom-up recursion (visit)
-        |   | DFS | BFS |
-        | - | - | - |
-        | recursion input | f(i), iterate once | f(i), iterate twice |
-        | iteration condition | len(stack) | len(queue) |
-    
-    + Strategy:
-        | | connected (Given 1 node only) | disconnected (Given all nodes, while unvisit at out loop) |
-        | - | - | - |
-        | undirected | recursion: global visit + f(i) <br> iteration: visit + while stack/queue | recursion: while global unvisit + f(i) <br> iteration: while unvisit while stack/queue |
-        | directed   | --- | recursion: while global unvisit + f(i) <br> iteration: while unvisit while stack/queue |
-
-    + Examples:
-        + connected undirected: Maze, Word Search, Clone Graph, Minimum of Tree Heights, Evaluate Division
-        + connected directed: most of the tree problems.
-        + disconnected undirected: Surrounded Regions, Number of Islands
-        + disconnected directed: Course Schedule
-        
+    + **Graph** (general) vs **Binary tree** (connected+directed+acyclic): **acyclic doesn't need to record "visit"**
+    + **Connected** (One entry point can go to everywhere) -> visit; **Disconnected** (Every entry points are needed) -> unvisit
+    + **DFS** is easier and enough:
+        + (Recommended) bottom-up recursion 1 or 2: node, visit/unvisit 
+        + stack iteration: while stack, node, visit/unvisit
+        + [Note] Revoke traversal need to pop the node after recursive traversal e.g. Word Search
     + Traversal not consider unweighted/weighted
 
-3. Repeat path problem for recursion: **delete i from visit/parent/parents at the end of the function !!!**
-    + e.g. Course schedule (directed cycle check) e.g. [[0,1],[0,2],[1,2]] will has cycle if forget to delete
-    + e.g. Word Search
-
-4. Cycle determination:
-    + undirected: must add parent (int) argument to f. Has node if a node visit twice excludes parent.
-    + directed: must add parents (list) argument to f. Has node if visiting a node is already in parents.
-    + directed(best): **topological sort - Kahn's algorithm (Iteration)** - remove in degree==0 nodes gradually
-
-<span style="color:green"> iteration(stack/queue)+visit vs recursion+unvisit </span>.
+3. Topological sort:
+    + **Kahn's algorithm (Iteration)**: remove in-degree=0 nodes gradually
+    + Applications: Scheduling, Cycle determination
     
-5. Shortest path problem:
+4. Shortest path problem:
     |            | Dijkstra | Bellman-Ford |
     | -          | - | - |
     | situation  | No "Negative cycle" or "step restriction" | has either left |
@@ -51,5 +30,5 @@
     
     + a: average in-degree of nodes; k: step restrictions (at most n)
 
-6. Minimum spanning tree: Prim's algorithm
+5. Minimum spanning tree: Prim's algorithm
     + Pick min adjacent weight of each nodes
