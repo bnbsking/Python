@@ -1,14 +1,16 @@
-### Version3:
+### Graph 20222.11.01
 1. Graph data structure:
     |        | space    | traversal | recommended | restriction |
-    | -      |   -      |  -        | - | - |
-    | Matrix | O(v^2)   | O(v^2)    |   |   |
-    | Dict   | O(v^2\*H)| O(v)      | v | nested dict, compute parents_dict in advance for some situations |
-    | Node   | O(v+e)   | O(v+e)    |   | complex and rarely seen in disconnected graph |
+    | -      |   -      |  -        | -           | - |
+    | Matrix | O(v^2)   | O(v^2)    |             |   |
+    | Dict   | O(v^2\*H)| O(v)      | v           | nested dict, compute parents_dict in advance for some situations |
+    | Node   | O(v+e)   | O(v+e)    |             | complex and rarely seen in disconnected graph |
 
 2. General graph traversal:
-    + Graph (cyclic) vs binary tree (directed acyclic): **acyclic doesn't need to record "visit"**
-    + Basic paremeters: **DFS recursion is the best (more precise) in most cases**
+    + Graph (general) vs Binary tree (connected+directed+acyclic): **acyclic doesn't need to record "visit"**
+    + Connected (start point can go to every node) -> visit; Disconnected: unvisit
+    + DFS is easier and enough:
+        + bottom-up recursion (visit)
         |   | DFS | BFS |
         | - | - | - |
         | recursion input | f(i), iterate once | f(i), iterate twice |
