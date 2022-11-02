@@ -3,7 +3,7 @@
     |        | space    | traversal | recommended | restriction |
     | -      |   -      |  -        | -           | - |
     | Matrix | O(v^2)   | O(v^2)    |             |   |
-    | Dict   | O(v^2\*H)| O(v)      | v           | nested dict, compute parents_dict in advance for some situations |
+    | Dict   | O(v^2\*H)| O(v)      | v           | nested dict, aka out-D, compute parents_dict in advance for some situations |
     | Node   | O(v+e)   | O(v+e)    |             | complex and rarely seen in disconnected graph |
     + data structure transformation can use dict as media e.g. clone graph (node->dict->node)
 
@@ -17,7 +17,7 @@
     + Traversal not consider unweighted/weighted
 
 3. Topological sort:
-    + **Kahn's algorithm (Iteration)**: remove in-degree=0 nodes gradually
+    + **Kahn's algorithm (Iteration)**: Remove in-degree=0 nodes gradually. In-D is needed
     + Applications: Scheduling, Cycle determination
     
 4. Shortest path problem:
