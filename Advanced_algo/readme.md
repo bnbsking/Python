@@ -22,7 +22,7 @@
     + **Kahn's algorithm (Iteration)**: Remove in-degree=0 nodes gradually (In-D is needed).
     + Applications: Scheduling, Cycle determination e.g. Course scheduling
     
-4. Shortest path problem (directed):
+4. Shortest path problem (directed/undirected):
     |            | Dijkstra | Bellman-Ford by Matrix |
     | -          | -        | - |
     | situation  | No "negative cycle" or "step restriction" | Has either left |
