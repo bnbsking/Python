@@ -18,11 +18,11 @@
         + [Note] Revoke traversal need to pop the node after traversal if use recursive-bu-2 so recursive-bu-1 is better e.g. Word Search
     + Traversal not consider unweighted/weighted
 
-3. Topological sort:
+3. Topological sort (directed):
     + **Kahn's algorithm (Iteration)**: Remove in-degree=0 nodes gradually (In-D is needed).
     + Applications: Scheduling, Cycle determination e.g. Course scheduling
     
-4. Shortest path problem:
+4. Shortest path problem (directed):
     |            | Dijkstra | Bellman-Ford by Matrix |
     | -          | -        | - |
     | situation  | No "negative cycle" or "step restriction" | Has either left |
@@ -31,5 +31,5 @@
     | example    | Network delay time | Cheapest flights within k steps |
     + Matrix is recommended since its easier and efficient in general case (dense graph) 
     
-5. Minimum spanning tree: Prim's algorithm
+5. Minimum spanning tree (directed): Prim's algorithm
     + Pick min adjacent weight of each nodes
