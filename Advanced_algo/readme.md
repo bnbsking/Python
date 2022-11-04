@@ -26,7 +26,7 @@
     |            | Dijkstra | Bellman-Ford by Matrix |
     | -          | -        | - |
     | situation  | No "Negative cycle" or "step restriction" | has either left |
-    | concept    | Explored distance -> get unvisited min dist node (v times)<br>-> triangular update (neighbor times) | update all current from neighbors |
+    | concept    | Explored distance list -> get unvisited min dist node (v times)<br>-> triangular update (neighbor times) | update all current from neighbors |
     | time       | Naive:O(v^2)<br>Heap:O(elog(v)) | Naive:O(?)<br>O(?) |
     | example    | Network delay time | Cheapest flights within k steps |
     
