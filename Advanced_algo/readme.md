@@ -29,6 +29,7 @@
     | concept    | Explored distance list -> get unvisited min dist node (v times)<br>-> triangular update (neighbor times) | Update all current from neighbors |
     | time       | Naive:O(v^2)<br>Heap:O(elog(v)) | Naive:O(?)<br>O(?) |
     | example    | Network delay time | Cheapest flights within k steps |
+    + Matrix is recommended since its easier and efficient in general case (dense graph) 
     
 5. Minimum spanning tree: Prim's algorithm
     + Pick min adjacent weight of each nodes
