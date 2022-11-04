@@ -23,13 +23,12 @@
     + Applications: Scheduling, Cycle determination e.g. Course scheduling
     
 4. Shortest path problem:
-    |            | Dijkstra by Matrix | Dijkstra by Heap | Bellman-Ford by Matrix |
-    | -          | -                  | -                | - |
-    | situation  | No "Negative cycle" or "step restriction" | Same as left | has either left |
-    | concept    | Explored distance -> get unvisited min dist node (v times) -> triangular update (neighbor times) | Same as left |update all current from neighbors |
-    | time       | O(va) | O() | O(kva) |
-    | more | iteration,visit e.g. Network delay time | iteration e.g. Cheapest flights within k steps |
-    + a: average in-degree of nodes; k: step restrictions (at most n)
-
+    |            | Dijkstra | Bellman-Ford by Matrix |
+    | -          | -        | - |
+    | situation  | No "Negative cycle" or "step restriction" | has either left |
+    | concept    | Explored distance -> get unvisited min dist node (v times)<br>-> triangular update (neighbor times) | update all current from neighbors |
+    | time       | Naive:O(v^2)<br>Heap:O(elog(v)) | Naive:O(?)<br>O(?) |
+    | example    | Network delay time | Cheapest flights within k steps |
+    
 5. Minimum spanning tree: Prim's algorithm
     + Pick min adjacent weight of each nodes
