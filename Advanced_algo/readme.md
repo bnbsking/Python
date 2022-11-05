@@ -26,10 +26,11 @@
     |            | Dijkstra | Bellman-Ford           |
     | -          | -        | -                      |
     | situation  | positive edge and no step restriction | can have either left |
-    | concept    | Explored distance dict -> get unvisited min dist node (v times)<br>-> triangular update (neighbor times) | copy distance dict (v times) -> triangular update (all edges times) |
+    | concept    | Initialize distance dict -> get unvisited min dist node (v times)<br>-> triangular update (neighbor times) | Initialize distance dict -> copy distance dict (v times)<br>-> triangular update (all edges times) |
     | time       | Naive:O(v^2)<br>Heap:O(elog(v)) | O(ve) |
     | example    | Network delay time | Cheapest flights within k steps |
     + Dijkstra in naive is recommended since its easier and efficient in general case (dense graph)
     
 5. Minimum spanning tree (directed): Prim's algorithm
-    + Pick min adjacent weight of each nodes
+    + Random pick start -> Initialize edge set -> pick min edge (l,r) then add to tree, add r neighbors edges, remove (x,r) from set 
+    + Naive: O(v^2); Heap: O(elog(v))
