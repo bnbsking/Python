@@ -23,7 +23,7 @@
     + Applications: Scheduling, Cycle determination e.g. Course scheduling
     
 4. Shortest path problem (directed/undirected):
-    |            | Dijkstra | Bellman-Ford by Matrix |
+    |            | Dijkstra | Bellman-Ford           |
     | -          | -        | -                      |
     | situation  | positive edge and no step restriction | can have either left |
     | concept    | Explored distance dict -> get unvisited min dist node (v times)<br>-> triangular update (neighbor times) | copy distance dict (v times) -> triangular update (all edges times) |
