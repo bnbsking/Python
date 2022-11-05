@@ -24,12 +24,12 @@
     
 4. Shortest path problem (directed/undirected):
     |            | Dijkstra | Bellman-Ford by Matrix |
-    | -          | -        | - |
-    | situation  | No "negative cycle" or "step restriction" | Has either left |
-    | concept    | Explored distance list -> get unvisited min dist node (v times)<br>-> triangular update (neighbor times) | Update all current from neighbors |
-    | time       | Naive:O(v^2)<br>Heap:O(elog(v)) | Naive:O(?)<br>O(?) |
+    | -          | -        | -                      |
+    | situation  | positive edge and no step restriction | can have either left |
+    | concept    | Explored distance dict -> get unvisited min dist node (v times)<br>-> triangular update (neighbor times) | copy distance dict (v times) -> triangular update (all edges times) |
+    | time       | Naive:O(v^2)<br>Heap:O(elog(v)) | O(ve) |
     | example    | Network delay time | Cheapest flights within k steps |
-    + Matrix is recommended since its easier and efficient in general case (dense graph) 
+    + Dijkstra in naive is recommended since its easier and efficient in general case (dense graph)
     
 5. Minimum spanning tree (directed): Prim's algorithm
     + Pick min adjacent weight of each nodes
