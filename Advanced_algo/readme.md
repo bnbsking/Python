@@ -32,5 +32,5 @@
     + Dijkstra in naive is recommended since its easier and efficient in general case (dense graph)
     
 5. Minimum spanning tree (directed): Prim's algorithm
-    + Random pick start -> Initialize edge set -> pick min edge (l,r) then add to tree, add r neighbors edges, remove (x,r) from set 
+    + Random pick start -> Initialize edge set -> pick min edge (l,r) then add to tree, add r neighbors edges, remove (x,r) from set (v-1 times)
     + Naive: O(v^2); Heap: O(elog(v))
