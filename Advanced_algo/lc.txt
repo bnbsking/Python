@@ -9,10 +9,16 @@ Hash
 80. Remove Duplicates from Sorted Array II
 82. Remove Duplicates from Sorted List II
 83. Remove Duplicates from Sorted List
+128. Longest Consecutive Sequence
+136. Single Number
+137. Single Number II
+141. Linked List Cycle
+142. Linked List Cycle II
+160. Intersection of Two Linked Lists
 
 Backward DP
 3. Longest Substring Without Repeating Character | dict + two case
-39. Combination Sum
+39. Combination Sum | Knapsack
 40. Combination Sum II
 62. Unique Paths
 63. Unique Paths II
@@ -27,6 +33,7 @@ Backward DP
 122. Best Time to Buy and Sell Stock II
 
 Forward DP
+139. Word Break
 
 Iteration
 2. Add Two Numbers
@@ -43,12 +50,18 @@ Iteration
 56. Merge Intervals
 61. Rotate List
 75. Sort Colors
-86. Partition List
 93. Restore IP Addresses
+133. Clone Graph | node2dict2node
+134. Gas Station | very similar to Maximum Subarray
+138. Copy List with Random Pointer
+152. Maximum Product Subarray | inclusive ans, minv, maxv
+165. Compare Version Numbers
 
 Stack
 20. Valid Parentheses | dict + matching
 71. Simplify Path
+150. Evaluate Reverse Polish Notation
+155. Min Stack
 
 Left-Right
 11. Container With Most Water
@@ -59,6 +72,9 @@ Left-Right
 57. Insert Interval
 74. Search a 2D Matrix
 81. Search in Rotated Sorted Array II
+153. Find Minimum in Rotated Sorted Array
+162. Find Peak Element
+167. Two Sum II - Input Array Is Sorted
 
 Naive
 7. Reverse Integer
@@ -79,6 +95,10 @@ Naive
 69. Sqrt(x)
 88. Merge Sorted Array
 125. Valid Palindrome
+143. Reorder List
+147. Insertion Sort List
+148. Sort List
+150. Evaluate Reverse Polish Notation
 
 Top-Down arg Recursion
 89. Gray Code
@@ -96,6 +116,9 @@ Top-Down arg Recursion
 109. Convert Sorted List to Binary Search Tree
 111. Minimum Depth of Binary Tree
 112. Path Sum
+129. Sum Root to Leaf Numbers
+144. Binary Tree Preorder Traversal
+145. Binary Tree Postorder Traversal
 
 Top-Down share Recursion
 102. Binary Tree Level Order Traversal
@@ -105,6 +128,7 @@ Top-Down share Recursion
 114. Flatten Binary Tree to Linked List
 116. Populating Next Right Pointers in Each Node
 117. Populating Next Right Pointers in Each Node II
+130. Surrounded Regions
 
 Bottom-up arg Recursion
 22. Generate Parentheses
@@ -116,11 +140,19 @@ Bottom-up arg Recursion
 Bottom-up share Recursion
 79. Word Search
 
+Mix
+131. Palindrome Partitioning
+
 Special
 28. Find the Index of the First Occurrence in a String | lcps + KMP
+146. LRU Cache | dict+double linked list OR OrderedDict with O.popitem(last=False)
 
 Bad
 6. Zigzag Conversion
 27. Remove Element
 29. Divide Two Integers
 38. Count and Say
+166. Fraction to Recurring Decimal
+
+Unknown
+86. Partition List
