@@ -8,3 +8,5 @@ print(A, x, f(5))
 
 def f():
     return 3 if 6>5 else 0
+
+# min, max, sum, sorted, list, set, dict X one line for
