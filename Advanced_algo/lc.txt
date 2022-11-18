@@ -15,6 +15,8 @@ Hash
 141. Linked List Cycle
 142. Linked List Cycle II
 160. Intersection of Two Linked Lists
+169. Majority Element
+187. Repeated DNA Sequences
 
 Backward DP
 3. Longest Substring Without Repeating Character | dict + two case
@@ -31,6 +33,7 @@ Backward DP
 120. Triangle
 121. Best Time to Buy and Sell Stock
 122. Best Time to Buy and Sell Stock II
+198. House Robber
 
 Forward DP
 139. Word Break
@@ -56,6 +59,10 @@ Iteration
 138. Copy List with Random Pointer
 152. Maximum Product Subarray | inclusive ans, minv, maxv
 165. Compare Version Numbers
+168. Excel Sheet Column Title**
+171. Excel Sheet Column Number
+172. Factorial Trailing Zeroes
+179. Largest Number
 
 Stack
 20. Valid Parentheses | dict + matching
@@ -99,6 +106,9 @@ Naive
 147. Insertion Sort List
 148. Sort List
 150. Evaluate Reverse Polish Notation
+189. Rotate Array
+190. Reverse Bits
+191. Number of 1 Bits
 
 Top-Down arg Recursion
 89. Gray Code
@@ -119,6 +129,7 @@ Top-Down arg Recursion
 129. Sum Root to Leaf Numbers
 144. Binary Tree Preorder Traversal
 145. Binary Tree Postorder Traversal
+173. Binary Search Tree Iterator
 
 Top-Down share Recursion
 102. Binary Tree Level Order Traversal
@@ -129,6 +140,8 @@ Top-Down share Recursion
 116. Populating Next Right Pointers in Each Node
 117. Populating Next Right Pointers in Each Node II
 130. Surrounded Regions
+199. Binary Tree Right Side View
+200. Number of Islands
 
 Bottom-up arg Recursion
 22. Generate Parentheses
