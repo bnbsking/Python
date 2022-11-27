@@ -11,7 +11,7 @@
 
 + Download VsCode (~96MB) and install
 
-+ Create an empty folder and open it by VSCode
++ Create an empty folder and open it by VsCode
 
 [ Minimal: run by terminal and no hints while editing ]
 
@@ -25,5 +25,5 @@
 
 [ Code runner icon and Hints while editing ]
 
-+ Install python from vs code first
++ Install python from VsCode first
 + "ctrl+shift+P" and type "Python: Select Intepreter" to choose conda kernel
