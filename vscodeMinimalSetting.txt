@@ -1,0 +1,12 @@
++ Download VsCode and install
+
++ Create an empty folder and open it by VSCode
+
++ Create new .ipynb and edit:
+    + "ctrl+`" to open terminal
+    + conda activate <correct_environemnt>
+    + which pip: to get correct package path, otherwise reset PATH
+    + ipython xxx.ipynb (pip install ipython first)
+    
++ Create new .py and edit:
+    + same as above but python xxx.py at last step
