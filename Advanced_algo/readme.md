@@ -1,4 +1,4 @@
-### Graph 20222.11.01
+### Graph 2022.11.01
 1. Graph data structure:
     |        | space    | traversal | recommended | restriction |
     | -      |   -      |  -        | -           | - |
