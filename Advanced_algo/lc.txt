@@ -145,6 +145,7 @@ Top-Down arg Recursion
 203. Remove Linked List Elements
 206. Reverse Linked List
 215. Kth Largest Element in an Array | O(n) space quick select is easier
+222. Count Complete Tree Nodes
 
 Top-Down share Recursion
 102. Binary Tree Level Order Traversal
@@ -177,6 +178,7 @@ Mix
 Special
 28. Find the Index of the First Occurrence in a String | lcps + KMP
 146. LRU Cache | dict+double linked list OR OrderedDict with O.popitem(last=False)
+223. Rectangle Area | max(0,min()-max()) *****
 
 Bad
 6. Zigzag Conversion
