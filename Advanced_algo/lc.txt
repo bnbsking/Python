@@ -21,6 +21,8 @@ Hash
 205. Isomorphic Strings
 208. Implement Trie (Prefix Tree)
 211. Design Add and Search Words Data Structure
+217. Contains Duplicate
+219. Contains Duplicate II
 
 Backward DP
 3. Longest Substring Without Repeating Character | L.append( i-D[s[i]] if s[i] in D and i-L[-1]<=D[s[i]] else L[-1]+1 )
@@ -38,6 +40,7 @@ Backward DP
 122. Best Time to Buy and Sell Stock II | FSM, rest:s0[0]=0; buy:s1[0]=-price[0] 
 198. House Robber    | initial 3, L.append( max(L[-3],L[-2])+nums[i] ), return max(L[-1],L[-2])
 213. House Robber II | initial 4, exclude first L / exclide last M, return max(L[-1],M[-1])
+221. Maximal Square  | M[i][j] = M[i][j] * min(ul,l,u)+1
 
 Forward DP
 139. Word Break | for i for word: write True if match
@@ -166,6 +169,7 @@ Bottom-up arg Recursion
 
 Bottom-up share Recursion
 79. Word Search | f(position,match,visitS)
+216. Combination Sum III | f(path,start,k,n)
 
 Mix
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
