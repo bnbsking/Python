@@ -30,8 +30,8 @@ Backward DP
 63. Unique Paths II
 64. Minimum Path Sum
 70. Climbing Stairs
-91. Decode Ways
-97. Interleaving String
+91. Decode Ways | 00, 01~09/27~, 10/20, 11~19/21~26
+97. Interleaving String | T[i][j] = (T[i-1][j] and s1[i-1]==s3[i+j-1]) or (T[i][j-1] and s2[j-1]==s3[i+j-1])
 118. Pascal's Triangle
 119. Pascal's Triangle II
 120. Triangle
@@ -53,13 +53,13 @@ Iteration
 46. Permutations
 47. Permutations II
 48. Rotate Image
-53. Maximum Subarray | ans with tmpSum
+53. Maximum Subarray | ans=0 tmpSum=0, ans update every i 
 56. Merge Intervals
 61. Rotate List
 75. Sort Colors
-93. Restore IP Addresses
+93. Restore IP Addresses | cut i,j,k four pieces, bool and <255 and no leading 0 
 133. Clone Graph | node2dict2node
-134. Gas Station | very similar to Maximum Subarray
+134. Gas Station | (very similar to Maximum Subarray) ans=0 tmpSum=0, ans+=1 if tmpSum<0
 138. Copy List with Random Pointer
 152. Maximum Product Subarray | inclusive ans, minv, maxv
 165. Compare Version Numbers
@@ -122,9 +122,9 @@ Top-Down arg Recursion
 89. Gray Code
 92. Reverse Linked List II
 94. Binary Tree Inorder Traversal
-95. Unique Binary Search Trees II
+95. Unique Binary Search Trees II | f(L=list(range(1,1+n)))
 96. Unique Binary Search Trees
-98. Validate Binary Search Tree
+98. Validate Binary Search Tree | ordered or not
 99. Recover Binary Search Tree
 100. Same Tree
 101. Symmetric Tree
@@ -158,13 +158,13 @@ Bottom-up arg Recursion
 22. Generate Parentheses
 45. Jump Game II | f(i=0) scan current possiblities and select best
 55. Jump Game | f(i=0,energy=0) call f(i+1,energy')
-77. Combinations | 
-78. Subsets
+77. Combinations | f(i=0, k=k) get k elemnets from L[i:]
+78. Subsets | f(i=0, L=[[]]) add or not L[i]
 90. Subsets II
 110. Balanced Binary Tree
 
 Bottom-up share Recursion
-79. Word Search
+79. Word Search | f(position,match,visitS)
 
 Mix
 131. Palindrome Partitioning
