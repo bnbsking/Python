@@ -9,7 +9,7 @@ Hash
 80. Remove Duplicates from Sorted Array II
 82. Remove Duplicates from Sorted List II
 83. Remove Duplicates from Sorted List
-128. Longest Consecutive Sequence
+128. Longest Consecutive Sequence | S=set(L); for x in L: if x-1 not in S:...
 136. Single Number
 137. Single Number II
 141. Linked List Cycle
