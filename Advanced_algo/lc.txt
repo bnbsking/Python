@@ -160,7 +160,7 @@ Top-Down share Recursion
 200. Number of Islands  | while unvisit: f(position)
 
 Bottom-up arg Recursion
-22. Generate Parentheses
+22. Generate Parentheses | f(L=['('],l=1,r=0)
 45. Jump Game II | f(i=0) scan current possiblities and select best
 55. Jump Game | f(i=0,energy=0) call f(i+1,energy')
 77. Combinations | f(i=0, k=k) get k elemnets from L[i:]
