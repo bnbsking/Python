@@ -35,13 +35,12 @@ Backward DP
 118. Pascal's Triangle
 119. Pascal's Triangle II
 120. Triangle
-121. Best Time to Buy and Sell Stock
-122. Best Time to Buy and Sell Stock II
-198. House Robber
-213. House Robber II
+122. Best Time to Buy and Sell Stock II | FSM, rest:s0[0]=0; buy:s1[0]=-price[0] 
+198. House Robber    | initial 3, L.append( max(L[-3],L[-2])+nums[i] ), return max(L[-1],L[-2])
+213. House Robber II | initial 4, exclude first L / exclide last M, return max(L[-1],M[-1])
 
 Forward DP
-139. Word Break
+139. Word Break | for i for word: write True if match
 204. Count Primes | Sieve of Eratosthenes
 
 Iteration
@@ -53,30 +52,31 @@ Iteration
 46. Permutations
 47. Permutations II
 48. Rotate Image
-53. Maximum Subarray | ans=0 tmpSum=0, ans update every i 
+53. Maximum Subarray | ans=0 tmpSum=0, ans update every i
 56. Merge Intervals
 61. Rotate List
 75. Sort Colors
-93. Restore IP Addresses | cut i,j,k four pieces, bool and <255 and no leading 0 
+93. Restore IP Addresses | cut i,j,k four pieces, bool and <255 and no leading 0
+121. Best Time to Buy and Sell Stock | ans, lowest
 133. Clone Graph | node2dict2node
 134. Gas Station | (very similar to Maximum Subarray) ans=0 tmpSum=0, ans+=1 if tmpSum<0
 138. Copy List with Random Pointer
 152. Maximum Product Subarray | inclusive ans, minv, maxv
 165. Compare Version Numbers
-168. Excel Sheet Column Title
-171. Excel Sheet Column Number
-172. Factorial Trailing Zeroes
+168. Excel Sheet Column Title  | while num>0: num-=1; r=num%26; append; num=(num-r)//26
+171. Excel Sheet Column Number | for i,c in enumerate(s[::-1]): ans += (ord(c)-ord("A")+1) * 26**i
+172. Factorial Trailing Zeroes | c+=int(n/5**(i+1))
 179. Largest Number
-201. Bitwise AND of Numbers Range
-207. Course Schedule | Kahn's algorithm
-209. Minimum Size Subarray Sum
+201. Bitwise AND of Numbers Range | must same bit, while align with 1 from left to right
+207. Course Schedule    | Kahn's algorithm
+209. Minimum Size Subarray Sum | extend front and cut back
 210. Course Schedule II | Kahn's algorithm
 
 Stack
-20. Valid Parentheses | dict + matching
+20. Valid Parentheses | dict + lr matching
 71. Simplify Path
 150. Evaluate Reverse Polish Notation
-155. Min Stack
+155. Min Stack | deque (maintain Q[0] be min during push and pop) + stack
 
 Left-Right
 11. Container With Most Water
@@ -88,7 +88,6 @@ Left-Right
 74. Search a 2D Matrix
 81. Search in Rotated Sorted Array II
 153. Find Minimum in Rotated Sorted Array
-162. Find Peak Element
 167. Two Sum II - Input Array Is Sorted
 
 Naive
@@ -138,6 +137,7 @@ Top-Down arg Recursion
 129. Sum Root to Leaf Numbers
 144. Binary Tree Preorder Traversal
 145. Binary Tree Postorder Traversal
+162. Find Peak Element | f(l,r), check max(L[m-1], L[m], L[m+1]) as binary search
 173. Binary Search Tree Iterator
 203. Remove Linked List Elements
 206. Reverse Linked List
@@ -151,9 +151,9 @@ Top-Down share Recursion
 114. Flatten Binary Tree to Linked List
 116. Populating Next Right Pointers in Each Node
 117. Populating Next Right Pointers in Each Node II
-130. Surrounded Regions
+130. Surrounded Regions | whlie unvisit: f(position)
 199. Binary Tree Right Side View
-200. Number of Islands
+200. Number of Islands  | while unvisit: f(position)
 
 Bottom-up arg Recursion
 22. Generate Parentheses
@@ -168,7 +168,7 @@ Bottom-up share Recursion
 79. Word Search | f(position,match,visitS)
 
 Mix
-131. Palindrome Partitioning
+131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
 
 Special
 28. Find the Index of the First Occurrence in a String | lcps + KMP
