@@ -54,7 +54,7 @@ Iteration
 46. Permutations
 47. Permutations II
 48. Rotate Image
-53. Maximum Subarray | ans=0 tmpSum=0, ans update every i
+53. Maximum Subarray | ans=0 tmpSum=0, ans=max(ans,tmpSum) update every i
 56. Merge Intervals
 61. Rotate List
 75. Sort Colors
@@ -63,7 +63,7 @@ Iteration
 133. Clone Graph | node2dict2node
 134. Gas Station | (very similar to Maximum Subarray) ans=0 tmpSum=0, ans+=1 if tmpSum<0
 138. Copy List with Random Pointer
-152. Maximum Product Subarray | inclusive ans, minv, maxv
+152. Maximum Product Subarray | update minv=min(x,minv*x,maxv*x), maxv=max(x,minv*x,maxv*x), ans=max(ans,maxv)
 165. Compare Version Numbers
 168. Excel Sheet Column Title  | while num>0: num-=1; r=num%26; append; num=(num-r)//26
 171. Excel Sheet Column Number | for i,c in enumerate(s[::-1]): ans += (ord(c)-ord("A")+1) * 26**i
