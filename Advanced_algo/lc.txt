@@ -47,7 +47,6 @@ Forward DP
 204. Count Primes | Sieve of Eratosthenes
 
 Iteration
-2. Add Two Numbers
 5. Longest Palindromic Substring
 17. Letter Combinations of a Phone Number
 24. Swap Nodes in Pairs
@@ -101,7 +100,6 @@ Naive
 13. Roman to Integer
 14. Longest Common Prefix
 19. Remove Nth Node From End of List
-21. Merge Two Sorted Lists
 36. Valid Sudoku
 43. Multiply Strings
 49. Group Anagrams
@@ -121,6 +119,8 @@ Naive
 191. Number of 1 Bits
 
 Top-Down arg Recursion
+2. Add Two Numbers
+21. Merge Two Sorted Lists
 89. Gray Code
 92. Reverse Linked List II
 94. Binary Tree Inorder Traversal
