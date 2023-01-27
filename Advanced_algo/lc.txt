@@ -6,9 +6,6 @@ Hash
 54. Spiral Matrix
 59. Spiral Matrix II
 73. Set Matrix Zeroes
-80. Remove Duplicates from Sorted Array II
-82. Remove Duplicates from Sorted List II
-83. Remove Duplicates from Sorted List
 128. Longest Consecutive Sequence | S=set(L); for x in L: if x-1 not in S:...
 136. Single Number
 137. Single Number II
@@ -57,6 +54,7 @@ Iteration
 53. Maximum Subarray | ans=0 tmpSum=0, ans=max(ans,tmpSum) update every i
 61. Rotate List
 75. Sort Colors
+80. Remove Duplicates from Sorted Array II
 93. Restore IP Addresses | cut i,j,k four pieces, bool and <255 and no leading 0
 121. Best Time to Buy and Sell Stock | ans, lowest
 133. Clone Graph | node2dict2node
@@ -86,7 +84,7 @@ Left-Right
 34. Find First and Last Position of Element in Sorted Array
 35. Search Insert Position
 74. Search a 2D Matrix
-81. Search in Rotated Sorted Array II
+81. Search in Rotated Sorted Array II | based on 33. add if nums[l]==nums[m]==nums[r]: l, r = l+1, r-1
 153. Find Minimum in Rotated Sorted Array
 167. Two Sum II - Input Array Is Sorted
 
@@ -121,6 +119,8 @@ Top-Down arg Recursion
 21. Merge Two Sorted Lists
 56. Merge Intervals
 57. Insert Interval
+82. Remove Duplicates from Sorted List II
+83. Remove Duplicates from Sorted List
 89. Gray Code
 92. Reverse Linked List II
 94. Binary Tree Inorder Traversal
