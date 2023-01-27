@@ -55,7 +55,6 @@ Iteration
 47. Permutations II
 48. Rotate Image
 53. Maximum Subarray | ans=0 tmpSum=0, ans=max(ans,tmpSum) update every i
-56. Merge Intervals
 61. Rotate List
 75. Sort Colors
 93. Restore IP Addresses | cut i,j,k four pieces, bool and <255 and no leading 0
@@ -86,7 +85,6 @@ Left-Right
 33. Search in Rotated Sorted Array | judge pivot -> judge left or right
 34. Find First and Last Position of Element in Sorted Array
 35. Search Insert Position
-57. Insert Interval
 74. Search a 2D Matrix
 81. Search in Rotated Sorted Array II
 153. Find Minimum in Rotated Sorted Array
@@ -121,6 +119,8 @@ Naive
 Top-Down arg Recursion
 2. Add Two Numbers
 21. Merge Two Sorted Lists
+56. Merge Intervals
+57. Insert Interval
 89. Gray Code
 92. Reverse Linked List II
 94. Binary Tree Inorder Traversal
@@ -163,12 +163,12 @@ Bottom-up arg Recursion
 22. Generate Parentheses | f(L=['('],l=1,r=0)
 45. Jump Game II | f(i=0) scan current possiblities and select best
 55. Jump Game | f(i=0,energy=0) call f(i+1,energy')
-77. Combinations | f(i=0, k=k) get k elemnets from L[i:]
-78. Subsets | f(i=0, L=[[]]) add or not L[i]
+78. Subsets | f(i=0, L=[[]]) concatenate add nums[i] or not add
 90. Subsets II
 110. Balanced Binary Tree
 
 Bottom-up share Recursion
+77. Combinations | f(start=1, L=[]) put ele>=start to L
 79. Word Search | f(position,match,visitS)
 216. Combination Sum III | f(path,start,k,n)
 
