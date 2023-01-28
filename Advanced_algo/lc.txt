@@ -15,8 +15,6 @@ Hash
 187. Repeated DNA Sequences
 202. Happy Number
 205. Isomorphic Strings
-208. Implement Trie (Prefix Tree)
-211. Design Add and Search Words Data Structure
 217. Contains Duplicate
 219. Contains Duplicate II
 
@@ -179,6 +177,8 @@ Mix
 Special
 28. Find the Index of the First Occurrence in a String | lcps + KMP
 146. LRU Cache | dict+double linked list OR OrderedDict with O.popitem(last=False)
+208. Implement Trie (Prefix Tree) | Trie
+211. Design Add and Search Words Data Structure | Trie + recursion
 223. Rectangle Area | max(0,min()-max()) *****
 
 Bad
