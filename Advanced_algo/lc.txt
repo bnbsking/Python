@@ -12,7 +12,6 @@ Hash
 141. Linked List Cycle
 142. Linked List Cycle II
 160. Intersection of Two Linked Lists
-169. Majority Element
 187. Repeated DNA Sequences
 202. Happy Number
 205. Isomorphic Strings
@@ -63,6 +62,7 @@ Iteration
 152. Maximum Product Subarray | update minv=min(x,minv*x,maxv*x), maxv=max(x,minv*x,maxv*x), ans=max(ans,maxv)
 165. Compare Version Numbers
 168. Excel Sheet Column Title  | while num>0: num-=1; r=num%26; append; num=(num-r)//26
+169. Majority Element | Boyer-Moore Voting Algorithm: if count==0 change candidate; count=1 if x==candidate else -1
 171. Excel Sheet Column Number | for i,c in enumerate(s[::-1]): ans += (ord(c)-ord("A")+1) * 26**i
 172. Factorial Trailing Zeroes | c+=int(n/5**(i+1))
 179. Largest Number
