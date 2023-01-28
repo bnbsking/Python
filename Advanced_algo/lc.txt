@@ -110,6 +110,7 @@ Naive
 147. Insertion Sort List
 148. Sort List
 150. Evaluate Reverse Polish Notation
+151. Reverse Words in a String
 189. Rotate Array
 190. Reverse Bits
 191. Number of 1 Bits
@@ -140,7 +141,7 @@ Top-Down arg Recursion
 129. Sum Root to Leaf Numbers
 144. Binary Tree Preorder Traversal
 145. Binary Tree Postorder Traversal
-162. Find Peak Element | f(l,r), check max(L[m-1], L[m], L[m+1]) as binary search
+162. Find Peak Element | f(l,r), check max(L[m-1], L[m], L[m+1]) just like binary search
 173. Binary Search Tree Iterator
 203. Remove Linked List Elements
 206. Reverse Linked List
