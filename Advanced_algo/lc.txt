@@ -3,6 +3,7 @@ Hash
 15. 3Sum
 18. 4Sum
 26. Remove Duplicates from Sorted Array
+49. Group Anagrams
 54. Spiral Matrix
 59. Spiral Matrix II
 73. Set Matrix Zeroes
@@ -19,6 +20,9 @@ Hash
 219. Contains Duplicate II
 229. Majority Element II
 260. Single Number III
+287. Find the Duplicate Number | Floyd's Tortoise and Hare?
+290. Word Pattern
+299. Bulls and Cows | same as 205 and 290
 
 Backward DP
 3. Longest Substring Without Repeating Character | L.append( i-D[s[i]] if s[i] in D and i-L[-1]<=D[s[i]] else L[-1]+1 )
@@ -35,6 +39,8 @@ Backward DP
 198. House Robber    | initial 3, L.append( max(L[-3],L[-2])+nums[i] ), return max(L[-1],L[-2])
 213. House Robber II | initial 4, exclude first L / exclide last M, return max(L[-1],M[-1])
 221. Maximal Square  | M[i][j] = M[i][j] * min(ul,l,u)+1
+279. Perfect Squares | L = [0,1]; for i in range(2,n+1): L.append( min( L[i-x**2]+1 for x in squares if i-x**2 >=0 ) )
+300. Longest Increasing Subsequence | similar to 279
 
 Forward DP
 39. Combination Sum | Knapsack
@@ -63,7 +69,7 @@ Iteration
 152. Maximum Product Subarray | update minv=min(x,minv*x,maxv*x), maxv=max(x,minv*x,maxv*x), ans=max(ans,maxv)
 165. Compare Version Numbers
 168. Excel Sheet Column Title  | while num>0: num-=1; r=num%26; append; num=(num-r)//26
-169. Majority Element | Boyer-Moore Voting Algorithm: if count==0 change candidate; count=1 if x==candidate else -1
+169. Majority Element | Boyer-290. Word PatternMoore Voting Algorithm: if count==0 change candidate; count=1 if x==candidate else -1
 171. Excel Sheet Column Number | for i,c in enumerate(s[::-1]): ans += (ord(c)-ord("A")+1) * 26**i
 172. Factorial Trailing Zeroes | c+=int(n/5**(i+1))
 179. Largest Number
@@ -75,6 +81,7 @@ Iteration
 238. Product of Array Except Self
 260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually 
 268. Missing Number | xor 1~n then xor all since a^a=0 always
+289. Game of Life
 
 Stack
 20. Valid Parentheses | dict + lr matching
@@ -96,6 +103,7 @@ Left-Right
 153. Find Minimum in Rotated Sorted Array
 167. Two Sum II - Input Array Is Sorted
 240. Search a 2D Matrix II
+278. First Bad Version
 
 Naive
 7. Reverse Integer
@@ -107,7 +115,6 @@ Naive
 19. Remove Nth Node From End of List
 36. Valid Sudoku
 43. Multiply Strings
-49. Group Anagrams
 50. Pow(x, n)
 58. Length of Last Word
 66. Plus One
@@ -127,6 +134,9 @@ Naive
 242. Valid Anagram
 258. Add Digits
 263. Ugly Number
+283. Move Zeroes
+284. Peeking Iterator
+292. Nim Game
 
 Top-Down arg Recursion
 2. Add Two Numbers
@@ -209,6 +219,8 @@ Bad
 29. Divide Two Integers
 38. Count and Say
 166. Fraction to Recurring Decimal
+274. H-Index
+275. H-Index II
 
 Unknown
 86. Partition List
