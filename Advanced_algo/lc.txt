@@ -40,7 +40,7 @@ Forward DP
 39. Combination Sum | Knapsack
 40. Combination Sum II
 139. Word Break | for i for word: write True if match
-204. Count Primes | Sieve of Eratosthenes
+204. Count Primes | Sieve of Eratosthenes: L=[F,F]+[T]*(n-2); for i in range(2,int(n**0.5)+1): if L[i]: for j in range(i*i, n, i): L[j]=F
 
 Iteration
 5. Longest Palindromic Substring
