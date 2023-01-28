@@ -17,6 +17,8 @@ Hash
 205. Isomorphic Strings
 217. Contains Duplicate
 219. Contains Duplicate II
+229. Majority Element II
+260. Single Number III
 
 Backward DP
 3. Longest Substring Without Repeating Character | L.append( i-D[s[i]] if s[i] in D and i-L[-1]<=D[s[i]] else L[-1]+1 )
@@ -39,6 +41,7 @@ Forward DP
 40. Combination Sum II
 139. Word Break | for i for word: write True if match
 204. Count Primes | Sieve of Eratosthenes: L=[F,F]+[T]*(n-2); for i in range(2,int(n**0.5)+1): if L[i]: for j in range(i*i, n, i): L[j]=F
+264. Ugly Number II | record multiples of 2,3,6 
 
 Iteration
 5. Longest Palindromic Substring
@@ -68,12 +71,19 @@ Iteration
 207. Course Schedule    | Kahn's algorithm
 209. Minimum Size Subarray Sum | extend front and cut back (similar to 187)
 210. Course Schedule II | Kahn's algorithm
+228. Summary Ranges
+238. Product of Array Except Self
+260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually 
+268. Missing Number | xor 1~n then xor all since a^a=0 always
 
 Stack
 20. Valid Parentheses | dict + lr matching
 71. Simplify Path
 150. Evaluate Reverse Polish Notation
 155. Min Stack | deque (maintain Q[0] be min during push and pop) + stack
+227. Basic Calculator II | totally 3 steps
+225. Implement Stack using Queues
+232. Implement Queue using Stacks
 
 Left-Right
 11. Container With Most Water
@@ -85,6 +95,7 @@ Left-Right
 81. Search in Rotated Sorted Array II | based on 33. add if nums[l]==nums[m]==nums[r]: l, r = l+1, r-1
 153. Find Minimum in Rotated Sorted Array
 167. Two Sum II - Input Array Is Sorted
+240. Search a 2D Matrix II
 
 Naive
 7. Reverse Integer
@@ -107,11 +118,15 @@ Naive
 143. Reorder List
 147. Insertion Sort List
 148. Sort List
-150. Evaluate Reverse Polish Notation
 151. Reverse Words in a String
 189. Rotate Array
 190. Reverse Bits
 191. Number of 1 Bits
+231. Power of Two
+237. Delete Node in a Linked List
+242. Valid Anagram
+258. Add Digits
+263. Ugly Number
 
 Top-Down arg Recursion
 2. Add Two Numbers
@@ -145,6 +160,10 @@ Top-Down arg Recursion
 206. Reverse Linked List
 215. Kth Largest Element in an Array | O(n) space quick select is easier
 222. Count Complete Tree Nodes
+226. Invert Binary Tree
+230. Kth Smallest Element in a BST
+234. Palindrome Linked List
+241. Different Ways to Add Parentheses | similar to 95.
 
 Top-Down share Recursion
 102. Binary Tree Level Order Traversal
@@ -157,6 +176,9 @@ Top-Down share Recursion
 130. Surrounded Regions | whlie unvisit: f(position)
 199. Binary Tree Right Side View
 200. Number of Islands  | while unvisit: f(position)
+235. Lowest Common Ancestor of a Binary Search Tree
+236. Lowest Common Ancestor of a Binary Tree
+257. Binary Tree Paths
 
 Bottom-up arg Recursion
 22. Generate Parentheses | f(L=['('],l=1,r=0)
