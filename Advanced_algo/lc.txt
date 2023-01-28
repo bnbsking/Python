@@ -68,7 +68,7 @@ Iteration
 179. Largest Number
 201. Bitwise AND of Numbers Range | must same bit, while align with 1 from left to right
 207. Course Schedule    | Kahn's algorithm
-209. Minimum Size Subarray Sum | extend front and cut back
+209. Minimum Size Subarray Sum | extend front and cut back (similar to 187)
 210. Course Schedule II | Kahn's algorithm
 
 Stack
