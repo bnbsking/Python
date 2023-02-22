@@ -106,6 +106,7 @@ Left-Right
 278. First Bad Version
 -
 540. Single Element in a Sorted Array | if m%2 then if L[m-1]==L[m]
+1011. Capacity To Ship Packages Within D Days | def isValid(capacity), binary search [max(weights),sum(weights)]
 
 Naive
 7. Reverse Integer
