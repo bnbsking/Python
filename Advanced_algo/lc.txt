@@ -41,6 +41,8 @@ Backward DP
 221. Maximal Square  | M[i][j] = M[i][j] * min(ul,l,u)+1
 279. Perfect Squares | L = [0,1]; for i in range(2,n+1): L.append( min( L[i-x**2]+1 for x in squares if i-x**2 >=0 ) )
 300. Longest Increasing Subsequence | similar to 279
+303. Range Sum Query - Immutable
+304. Range Sum Query 2D - Immutable
 309. Best Time to Buy and Sell Stock with Cooldown | FSM, rest:s0[0]=0; buy:s1[0]=-price[0], cooldown:s2[0]=-price[0] since s2.append( s1[i-1]+prices[i] )
 
 Forward DP
