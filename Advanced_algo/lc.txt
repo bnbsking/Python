@@ -41,6 +41,7 @@ Backward DP
 221. Maximal Square  | M[i][j] = M[i][j] * min(ul,l,u)+1
 279. Perfect Squares | L = [0,1]; for i in range(2,n+1): L.append( min( L[i-x**2]+1 for x in squares if i-x**2 >=0 ) )
 300. Longest Increasing Subsequence | similar to 279
+309. Best Time to Buy and Sell Stock with Cooldown | FSM, rest:s0[0]=0; buy:s1[0]=-price[0], cooldown:s2[0]=-price[0] since s2.append( s1[i-1]+prices[i] )
 
 Forward DP
 39. Combination Sum | Knapsack
@@ -74,14 +75,15 @@ Iteration
 172. Factorial Trailing Zeroes | c+=int(n/5**(i+1))
 179. Largest Number
 201. Bitwise AND of Numbers Range | must same bit, while align with 1 from left to right
-207. Course Schedule    | Kahn's algorithm
+207. Course Schedule    | Kahn's algorithm, while leaves (DFS)
 209. Minimum Size Subarray Sum | extend front and cut back (similar to 187)
-210. Course Schedule II | Kahn's algorithm
+210. Course Schedule II | Kahn's algorithm, while leaves (DFS)
 228. Summary Ranges
 238. Product of Array Except Self
 260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually 
 268. Missing Number | xor 1~n then xor all since a^a=0 always
 289. Game of Life
+310. Minimum Height Trees | Kahn's algorithm, while len(inD)>2 (BFS)
 
 Stack
 20. Valid Parentheses | dict + lr matching
@@ -177,6 +179,7 @@ Top-Down arg Recursion
 230. Kth Smallest Element in a BST
 234. Palindrome Linked List
 241. Different Ways to Add Parentheses | similar to 95.
+306. Additive Number | cut 3 parts sequentially, each do recursive call 
 
 Top-Down share Recursion
 102. Binary Tree Level Order Traversal
