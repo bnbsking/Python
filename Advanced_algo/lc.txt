@@ -146,6 +146,8 @@ Naive
 283. Move Zeroes
 284. Peeking Iterator
 292. Nim Game
+-
+2279. Maximum Bags With Full Capacity of Rocks
 
 Top-Down arg Recursion
 2. Add Two Numbers
