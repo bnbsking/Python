@@ -86,6 +86,8 @@ Iteration
 268. Missing Number | xor 1~n then xor all since a^a=0 always
 289. Game of Life
 310. Minimum Height Trees | Kahn's algorithm, while len(inD)>2 (BFS)
+-
+1962. Remove Stones to Minimize the Total | Max-heap
 
 Stack
 20. Valid Parentheses | dict + lr matching
