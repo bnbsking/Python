@@ -189,6 +189,7 @@ Top-Down arg Recursion
 -
 427. Construct Quad Tree | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
 652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
+912. Sort an Array
 
 Top-Down share Recursion
 102. Binary Tree Level Order Traversal
