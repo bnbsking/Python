@@ -50,7 +50,8 @@ Forward DP
 40. Combination Sum II
 139. Word Break | for i for word: write True if match
 204. Count Primes | Sieve of Eratosthenes: L=[F,F]+[T]*(n-2); for i in range(2,int(n**0.5)+1): if L[i]: for j in range(i*i, n, i): L[j]=F
-264. Ugly Number II | record multiples of 2,3,6 
+264. Ugly Number II | Create array store ugly numbers sequentially. Use "2,3,5 index pointers" update candidates.
+Any ugly number must depends are previous ugly numbers (3 candidates) so the candidates updated by next least larger. Both co-factor should be updated as well.
 
 Iteration
 5. Longest Palindromic Substring
