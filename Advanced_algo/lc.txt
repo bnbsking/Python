@@ -115,6 +115,7 @@ Left-Right
 -
 540. Single Element in a Sorted Array | if m%2 then if L[m-1]==L[m]
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity), binary search [max(weights),sum(weights)]
+1201. Ugly Number III | gcd, binary search find m -> while not multiple: m-=1
 
 Naive
 7. Reverse Integer
