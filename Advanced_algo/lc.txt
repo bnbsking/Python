@@ -39,19 +39,20 @@ Backward DP
 198. House Robber    | initial 3, L.append( max(L[-3],L[-2])+nums[i] ), return max(L[-1],L[-2])
 213. House Robber II | initial 4, exclude first L / exclide last M, return max(L[-1],M[-1])
 221. Maximal Square  | M[i][j] = M[i][j] * min(ul,l,u)+1
+264. Ugly Number II | Create array store ugly numbers sequentially. Use "2,3,5 index pointers" update candidates.
+Any ugly number must depends are previous ugly numbers (3 candidates) so the candidates updated by next least larger. Both co-factor should be updated as well.
 279. Perfect Squares | L = [0,1]; for i in range(2,n+1): L.append( min( L[i-x**2]+1 for x in squares if i-x**2 >=0 ) )
 300. Longest Increasing Subsequence | similar to 279
 303. Range Sum Query - Immutable
 304. Range Sum Query 2D - Immutable
 309. Best Time to Buy and Sell Stock with Cooldown | FSM, rest:s0[0]=0; buy:s1[0]=-price[0], cooldown:s2[0]=-price[0] since s2.append( s1[i-1]+prices[i] )
+313. Super Ugly Number | same as 264
 
 Forward DP
 39. Combination Sum | Knapsack
 40. Combination Sum II
 139. Word Break | for i for word: write True if match
 204. Count Primes | Sieve of Eratosthenes: L=[F,F]+[T]*(n-2); for i in range(2,int(n**0.5)+1): if L[i]: for j in range(i*i, n, i): L[j]=F
-264. Ugly Number II | Create array store ugly numbers sequentially. Use "2,3,5 index pointers" update candidates.
-Any ugly number must depends are previous ugly numbers (3 candidates) so the candidates updated by next least larger. Both co-factor should be updated as well.
 
 Iteration
 5. Longest Palindromic Substring
