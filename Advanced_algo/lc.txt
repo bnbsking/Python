@@ -100,6 +100,7 @@ Stack
 227. Basic Calculator II | totally 3 steps
 225. Implement Stack using Queues
 232. Implement Queue using Stacks
+316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later.  
 
 Left-Right
 11. Container With Most Water
