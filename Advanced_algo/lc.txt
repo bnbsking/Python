@@ -59,6 +59,7 @@ Forward DP
 Iteration
 5. Longest Palindromic Substring
 31. Next Permutation | e.g. 193*54*2->194*532->194235 | find first desc -> find larger i -> swap(i,j) -> swap all ele >= desc
+38. Count and Say | like general spliting
 46. Permutations
 47. Permutations II
 48. Rotate Image
