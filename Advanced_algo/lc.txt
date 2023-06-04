@@ -2,7 +2,6 @@ Hash
 1. Two Sum
 15. 3Sum
 18. 4Sum
-26. Remove Duplicates from Sorted Array
 49. Group Anagrams
 54. Spiral Matrix
 59. Spiral Matrix II
@@ -238,6 +237,7 @@ Special
 
 Bad
 6. Zigzag Conversion
+26. Remove Duplicates from Sorted Array
 27. Remove Element
 29. Divide Two Integers
 38. Count and Say
