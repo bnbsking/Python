@@ -2,6 +2,7 @@ Hash
 1. Two Sum
 15. 3Sum
 18. 4Sum
+36. Valid Sudoku | check (i,ele), (ele,j), (i,j,ele) in S
 49. Group Anagrams
 54. Spiral Matrix
 59. Spiral Matrix II
@@ -22,6 +23,8 @@ Hash
 287. Find the Duplicate Number | Floyd's Tortoise and Hare?
 290. Word Pattern
 299. Bulls and Cows | same as 205 and 290
+-
+2133. Check if Every Row and Column Contains All Numbers | same as 36.
 
 Backward DP
 3. Longest Substring Without Repeating Character | L.append( i-D[s[i]] if s[i] in D and i-L[-1]<=D[s[i]] else L[-1]+1 ) |e.g. abba
@@ -127,7 +130,6 @@ Naive
 13. Roman to Integer
 14. Longest Common Prefix
 19. Remove Nth Node From End of List
-36. Valid Sudoku
 43. Multiply Strings
 50. Pow(x, n)
 58. Length of Last Word
