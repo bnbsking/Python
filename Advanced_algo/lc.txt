@@ -55,6 +55,8 @@ Forward DP
 40. Combination Sum II
 139. Word Break | for i for word: write True if match
 204. Count Primes | Sieve of Eratosthenes: L=[F,F]+[T]*(n-2); for i in range(2,int(n**0.5)+1): if L[i]: for j in range(i*i, n, i): L[j]=F
+-
+322. coin change
 
 Iteration
 5. Longest Palindromic Substring
@@ -244,7 +246,6 @@ Bad
 26. Remove Duplicates from Sorted Array
 27. Remove Element
 29. Divide Two Integers
-38. Count and Say
 166. Fraction to Recurring Decimal
 274. H-Index
 275. H-Index II
