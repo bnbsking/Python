@@ -154,6 +154,7 @@ Naive
 284. Peeking Iterator
 292. Nim Game
 -
+1572. Matrix Diagonal Sum
 
 Top-Down arg Recursion
 2. Add Two Numbers
