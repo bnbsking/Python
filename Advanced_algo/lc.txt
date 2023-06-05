@@ -93,6 +93,7 @@ Iteration
 310. Minimum Height Trees | Kahn's algorithm, while len(inD)>2 (BFS)
 -
 443. String Compression | split strategy
+1232. Check If It Is a Straight Line | use determinants instead of slopes
 1962. Remove Stones to Minimize the Total | Max-heap
 2279. Maximum Bags With Full Capacity of Rocks
 
