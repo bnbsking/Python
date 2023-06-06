@@ -28,6 +28,7 @@ Hash
 
 Backward DP
 3. Longest Substring Without Repeating Character | L.append( i-D[s[i]] if s[i] in D and i-L[-1]<=D[s[i]] else L[-1]+1 ) |e.g. abba
+45. Jump Game II | Transform array to "farthest index can go"
 62. Unique Paths
 63. Unique Paths II
 64. Minimum Path Sum
@@ -222,7 +223,6 @@ Top-Down share Recursion
 Bottom-up arg Recursion
 17. Letter Combinations of a Phone Number
 22. Generate Parentheses | f(L=['('],l=1,r=0)
-45. Jump Game II | f(i=0) scan current possiblities and select best
 55. Jump Game | f(i=0,energy=0) call f(i+1,energy')
 78. Subsets | f(i=0, L=[[]]) concatenate add nums[i] or not add
 90. Subsets II
