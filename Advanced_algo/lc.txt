@@ -206,8 +206,6 @@ Top-Down arg Recursion
 912. Sort an Array
 
 Top-Down share Recursion
-46. Permutations
-47. Permutations II
 102. Binary Tree Level Order Traversal
 103. Binary Tree Zigzag Level Order Traversal
 107. Binary Tree Level Order Traversal II
@@ -224,6 +222,8 @@ Top-Down share Recursion
 
 Bottom-up arg Recursion
 17. Letter Combinations of a Phone Number
+46. Permutations
+47. Permutations II
 22. Generate Parentheses | f(L=['('],l=1,r=0)
 78. Subsets | f(i=0, L=[[]]) concatenate add nums[i] or not add
 90. Subsets II
