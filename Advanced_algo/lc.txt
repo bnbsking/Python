@@ -97,6 +97,8 @@ Iteration
 1351. Count Negative Numbers in a Sorted Matrix | j stands at rightest >=0 for each row
 1962. Remove Stones to Minimize the Total | Max-heap
 2279. Maximum Bags With Full Capacity of Rocks
+--
+23*. Merge k Sorted Lists
 
 Stack
 20. Valid Parentheses | dict + lr matching
@@ -106,7 +108,8 @@ Stack
 227. Basic Calculator II | totally 3 steps
 225. Implement Stack using Queues
 232. Implement Queue using Stacks
-316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later.  
+316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later. 
+-
 1081. Smallest Subsequence of Distinct Characters | same as 316
 
 Left-Right
@@ -229,6 +232,8 @@ Bottom-up arg Recursion
 78. Subsets | f(i=0, L=[[]]) concatenate add nums[i] or not add
 90. Subsets II
 110. Balanced Binary Tree
+--
+60.* Permutation Sequence
 
 Bottom-up share Recursion
 77. Combinations | f(start=1, L=[]) put ele>=start to L
