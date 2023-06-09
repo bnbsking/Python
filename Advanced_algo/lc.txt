@@ -162,9 +162,11 @@ Naive
 284. Peeking Iterator
 292. Nim Game
 -
+744. Find Smallest Letter Greater Than Target
 1318. Minimum Flips to Make a OR b Equal to c
 1502. Can Make Arithmetic Progression From Sequence
 1572. Matrix Diagonal Sum
+2148. Count Elements With Strictly Smaller and Greater Elements
 
 Top-Down arg Recursion
 2. Add Two Numbers
