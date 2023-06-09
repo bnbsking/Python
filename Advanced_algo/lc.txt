@@ -98,7 +98,8 @@ Iteration
 1962. Remove Stones to Minimize the Total | Max-heap
 2279. Maximum Bags With Full Capacity of Rocks
 --
-23*. Merge k Sorted Lists
+23*. Merge k Sorted Lists | heap
+41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
 
 Stack
 20. Valid Parentheses | dict + lr matching
@@ -245,7 +246,7 @@ Bottom-up share Recursion
 216. Combination Sum III | f(path,start,k,n)
 --
 30*. Substring with Concatenation of All Words
-37*. Sudoku Solver
+37*. Sudoku Solver | use list instead of set to prevent unorder traversal, return if trying 1-9 is failed
 
 Mix
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
