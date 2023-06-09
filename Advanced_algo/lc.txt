@@ -235,12 +235,14 @@ Bottom-up arg Recursion
 90. Subsets II
 110. Balanced Binary Tree
 --
-60.* Permutation Sequence
+60*. Permutation Sequence
 
 Bottom-up share Recursion
 77. Combinations | f(start=1, L=[]) put ele>=start to L
 79. Word Search | f(position,match,visitS)
 216. Combination Sum III | f(path,start,k,n)
+--
+30*. Substring with Concatenation of All Words
 
 Mix
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
