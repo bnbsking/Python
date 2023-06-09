@@ -245,6 +245,7 @@ Bottom-up share Recursion
 216. Combination Sum III | f(path,start,k,n)
 --
 30*. Substring with Concatenation of All Words
+37*. Sudoku Solver
 
 Mix
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
