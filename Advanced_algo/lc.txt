@@ -251,6 +251,9 @@ Bottom-up share Recursion
 Mix
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
 
+Math
+1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
+
 Special
 28. Find the Index of the First Occurrence in a String | lcps + KMP
 146. LRU Cache | dict+double linked list OR OrderedDict with O.popitem(last=False)
