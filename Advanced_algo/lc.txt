@@ -100,6 +100,7 @@ Iteration
 --
 23*. Merge k Sorted Lists | heap
 41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
+42*. Trapping Rain Water | find maxidx, collect left with lmax, collect right with rmax
 
 Left-Right
 11. Container With Most Water
