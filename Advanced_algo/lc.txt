@@ -26,7 +26,7 @@ Hash
 -
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 
-Backward DP
+DP Backward
 3. Longest Substring Without Repeating Character | L.append( i-D[s[i]] if s[i] in D and i-L[-1]<=D[s[i]] else L[-1]+1 ) |e.g. abba
 45. Jump Game II | Transform array to "farthest index can go"
 55. Jump Game | Transform array to "farthest index can go", for i in range(1,len(nums)-1), return False if i<=nums[i]
@@ -52,7 +52,7 @@ Any ugly number must depends are previous ugly numbers (3 candidates) so the can
 309. Best Time to Buy and Sell Stock with Cooldown | FSM, rest:s0[0]=0; buy:s1[0]=-price[0], cooldown:s2[0]=-price[0] since s2.append( s1[i-1]+prices[i] )
 313. Super Ugly Number | same as 264
 
-Forward DP
+DP Forward
 39. Combination Sum | Knapsack
 40. Combination Sum II
 139. Word Break | for i for word: write True if match
@@ -101,18 +101,6 @@ Iteration
 23*. Merge k Sorted Lists | heap
 41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
 
-Stack
-20. Valid Parentheses | dict + lr matching
-71. Simplify Path
-150. Evaluate Reverse Polish Notation
-155. Min Stack | deque (maintain Q[0] be min during push and pop) + stack
-227. Basic Calculator II | totally 3 steps
-225. Implement Stack using Queues
-232. Implement Queue using Stacks
-316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later. 
--
-1081. Smallest Subsequence of Distinct Characters | same as 316
-
 Left-Right
 11. Container With Most Water
 16. 3Sum Closest | sort + binary search
@@ -130,6 +118,12 @@ Left-Right
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity), binary search [max(weights),sum(weights)]
 1201. Ugly Number III | gcd, binary search find m -> while not multiple: m-=1
 2187. Minimum Time to Complete Trips | binary search + linear search
+
+Math
+1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
+
+Mix
+131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
 
 Naive
 7. Reverse Integer
@@ -169,7 +163,18 @@ Naive
 1572. Matrix Diagonal Sum
 2148. Count Elements With Strictly Smaller and Greater Elements
 
-Top-Down arg Recursion
+Recursion Arg Bottom-up <1/4>
+17. Letter Combinations of a Phone Number
+46. Permutations
+47. Permutations II
+22. Generate Parentheses | f(L=['('],l=1,r=0)
+78. Subsets | f(i=0, L=[[]]) concatenate add nums[i] or not add
+90. Subsets II
+110. Balanced Binary Tree
+--
+60*. Permutation Sequence
+
+Recursion Arg Top-Down <2/4>
 2. Add Two Numbers
 21. Merge Two Sorted Lists
 24. Swap Nodes in Pairs
@@ -214,7 +219,16 @@ Top-Down arg Recursion
 --
 25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
 
-Top-Down share Recursion
+Recursion Share Bottom-up <3/4>
+77. Combinations | f(start=1, L=[]) put ele>=start to L
+79. Word Search | retrievable f(position,match,visitS)
+216. Combination Sum III | f(path,start,k,n)
+--
+30*. Substring with Concatenation of All Words
+37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, retrievable + must copy L since has L.pop  
+51*. N-Queens | retreivable + no need copy B since B is invariant
+
+Recursion Share Top-Down <4/4>
 102. Binary Tree Level Order Traversal
 103. Binary Tree Zigzag Level Order Traversal
 107. Binary Tree Level Order Traversal II
@@ -229,31 +243,19 @@ Top-Down share Recursion
 236. Lowest Common Ancestor of a Binary Tree
 257. Binary Tree Paths
 
-Bottom-up arg Recursion
-17. Letter Combinations of a Phone Number
-46. Permutations
-47. Permutations II
-22. Generate Parentheses | f(L=['('],l=1,r=0)
-78. Subsets | f(i=0, L=[[]]) concatenate add nums[i] or not add
-90. Subsets II
-110. Balanced Binary Tree
---
-60*. Permutation Sequence
+Stack
+20. Valid Parentheses | dict + lr matching
+71. Simplify Path
+150. Evaluate Reverse Polish Notation
+155. Min Stack | deque (maintain Q[0] be min during push and pop) + stack
+227. Basic Calculator II | totally 3 steps
+225. Implement Stack using Queues
+232. Implement Queue using Stacks
+316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later. 
+-
+1081. Smallest Subsequence of Distinct Characters | same as 316
 
-Bottom-up share Recursion
-77. Combinations | f(start=1, L=[]) put ele>=start to L
-79. Word Search | retrievable f(position,match,visitS)
-216. Combination Sum III | f(path,start,k,n)
---
-30*. Substring with Concatenation of All Words
-37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, retrievable + must copy L since has L.pop  
-51*. N-Queens | retreivable + no need copy B since B is invariant
-
-Mix
-131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
-
-Math
-1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
+----------
 
 Special
 28. Find the Index of the First Occurrence in a String | lcps + KMP
