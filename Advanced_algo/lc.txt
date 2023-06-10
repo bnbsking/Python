@@ -4,9 +4,6 @@ Hash
 18. 4Sum
 36. Valid Sudoku | check (i,ele), (ele,j), (i,j,ele) in S
 49. Group Anagrams
-54. Spiral Matrix
-59. Spiral Matrix II
-73. Set Matrix Zeroes
 128. Longest Consecutive Sequence | S=set(L); for x in L: if x-1 not in S:...
 136. Single Number
 137. Single Number II
@@ -66,7 +63,10 @@ Iteration
 38. Count and Say | like general spliting
 48. Rotate Image
 53. Maximum Subarray | ans=0 tmpSum=0, ans=max(ans,tmpSum) update every i
+54. Spiral Matrix
+59. Spiral Matrix II
 61. Rotate List
+73. Set Matrix Zeroes | O(1) space: let 1 change to not 0 but 0.5 
 75. Sort Colors
 80. Remove Duplicates from Sorted Array II
 93. Restore IP Addresses | cut i,j,k four pieces, bool and <255 and no leading 0
