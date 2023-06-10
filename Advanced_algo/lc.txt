@@ -121,6 +121,7 @@ Left-Right
 2187. Minimum Time to Complete Trips | binary search + linear search
 
 Math
+65. Valid Number | e,E<=1; letters=0; points<=1; +/-<=1+bool(has e/E); digit>=1; -> has or not e/E, .index(+/-)>=0
 1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
 
 Mix
