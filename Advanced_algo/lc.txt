@@ -22,6 +22,7 @@ Hash
 299. Bulls and Cows | same as 205 and 290
 -
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
+2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
 
 DP Backward
 3. Longest Substring Without Repeating Character | L.append( i-D[s[i]] if s[i] in D and i-L[-1]<=D[s[i]] else L[-1]+1 ) |e.g. abba
