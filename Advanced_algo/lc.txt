@@ -37,7 +37,6 @@ DP Backward
 118. Pascal's Triangle
 119. Pascal's Triangle II
 120. Triangle
-122. Best Time to Buy and Sell Stock II | FSM, rest:s0[0]=0; buy:s1[0]=-price[0] 
 198. House Robber    | initial 3, L.append( max(L[-3],L[-2])+nums[i] ), return max(L[-1],L[-2])
 213. House Robber II | initial 4, exclude first L / exclide last M, return max(L[-1],M[-1])
 221. Maximal Square  | M[i][j] = M[i][j] * min(ul,l,u)+1
@@ -71,7 +70,8 @@ Iteration
 75. Sort Colors
 80. Remove Duplicates from Sorted Array II
 93. Restore IP Addresses | cut i,j,k four pieces, bool and <255 and no leading 0
-121. Best Time to Buy and Sell Stock | ans, lowest
+121. Best Time to Buy and Sell Stock | like 53. ans, lowest
+122. Best Time to Buy and Sell Stock II | ans += (num[i]-num[i-1])*(num[i]>num[i-1])
 133. Clone Graph | node2dict2node
 134. Gas Station | (very similar to Maximum Subarray) ans=0 tmpSum=0, ans+=1 if tmpSum<0
 138. Copy List with Random Pointer
