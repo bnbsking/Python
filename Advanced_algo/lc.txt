@@ -63,7 +63,7 @@ Iteration
 31. Next Permutation | e.g. 246*5_31 | * at peak _ at > *-1 -> swap(*-1,_) -> swap all ele after * inclusively
 38. Count and Say | like general spliting
 48. Rotate Image
-53. Maximum Subarray | ans=0 tmpSum=0, ans=max(ans,tmpSum) update every i
+53. Maximum Subarray | ans=num[0], acc=nums[0] -> acc=max(acc+x,x) -> ans=max(ans,acc)
 54. Spiral Matrix
 59. Spiral Matrix II
 61. Rotate List
@@ -102,6 +102,7 @@ Iteration
 23*. Merge k Sorted Lists | heap
 41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
 42*. Trapping Rain Water | find maxidx, collect left with lmax, collect right with rmax
+124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
 
 Left-Right
 11. Container With Most Water
