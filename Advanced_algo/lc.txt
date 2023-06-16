@@ -71,7 +71,7 @@ Iteration
 80. Remove Duplicates from Sorted Array II
 93. Restore IP Addresses | cut i,j,k four pieces, bool and <255 and no leading 0
 121. Best Time to Buy and Sell Stock | like 53. ans, lowest
-122. Best Time to Buy and Sell Stock II | ans += (num[i]-num[i-1])*(num[i]>num[i-1])
+122. Best Time to Buy and Sell Stock II | ans += max(0,num[i]-num[i-1])
 133. Clone Graph | node2dict2node
 134. Gas Station | (very similar to Maximum Subarray) ans=0 tmpSum=0, ans+=1 if tmpSum<0
 138. Copy List with Random Pointer
