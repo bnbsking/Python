@@ -46,7 +46,6 @@ Any ugly number must depends are previous ugly numbers (3 candidates) so the can
 300. Longest Increasing Subsequence | similar to 279
 303. Range Sum Query - Immutable
 304. Range Sum Query 2D - Immutable
-309. Best Time to Buy and Sell Stock with Cooldown | FSM, rest:s0[0]=0; buy:s1[0]=-price[0], cooldown:s2[0]=-price[0] since s2.append( s1[i-1]+prices[i] )
 313. Super Ugly Number | same as 264
 
 DP Forward
@@ -103,6 +102,12 @@ Iteration
 41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
 42*. Trapping Rain Water | find maxidx, collect left with lmax, collect right with rmax
 124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
+
+Iteration - FSM
+309. Best Time to Buy and Sell Stock with Cooldown | buy, sel, col = 0, -p, -p
+714. Best Time to Buy and Sell Stock with Transaction Fee | buy, sel = 0, -p
+--
+123*. Best Time to Buy and Sell Stock III | sel1, buy2, sel2, ans = -p, 0, -float('inf'), -float('inf)
 
 Left-Right
 11. Container With Most Water
