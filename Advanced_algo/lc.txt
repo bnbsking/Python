@@ -120,7 +120,7 @@ Iteration - Left-Right
 35. Search Insert Position
 74. Search a 2D Matrix
 81. Search in Rotated Sorted Array II | based on 33. add if nums[l]==nums[m]==nums[r]: l, r = l+1, r-1
-153. Find Minimum in Rotated Sorted Array
+153. Find Minimum in Rotated Sorted Array | consider min(nums[l],nums[m],nums[r])==nums[l] so pivot can be determined; wary [2,1]
 167. Two Sum II - Input Array Is Sorted
 240. Search a 2D Matrix II
 278. First Bad Version
