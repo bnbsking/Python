@@ -1,27 +1,3 @@
-Hash
-1. Two Sum
-15. 3Sum
-18. 4Sum
-36. Valid Sudoku | check (i,ele), (ele,j), (i,j,ele) in S
-49. Group Anagrams
-128. Longest Consecutive Sequence | S=set(L); for x in L: if x-1 not in S:...
-141. Linked List Cycle
-142. Linked List Cycle II
-160. Intersection of Two Linked Lists
-187. Repeated DNA Sequences
-202. Happy Number
-205. Isomorphic Strings
-217. Contains Duplicate
-219. Contains Duplicate II
-229. Majority Element II
-260. Single Number III
-287. Find the Duplicate Number | Floyd's Tortoise and Hare?
-290. Word Pattern
-299. Bulls and Cows | same as 205 and 290
--
-2133. Check if Every Row and Column Contains All Numbers | same as 36.
-2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
-
 DP Backward
 3. Longest Substring Without Repeating Character | L.append( i-D[s[i]] if s[i] in D and i-L[-1]<=D[s[i]] else L[-1]+1 ) |e.g. abba
 45. Jump Game II | Transform array to "farthest index can go"
@@ -54,6 +30,29 @@ DP Forward
 -
 322. coin change
 
+Hash
+1. Two Sum
+15. 3Sum
+18. 4Sum
+36. Valid Sudoku | check (i,ele), (ele,j), (i,j,ele) in S
+49. Group Anagrams
+128. Longest Consecutive Sequence | S=set(L); for x in L: if x-1 not in S:...
+141. Linked List Cycle
+142. Linked List Cycle II
+160. Intersection of Two Linked Lists
+187. Repeated DNA Sequences
+202. Happy Number
+205. Isomorphic Strings
+217. Contains Duplicate
+219. Contains Duplicate II
+260. Single Number III
+287. Find the Duplicate Number | Floyd's Tortoise and Hare?
+290. Word Pattern
+299. Bulls and Cows | same as 205 and 290
+-
+2133. Check if Every Row and Column Contains All Numbers | same as 36.
+2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
+
 Iteration
 5. Longest Palindromic Substring
 31. Next Permutation | e.g. 246*5_31 | * at peak _ at > *-1 -> swap(*-1,_) -> swap all ele after * inclusively
@@ -75,7 +74,6 @@ Iteration
 152. Maximum Product Subarray | update minv=min(x,minv*x,maxv*x), maxv=max(x,minv*x,maxv*x), ans=max(ans,maxv)
 165. Compare Version Numbers
 168. Excel Sheet Column Title  | while num>0: num-=1; r=num%26; append; num=(num-r)//26
-169. Majority Element | Boyer-290. Word PatternMoore Voting Algorithm: if count==0 change candidate; count=1 if x==candidate else -1
 171. Excel Sheet Column Number | for i,c in enumerate(s[::-1]): ans += (ord(c)-ord("A")+1) * 26**i
 172. Factorial Trailing Zeroes | c+=int(n/5**(i+1))
 179. Largest Number
@@ -132,6 +130,10 @@ Iteration - Left-Right
 2187. Minimum Time to Complete Trips | binary search + linear search
 --
 42*. Trapping Rain Water | find maxidx, collect left with lmax, collect right with rmax
+
+Iteration - Monte Carlo
+169. Majority Element
+229. Majority Element II
 
 Math
 65. Valid Number | points<=1; +/-<=1+bool(has e/E); letters=0; e,E<=1 -> has or not e/E, digit>=1 and .index(+/-)>=0
