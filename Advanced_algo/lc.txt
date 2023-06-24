@@ -162,7 +162,7 @@ Naive
 147. Insertion Sort List
 148. Sort List
 151. Reverse Words in a String
-189. Rotate Array
+189. Rotate Array | reverse 3 times O(1) space
 190. Reverse Bits
 191. Number of 1 Bits
 231. Power of Two
