@@ -96,7 +96,6 @@ Iteration
 --
 23*. Merge k Sorted Lists | heap
 41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
-42*. Trapping Rain Water | find maxidx, collect left with lmax, collect right with rmax
 124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
 
 Iteration - Bit operations
@@ -111,7 +110,7 @@ Iteration - FSM
 --
 123*. Best Time to Buy and Sell Stock III | sel1, buy2, sel2, ans = -p, 0, -float('inf'), -float('inf)
 
-Left-Right
+Iteration - Left-Right
 11. Container With Most Water
 16. 3Sum Closest | sort + binary search
 33. Search in Rotated Sorted Array | judge pivot -> judge left or right
@@ -128,6 +127,8 @@ Left-Right
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity), binary search [max(weights),sum(weights)]
 1201. Ugly Number III | gcd, binary search find m -> while not multiple: m-=1
 2187. Minimum Time to Complete Trips | binary search + linear search
+--
+42*. Trapping Rain Water | find maxidx, collect left with lmax, collect right with rmax
 
 Math
 65. Valid Number | points<=1; +/-<=1+bool(has e/E); letters=0; e,E<=1 -> has or not e/E, digit>=1 and .index(+/-)>=0
