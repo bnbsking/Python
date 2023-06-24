@@ -5,8 +5,6 @@ Hash
 36. Valid Sudoku | check (i,ele), (ele,j), (i,j,ele) in S
 49. Group Anagrams
 128. Longest Consecutive Sequence | S=set(L); for x in L: if x-1 not in S:...
-136. Single Number
-137. Single Number II
 141. Linked List Cycle
 142. Linked List Cycle II
 160. Intersection of Two Linked Lists
@@ -87,8 +85,6 @@ Iteration
 210. Course Schedule II | Kahn's algorithm, while leaves (DFS)
 228. Summary Ranges
 238. Product of Array Except Self
-260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually 
-268. Missing Number | xor 1~n then xor all since a^a=0 always
 289. Game of Life
 310. Minimum Height Trees | Kahn's algorithm, while len(inD)>2 (BFS)
 -
@@ -102,6 +98,12 @@ Iteration
 41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
 42*. Trapping Rain Water | find maxidx, collect left with lmax, collect right with rmax
 124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
+
+Iteration - Bit operations
+136. Single Number
+137. Single Number II | tenary, add-mod3
+260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually 
+268. Missing Number | xor 1~n then xor all since a^a=0 always
 
 Iteration - FSM
 309. Best Time to Buy and Sell Stock with Cooldown | buy, sel, col = 0, -p, -p
