@@ -97,6 +97,7 @@ Iteration
 23*. Merge k Sorted Lists | heap
 41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
 124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
+135*. Candy | collect all local min as S, expand lr + remove from S until not greater
 
 Iteration - Bit operations
 136. Single Number
