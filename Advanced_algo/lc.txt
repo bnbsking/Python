@@ -240,6 +240,7 @@ Recursion Share Bottom-up <3/4>
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, retrievable + must copy L since has L.pop  
 51*. N-Queens | retreivable + no need copy B since B is invariant
+140*. Word Break II
 
 Recursion Share Top-Down <4/4>
 102. Binary Tree Level Order Traversal
