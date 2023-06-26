@@ -91,6 +91,7 @@ Iteration
 1351. Count Negative Numbers in a Sorted Matrix | j stands at rightest >=0 for each row
 1962. Remove Stones to Minimize the Total | Max-heap
 2279. Maximum Bags With Full Capacity of Rocks
+2462. Total Cost to Hire K Workers | heap
 --
 23*. Merge k Sorted Lists | heap
 41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
@@ -204,7 +205,7 @@ Recursion Arg Top-Down <2/4>
 94. Binary Tree Inorder Traversal
 95. Unique Binary Search Trees II | f(L=list(range(1,1+n)))
 96. Unique Binary Search Trees
-98. Validate Binary Search Tree | ordered or not
+98. Validate Binary Search Tree | LDR ordered or not
 99. Recover Binary Search Tree
 100. Same Tree
 101. Symmetric Tree
@@ -253,9 +254,9 @@ Recursion Share Top-Down <4/4>
 114. Flatten Binary Tree to Linked List
 116. Populating Next Right Pointers in Each Node
 117. Populating Next Right Pointers in Each Node II
-130. Surrounded Regions | whlie unvisit: f(position)
+130. Surrounded Regions
 199. Binary Tree Right Side View
-200. Number of Islands  | while unvisit: f(position)
+200. Number of Islands
 235. Lowest Common Ancestor of a Binary Search Tree
 236. Lowest Common Ancestor of a Binary Tree
 257. Binary Tree Paths
