@@ -109,7 +109,7 @@ Iteration - Bit operations
 Iteration - Dijkstra
 -
 743. Network Delay Time | update unvisited only; add to heap unvisited only
-1514. Path with Maximum Probability | if x==end: return L[end]; add to heap unvisited only
+1514. Path with Maximum Probability | same as 743
 
 Iteration - FSM
 309. Best Time to Buy and Sell Stock with Cooldown | buy, sel, col = 0, -p, -p
