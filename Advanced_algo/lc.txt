@@ -284,7 +284,7 @@ Stack
 Special
 28. Find the Index of the First Occurrence in a String | lcps + KMP
 146. LRU Cache | dict+double linked list OR OrderedDict with O.popitem(last=False)
-208. Implement Trie (Prefix Tree) | Trie
+208. Implement Trie (Prefix Tree) | Trie + recursion (Nested Dict)
 211. Design Add and Search Words Data Structure | Trie + recursion
 223. Rectangle Area | max(0,min()-max()) *****
 
