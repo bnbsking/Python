@@ -106,10 +106,12 @@ Iteration - Bit operations
 260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually 
 268. Missing Number | xor 1~n then xor all since a^a=0 always
 
-Iteration - Dijkstra
+Iteration - BFS or Dijkstra
 -
 743. Network Delay Time | update unvisited only; add to heap unvisited only
 1514. Path with Maximum Probability | same as 743
+--
+127*. Word Ladder
 
 Iteration - FSM
 309. Best Time to Buy and Sell Stock with Cooldown | buy, sel, col = 0, -p, -p
