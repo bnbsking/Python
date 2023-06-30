@@ -228,7 +228,7 @@ Recursion Arg Top-Down <2/4>
 173. Binary Search Tree Iterator
 203. Remove Linked List Elements
 206. Reverse Linked List | upper left & down right r
-215. Kth Largest Element in an Array | O(n) space quick select is easier
+215. Kth Largest Element in an Array | quick select
 222. Count Complete Tree Nodes
 226. Invert Binary Tree
 230. Kth Smallest Element in a BST
