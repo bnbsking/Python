@@ -145,8 +145,10 @@ Iteration - Monte Carlo
 229. Majority Element II
 
 Math
-65. Valid Number | points<=1; +/-<=1+bool(has e/E); letters=0; e,E<=1 -> has or not e/E, digit>=1 and .index(+/-)>=0
+-
 1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
+--
+65*. Valid Number | points<=1; +/-<=1+bool(has e/E); letters=0; e,E<=1 -> has or not e/E, digit>=1 and .index(+/-)>=0
 
 Mix
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
@@ -252,6 +254,7 @@ Recursion Share Bottom-up <3/4>
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, retrievable + must copy L since has L.pop  
 51*. N-Queens | retreivable + no need copy B since B is invariant
+52*. N-Queens II
 140*. Word Break II
 
 Recursion Share Top-Down <4/4>
