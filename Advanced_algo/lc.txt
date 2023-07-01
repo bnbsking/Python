@@ -250,6 +250,8 @@ Recursion Share Bottom-up <3/4>
 77. Combinations | f(start=1, L=[]) put ele>=start to L
 79. Word Search | retrievable f(position,match,visitS)
 216. Combination Sum III | f(path=[],start=1,sumv=n)
+-
+2305. Fair Distribution of Cookies | O(n^k) retreivable
 --
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, retrievable + must copy L since has L.pop  
