@@ -283,6 +283,8 @@ Stack
 316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later. 
 -
 1081. Smallest Subsequence of Distinct Characters | same as 316
+--
+224*. Basic Calculator
 
 ----------
 
@@ -292,8 +294,6 @@ Special
 208. Implement Trie (Prefix Tree) | Trie + recursion (Nested Dict)
 211. Design Add and Search Words Data Structure | Trie + recursion
 223. Rectangle Area | max(0,min()-max())
---
-224*. Basic Calculator
 
 Bad
 6. Zigzag Conversion
