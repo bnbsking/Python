@@ -88,6 +88,7 @@ Iteration
 -
 373. Find K Pairs with Smallest Sums | heap and set
 443. String Compression | split strategy
+859. Buddy Strings | check whether elements count are same; diff==2: True; diff==1: has duplicate; others: False
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1351. Count Negative Numbers in a Sorted Matrix | j stands at rightest >=0 for each row
 1962. Remove Stones to Minimize the Total | Max-heap
@@ -95,10 +96,14 @@ Iteration
 2462. Total Cost to Hire K Workers | heap
 --
 23*. Merge k Sorted Lists | heap
-41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
 124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
 135*. Candy | collect all local min as S, expand lr + remove from S until not greater
 149*. Max Points on a Line | use determinant, O(n^3)
+
+Iteration - Arithmetic sort
+268. Missing Number | while i<len(nums) and nums[i]!=nums[nums[i]]: nums[nums[i]], nums[i] = nums[i], nums[nums[i]] # CANNOT REVERSE
+--
+41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
 
 Iteration - Bit operations
 136. Single Number
