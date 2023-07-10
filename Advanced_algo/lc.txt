@@ -136,6 +136,8 @@ Iteration - Left-Right
 162. Find Peak Element | check max(L[m-1], L[m], L[m+1])
 167. Two Sum II - Input Array Is Sorted
 240. Search a 2D Matrix II
+274. H-Index | reverse n, n-1, ..., 2, 1. L[-1-i]<1+i
+275. H-Index II
 278. First Bad Version
 -
 540. Single Element in a Sorted Array | if m%2 then if L[m-1]==L[m]
@@ -308,8 +310,6 @@ Bad
 27. Remove Element
 29. Divide Two Integers
 166. Fraction to Recurring Decimal
-274. H-Index
-275. H-Index II
 
 Unknown
 86. Partition List
