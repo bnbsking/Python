@@ -46,7 +46,6 @@ Hash
 217. Contains Duplicate
 219. Contains Duplicate II
 260. Single Number III
-287. Find the Duplicate Number | Floyd's Tortoise and Hare?
 290. Word Pattern
 299. Bulls and Cows | same as 205 and 290
 -
@@ -83,6 +82,7 @@ Iteration
 210. Course Schedule II | Kahn's algorithm, while leaves (DFS)
 228. Summary Ranges
 238. Product of Array Except Self
+283. Move Zeroes | like quick sort but i=j=0 where j>i
 289. Game of Life
 310. Minimum Height Trees | Kahn's algorithm, while len(inD)>2 (BFS)
 -
@@ -101,7 +101,8 @@ Iteration
 149*. Max Points on a Line | use determinant, O(n^3)
 
 Iteration - Arithmetic sort
-268. Missing Number | while i<len(nums) and nums[i]!=nums[nums[i]]: nums[nums[i]], nums[i] = nums[i], nums[nums[i]] # CANNOT REVERSE
+268. Missing Number | while i<len(L) and L[i]!=L[L[i]]: L[L[i]], L[i] = L[i], L[L[i]] # CANNOT REVERSE
+287. Find the Duplicate Number | return when nums[nums[i]]==nums[i] or at the final
 --
 41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
 
@@ -188,7 +189,6 @@ Naive
 242. Valid Anagram
 258. Add Digits
 263. Ugly Number
-283. Move Zeroes
 284. Peeking Iterator
 292. Nim Game
 -
