@@ -308,6 +308,7 @@ Special
 208. Implement Trie (Prefix Tree) | Trie + recursion (Nested Dict)
 211. Design Add and Search Words Data Structure | Trie + recursion
 223. Rectangle Area | max(0,min()-max())
+307. Range Sum Query - Mutable | Segment tree. (T,T.l,T.r)=(sum(L),sum(left),sum(right)). same inputs of 3 methods f(i=0,l=0,r=len(L)-1)
 
 Bad
 6. Zigzag Conversion
