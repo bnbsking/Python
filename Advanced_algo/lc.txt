@@ -194,6 +194,7 @@ Naive
 284. Peeking Iterator
 292. Nim Game
 318. Maximum Product of Word Lengths
+319. Bulb Switcher
 -
 744. Find Smallest Letter Greater Than Target
 1318. Minimum Flips to Make a OR b Equal to c
