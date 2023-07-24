@@ -160,6 +160,7 @@ Iteration - Monte Carlo
 229. Majority Element II
 
 Math
+343. Integer Break | for n>3: cut 3 nums
 -
 1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
 --
