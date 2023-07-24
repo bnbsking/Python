@@ -49,6 +49,8 @@ Hash
 260. Single Number III
 290. Word Pattern
 299. Bulls and Cows | same as 205 and 290
+349. Intersection of Two Arrays
+350. Intersection of Two Arrays II
 -
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
@@ -89,6 +91,7 @@ Iteration
 324. Wiggle Sort II | 1,3,5,...,0,2,4,...
 328. Odd Even Linked List
 331. Verify Preorder Serialization of a Binary Tree | slot=1 if # slot-=1 else slot+=1, slot must >0 during iteration and =0 finally
+334. Increasing Triplet Subsequence | iteratively update min1 and min2
 -
 373. Find K Pairs with Smallest Sums | heap and set
 443. String Compression | split strategy
@@ -164,6 +167,7 @@ Math
 
 Mix
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
+337. House Robber III
 
 Naive
 7. Reverse Integer
@@ -197,6 +201,11 @@ Naive
 292. Nim Game
 318. Maximum Product of Word Lengths
 319. Bulb Switcher
+338. Counting Bits
+342. Power of Four
+344. Reverse String
+345. Reverse Vowels of a String
+347. Top K Frequent Elements
 -
 744. Find Smallest Letter Greater Than Target
 1318. Minimum Flips to Make a OR b Equal to c
