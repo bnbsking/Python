@@ -51,6 +51,7 @@ Hash
 299. Bulls and Cows | same as 205 and 290
 349. Intersection of Two Arrays
 350. Intersection of Two Arrays II
+355. Design Twitter | defaultdict, deque, heapq
 -
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
