@@ -224,6 +224,7 @@ Recursion Arg Bottom-up <1/4>
 78. Subsets | f(i=0, L=[[]]) concatenate add nums[i] or not add
 90. Subsets II
 110. Balanced Binary Tree
+365. Water and Jug Problem | DFS f(total), 4 dirs: total+j1, total+j2, total-j1, total-j2
 --
 60*. Permutation Sequence
 
