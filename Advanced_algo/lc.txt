@@ -52,6 +52,9 @@ Hash
 349. Intersection of Two Arrays
 350. Intersection of Two Arrays II
 355. Design Twitter | defaultdict, deque, heapq
+383. Ransom Note
+387. First Unique Character in a String
+389. Find the Difference
 -
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
@@ -98,6 +101,7 @@ Iteration
 380. Insert Delete GetRandom O(1) | dict+list, remove do nothing for list, remove from list while getRandom if needed
 382. Linked List Random Node | to list
 384. Shuffle an Array
+386. Lexicographical Numbers | sort in str (by ascii)
 -
 443. String Compression | split strategy
 859. Buddy Strings | check whether elements count are same; diff==2: True; diff==1: has duplicate; others: False
@@ -215,7 +219,6 @@ Naive
 345. Reverse Vowels of a String
 347. Top K Frequent Elements
 367. Valid Perfect Square
-383. Ransom Note
 -
 744. Find Smallest Letter Greater Than Target
 1318. Minimum Flips to Make a OR b Equal to c
