@@ -95,6 +95,9 @@ Iteration
 334. Increasing Triplet Subsequence | iteratively update min1 and min2
 373. Find K Pairs with Smallest Sums | heap and visitS
 376. Wiggle Subsequence | slightly similar to 152. up,down=1,1 up=down+1 or down=up+1 or None
+380. Insert Delete GetRandom O(1) | dict+list, remove do nothing for list, remove from list while getRandom if needed
+382. Linked List Random Node | to list
+384. Shuffle an Array
 -
 443. String Compression | split strategy
 859. Buddy Strings | check whether elements count are same; diff==2: True; diff==1: has duplicate; others: False
@@ -212,6 +215,7 @@ Naive
 345. Reverse Vowels of a String
 347. Top K Frequent Elements
 367. Valid Perfect Square
+383. Ransom Note
 -
 744. Find Smallest Letter Greater Than Target
 1318. Minimum Flips to Make a OR b Equal to c
