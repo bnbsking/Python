@@ -102,6 +102,7 @@ Iteration
 382. Linked List Random Node | to list
 384. Shuffle an Array
 386. Lexicographical Numbers | sort in str (by ascii)
+392. Is Subsequence | Dont need to restart, i.e. O(n)
 -
 443. String Compression | split strategy
 859. Buddy Strings | check whether elements count are same; diff==2: True; diff==1: has duplicate; others: False
@@ -326,6 +327,7 @@ Stack
 225. Implement Stack using Queues
 232. Implement Queue using Stacks
 316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later. 
+394. Decode String
 -
 1081. Smallest Subsequence of Distinct Characters | same as 316
 --
