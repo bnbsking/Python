@@ -56,6 +56,7 @@ Hash
 383. Ransom Note
 387. First Unique Character in a String
 389. Find the Difference
+398. Random Pick Index
 -
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
@@ -182,6 +183,7 @@ Math
 Mix
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
 337. House Robber III
+397. Integer Replacement | if even: //2 else 1+min(f(n-1)+f(n+1))
 
 Naive
 7. Reverse Integer
