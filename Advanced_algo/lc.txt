@@ -327,7 +327,7 @@ Stack
 20. Valid Parentheses | dict + lr matching
 71. Simplify Path
 150. Evaluate Reverse Polish Notation | complete version 227. 224.
-155. Min Stack | use stack and deque (Q[0] is min while Q[1:] is same as stack)
+155. Min Stack | 1 stack + 1 deque (Q[0] is min while Q[1:] is same as stack)
 227. Basic Calculator II | totally 3 steps
 225. Implement Stack using Queues
 232. Implement Queue using Stacks
