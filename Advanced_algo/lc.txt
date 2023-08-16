@@ -332,9 +332,10 @@ Stack
 225. Implement Stack using Queues
 232. Implement Queue using Stacks
 316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later. 
-394. Decode String
-402. Remove K Digits
+394. Decode String | numStack + charStack. deal with num or [ or ]
+402. Remove K Digits | while stack and k and stack[-1]>x. Exceptions: leading 0s, k>0, empty str
 -
+739. Daily Temperatures | stack=[(ith_day, ith_day_temp)]. pop and write ans[i]=i-ith_day while stack and hotter
 1081. Smallest Subsequence of Distinct Characters | same as 316
 --
 224*. Basic Calculator
