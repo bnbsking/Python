@@ -333,6 +333,7 @@ Stack
 232. Implement Queue using Stacks
 316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later. 
 394. Decode String
+402. Remove K Digits
 -
 1081. Smallest Subsequence of Distinct Characters | same as 316
 --
