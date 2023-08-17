@@ -132,6 +132,7 @@ Iteration - Bit operations
 268. Missing Number | xor 1~n then xor all since a^a=0 always
 
 Iteration - BFS or Dijkstra
+542. 01 Matrix | queue has (i,j,depth), Multi-source BFS
 -
 743. Network Delay Time | update unvisited only; add to heap unvisited only
 1514. Path with Maximum Probability | same as 743
