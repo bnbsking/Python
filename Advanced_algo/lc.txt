@@ -52,7 +52,7 @@ Hash
 299. Bulls and Cows | same as 205 and 290
 349. Intersection of Two Arrays
 350. Intersection of Two Arrays II
-355. Design Twitter | defaultdict, deque, heapq
+355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq while calling getNewsFeed
 383. Ransom Note
 387. First Unique Character in a String
 389. Find the Difference
@@ -131,13 +131,14 @@ Iteration - Bit operations
 260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually 
 268. Missing Number | xor 1~n then xor all since a^a=0 always
 
-Iteration - BFS or Dijkstra
-542. 01 Matrix | queue has (i,j,depth), Multi-source BFS
+Iteration - BFS or Dijkstra or Queue
+542. 01 Matrix | queue in (i,j,depth), Multi-source BFS
 -
 743. Network Delay Time | update unvisited only; add to heap unvisited only
 1514. Path with Maximum Probability | same as 743
 --
 127*. Word Ladder
+239*. Sliding Window Maximum | (val,idx) in queue, length is not const, always desc sorted
 
 Iteration - FSM
 309. Best Time to Buy and Sell Stock with Cooldown | buy, sel, col = 0, -p, -p
@@ -340,10 +341,6 @@ Stack
 1081. Smallest Subsequence of Distinct Characters | same as 316
 --
 224*. Basic Calculator
-
-Queue
---
-239*. Sliding Window Maximum | (val,idx) in deque, length is not const, always desc sorted
 
 ----------
 
