@@ -105,6 +105,7 @@ Iteration
 384. Shuffle an Array
 386. Lexicographical Numbers | sort in str (by ascii)
 392. Is Subsequence | Dont need to restart, i.e. O(n)
+405. Convert a Number to Hexadecimal | +x to -x: reverse_bit+1 (vice versa) OR -(num+1) reverse_bit 
 -
 443. String Compression | split strategy
 459. Repeated Substring Pattern
@@ -297,6 +298,7 @@ Recursion Share Bottom-up <3/4>
 77. Combinations | f(start=1, L=[]) put ele>=start to L
 79. Word Search | retrievable f(position,match,visitS) # retrievable = backtracking
 216. Combination Sum III | f(path=[],start=1,sumv=n)
+404. Sum of Left Leaves | f(T,isLeft)
 -
 2305. Fair Distribution of Cookies | O(n^k) retreivable
 --
