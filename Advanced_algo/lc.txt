@@ -109,6 +109,7 @@ Iteration
 -
 443. String Compression | split strategy
 459. Repeated Substring Pattern
+767. Reorganize String | Heap
 859. Buddy Strings | check whether elements count are same; diff==2: True; diff==1: has duplicate; others: False
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1351. Count Negative Numbers in a Sorted Matrix | j stands at rightest >=0 for each row
