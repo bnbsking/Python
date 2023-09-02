@@ -160,8 +160,8 @@ Iteration - Left-Right
 35. Search Insert Position
 74. Search a 2D Matrix
 81. Search in Rotated Sorted Array II | based on 33. add if nums[l]==nums[m]==nums[r]: l, r = l+1, r-1
-153. Find Minimum in Rotated Sorted Array | min(nums[l],nums[m],nums[r]), special case nums[m] is min and also ans
-162. Find Peak Element | max(L[m-1], L[m], L[m+1]), be ware of elif need m>0
+153. Find Minimum in Rotated Sorted Array | min(nums[l],nums[m],nums[r]), special case nums[m] is min and also ans (check neighbors circularly)
+162. Find Peak Element | max(L[m-1], L[m], L[m+1]), be ware of drop right half need m>0
 167. Two Sum II - Input Array Is Sorted
 240. Search a 2D Matrix II
 274. H-Index | reverse n, n-1, ..., 2, 1. L[-1-i]<1+i
