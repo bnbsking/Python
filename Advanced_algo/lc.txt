@@ -115,6 +115,7 @@ Iteration
 443. String Compression | split strategy
 459. Repeated Substring Pattern
 674. Longest Continuous Increasing Subsequence | start, ans = 0, 1 for loop if else (compare to 300 is continuous)
+725. Split Linked List in Parts
 767. Reorganize String | Heap
 859. Buddy Strings | check whether elements count are same; diff==2: True; diff==1: has duplicate; others: False
 1232. Check If It Is a Straight Line | use determinants instead of slopes
