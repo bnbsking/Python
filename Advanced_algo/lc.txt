@@ -61,6 +61,7 @@ Hash
 389. Find the Difference
 398. Random Pick Index
 -
+1282. Group the People Given the Group Size They Belong To
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
 
@@ -127,7 +128,7 @@ Iteration
 --
 23*. Merge k Sorted Lists | heap
 124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
-135*. Candy | collect all local min as S, expand lr + remove from S until not greater
+135*. Candy | for i in range(R): if i is smallest: lr expand (L[r]=max(L[r],L[r-1]+1))
 149*. Max Points on a Line | use determinant, O(n^3)
 
 Iteration - Arithmetic sort
