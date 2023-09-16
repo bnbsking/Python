@@ -352,7 +352,7 @@ Stack
 227. Basic Calculator II | totally 3 steps
 225. Implement Stack using Queues
 232. Implement Queue using Stacks
-316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later. 
+316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later.
 394. Decode String | numStack + charStack. deal with num or [ or ]
 402. Remove K Digits | while stack and k and stack[-1]>x. Exceptions: leading 0s, k>0, empty str
 -
@@ -370,6 +370,8 @@ Special
 211. Design Add and Search Words Data Structure | Trie + recursion
 223. Rectangle Area | max(0,min()-max())
 307. Range Sum Query - Mutable | Segment tree. (T,T.l,T.r)=(sum(L),sum(left),sum(right)). same inputs of 3 methods f(i=0,l=0,r=len(L)-1)
+--
+*1483. Kth Ancestor of a Tree Node | Binary lifting. self.D[i][j]=i-th node's 2**j ancestor. Column major filling since it may not have ancestor before filling parent. To fill self.D[i][j-1], parent=self.D[i][j-1] 
 
 Bad
 6. Zigzag Conversion
