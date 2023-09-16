@@ -335,6 +335,8 @@ Recursion Share Top-Down <4/4>
 200. Number of Islands
 235. Lowest Common Ancestor of a Binary Search Tree
 236. Lowest Common Ancestor of a Binary Tree
+  + Naive recursion (good at balanced)
+  + Change to Range min query (good at general): euler path, depth path, D: T.val->"first occurence index in euler path". Build segment tree each node (T.val,index) then query(D[p.val],D[q.val])
 257. Binary Tree Paths
 341. Flatten Nested List Iterator
 395. Longest Substring with At Least K Repeating Characters | for c in set(s): Use s.count(c)<k as splitting seperator
