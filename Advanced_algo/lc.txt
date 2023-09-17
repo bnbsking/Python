@@ -37,12 +37,12 @@ DP Forward
 
 Graph - Spanning tree
 -
-1584. Min Cost to Connect All Points | Prim's. Heap(edge,node), ans, visitS. search neighbor if unvisited; add to heap if unvisited. Very similar to 743
+1584. Min Cost to Connect All Points | Prim. Heap(edge,node), distanceToMSS, visitS, ans. search neighbor if unvisited; add to heap if unvisited and shorter. Very similar to 743
 
 Graph - Shortest path
 399. Evaluate Division | Create graph, dfs(now,dest,visitS,accum)
 -
-743. Network Delay Time | Dijkstra. Heap(edge,node), distanceL, visitS. search neighbor if unvisited; add to heap if unvisited
+743. Network Delay Time | Dijkstra. Heap(edge,node), distanceToStart, visitS. search neighbor if unvisited; add to heap if unvisited and shorter
 1514. Path with Maximum Probability | same as 743
 
 Graph - Topological sort
