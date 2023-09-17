@@ -34,3 +34,23 @@
 5. Minimum spanning tree (directed): Prim's algorithm
     + Random pick start -> Initialize edge set -> pick min edge (l,r) then add to tree, add r neighbors edges, remove (x,r) from set (v-1 times)
     + Naive: O(v^2); Heap: O(elog(v))
+
+### Graph 2023.09.18
+1. DFS - recursion - O(E+V)
+2. BFS - queue - O(E+V) e.g. shortest path problem with equal weights or depth constraint e.g. 127. Word Ladder or 542. 01 matrix
+3. Shortest path
+    + Dijkstra - heap + distanceToStart - O( (V+E)logV ). Single source non-negative edge
+    + Bellman-Ford - Single source - O(VE)
+    + Floyd-Warshall - Multiple sources - O(v^3)
+4. Minimum spanning tree
+    + Prim - heap + distance to MST - O( (E+V)logV ) very similar to Dijkstra
+    + Kruskal - Sort edges + Disjoint Set - O(ElogE) has same complexity with Prim
+5. Topological sort
+    + Kahn - Graph + inDegL - O(V+E)
+
+More <=P
+    + Eulerian Path
+More >NP
+    + Hamiltonian Path (equal weight)
+    + TSP (non-equal weight)
+    + Schedueling optimization
