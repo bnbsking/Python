@@ -139,7 +139,7 @@ Iteration
 23*. Merge k Sorted Lists | heap
 124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
 135*. Candy | for i in range(R): if i is smallest: lr expand (L[r]=max(L[r],L[r-1]+1))
-127*. Word Ladder | 
+127*. Word Ladder
 149*. Max Points on a Line | use determinant, O(n^3)
 
 Iteration - Arithmetic sort
@@ -195,6 +195,7 @@ Math
 1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
 --
 65*. Valid Number | points<=1; +/-<=1+bool(has e/E); letters=0; e,E<=1 -> has or not e/E, digit>=1 and .index(+/-)>=0
+1359. Count All Valid Pickup and Delivery Options | f(i)=f(i-1)*i*(2i-1)%m
 
 Mix
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
