@@ -38,6 +38,7 @@ DP Forward
 Graph - Spanning tree
 -
 1584. Min Cost to Connect All Points | Prim. Heap(edge,node), distanceToMSS, visitS, ans. search neighbor if unvisited; add to heap if unvisited and shorter. Very similar to 743
+  + another Kruskal: Union find, sort edges reversely, pop, merge 2 point if union
 
 Graph - Shortest path
 399. Evaluate Division | Create graph, dfs(now,dest,visitS,accum)
