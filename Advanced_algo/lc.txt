@@ -47,9 +47,9 @@ Graph - Shortest path
 1514. Path with Maximum Probability | same as 743
 
 Graph - Topological sort
-207. Course Schedule    | Kahn's algorithm, while leaves (DFS)
-210. Course Schedule II | Kahn's algorithm, while leaves (DFS)
-310. Minimum Height Trees | Kahn's algorithm, while len(inD)>2 (BFS)
+207. Course Schedule    | Kahn's algorithm. G(constant), inDegL. while leaves (DFS)
+210. Course Schedule II | Kahn's algorithm. G(constant), inDegL. while leaves (DFS)
+310. Minimum Height Trees | Kahn's algorithm. G(varied), inDegL. while len(G)>2 (BFS)
 
 Hash
 1. Two Sum
