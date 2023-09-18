@@ -44,7 +44,8 @@ Graph - Shortest path
 399. Evaluate Division | Create graph, dfs(now,dest,visitS,accum)
 -
 743. Network Delay Time | Dijkstra. Heap(edge,node), distanceToStart, visitS. search neighbor if unvisited; add to heap if unvisited and shorter
-1514. Path with Maximum Probability | same as 743
+1514. Path with Maximum Probability | Dijkstra. same as 743
+1631. Path With Minimum Effort | Dijkstra. compare accum_delta rather than distance
 
 Graph - Topological sort
 207. Course Schedule    | Kahn's algorithm. G(constant), inDegL. while leaves (DFS)
