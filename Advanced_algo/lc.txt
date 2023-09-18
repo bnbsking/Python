@@ -37,16 +37,16 @@ DP Forward
 
 Graph - Spanning tree
 -
-1584. Min Cost to Connect All Points | Prim. Heap(edge,node), distanceToMSS, visitS, ans. search neighbor if unvisited; add to heap if unvisited and shorter. Very similar to 743
+1584. Min Cost to Connect All Points | Prim. Heap(edge,node), distanceToMSS, visitS, ans. search neighbor if unvisited; add to heap if unvisited and shorter. Relaxation on distanceToMSS. Very similar to 743
   + another Kruskal: Union find, sort edges reversely, pop, merge 2 point if union
 
 Graph - Shortest path
 399. Evaluate Division | Create graph, dfs(now,dest,visitS,accum)
 -
-743. Network Delay Time | Dijkstra. Heap(edge,node), distanceToStart, visitS. search neighbor if unvisited; add to heap if unvisited and shorter. (Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
-787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap
+743. Network Delay Time | Dijkstra. Heap(edge,node), distanceToStart, visitS. search neighbor if unvisited; add to heap if unvisited and shorter. Relaxation on distance.(Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
+787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap + No visitS. Q(sumPath,node), relaxation on sumPath
 1514. Path with Maximum Probability | Dijkstra. same as 743
-1631. Path With Minimum Effort | Dijkstra. compare accum_delta rather than distance
+1631. Path With Minimum Effort | Dijkstra. Heap(accum_delta,node), relaxation on accum_delta.
 
 Graph - Topological sort
 207. Course Schedule    | Kahn's algorithm. G(constant), inDegL. while leaves (DFS)
