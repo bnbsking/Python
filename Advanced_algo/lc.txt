@@ -33,7 +33,7 @@ DP Forward
 139. Word Break | for i for word: write True if match
 204. Count Primes | Sieve of Eratosthenes: L=[F,F]+[T]*(n-2); for i in range(2,int(n**0.5)+1): if L[i]: for j in range(i*i, n, i): L[j]=F
 322. coin change
-377. Combination Sum IV | similar to 62. or 70.
+377. Combination Sum IV | Infinity selection. similar to 62. or 70.
 
 Graph - Spanning tree
 -
@@ -209,6 +209,7 @@ Mix
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
 337. House Robber III
 397. Integer Replacement | if even: //2 else 1+min(f(n-1)+f(n+1))
+416. Partition Equal Subset Sum | Similar to 40. Add memorization.
 
 Naive
 7. Reverse Integer
@@ -322,11 +323,11 @@ Recursion Arg Top-Down <2/4>
 25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
 
 Recursion Share Bottom-up <3/4>
-39. Combination Sum | f(path,start,val)
-40. Combination Sum | collections.counter, f(path,start,val), more 1 for to iterate times
-77. Combinations | f(start=1, L=[]) put ele>=start to L
+39. Combination Sum | f(path,start,val), similar than 40. for can
+40. Combination Sum II | collections.counter, f(path,start_can_idx,val), for can for times
+77. Combinations | f(start=1, L=[]) put ele>=start to L, simpler than 40. for can (no duplicate) 
 79. Word Search | retrievable f(position,match,visitS) # retrievable = backtracking
-216. Combination Sum III | f(path=[],start=1,sumv=n)
+216. Combination Sum III | f(path=[],start=1,sumv=n), simpler than 40. for can (no duplicate)
 404. Sum of Left Leaves | f(T,isLeft)
 -
 2305. Fair Distribution of Cookies | O(n^k) retreivable
