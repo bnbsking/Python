@@ -45,10 +45,10 @@ Graph - Shortest path
 -
 743. Network Delay Time | Dijkstra. Heap(edge,node), distanceToStart, visitS. search neighbor if unvisited; add to heap if unvisited and shorter. Relaxation on distance.(Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
 787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap + No visitS. Q(sumPath,node), relaxation on sumPath
-1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance | Floyd-WarShall O(v^3). for mid for i for j: relaxation. cannot modify the loop order. Becuase previous optimization results may not hold if mid changes.
+1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance | Floyd-WarShall O(v^3). for mid for vi for vj: relaxation. cannot modify the loop order. Becuase previous optimization results may not hold if mid changes.
 1514. Path with Maximum Probability | Dijkstra. same as 743
 1631. Path With Minimum Effort | Dijkstra. Heap(accum_delta,node), relaxation on accum_delta.
-another -> Bellman Ford O(ve)
+another -> Bellman Ford O(ve): for node for edges: relaxation
 
 Graph - Topological sort
 207. Course Schedule    | Kahn's algorithm. G(constant), inDegL. while leaves (DFS)
