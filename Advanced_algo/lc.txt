@@ -95,7 +95,6 @@ Iteration
 59. Spiral Matrix II
 61. Rotate List
 73. Set Matrix Zeroes | O(1) space: let 1 change to not 0 but 0.5 
-75. Sort Colors | Dutch Flag Algorithm. l, i, r. while i<=r
 80. Remove Duplicates from Sorted Array II
 93. Restore IP Addresses | cut i,j,k four pieces, bool and <255 and no leading 0
 121. Best Time to Buy and Sell Stock | like 53. ans, lowest
@@ -307,7 +306,6 @@ Recursion Arg Top-Down <2/4>
 173. Binary Search Tree Iterator
 203. Remove Linked List Elements
 206. Reverse Linked List | upper left & down right r
-215. Kth Largest Element in an Array | quick select
 222. Count Complete Tree Nodes
 226. Invert Binary Tree
 230. Kth Smallest Element in a BST
@@ -376,6 +374,12 @@ Stack
 1081. Smallest Subsequence of Distinct Characters | same as 316
 --
 224*. Basic Calculator
+
+Sort
+75. Sort Colors | Dutch Flag Algorithm. l, i, r. while i<=r
+215. Kth Largest Element in an Array | Quick select. if l+1==r elif l+1<r. random pivot + Dutch flag. call 0~1 side
+-
+912. Sort an Array | Quick sort. if l+1==r elif l+1<r. random pivot + Dutch flag. call 2 sides
 
 ----------
 
