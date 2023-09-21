@@ -95,7 +95,7 @@ Iteration
 59. Spiral Matrix II
 61. Rotate List
 73. Set Matrix Zeroes | O(1) space: let 1 change to not 0 but 0.5 
-75. Sort Colors
+75. Sort Colors | Dutch Flag Algorithm. l, i, r. while i<=r
 80. Remove Duplicates from Sorted Array II
 93. Restore IP Addresses | cut i,j,k four pieces, bool and <255 and no leading 0
 121. Best Time to Buy and Sell Stock | like 53. ans, lowest
