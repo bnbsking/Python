@@ -334,7 +334,7 @@ Recursion Share Bottom-up <3/4>
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, retrievable + must copy L since has L.pop  
 51*. N-Queens | retrievable + no need copy B since B is invariant
 52*. N-Queens II
-140*. Word Break II
+140*. Word Break II | similar as 40
 
 Recursion Share Top-Down <4/4>
 102. Binary Tree Level Order Traversal
