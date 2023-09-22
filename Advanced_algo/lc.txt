@@ -386,7 +386,7 @@ Sort
 Special
 28. Find the Index of the First Occurrence in a String | lcps + KMP
 146. LRU Cache | dict+double linked list OR OrderedDict with O.popitem(last=False)
-208. Implement Trie (Prefix Tree) | Trie + recursion (Nested Dict)
+208. Implement Trie (Prefix Tree) | Dict, the end of inserting: p["*"]="". e.g. insert apple, insert app, search app
 211. Design Add and Search Words Data Structure | Trie + recursion
 223. Rectangle Area | max(0,min()-max())
 307. Range Sum Query - Mutable | Segment tree. (T,T.l,T.r)=(sum(L),sum(left),sum(right)). same inputs of 3 methods f(i=0,l=0,r=len(L)-1)
