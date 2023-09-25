@@ -48,9 +48,13 @@
 5. Topological sort
     + Kahn - Graph + inDegL - O(V+E)
 
-More <=P
++ More <=P
     + Eulerian Path
-More >NP
++ More >NP
     + Hamiltonian Path (equal weight)
     + TSP (non-equal weight)
     + Schedueling optimization
+
+### Others
+    + subarray: caterpillar
+    + subsequence: DP
