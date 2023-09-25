@@ -197,6 +197,11 @@ Iteration - Monte Carlo
 169. Majority Element
 229. Majority Element II
 
+Iteration - Two pointers, caterpillar, subarry
+--
+1658. Minimum Operations to Reduce X to Zero | while accum>=target and start<=i:, return ans if maxLen>0 or target==0 else -1
+
+
 Math
 343. Integer Break | for n>3: cut 3 nums
 357. Count Numbers with Unique Digits
@@ -383,13 +388,15 @@ Sort
 -
 912. Sort an Array | Quick sort. if l+1==r elif l+1<r. random pivot + Dutch flag. call 2 sides
 
+Trie
+208. Implement Trie (Prefix Tree) | Dict, the end of inserting: p["*"]="". e.g. insert apple, insert app, search app
+211. Design Add and Search Words Data Structure | Trie + recursion
+
 ----------
 
 Special
 28. Find the Index of the First Occurrence in a String | lcps + KMP
 146. LRU Cache | dict+double linked list OR OrderedDict with O.popitem(last=False)
-208. Implement Trie (Prefix Tree) | Dict, the end of inserting: p["*"]="". e.g. insert apple, insert app, search app
-211. Design Add and Search Words Data Structure | Trie + recursion
 223. Rectangle Area | max(0,min()-max())
 307. Range Sum Query - Mutable | Segment tree. (T,T.l,T.r)=(sum(L),sum(left),sum(right)). same inputs of 3 methods f(i=0,l=0,r=len(L)-1)
 --
