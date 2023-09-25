@@ -34,6 +34,8 @@ DP Forward
 204. Count Primes | Sieve of Eratosthenes: L=[F,F]+[T]*(n-2); for i in range(2,int(n**0.5)+1): if L[i]: for j in range(i*i, n, i): L[j]=F
 322. coin change
 377. Combination Sum IV | Infinity selection. similar to 62. or 70.
+-
+1048. Longest String Chain | Must sort by len first. Create "next node" graph where key=remove_each_char. Forward DP
 
 Graph - Spanning tree
 -
