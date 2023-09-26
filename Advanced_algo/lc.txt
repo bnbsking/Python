@@ -35,6 +35,7 @@ DP Forward
 322. coin change
 377. Combination Sum IV | Infinity selection. similar to 62. or 70.
 -
+799. Champagne Tower | L[0][0]=poured, compute excess to its children
 1048. Longest String Chain | Must sort by len first. Create "next node" graph where key=remove_each_char. Forward DP
 
 Graph - Spanning tree
