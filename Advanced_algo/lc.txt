@@ -202,6 +202,12 @@ Iteration - Two pointers, caterpillar, subarry
 --
 1658. Minimum Operations to Reduce X to Zero | while accum>=target and start<=i:, return ans if maxLen>0 or target==0 else -1
 
+Iteration - Sort
+75. Sort Colors | Dutch Flag Algorithm. l, i, r. while i<=r
+215. Kth Largest Element in an Array | Quick select. if l+1==r elif l+1<r. random pivot + Dutch flag. call 0~1 side
+-
+905. Sort Array By Parity | Dutch Flag Algorithm
+912. Sort an Array | Quick sort. if l+1==r elif l+1<r. random pivot + Dutch flag. call 2 sides
 
 Math
 343. Integer Break | for n>3: cut 3 nums
@@ -281,6 +287,8 @@ Recursion Arg Bottom-up <1/4>
 90. Subsets II
 110. Balanced Binary Tree
 365. Water and Jug Problem | DFS f(total), 4 dirs: total+j1, total+j2, total-j1, total-j2
+-
+880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha()... else
 --
 60*. Permutation Sequence
 
@@ -382,13 +390,6 @@ Stack
 1081. Smallest Subsequence of Distinct Characters | same as 316
 --
 224*. Basic Calculator
-
-Sort
-75. Sort Colors | Dutch Flag Algorithm. l, i, r. while i<=r
-215. Kth Largest Element in an Array | Quick select. if l+1==r elif l+1<r. random pivot + Dutch flag. call 0~1 side
--
-905. Sort Array By Parity | Dutch Flag Algorithm
-912. Sort an Array | Quick sort. if l+1==r elif l+1<r. random pivot + Dutch flag. call 2 sides
 
 Trie
 208. Implement Trie (Prefix Tree) | Dict, the end of inserting: p["*"]="". e.g. insert apple, insert app, search app
