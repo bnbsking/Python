@@ -378,7 +378,7 @@ Stack
 394. Decode String | numStack + charStack. deal with num or [ or ]
 402. Remove K Digits | while stack and k and stack[-1]>x. Exceptions: leading 0s, k>0, empty str
 -
-739. Daily Temperatures | stack=[(ith_day, ith_day_temp)]. pop and write ans[i]=i-ith_day while stack and hotter
+739. Daily Temperatures | stack=[(ith_day_temp, ith_day)]. pop and write ans[i]=i-ith_day while stack and hotter than top
 1081. Smallest Subsequence of Distinct Characters | same as 316
 --
 224*. Basic Calculator
@@ -387,6 +387,7 @@ Sort
 75. Sort Colors | Dutch Flag Algorithm. l, i, r. while i<=r
 215. Kth Largest Element in an Array | Quick select. if l+1==r elif l+1<r. random pivot + Dutch flag. call 0~1 side
 -
+905. Sort Array By Parity | Dutch Flag Algorithm
 912. Sort an Array | Quick sort. if l+1==r elif l+1<r. random pivot + Dutch flag. call 2 sides
 
 Trie
