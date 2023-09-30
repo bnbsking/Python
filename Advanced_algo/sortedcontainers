@@ -1,0 +1,14 @@
+pip install sortedcontainers
+
+from sortedcontainers import SortedList
+
+T = SortedList([3,1,2,5,4])
+T.add(6)
+T.remove(1)
+print(T) # [2,3,4,5,6]
+print( T.index(0) )
+# T.pop(index=-1) # same as list
+# T.count(ele) # same as list
+# T.islice(start,end) # generator
+
+# tree based
