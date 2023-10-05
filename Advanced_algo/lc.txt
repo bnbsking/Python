@@ -45,7 +45,9 @@ Graph - Spanning tree
 
 Graph - Shortest path
 399. Evaluate Division | Create graph, dfs(now,dest,visitS,accum)
+433. Minimum Genetic Mutation | BFS
 -
+542. 01 Matrix | queue in (i,j,depth), Multi-source BFS
 743. Network Delay Time | Dijkstra. Heap(edge,node), distanceToStart, visitS. search neighbor if unvisited; add to heap if unvisited and shorter. Relaxation on distance.(Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
 787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap + No visitS. Q(sumPath,node), relaxation on sumPath
 1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance | Floyd-WarShall O(v^3). for mid for vi for vj: relaxation. cannot modify the loop order. Becuase previous optimization results may not hold if mid changes.
@@ -134,11 +136,9 @@ Iteration
 406. Queue Reconstruction by Height | sort by (-p[0],p[1]) then L.insert(p[1],p)
 413. Arithmetic Slices | similar to 674 but ans+=i-start-1
 423. Reconstruct Original Digits from English | order: 0246813579
-433. Minimum Genetic Mutation | BFS
 -
 443. String Compression | split strategy
 459. Repeated Substring Pattern
-542. 01 Matrix | queue in (i,j,depth), Multi-source BFS
 674. Longest Continuous Increasing Subsequence | start, ans = 0, 1 for loop if else (compare to 300 is continuous)
 725. Split Linked List in Parts
 767. Reorganize String | Heap
