@@ -334,7 +334,6 @@ Recursion Arg Top-Down <2/4>
 241. Different Ways to Add Parentheses | similar to 95.
 306. Additive Number | cut 3 parts sequentially, each do recursive call
 427. Construct Quad Tree | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
-429. N-ary Tree Level Order Traversal
 -
 652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
 894. All Possible Full Binary Trees | similar to 95.
@@ -376,6 +375,8 @@ Recursion Share Top-Down <4/4>
 257. Binary Tree Paths
 341. Flatten Nested List Iterator
 395. Longest Substring with At Least K Repeating Characters | for c in set(s): Use s.count(c)<k as splitting seperator
+429. N-ary Tree Level Order Traversal
+430. Flatten a Multilevel Doubly Linked List
 --
 802. Find Eventual Safe States | args+share. recursive call if n not in ans, if isSafe and n not in visit 
 863. All Nodes Distance K in Binary Tree | Tree to Graph + BFS
