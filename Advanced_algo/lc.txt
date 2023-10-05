@@ -134,6 +134,7 @@ Iteration
 406. Queue Reconstruction by Height | sort by (-p[0],p[1]) then L.insert(p[1],p)
 413. Arithmetic Slices | similar to 674 but ans+=i-start-1
 423. Reconstruct Original Digits from English | order: 0246813579
+433. Minimum Genetic Mutation | BFS
 -
 443. String Compression | split strategy
 459. Repeated Substring Pattern
