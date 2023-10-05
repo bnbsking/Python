@@ -84,6 +84,8 @@ Hash
 389. Find the Difference
 398. Random Pick Index
 -
+523. Continuous Subarray Sum | similar to 560. But D[sumv]=i and NOT update if sumv in D
+560. Subarray Sum Equals K | D[sumv]=counts. for x: update ans by checking sumv-k in D
 706. Design HashMap
 1282. Group the People Given the Group Size They Belong To
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
@@ -113,7 +115,6 @@ Iteration
 172. Factorial Trailing Zeroes | c+=int(n/5**(i+1))
 179. Largest Number
 201. Bitwise AND of Numbers Range | must same bit, while align with 1 from left to right
-209. Minimum Size Subarray Sum | extend front and cut back (similar to 187)
 228. Summary Ranges
 238. Product of Array Except Self
 283. Move Zeroes | like quick sort but i=j=0 where j>i
@@ -201,6 +202,8 @@ Iteration - Monte Carlo
 229. Majority Element II
 
 Iteration - Two pointers, caterpillar, subarry
+209. Minimum Size Subarray Sum | extend front and cut back (similar to 187)
+424. Longest Repeating Character Replacement
 --
 1658. Minimum Operations to Reduce X to Zero | while accum>=target and start<=i:, return ans if maxLen>0 or target==0 else -1
 
