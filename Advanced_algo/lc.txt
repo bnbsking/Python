@@ -217,7 +217,6 @@ Iteration - Sort
 912. Sort an Array | Quick sort. if l+1==r elif l+1<r. random pivot + Dutch flag. call 2 sides
 
 Math
-343. Integer Break | for n>3: cut 3 nums
 357. Count Numbers with Unique Digits
 -
 1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
@@ -228,6 +227,7 @@ Math
 Mix
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
 337. House Robber III
+343. Integer Break | initial n<4 return. f(n) recursion cut 2 or 3 where f(1) and f(2) and f(3) are different from the initial
 397. Integer Replacement | if even: //2 else 1+min(f(n-1)+f(n+1))
 416. Partition Equal Subset Sum | Similar to 40. Add memorization.
 
