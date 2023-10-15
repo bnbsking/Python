@@ -136,6 +136,7 @@ Iteration
 423. Reconstruct Original Digits from English | order: 0246813579
 435. Non-overlapping Intervals | sort by end. for i in range(L): if non-overlap with prev: prev=i else ans+=1
 438. Find All Anagrams in a String | sliding window Counter
+442. Find All Duplicates in an Array | Use negative sign to save visited
 -
 443. String Compression | split strategy
 459. Repeated Substring Pattern
