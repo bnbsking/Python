@@ -135,7 +135,6 @@ Iteration
 406. Queue Reconstruction by Height | sort by (-p[0],p[1]) then L.insert(p[1],p)
 413. Arithmetic Slices | similar to 674 but ans+=i-start-1
 423. Reconstruct Original Digits from English | order: 0246813579
-435. Non-overlapping Intervals | sort by end. for i in range(L): if non-overlap with prev: prev=i else ans+=1
 438. Find All Anagrams in a String | sliding window Counter
 442. Find All Duplicates in an Array | Use negative sign to save visited
 443. String Compression | split strategy
@@ -207,6 +206,13 @@ Iteration - Left-Right
 Iteration - Monte Carlo
 169. Majority Element
 229. Majority Element II
+
+Iteration - Non-overlapping interval
+56. Merge Intervals | sort and merge
+435. Non-overlapping Intervals | sort by end. for i in range(L): if non-overlap with prev: prev=i else ans+=1
+452. Minimum Number of Arrows to Burst Balloons | Like 56. But intersection instead of union.
+-
+*. Maximum overlap interval | sort (start,1) and (end,-1). Accumulation count and find max.
 
 Iteration - subarray sum all: hash
 523. Continuous Subarray Sum | similar to 560. D={0:-1} initially (sumv%k->first_occur_idx). for x: x always accumulated but %k. Check if sumv in D and index diff >1, if sumv not in D: D[sumv]=i
@@ -282,6 +288,7 @@ Naive
 412. Fizz Buzz
 414. Third Maximum Number
 415. Add Strings
+451. Sort Characters By Frequency
 -
 744. Find Smallest Letter Greater Than Target
 1318. Minimum Flips to Make a OR b Equal to c
@@ -313,7 +320,6 @@ Recursion Arg Top-Down <2/4>
 2. Add Two Numbers
 21. Merge Two Sorted Lists
 24. Swap Nodes in Pairs
-56. Merge Intervals
 57. Insert Interval
 82. Remove Duplicates from Sorted List II
 83. Remove Duplicates from Sorted List
