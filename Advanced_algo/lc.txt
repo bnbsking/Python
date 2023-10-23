@@ -86,6 +86,7 @@ Hash
 389. Find the Difference
 398. Random Pick Index
 447. Number of Boomerangs
+454. 4Sum II | O(n^2) map + O(n^2) find
 -
 706. Design HashMap
 1282. Group the People Given the Group Size They Belong To
@@ -139,6 +140,7 @@ Iteration
 442. Find All Duplicates in an Array | Use negative sign to save visited
 443. String Compression | split strategy
 445. Add Two Numbers II | reverse list and same as 2.
+453. Minimum Moves to Equal Array Elements
 -
 459. Repeated Substring Pattern
 674. Longest Continuous Increasing Subsequence | start, ans = 0, 1 for loop if else (compare to 300 is continuous)
