@@ -371,6 +371,7 @@ Recursion Share Bottom-up <3/4>
 79. Word Search | retrievable f(position,match,visitS) # retrievable = backtracking
 216. Combination Sum III | f(path=[],start=1,sumv=n), simpler than 40. for can (no duplicate)
 404. Sum of Left Leaves | f(T,isLeft)
+457. Circular Array Loop | f(i,pathS,isPos) while not self.ans and nodeS: f(i,set(),isPos)
 -
 2305. Fair Distribution of Cookies | O(n^k) retreivable
 --
@@ -417,8 +418,8 @@ Stack
 316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later.
 394. Decode String | numStack + charStack. deal with num or [ or ]
 402. Remove K Digits | while stack and k and stack[-1]>x. Exceptions: leading 0s, k>0, empty str
--
 456. 132 Pattern | stack, secondmax = [], float('-inf'). stack[-1] is always max; iterate reversely.
+-
 739. Daily Temperatures | stack=[(ith_day_temp, ith_day)]. pop and write ans[i]=i-ith_day while stack and hotter than top
 844. Backspace String Compare
 1081. Smallest Subsequence of Distinct Characters | same as 316
