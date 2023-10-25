@@ -273,7 +273,7 @@ Naive
 189. Rotate Array | reverse 3 times O(1) space
 190. Reverse Bits
 191. Number of 1 Bits
-231. Power of Two
+231. Power of Two | bin
 237. Delete Node in a Linked List
 242. Valid Anagram
 258. Add Digits
@@ -282,7 +282,7 @@ Naive
 292. Nim Game
 318. Maximum Product of Word Lengths
 319. Bulb Switcher
-342. Power of Four
+342. Power of Four | bin
 344. Reverse String
 345. Reverse Vowels of a String
 347. Top K Frequent Elements
@@ -401,6 +401,7 @@ Recursion Share Top-Down <4/4>
 429. N-ary Tree Level Order Traversal
 430. Flatten a Multilevel Doubly Linked List
 --
+515. Find Largest Value in Each Tree Row
 802. Find Eventual Safe States | args+share. recursive call if n not in ans, if isSafe and n not in visit 
 863. All Nodes Distance K in Binary Tree | Tree to Graph + BFS
 1361. Validate Binary Tree Nodes
