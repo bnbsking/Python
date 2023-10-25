@@ -142,6 +142,7 @@ Iteration
 445. Add Two Numbers II | reverse list and same as 2.
 453. Minimum Moves to Equal Array Elements
 455. Assign Cookies
+459. Repeated Substring Pattern
 -
 459. Repeated Substring Pattern
 674. Longest Continuous Increasing Subsequence | start, ans = 0, 1 for loop if else (compare to 300 is continuous)
@@ -172,8 +173,10 @@ Iteration - Arithmetic sort
 Iteration - Bit operations
 136. Single Number
 137. Single Number II | tenary, add-mod3
-260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually 
+260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually
 268. Missing Number | xor 1~n then xor all since a^a=0 always
+---
+779. K-th Symbol in Grammar | left remains, right flips -> count how many right (flips)
 
 Iteration - FSM
 309. Best Time to Buy and Sell Stock with Cooldown | buy, sel, col = 0, -p, -p
