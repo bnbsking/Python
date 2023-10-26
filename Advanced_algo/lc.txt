@@ -177,6 +177,7 @@ Iteration - Bit operations
 260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually
 268. Missing Number | xor 1~n then xor all since a^a=0 always
 ---
+461. Hamming Distance
 779. K-th Symbol in Grammar | left remains, right flips -> count how many right (flips)
 
 Iteration - FSM
