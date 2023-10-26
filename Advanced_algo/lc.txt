@@ -145,7 +145,6 @@ Iteration
 455. Assign Cookies
 459. Repeated Substring Pattern
 -
-459. Repeated Substring Pattern
 674. Longest Continuous Increasing Subsequence | start, ans = 0, 1 for loop if else (compare to 300 is continuous)
 725. Split Linked List in Parts
 746. Min Cost Climbing Stairs | for i in range(2,len(L)+1): c = min(a+L[-2], b+L[-1])
@@ -176,8 +175,8 @@ Iteration - Bit operations
 137. Single Number II | tenary, add-mod3
 260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually
 268. Missing Number | xor 1~n then xor all since a^a=0 always
----
 461. Hamming Distance
+---
 779. K-th Symbol in Grammar | left remains, right flips -> count how many right (flips)
 
 Iteration - FSM
