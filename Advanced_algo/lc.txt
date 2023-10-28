@@ -196,7 +196,7 @@ Iteration - Left-Right
 74. Search a 2D Matrix
 81. Search in Rotated Sorted Array II | based on 33. add if nums[l]==nums[m]==nums[r]: l, r = l+1, r-1
 153. Find Minimum in Rotated Sorted Array | min(nums[l],nums[m],nums[r]), special case nums[m] is min and also ans (check neighbors circularly)
-162. Find Peak Element | max(L[m-1], L[m], L[m+1]), be ware of drop right half need m>0
+162. Find Peak Element | max(L[m-1], L[m], L[m+1])
 167. Two Sum II - Input Array Is Sorted
 240. Search a 2D Matrix II
 274. H-Index | reverse n, n-1, ..., 2, 1. L[-1-i]<1+i
@@ -204,7 +204,7 @@ Iteration - Left-Right
 278. First Bad Version
 374. Guess Number Higher or Lower
 436. Find Right Interval
-462. Minimum Moves to Equal Array Elements II
+462. Minimum Moves to Equal Array Elements II | similar to 162. Or sort and use median as level.
 -
 540. Single Element in a Sorted Array | if m%2 then if L[m-1]==L[m]
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity), binary search [max(weights),sum(weights)]
