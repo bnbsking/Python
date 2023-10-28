@@ -29,6 +29,8 @@ Any ugly number must depends are previous ugly numbers (3 candidates) so the can
 823. Binary Trees With Factors
 1218. Longest Arithmetic Subsequence of Given Difference | a dict val:ans is enough
 2707. Extra Characters in a String | similar to 279
+--
+1220. Count Vowels Permutation
 
 DP Forward
 139. Word Break | for i for word: write True if match
