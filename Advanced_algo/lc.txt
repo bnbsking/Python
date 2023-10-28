@@ -204,6 +204,7 @@ Iteration - Left-Right
 278. First Bad Version
 374. Guess Number Higher or Lower
 436. Find Right Interval
+462. Minimum Moves to Equal Array Elements II
 -
 540. Single Element in a Sorted Array | if m%2 then if L[m-1]==L[m]
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity), binary search [max(weights),sum(weights)]
@@ -298,6 +299,7 @@ Naive
 414. Third Maximum Number
 415. Add Strings
 451. Sort Characters By Frequency
+463. Island Perimeter
 -
 744. Find Smallest Letter Greater Than Target
 1318. Minimum Flips to Make a OR b Equal to c
