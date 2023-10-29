@@ -24,7 +24,7 @@ Any ugly number must depends are previous ugly numbers (3 candidates) so the can
 338. Counting Bits | L[i]=L[i//2]+i%2
 368. Largest Divisible Subset | similar to 279
 396. Rotate Function | rotate diff is sumv except the last-i
-464. Can I Win | if sum(choices)<total: return False (before start recursion), recursion condition: for i in range(len(L)): if not f: true and break
+464. Can I Win | if sum(choices)<total: return False (before start recursion), recursion condition: false initially, for i in range(len(L)): if not f: true and break
 -
 646. Maximum Length of Pair Chain | same as 300
 823. Binary Trees With Factors
