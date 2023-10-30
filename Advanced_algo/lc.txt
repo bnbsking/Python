@@ -24,7 +24,6 @@ Any ugly number must depends are previous ugly numbers (3 candidates) so the can
 338. Counting Bits | L[i]=L[i//2]+i%2
 368. Largest Divisible Subset | similar to 279
 396. Rotate Function | rotate diff is sumv except the last-i
-464. Can I Win | if sum(choices)<total: return False (before start recursion), recursion condition: false initially, for i in range(len(L)): if not f: true and break
 -
 646. Maximum Length of Pair Chain | same as 300
 823. Binary Trees With Factors
@@ -251,13 +250,6 @@ Math
 65*. Valid Number | points<=1; +/-<=1+bool(has e/E); letters=0; e,E<=1 -> has or not e/E, digit>=1 and .index(+/-)>=0
 1359. Count All Valid Pickup and Delivery Options | f(i)=f(i-1)*i*(2i-1)%m
 
-Mix
-131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge
-337. House Robber III
-343. Integer Break | initial n<4 return. f(n) recursion cut 2 or 3 where f(1) and f(2) and f(3) are different from the initial
-397. Integer Replacement | if even: //2 else 1+min(f(n-1)+f(n+1))
-416. Partition Equal Subset Sum | Similar to 40. Add memorization.
-
 Naive
 7. Reverse Integer
 8. String to Integer (atoi)
@@ -363,6 +355,9 @@ Recursion Arg Top-Down <2/4>
 234. Palindrome Linked List
 241. Different Ways to Add Parentheses | similar to 95.
 306. Additive Number | cut 3 parts sequentially, each do recursive call
+337. House Robber III | add memory
+343. Integer Break | initial n<4 return. f(n) recursion cut 2 or 3 where f(1) and f(2) and f(3) are different from the initial. add memory
+397. Integer Replacement | add memory
 427. Construct Quad Tree | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
 449. Serialize and Deserialize BST
 450. Delete Node in a BST | if not left: elif not right: else find rightest node in left subtree -> copy its value and delete such node
@@ -378,8 +373,10 @@ Recursion Share Bottom-up <3/4>
 40. Combination Sum II | collections.counter, f(path,start_can_idx,val), for can for times
 77. Combinations | f(start=1, L=[]) put ele>=start to L, simpler than 40. for can (no duplicate) 
 79. Word Search | retrievable f(position,match,visitS) # retrievable = backtracking
+131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge + add memory
 216. Combination Sum III | f(path=[],start=1,sumv=n), simpler than 40. for can (no duplicate)
 404. Sum of Left Leaves | f(T,isLeft)
+416. Partition Equal Subset Sum | Similar to 40. Add memorization.
 457. Circular Array Loop | f(i,pathS,isPos) while not self.ans and nodeS: f(i,set(),isPos)
 -
 2305. Fair Distribution of Cookies | O(n^k) retreivable
@@ -410,6 +407,7 @@ Recursion Share Top-Down <4/4>
 395. Longest Substring with At Least K Repeating Characters | for c in set(s): Use s.count(c)<k as splitting seperator
 429. N-ary Tree Level Order Traversal
 430. Flatten a Multilevel Doubly Linked List
+464. Can I Win | if sum(choices)<total: return False (before start recursion), recursion condition: false initially, for i in range(len(L)): if not f: true and break
 --
 515. Find Largest Value in Each Tree Row
 802. Find Eventual Safe States | args+share. recursive call if n not in ans, if isSafe and n not in visit 
