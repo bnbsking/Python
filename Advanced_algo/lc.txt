@@ -180,6 +180,7 @@ Iteration - Bit operations
 461. Hamming Distance
 ---
 779. K-th Symbol in Grammar | left remains, right flips -> count how many right (flips)
+2433. Find The Original Array of Prefix Xor | ^ has association
 
 Iteration - FSM
 309. Best Time to Buy and Sell Stock with Cooldown | buy, sel, col = 0, -p, -p
@@ -293,6 +294,7 @@ Naive
 415. Add Strings
 451. Sort Characters By Frequency
 463. Island Perimeter
+468. Validate IP Address
 -
 744. Find Smallest Letter Greater Than Target
 1318. Minimum Flips to Make a OR b Equal to c
