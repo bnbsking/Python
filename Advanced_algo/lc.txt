@@ -156,6 +156,7 @@ Iteration
 859. Buddy Strings | check whether elements count are same; diff==2: True; diff==1: has duplicate; others: False
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1351. Count Negative Numbers in a Sorted Matrix | j stands at rightest >=0 for each row
+1441. Build an Array With Stack Operations
 1647. Minimum Deletions to Make Character Frequencies Unique | Counter, ans, freqS
 1962. Remove Stones to Minimize the Total | Max-heap
 2279. Maximum Bags With Full Capacity of Rocks
