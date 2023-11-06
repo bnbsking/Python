@@ -384,6 +384,7 @@ Recursion Share Bottom-up <3/4>
 404. Sum of Left Leaves | f(T,isLeft)
 416. Partition Equal Subset Sum | Similar to 40. Add memorization.
 457. Circular Array Loop | f(i,pathS,isPos) while not self.ans and nodeS: f(i,set(),isPos)
+473. Matchsticks to Square | Similar to 40. + 416.
 -
 2305. Fair Distribution of Cookies | O(n^k) retreivable
 --
