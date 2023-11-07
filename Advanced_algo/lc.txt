@@ -157,6 +157,7 @@ Iteration
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1351. Count Negative Numbers in a Sorted Matrix | j stands at rightest >=0 for each row
 1441. Build an Array With Stack Operations
+1503. Last Moment Before All Ants Fall Out of a Plank | don't trace ant-i but switch id while collision
 1647. Minimum Deletions to Make Character Frequencies Unique | Counter, ans, freqS
 1962. Remove Stones to Minimize the Total | Max-heap
 2279. Maximum Bags With Full Capacity of Rocks
@@ -303,6 +304,8 @@ Naive
 1318. Minimum Flips to Make a OR b Equal to c
 1502. Can Make Arithmetic Progression From Sequence
 1572. Matrix Diagonal Sum
+1845. Seat Reservation Manager | Heap
+1921. Eliminate Maximum Number of Monsters | Heap
 2148. Count Elements With Strictly Smaller and Greater Elements
 2483. Minimum Penalty for a Shop
 
