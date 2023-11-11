@@ -159,6 +159,7 @@ Iteration
 1351. Count Negative Numbers in a Sorted Matrix | j stands at rightest >=0 for each row
 1441. Build an Array With Stack Operations
 1503. Last Moment Before All Ants Fall Out of a Plank | don't trace ant-i but switch id while collision
+1535. Find the Winner of an Array Game | current_winner, consecutive_wins = L[0], 0. Similar to splitting strategy
 1647. Minimum Deletions to Make Character Frequencies Unique | Counter, ans, freqS
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal
 1962. Remove Stones to Minimize the Total | Max-heap
