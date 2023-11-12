@@ -24,6 +24,7 @@ Any ugly number must depends are previous ugly numbers (3 candidates) so the can
 338. Counting Bits | L[i]=L[i//2]+i%2
 368. Largest Divisible Subset | similar to 279
 396. Rotate Function | rotate diff is sumv except the last-i
+474. Ones and Zeroes | must reverse order filling
 -
 646. Maximum Length of Pair Chain | same as 300
 823. Binary Trees With Factors
@@ -213,6 +214,7 @@ Iteration - Left-Right
 374. Guess Number Higher or Lower
 436. Find Right Interval
 462. Minimum Moves to Equal Array Elements II | similar to 162. Or sort and use median as level.
+475. Heaters | search len(houses) times
 -
 540. Single Element in a Sorted Array | if m%2 then if L[m-1]==L[m]
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity), binary search [max(weights),sum(weights)]
@@ -302,6 +304,7 @@ Naive
 451. Sort Characters By Frequency
 463. Island Perimeter
 468. Validate IP Address
+476. Number Complement
 -
 744. Find Smallest Letter Greater Than Target
 1318. Minimum Flips to Make a OR b Equal to c
