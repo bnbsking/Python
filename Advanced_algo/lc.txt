@@ -165,6 +165,7 @@ Iteration
 1647. Minimum Deletions to Make Character Frequencies Unique | Counter, ans, freqS
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal
 1846. Maximum Element After Decreasing and Rearranging | sort, for loop revise
+1877. Minimize Maximum Pair Sum in Array | sort, max of head-tail pair
 1962. Remove Stones to Minimize the Total | Max-heap
 1980. Find Unique Binary String | diagonal
 2279. Maximum Bags With Full Capacity of Rocks
@@ -189,6 +190,9 @@ Iteration - Bit operations
 260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually
 268. Missing Number | xor 1~n then xor all since a^a=0 always
 461. Hamming Distance
+477. Total Hamming Distance |
+    # b 0s, n-b 1s # total dist = b*(n-b) # consider bipartite only
+    # check whether the i-th bit of a number x is 1: x >> i & 1 # shift is always prior than and
 ---
 779. K-th Symbol in Grammar | left remains, right flips -> count how many right (flips)
 2433. Find The Original Array of Prefix Xor | ^ has association
@@ -308,6 +312,7 @@ Naive
 463. Island Perimeter
 468. Validate IP Address
 476. Number Complement
+478. Generate Random Point in a Circle | parameter r=sqrt(rand)*self.r
 -
 744. Find Smallest Letter Greater Than Target
 1318. Minimum Flips to Make a OR b Equal to c
