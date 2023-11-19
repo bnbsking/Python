@@ -261,6 +261,7 @@ Iteration - Sort
 Math
 357. Count Numbers with Unique Digits
 441. Arranging Coins
+492. Construct the Rectangle | sqrt(x), while not divisible: x-=1
 -
 1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
 --
@@ -313,6 +314,7 @@ Naive
 468. Validate IP Address
 476. Number Complement
 478. Generate Random Point in a Circle | parameter r=sqrt(rand)*self.r
+485. Max Consecutive Ones
 -
 744. Find Smallest Letter Greater Than Target
 1318. Minimum Flips to Make a OR b Equal to c
