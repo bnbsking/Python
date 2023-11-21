@@ -243,6 +243,9 @@ Iteration - Non-overlapping interval
 -
 *. Maximum overlap interval | sort (start,1) and (end,-1). Accumulation count and find max.
 
+Iteration - sliding window
+1838. Frequency of the Most Frequent Element
+
 Iteration - subarray sum all: hash
 523. Continuous Subarray Sum | similar to 560. D={0:-1} initially (sumv%k->first_occur_idx). for x: x always accumulated but %k. Check if sumv in D and index diff >1, if sumv not in D: D[sumv]=i
 560. Subarray Sum Equals K | D={0:1} initially (sumv->counts). for x: x always accumulated, update ans by checking sumv-k in D
