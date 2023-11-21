@@ -96,6 +96,7 @@ Hash
 706. Design HashMap
 1282. Group the People Given the Group Size They Belong To
 1759. Count Number of Homogenous Substrings | split, arithmetic sum
+1814. Count Nice Pairs in an Array | remember to move terms first
 1930. Unique Length-3 Palindromic Subsequences | get leftCounter & rightCounter, add intersection to set
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
