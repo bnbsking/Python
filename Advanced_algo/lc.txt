@@ -333,8 +333,10 @@ Naive
 Queue
 -
 501. Find Mode in Binary Search Tree
+498. Diagonal Traverse | BFS add down when i=0 + add right always, use i+j to judge even or odd
 --
 239*. Sliding Window Maximum | (val,idx) in queue, length is not const, always desc sorted
+1424. Diagonal Traverse II | simpler than 498.
 
 Recursion Arg Bottom-up <1/4>
 17. Letter Combinations of a Phone Number
