@@ -28,6 +28,7 @@ Any ugly number must depends are previous ugly numbers (3 candidates) so the can
 -
 646. Maximum Length of Pair Chain | same as 300
 823. Binary Trees With Factors
+935. Knight Dialer | [1]*10
 1218. Longest Arithmetic Subsequence of Given Difference | a dict val:ans is enough
 2707. Extra Characters in a String | similar to 279
 --
@@ -322,12 +323,17 @@ Naive
 485. Max Consecutive Ones
 -
 744. Find Smallest Letter Greater Than Target
+1160. Find Words That Can Be Formed by Characters
+1266. Minimum Time Visiting All Points
 1318. Minimum Flips to Make a OR b Equal to c
 1502. Can Make Arithmetic Progression From Sequence
 1572. Matrix Diagonal Sum
+1662. Check If Two String Arrays are Equivalent
+1688. Count of Matches in Tournament
 1845. Seat Reservation Manager | Heap
 1921. Eliminate Maximum Number of Monsters | Heap
 2148. Count Elements With Strictly Smaller and Greater Elements
+2264. Largest 3-Same-Digit Number in String
 2483. Minimum Penalty for a Shop
 
 Queue
