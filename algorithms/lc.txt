@@ -102,6 +102,7 @@ Hash
 1930. Unique Length-3 Palindromic Subsequences | get leftCounter & rightCounter, add intersection to set
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
+2610. Convert an Array Into a 2D Array With Conditions
 
 Iteration
 5. Longest Palindromic Substring
