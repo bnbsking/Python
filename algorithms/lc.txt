@@ -323,6 +323,7 @@ Naive
 476. Number Complement
 478. Generate Random Point in a Circle | parameter r=sqrt(rand)*self.r
 485. Max Consecutive Ones
+495. Teemo Attacking
 -
 744. Find Smallest Letter Greater Than Target
 1160. Find Words That Can Be Formed by Characters
@@ -480,6 +481,7 @@ Stack
 394. Decode String | numStack + charStack. deal with num or [ or ]
 402. Remove K Digits | while stack and k and stack[-1]>x. Exceptions: leading 0s, k>0, empty str
 456. 132 Pattern | stack, secondmax = [], float('-inf'). stack[-1] is always max; iterate reversely.
+496. Next Greater Element I
 -
 739. Daily Temperatures | stack=[(ith_day_temp, ith_day)]. pop and write ans[i]=i-ith_day while stack and hotter than top
 844. Backspace String Compare
