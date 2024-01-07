@@ -419,14 +419,15 @@ Recursion Arg Top-Down <2/4>
 Recursion Share Bottom-up <3/4>
 39. Combination Sum | f(path={},start=0,target=target), similar than 40. for t in range(targer//can+1)
 40. Combination Sum II | collections.counter, f(path=[],start=0,target=target), for t in range(times+1)
-77. Combinations | f(start=1, L=[]) put ele>=start to L, simpler than 40. for can (no duplicate) 
+77. Combinations | f(path=[], start=0) simpler than 40. skip L[start] or add L[start]
 79. Word Search | retrievable f(position,match,visitS) # retrievable = backtracking
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge + add memory
-216. Combination Sum III | f(path=[],start=1,sumv=n), simpler than 40. for can (no duplicate)
+216. Combination Sum III | f(path=[],start=1,sumv=n), similar as 77.
 404. Sum of Left Leaves | f(T,isLeft)
-416. Partition Equal Subset Sum | Similar to 40. Add memorization.
+416. Partition Equal Subset Sum | Similar to 40. no path so add memorization.
 457. Circular Array Loop | f(i,pathS,isPos) while not self.ans and nodeS: f(i,set(),isPos)
 473. Matchsticks to Square | Similar to 40. + 416.
+494. Target Sum | f(methods={0:1}, start=0), for i in range(times+1) for key,val in methods
 -
 2305. Fair Distribution of Cookies | O(n^k) retreivable
 --
