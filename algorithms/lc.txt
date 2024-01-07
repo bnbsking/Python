@@ -337,10 +337,12 @@ Naive
 1845. Seat Reservation Manager | Heap
 1903. Largest Odd Number in String
 1921. Eliminate Maximum Number of Monsters | Heap
+2125. Number of Laser Beams in a Bank
 2148. Count Elements With Strictly Smaller and Greater Elements
 2264. Largest 3-Same-Digit Number in String
 2482. Difference Between Ones and Zeros in Row and Column | record row1s & col1s
 2483. Minimum Penalty for a Shop
+2870. Minimum Number of Operations to Make Array Empty
 
 Queue
 -
@@ -415,8 +417,8 @@ Recursion Arg Top-Down <2/4>
 25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
 
 Recursion Share Bottom-up <3/4>
-39. Combination Sum | f(path,start,val), similar than 40. for can
-40. Combination Sum II | collections.counter, f(path,start_can_idx,val), for can for times
+39. Combination Sum | f(path={},start=0,target=target), similar than 40. for t in range(targer//can+1)
+40. Combination Sum II | collections.counter, f(path=[],start=0,target=target), for t in range(times+1)
 77. Combinations | f(start=1, L=[]) put ele>=start to L, simpler than 40. for can (no duplicate) 
 79. Word Search | retrievable f(position,match,visitS) # retrievable = backtracking
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge + add memory
