@@ -485,6 +485,7 @@ Stack
 402. Remove K Digits | while stack and k and stack[-1]>x. Exceptions: leading 0s, k>0, empty str
 456. 132 Pattern | stack, secondmax = [], float('-inf'). stack[-1] is always max; iterate reversely.
 496. Next Greater Element I
+503. Next Greater Element II | similar to 739 but iterate 2n times
 -
 739. Daily Temperatures | stack=[(ith_day_temp, ith_day)]. pop and write ans[i]=i-ith_day while stack and hotter than top
 844. Backspace String Compare
