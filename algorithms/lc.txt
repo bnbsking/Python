@@ -93,6 +93,7 @@ Hash
 447. Number of Boomerangs
 454. 4Sum II | O(n^2) map + O(n^2) find
 467. Unique Substrings in Wraparound String
+500. Keyboard Row
 -
 706. Design HashMap
 1282. Group the People Given the Group Size They Belong To
@@ -324,6 +325,7 @@ Naive
 478. Generate Random Point in a Circle | parameter r=sqrt(rand)*self.r
 485. Max Consecutive Ones
 495. Teemo Attacking
+497. Random Point in Non-overlapping Rectangles | random.choices(L, weights, k=1)[0]
 -
 744. Find Smallest Letter Greater Than Target
 1160. Find Words That Can Be Formed by Characters
@@ -346,8 +348,6 @@ Naive
 2870. Minimum Number of Operations to Make Array Empty
 
 Queue
--
-501. Find Mode in Binary Search Tree
 498. Diagonal Traverse | BFS add down when i=0 + add right always, use i+j to judge even or odd
 --
 239*. Sliding Window Maximum | (val,idx) in queue, length is not const, always desc sorted
@@ -410,6 +410,7 @@ Recursion Arg Top-Down <2/4>
 450. Delete Node in a BST | if not left: elif not right: else find rightest node in left subtree -> copy its value and delete such node
 486. Predict the Winner | add memory, f(l,r) -> score
 491. Non-decreasing Subsequences | f(tup) -> set[non-desc-tuple] with each ele len>=1, filter finally
+501. Find Mode in Binary Search Tree
 -
 652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
 894. All Possible Full Binary Trees | similar to 95.
