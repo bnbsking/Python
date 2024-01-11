@@ -404,6 +404,7 @@ Recursion Arg Top-Down <2/4>
 306. Additive Number | cut 3 parts sequentially, each do recursive call
 337. House Robber III | add memory
 343. Integer Break | initial n<4 return. f(n) recursion cut 2 or 3 where f(1) and f(2) and f(3) are different from the initial. add memory
+394. Decode String | find ] -> rfind ( -> flatten -> recusion call
 397. Integer Replacement | add memory
 427. Construct Quad Tree | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
 449. Serialize and Deserialize BST
@@ -481,7 +482,6 @@ Stack
 225. Implement Stack using Queues
 232. Implement Queue using Stacks
 316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later.
-394. Decode String | numStack + charStack. deal with num or [ or ]
 402. Remove K Digits | while stack and k and stack[-1]>x. Exceptions: leading 0s, k>0, empty str
 456. 132 Pattern | stack, secondmax = [], float('-inf'). stack[-1] is always max; iterate reversely.
 496. Next Greater Element I
