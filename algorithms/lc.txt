@@ -327,6 +327,9 @@ Naive
 485. Max Consecutive Ones
 495. Teemo Attacking
 497. Random Point in Non-overlapping Rectangles | random.choices(L, weights, k=1)[0]
+506. Relative Ranks
+507. Perfect Number
+509. Fibonacci Number
 -
 744. Find Smallest Letter Greater Than Target
 1160. Find Words That Can Be Formed by Characters
@@ -462,6 +465,9 @@ Recursion Share Top-Down <4/4>
 429. N-ary Tree Level Order Traversal
 430. Flatten a Multilevel Doubly Linked List
 464. Can I Win | if sum(choices)<total: return False (before start recursion), recursion condition: false initially, for i in range(len(L)): if not f: true and break
+508. Most Frequent Subtree Sum
+513. Find Bottom Left Tree Value
+515. Find Largest Value in Each Tree Row
 --
 515. Find Largest Value in Each Tree Row
 606. Construct String from Binary Tree
