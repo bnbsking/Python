@@ -25,6 +25,7 @@ Any ugly number must depends are previous ugly numbers (3 candidates) so the can
 368. Largest Divisible Subset | similar to 279
 396. Rotate Function | rotate diff is sumv except the last-i
 474. Ones and Zeroes | must reverse order filling
+516. Longest Palindromic Subsequence | L[i][j] means f(s[i:j+1]), fill from i-j=0,-1,-2,..., diag0=1 diag1=1 or 2, others: L[i+1][j-1] if s[i]==s[j] else max(L[i+1][j], L[i][j-1])
 -
 646. Maximum Length of Pair Chain | same as 300
 823. Binary Trees With Factors
