@@ -29,6 +29,7 @@ Any ugly number must depends are previous ugly numbers (3 candidates) so the can
 -
 646. Maximum Length of Pair Chain | same as 300
 823. Binary Trees With Factors
+931. Minimum Falling Path Sum
 935. Knight Dialer | [1]*10
 1218. Longest Arithmetic Subsequence of Given Difference | a dict val:ans is enough
 2707. Extra Characters in a String | similar to 279
@@ -98,11 +99,13 @@ Hash
 -
 706. Design HashMap
 1282. Group the People Given the Group Size They Belong To
+1347. Minimum Number of Steps to Make Two Strings Anagram | sum((Counter-Counter).values())
 1759. Count Number of Homogenous Substrings | split, arithmetic sum
 1814. Count Nice Pairs in an Array | remember to move terms first
 1887. Reduction Operations to Make the Array Elements Equal | Counter -> sort -> sum
 1930. Unique Length-3 Palindromic Subsequences | get leftCounter & rightCounter, add intersection to set
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
+2225. Find Players With Zero or One Losses | defaultdict count lose times
 2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
 2610. Convert an Array Into a 2D Array With Conditions
 
@@ -334,6 +337,7 @@ Naive
 -
 744. Find Smallest Letter Greater Than Target
 1160. Find Words That Can Be Formed by Characters
+1207. Unique Number of Occurrences
 1266. Minimum Time Visiting All Points
 1318. Minimum Flips to Make a OR b Equal to c
 1436. Destination City
@@ -342,6 +346,7 @@ Naive
 1572. Matrix Diagonal Sum
 1662. Check If Two String Arrays are Equivalent
 1688. Count of Matches in Tournament
+1704. Determine if String Halves Are Alike
 1845. Seat Reservation Manager | Heap
 1903. Largest Odd Number in String
 1921. Eliminate Maximum Number of Monsters | Heap
@@ -477,7 +482,7 @@ Recursion Share Top-Down <4/4>
 1026. Maximum Difference Between Node and Ancestor
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
 1361. Validate Binary Tree Nodes
-2385. Amount of Time for Binary Tree to Be Infected | Tree to Graph + BFS
+2385. Amount of Time for Binary Tree to Be Infected | Tree to Graph by add parent link + BFS
 
 SortedContainers
 2353. Design a Food Rating System | functools.cmp_to_key, Dict[cusine] -> SortedList(rate,food) & Dict[food] -> [cusine,rate] 
