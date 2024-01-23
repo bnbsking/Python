@@ -100,6 +100,7 @@ Hash
 706. Design HashMap
 1282. Group the People Given the Group Size They Belong To
 1347. Minimum Number of Steps to Make Two Strings Anagram | sum((Counter-Counter).values())
+1657. Determine if Two Strings Are Close
 1759. Count Number of Homogenous Substrings | split, arithmetic sum
 1814. Count Nice Pairs in an Array | remember to move terms first
 1887. Reduction Operations to Make the Array Elements Equal | Counter -> sort -> sum
