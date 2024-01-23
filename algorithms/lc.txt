@@ -71,9 +71,9 @@ Hash
 1. Two Sum
 15. 3Sum
 18. 4Sum
-36. Valid Sudoku | check (i,ele), (ele,j), (i,j,ele) in S
+36. Valid Sudoku | check (i,ele), (ele,j), (i//3,j//3,ele) in S
 49. Group Anagrams
-128. Longest Consecutive Sequence | S=set(L); for x in L: if x-1 not in S:...
+128. Longest Consecutive Sequence | S=set(L); for x in L: if x in S: while x-l remove, while x+r remove, update ans
 141. Linked List Cycle
 142. Linked List Cycle II
 160. Intersection of Two Linked Lists
@@ -93,7 +93,7 @@ Hash
 389. Find the Difference
 398. Random Pick Index
 447. Number of Boomerangs
-454. 4Sum II | O(n^2) map + O(n^2) find
+454. 4Sum II | O(n^2) Counter collect -x-y + O(n^2) find +x+y
 467. Unique Substrings in Wraparound String
 500. Keyboard Row
 -
@@ -104,10 +104,10 @@ Hash
 1759. Count Number of Homogenous Substrings | split, arithmetic sum
 1814. Count Nice Pairs in an Array | remember to move terms first
 1887. Reduction Operations to Make the Array Elements Equal | Counter -> sort -> sum
-1930. Unique Length-3 Palindromic Subsequences | get leftCounter & rightCounter, add intersection to set
+1930. Unique Length-3 Palindromic Subsequences | for c in set(s): lfind, rfind -> count sum
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 2225. Find Players With Zero or One Losses | defaultdict count lose times
-2352. Equal Row and Column Pairs | set(D.keys()) & set(E.keys())
+2352. Equal Row and Column Pairs | Counter, sum(D[key]*E[key] for key in D.keys()&E.keys()）
 2610. Convert an Array Into a 2D Array With Conditions
 
 Iteration
