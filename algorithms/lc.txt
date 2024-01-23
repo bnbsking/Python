@@ -190,6 +190,7 @@ Iteration - Arithmetic sort
 448. Find All Numbers Disappeared in an Array
 --
 41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
+645. Set Mismatch
 
 Iteration - Bit operations
 136. Single Number
@@ -474,6 +475,7 @@ Recursion Share Top-Down <4/4>
 802. Find Eventual Safe States | args+share. recursive call if n not in ans, if isSafe and n not in visit 
 863. All Nodes Distance K in Binary Tree | Tree to Graph + BFS
 1026. Maximum Difference Between Node and Ancestor
+1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
 1361. Validate Binary Tree Nodes
 2385. Amount of Time for Binary Tree to Be Infected | Tree to Graph + BFS
 
@@ -496,6 +498,7 @@ Stack
 -
 739. Daily Temperatures | stack=[(ith_day_temp, ith_day)]. pop and write ans[i]=i-ith_day while stack and hotter than top
 844. Backspace String Compare
+907. Sum of Subarray Minimums | pop while smaller, dp[stack[-1]] + arr[i]*(i-stack[-1]) if stack else arr[i]*(i+1) [difficult]
 1081. Smallest Subsequence of Distinct Characters | same as 316
 --
 224*. Basic Calculator
