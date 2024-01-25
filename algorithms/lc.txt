@@ -6,6 +6,7 @@ DP Backward
 63. Unique Paths II
 64. Minimum Path Sum
 70. Climbing Stairs
+72. Edit Distance | L[i][j] = 1 + min(L[i-1][j-1], L[i-1][j], L[i][j-1])
 91. Decode Ways | 00, 01~09/27~, 10/20, 11~19/21~26
 97. Interleaving String | T[i][j] = (T[i-1][j] and s1[i-1]==s3[i+j-1]) or (T[i][j-1] and s2[j-1]==s3[i+j-1])
 118. Pascal's Triangle
@@ -31,10 +32,12 @@ Any ugly number must depends are previous ugly numbers (3 candidates) so the can
 823. Binary Trees With Factors
 931. Minimum Falling Path Sum
 935. Knight Dialer | [1]*10
+1143. Longest Common Subsequence | L[i][j] = max(l,u)
 1218. Longest Arithmetic Subsequence of Given Difference | a dict val:ans is enough
 2707. Extra Characters in a String | similar to 279
 --
 1220. Count Vowels Permutation
+# 2d-dp: 72, 97, 221, 1143
 
 DP Forward
 139. Word Break | for i for word: write True if match
