@@ -1,34 +1,46 @@
-DP Backward
-3. Longest Substring Without Repeating Character | L.append( i-D[s[i]] if s[i] in D and i-L[-1]<=D[s[i]] else L[-1]+1 ) |e.g. abba
-45. Jump Game II | Transform array to "farthest index can go"
-55. Jump Game | Transform array to "farthest index can go", for i in range(1,len(nums)-1), return False if i<=nums[i]
+DP 0
 62. Unique Paths
 63. Unique Paths II
 64. Minimum Path Sum
-70. Climbing Stairs
-72. Edit Distance | L[i][j] = 1 + min(L[i-1][j-1], L[i-1][j], L[i][j-1])
-91. Decode Ways | 00, 01~09/27~, 10/20, 11~19/21~26
-97. Interleaving String | T[i][j] = (T[i-1][j] and s1[i-1]==s3[i+j-1]) or (T[i][j-1] and s2[j-1]==s3[i+j-1])
 118. Pascal's Triangle
 119. Pascal's Triangle II
 120. Triangle
-198. House Robber    | initial 3, L.append( max(L[-3],L[-2])+nums[i] ), return max(L[-1],L[-2])
-213. House Robber II | initial 4, exclude first L / exclide last M, return max(L[-1],M[-1])
-221. Maximal Square  | M[i][j] = M[i][j] * min(ul,l,u)+1
-264. Ugly Number II | Create array store ugly numbers sequentially. Use "2,3,5 index pointers" update candidates.
-Any ugly number must depends are previous ugly numbers (3 candidates) so the candidates updated by next least larger. Both co-factor should be updated as well.
-279. Perfect Squares | L = [0,1]; for i in range(2,n+1): L.append( min( L[i-x**2]+1 for x in squares if i-x**2 >=0 ) )
-300. Longest Increasing Subsequence | similar to 279
 303. Range Sum Query - Immutable
 304. Range Sum Query 2D - Immutable
-313. Super Ugly Number | same as 264
-338. Counting Bits | L[i]=L[i//2]+i%2
-368. Largest Divisible Subset | similar to 279
-396. Rotate Function | rotate diff is sumv except the last-i
-474. Ones and Zeroes | must reverse order filling
-516. Longest Palindromic Subsequence | L[i][j] means f(s[i:j+1]), fill from i-j=0,-1,-2,..., diag0=1 diag1=1 or 2, others: L[i+1][j-1] if s[i]==s[j] else max(L[i+1][j], L[i][j-1])
--
+
+DP 1d Backward
+45. Jump Game II | i=1. nums[i] = max(nums[i-1], nums[i]+i). Transform array to "farthest index can go"
+55. Jump Game | same as 45
+91. Decode Ways | init 2. 4 cases: 00, 01~09/27~, 10/20, 11~19/21~26
+198. House Robber | init 3. L.append( max(L[-3],L[-2])+nums[i] ), return max(L[-1],L[-2])
+213. House Robber II | same as 198 but exclude first and last respectively, return max(L[-1],M[-1])
+279. Perfect Squares | L = [0,1]; for i in range(2,n+1): L.append( min( L[i-x**2]+1 for x in squares if i-x**2 >=0 ) )
+300. Longest Increasing Subsequence | similar to 279
+338. Counting Bits | L=[0]*(n+1), i=1. L[i]=L[i//2]+i%2
+368. Largest Divisible Subset | similar to 279 but each cell stores divisors
 646. Maximum Length of Pair Chain | same as 300
+
+DP 1d Forward
+264. Ugly Number II | init 2, j=2, i2=i3=i5=1. L.append( min(L[i2]*2,L[i3]*3,L[i5]*5) ); i2, i3, i5 = i2+int(L[-1]==L[i2]*2), i3+int(L[-1]==L[i3]*3), i5+int(L[-1]==L[i5]*5)
+Any ugly number must depends are previous ugly numbers (3 candidates) so the candidates updated by next least larger. Both co-factor should be updated as well.
+313. Super Ugly Number | same as 264
+
+DP Arr2d Backward
+72. Edit Distance | init 1r1c. L[i][j] = 1 + min(L[i-1][j-1], L[i-1][j], L[i][j-1])
+97. Interleaving String | init 1r1c. T[i][j] = (T[i-1][j] and s1[i-1]==s3[i+j-1]) or (T[i][j-1] and s2[j-1]==s3[i+j-1])
+221. Maximal Square  | init 1r1c. L[i][j] = L[i][j] * (min(L[i-1][j-1], L[i-1][j], L[i][j-1]) + 1)
+474. Ones and Zeroes | init all 0s. for s in strs for i in range(m,c0-1,-1) for j in range(n,c1-1,-1): L[i][j] = max(L[i][j], L[i-c0][j-c1]+1). must reverse order filling !!!
+516. Longest Palindromic Subsequence | init diagonal. L[i][j] means f(s[i:j+1]), fill from i-j=0,-1,-2,..., diag0=1 diag1=1 or 2, others: L[i+1][j-1] if s[i]==s[j] else max(L[i+1][j], L[i][j-1])
+
+Hash 0
+
+Hash
+3. Longest Substring Without Repeating Character | if s[i] not in D or accum<D[s[i]]: accum+=1, else accum=i-D[s[i]]
+
+@@@
+
+DP Backward
+-
 823. Binary Trees With Factors
 931. Minimum Falling Path Sum
 935. Knight Dialer | [1]*10
@@ -115,6 +127,11 @@ Hash
 2225. Find Players With Zero or One Losses | defaultdict count lose times
 2352. Equal Row and Column Pairs | Counter, sum(D[key]*E[key] for key in D.keys()&E.keys()）
 2610. Convert an Array Into a 2D Array With Conditions
+
+Iteration 0
+
+Iteration
+396. Rotate Function | init ans=current, sumv. current += sumv - nums[-1-i]*len(nums). consider rotate difference only
 
 Iteration
 5. Longest Palindromic Substring
@@ -306,6 +323,7 @@ Naive
 66. Plus One
 67. Add Binary
 69. Sqrt(x)
+70. Climbing Stairs
 88. Merge Sorted Array
 125. Valid Palindrome
 143. Reorder List
