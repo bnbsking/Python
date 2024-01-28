@@ -57,8 +57,8 @@ Graph - Spanning tree
 Graph - Shortest path
 399. Evaluate Division | Create graph, dfs(now,dest,visitS,accum)
 433. Minimum Genetic Mutation | BFS
+542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s update 1s
 -
-542. 01 Matrix | queue in (i,j,depth), Multi-source BFS
 743. Network Delay Time | Dijkstra. Heap(edge,node), distanceToStart, visitS. search neighbor if unvisited; add to heap if unvisited and shorter. Relaxation on distance.(Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
 787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap + No visitS. Q(sumPath,node), relaxation on sumPath
 1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance | Floyd-WarShall O(v^3). for mid for vi for vj: relaxation. cannot modify the loop order. Becuase previous optimization results may not hold if mid changes.
@@ -244,7 +244,6 @@ Iteration - Left-Right
 475. Heaters | search len(houses) times
 540. Single Element in a Sorted Array | while 1: if l==r or L[m-1]!=L[m]!=L[m+1]: return L[m] (always valid index since l-r=odd), consider c0 to c4...
 -
-540. Single Element in a Sorted Array | if m%2 then if L[m-1]==L[m]
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity), binary search [max(weights),sum(weights)]
 1201. Ugly Number III | gcd, binary search find m -> while not multiple: m-=1
 2187. Minimum Time to Complete Trips | binary search + linear search
@@ -267,7 +266,7 @@ Iteration - sliding window
 
 Iteration - subarray sum all: hash
 523. Continuous Subarray Sum | D={0:-1} initially (sumv%k->first_occur_idx). for x: sumv=(sumv+x)%k. if sumv in D and index_diff >1, if sumv not in D: D[sumv]=i
-525. Contiguous Array | Similar to 525
+525. Contiguous Array | Similar to 523
 560. Subarray Sum Equals K | D={0:1} initially (sumv->counts). for x: sumv=sumv+x, if sumv-k in D: sumv+=D[sumv-k], D[sumv]+=1
 
 Iteration - subarry sum pos: caterpillar 
@@ -346,6 +345,7 @@ Naive
 507. Perfect Number
 509. Fibonacci Number
 520. Detect Capital
+528. Random Pick with Weight
 537. Complex Number Multiplication
 -
 744. Find Smallest Letter Greater Than Target
@@ -438,7 +438,7 @@ Recursion Arg Top-Down <2/4>
 518. Coin Change II | f(start, target) and memorization
 529. Minesweeper
 530. Minimum Absolute Difference in BST | f(T.left) -> self.ans -> self.prev -> f(T.right)
-538. Convert BST to Greater Tree
+543. Diameter of Binary Tree | insert updating ans in treeheight recursion function
 -
 652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
 894. All Possible Full Binary Trees | similar to 95.
@@ -491,8 +491,9 @@ Recursion Share Top-Down <4/4>
 508. Most Frequent Subtree Sum
 513. Find Bottom Left Tree Value
 515. Find Largest Value in Each Tree Row
+538. Convert BST to Greater Tree
+547. Number of Provinces
 --
-515. Find Largest Value in Each Tree Row
 606. Construct String from Binary Tree
 802. Find Eventual Safe States | args+share. recursive call if n not in ans, if isSafe and n not in visit 
 863. All Nodes Distance K in Binary Tree | Tree to Graph + BFS
@@ -553,6 +554,7 @@ Bad
 521. Longest Uncommon Subsequence I
 522. Longest Uncommon Subsequence II
 535. Encode and Decode TinyURL
+541. Reverse String II
 
 Unknown
 86. Partition List
