@@ -101,6 +101,7 @@ Hash
 467. Unique Substrings in Wraparound String
 500. Keyboard Row
 519. Random Flip Matrix
+532. K-diff Pairs in an Array
 -
 706. Design HashMap
 1282. Group the People Given the Group Size They Belong To
@@ -432,6 +433,8 @@ Recursion Arg Top-Down <2/4>
 491. Non-decreasing Subsequences | f(tup) -> set[non-desc-tuple] with each ele len>=1, filter finally
 501. Find Mode in Binary Search Tree
 518. Coin Change II | f(start, target) and memorization
+529. Minesweeper
+530. Minimum Absolute Difference in BST | f(T.left) -> self.ans -> self.prev -> f(T.right)
 -
 652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
 894. All Possible Full Binary Trees | similar to 95.
