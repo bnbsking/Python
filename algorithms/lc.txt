@@ -168,6 +168,7 @@ Iteration
 459. Repeated Substring Pattern
 470. Implement Rand10() Using Rand7() | 7-carry while x>=40
 524. Longest Word in Dictionary through Deleting | find longest issubsequence
+539. Minimum Time Difference
 -
 674. Longest Continuous Increasing Subsequence | start, ans = 0, 1 for loop if else (compare to 300 is continuous)
 725. Split Linked List in Parts
@@ -241,6 +242,7 @@ Iteration - Left-Right
 436. Find Right Interval
 462. Minimum Moves to Equal Array Elements II | similar to 162. Or sort and use median as level.
 475. Heaters | search len(houses) times
+540. Single Element in a Sorted Array | while 1: if l==r or L[m-1]!=L[m]!=L[m+1]: return L[m] (always valid index since l-r=odd), consider c0 to c4...
 -
 540. Single Element in a Sorted Array | if m%2 then if L[m-1]==L[m]
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity), binary search [max(weights),sum(weights)]
@@ -344,6 +346,7 @@ Naive
 507. Perfect Number
 509. Fibonacci Number
 520. Detect Capital
+537. Complex Number Multiplication
 -
 744. Find Smallest Letter Greater Than Target
 1160. Find Words That Can Be Formed by Characters
@@ -435,6 +438,7 @@ Recursion Arg Top-Down <2/4>
 518. Coin Change II | f(start, target) and memorization
 529. Minesweeper
 530. Minimum Absolute Difference in BST | f(T.left) -> self.ans -> self.prev -> f(T.right)
+538. Convert BST to Greater Tree
 -
 652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
 894. All Possible Full Binary Trees | similar to 95.
@@ -545,6 +549,10 @@ Bad
 371. Sum of Two Integers
 372. Super Pow
 400. Nth Digit
+481. Magical String
+521. Longest Uncommon Subsequence I
+522. Longest Uncommon Subsequence II
+535. Encode and Decode TinyURL
 
 Unknown
 86. Partition List
