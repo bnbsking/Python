@@ -44,13 +44,6 @@ DP Arr2d Backward
 799. Champagne Tower | init triangular 0s, L[0][0]=poured. triangular update by excess: if L[i][j]>1: excess=L[i][j]-1, L[i][j]=1 -> if i+1<len(L): L[i+1][j], L[i+1][j+1] = L[i+1][j]+excess/2., L[i+1][j+1]+excess/2.
 1143. Longest Common Subsequence | L[i][j] = L[i-1][j-1] + 1 if text1[i-1]==text2[j-1] else max(L[i][j-1],L[i-1][j])
 
-Hash 0
-
-Hash
-3. Longest Substring Without Repeating Character | if s[i] not in D or accum<D[s[i]]: accum+=1, else accum=i-D[s[i]]
-554. Brick Wall | spaces=Counter(). for row in wall: for x in accumulate(row[-1]): spaces[x]+=1
-1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
-
 Graph - Spanning tree
 -
 1584. Min Cost to Connect All Points | Prim. Heap(edge,node), distanceToMSS, visitS, ans. search neighbor if unvisited; add to heap if unvisited and shorter. Relaxation on distanceToMSS. Very similar to 743. O((v+e)logv)
@@ -73,13 +66,11 @@ Graph - Topological sort
 210. Course Schedule II | Kahn's algorithm. G(constant), inDegL. while leaves (DFS)
 310. Minimum Height Trees | Kahn's algorithm. G(varied), inDegL. while len(G)>2 (BFS)
 
-Hash
+Hash 0
 1. Two Sum
 15. 3Sum
 18. 4Sum
-36. Valid Sudoku | check (i,ele), (ele,j), (i//3,j//3,ele) in S
 49. Group Anagrams
-128. Longest Consecutive Sequence | S=set(L); for x in L: if x in S: while x-l remove, while x+r remove, update ans
 141. Linked List Cycle
 142. Linked List Cycle II
 160. Intersection of Two Linked Lists
@@ -89,17 +80,28 @@ Hash
 217. Contains Duplicate
 219. Contains Duplicate II
 260. Single Number III
-290. Word Pattern
+290. Word Pattern | same as 205
 299. Bulls and Cows | same as 205 and 290
 349. Intersection of Two Arrays
 350. Intersection of Two Arrays II
-355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq while calling getNewsFeed
 383. Ransom Note
 387. First Unique Character in a String
 389. Find the Difference
 398. Random Pick Index
-447. Number of Boomerangs
-454. 4Sum II | O(n^2) Counter collect -x-y + O(n^2) find +x+y
+
+Hash
+3. Longest Substring Without Repeating Character | if s[i] not in D or accum<D[s[i]]: accum+=1, else accum=i-D[s[i]]
+36. Valid Sudoku | check (i,ele), (ele,j), (i//3,j//3,ele) in S
+128. Longest Consecutive Sequence | S=set(L); while S: while x-l in S, while x+r in S
+447. Number of Boomerangs | for x1,y1 in points: defaultdict for x2,y2 in points: D[dist]+=1 ans += sum( cnt*(cnt-1) for dist,cnt in D.items() if cnt>1 )
+454. 4Sum II | O(n^2) Counter collect -x-y, O(n^2) find +x+y
+554. Brick Wall | spaces=Counter(). for row in wall: for x in accumulate(row[-1]): spaces[x]+=1
+1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
+
+@
+
+Hash
+355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq while calling getNewsFeed
 467. Unique Substrings in Wraparound String
 500. Keyboard Row
 519. Random Flip Matrix
