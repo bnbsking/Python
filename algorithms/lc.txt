@@ -7,6 +7,8 @@ DP 0
 120. Triangle
 303. Range Sum Query - Immutable
 304. Range Sum Query 2D - Immutable
+931. Minimum Falling Path Sum
+935. Knight Dialer
 
 DP 1d Backward
 45. Jump Game II | i=1. nums[i] = max(nums[i-1], nums[i]+i). Transform array to "farthest index can go"
@@ -17,13 +19,20 @@ DP 1d Backward
 279. Perfect Squares | L = [0,1]; for i in range(2,n+1): L.append( min( L[i-x**2]+1 for x in squares if i-x**2 >=0 ) )
 300. Longest Increasing Subsequence | similar to 279
 338. Counting Bits | L=[0]*(n+1), i=1. L[i]=L[i//2]+i%2
-368. Largest Divisible Subset | similar to 279 but each cell stores divisors
-646. Maximum Length of Pair Chain | same as 300
+368. Largest Divisible Subset | init1. similar to 300 but each cell stores divisors
+646. Maximum Length of Pair Chain | init 1. similar to 300
+823. Binary Trees With Factors | init D[ele]->idx, [1]*len(arr). similar to 300
+2707. Extra Characters in a String | init 1. similar to 300.
 
 DP 1d Forward
+139. Word Break | init [True]+[False]*len(s). for i if L[i] for word: if s[i:i+len(word)]==word: L[i+len(word)]=True
+204. Count Primes | Sieve of Eratosthenes: L=[F,F]+[T]*(n-2); for i in range(2,int(n**0.5)+1): if L[i]: for j in range(i*i, n, i): L[j]=F
 264. Ugly Number II | init 2, j=2, i2=i3=i5=1. L.append( min(L[i2]*2,L[i3]*3,L[i5]*5) ); i2, i3, i5 = i2+int(L[-1]==L[i2]*2), i3+int(L[-1]==L[i3]*3), i5+int(L[-1]==L[i5]*5)
-Any ugly number must depends are previous ugly numbers (3 candidates) so the candidates updated by next least larger. Both co-factor should be updated as well.
+    Any ugly number must depends are previous ugly numbers (3 candidates) so the candidates updated by next least larger. Both co-factor should be updated as well.
 313. Super Ugly Number | same as 264
+322. coin change | init [0]+[inf]*amount. for i for coin: if i+c<len(L): L[i+c] = min(L[i+c], L[i]+1)
+377. Combination Sum IV | init [1]+[0]*target. for i for num: if i+x<len(L): L[i+x] += L[i]
+1048. Longest String Chain | Must sort by len first. Create "next node" graph where key=remove_each_char. init [1]*len(words). for i for nei_idx: L[nei_idx] = max(L[nei_idx], L[i]+1)
 
 DP Arr2d Backward
 72. Edit Distance | init 1r1c. L[i][j] = 1 + min(L[i-1][j-1], L[i-1][j], L[i][j-1])
@@ -31,35 +40,16 @@ DP Arr2d Backward
 221. Maximal Square  | init 1r1c. L[i][j] = L[i][j] * (min(L[i-1][j-1], L[i-1][j], L[i][j-1]) + 1)
 474. Ones and Zeroes | init all 0s. for s in strs for i in range(m,c0-1,-1) for j in range(n,c1-1,-1): L[i][j] = max(L[i][j], L[i-c0][j-c1]+1). must reverse order filling !!!
 516. Longest Palindromic Subsequence | init diagonal. L[i][j] means f(s[i:j+1]), fill from i-j=0,-1,-2,..., diag0=1 diag1=1 or 2, others: L[i+1][j-1] if s[i]==s[j] else max(L[i+1][j], L[i][j-1])
+576. Out of Boundary Paths | init all 0s one 1. renew matrix per step: inner zeros, outer inherit. update inner by forward dp
+799. Champagne Tower | init triangular 0s, L[0][0]=poured. triangular update by excess: if L[i][j]>1: excess=L[i][j]-1, L[i][j]=1 -> if i+1<len(L): L[i+1][j], L[i+1][j+1] = L[i+1][j]+excess/2., L[i+1][j+1]+excess/2.
+1143. Longest Common Subsequence | L[i][j] = L[i-1][j-1] + 1 if text1[i-1]==text2[j-1] else max(L[i][j-1],L[i-1][j])
 
 Hash 0
 
 Hash
 3. Longest Substring Without Repeating Character | if s[i] not in D or accum<D[s[i]]: accum+=1, else accum=i-D[s[i]]
-
-@@@
-
-DP Backward
--
-823. Binary Trees With Factors
-931. Minimum Falling Path Sum
-935. Knight Dialer | [1]*10
-1143. Longest Common Subsequence | L[i][j] = max(l,u)
-1218. Longest Arithmetic Subsequence of Given Difference | a dict val:ans is enough
-2707. Extra Characters in a String | similar to 279
---
-1220. Count Vowels Permutation
-# 2d-dp: 72, 97, 221, 1143
-
-DP Forward
-139. Word Break | for i for word: write True if match
-204. Count Primes | Sieve of Eratosthenes: L=[F,F]+[T]*(n-2); for i in range(2,int(n**0.5)+1): if L[i]: for j in range(i*i, n, i): L[j]=F
-322. coin change
-377. Combination Sum IV | Infinity selection. similar to 62. or 70.
-576. Out of Boundary Paths | prepare next state: inner zeros, outer inherit. update inner by forward dp
--
-799. Champagne Tower | L[0][0]=poured, compute excess to its children
-1048. Longest String Chain | Must sort by len first. Create "next node" graph where key=remove_each_char. Forward DP
+554. Brick Wall | spaces=Counter(). for row in wall: for x in accumulate(row[-1]): spaces[x]+=1
+1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
 
 Graph - Spanning tree
 -
@@ -129,6 +119,7 @@ Hash
 2610. Convert an Array Into a 2D Array With Conditions
 
 Iteration 0
+1220. Count Vowels Permutation
 
 Iteration
 396. Rotate Function | init ans=current, sumv. current += sumv - nums[-1-i]*len(nums). consider rotate difference only
@@ -365,6 +356,7 @@ Naive
 520. Detect Capital
 528. Random Pick with Weight
 537. Complex Number Multiplication
+551. Student Attendance Record I
 -
 744. Find Smallest Letter Greater Than Target
 1160. Find Words That Can Be Formed by Characters
@@ -573,6 +565,7 @@ Bad
 522. Longest Uncommon Subsequence II
 535. Encode and Decode TinyURL
 541. Reverse String II
+553. Optimal Division
 
 Unknown
 86. Partition List
