@@ -44,13 +44,17 @@ DP Arr2d Backward
 799. Champagne Tower | init triangular 0s, L[0][0]=poured. triangular update by excess: if L[i][j]>1: excess=L[i][j]-1, L[i][j]=1 -> if i+1<len(L): L[i+1][j], L[i+1][j+1] = L[i+1][j]+excess/2., L[i+1][j+1]+excess/2.
 1143. Longest Common Subsequence | L[i][j] = L[i-1][j-1] + 1 if text1[i-1]==text2[j-1] else max(L[i][j-1],L[i-1][j])
 
+Graph Traversal 0
+
+Graph Traversal
+399. Evaluate Division | f(start, end, visit), use graph as memorization, return find, G[start,end]. visitS should be reinitialized per query, don't add unfind query so G can keep disconnection.
+
 Graph - Spanning tree
 -
 1584. Min Cost to Connect All Points | Prim. Init graph. Heap(dist2mst,node), L=[dist,...], visitS, ans. while heap: pop, """if x in visitS else""", for nei in G[x]: if shorter update and push. Very similar to 743. O((v+e)logv)
   + Kruskal: Union find, sort edges reversely, pop, merge 2 point if union. O(eloge). same complexity.
 
 Graph - Shortest path
-399. Evaluate Division | Create graph, dfs(now,dest,visitS,accum)
 433. Minimum Genetic Mutation | BFS
 542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s update 1s
 -
