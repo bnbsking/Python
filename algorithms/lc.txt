@@ -46,7 +46,7 @@ DP Arr2d Backward
 
 Graph - Spanning tree
 -
-1584. Min Cost to Connect All Points | Prim. Heap(edge,node), distanceToMSS, visitS, ans. search neighbor if unvisited; add to heap if unvisited and shorter. Relaxation on distanceToMSS. Very similar to 743. O((v+e)logv)
+1584. Min Cost to Connect All Points | Prim. Init graph. Heap(dist2mst,node), L=[dist,...], visitS, ans. while heap: pop, """if x in visitS else""", for nei in G[x]: if shorter update and push. Very similar to 743. O((v+e)logv)
   + Kruskal: Union find, sort edges reversely, pop, merge 2 point if union. O(eloge). same complexity.
 
 Graph - Shortest path
@@ -54,7 +54,7 @@ Graph - Shortest path
 433. Minimum Genetic Mutation | BFS
 542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s update 1s
 -
-743. Network Delay Time | Dijkstra. Heap(edge,node), distanceToStart, visitS. search neighbor if unvisited; add to heap if unvisited and shorter. Relaxation on distance.(Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
+743. Network Delay Time | Dijkstra. Init graph. Heap(dist2node,node), L=[dist, ...]. while heap: pop, for nei in G[x]: if shorter: update and push. Relaxation on distance.(Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
 787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap + No visitS. Q(sumPath,node), relaxation on sumPath
 1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance | Floyd-WarShall O(v^3). for mid for vi for vj: relaxation. cannot modify the loop order. Becuase previous optimization results may not hold if mid changes.
 1514. Path with Maximum Probability | Dijkstra. same as 743
@@ -88,6 +88,13 @@ Hash 0
 387. First Unique Character in a String
 389. Find the Difference
 398. Random Pick Index
+500. Keyboard Row
+519. Random Flip Matrix | while 1: pick not selected
+706. Design HashMap
+1347. Minimum Number of Steps to Make Two Strings Anagram | sum((Counter-Counter).values())
+1657. Determine if Two Strings Are Close | set(word1)==set(word2) and sorted(Counter(word1).values()) == sorted(Counter(word2).values())
+2352. Equal Row and Column Pairs | Counter, sum(D[key]*E[key] for key in D.keys()&E.keys()
+2610. Convert an Array Into a 2D Array With Conditions
 
 Hash
 3. Longest Substring Without Repeating Character | if s[i] not in D or accum<D[s[i]]: accum+=1, else accum=i-D[s[i]]
@@ -95,30 +102,24 @@ Hash
 128. Longest Consecutive Sequence | S=set(L); while S: while x-l in S, while x+r in S
 447. Number of Boomerangs | for x1,y1 in points: defaultdict for x2,y2 in points: D[dist]+=1 ans += sum( cnt*(cnt-1) for dist,cnt in D.items() if cnt>1 )
 454. 4Sum II | O(n^2) Counter collect -x-y, O(n^2) find +x+y
+467. Unique Substrings in Wraparound String | D, l = { c: 1 for c in s }, 1. D substr end with char -> numbers. l = l+1 if (ord(s[i])-ord(s[i-1]))%26 == 1 else 1. D[s[i]] = max(D[s[i]], l)
+532. K-diff Pairs in an Array | S, ans = set(nums), 0. for x in sorted(list(S)): if x+k in S: ans+=1
 554. Brick Wall | spaces=Counter(). for row in wall: for x in accumulate(row[-1]): spaces[x]+=1
 1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
-
-@
-
-Hash
-355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq while calling getNewsFeed
-467. Unique Substrings in Wraparound String
-500. Keyboard Row
-519. Random Flip Matrix
-532. K-diff Pairs in an Array
--
-706. Design HashMap
-1282. Group the People Given the Group Size They Belong To
-1347. Minimum Number of Steps to Make Two Strings Anagram | sum((Counter-Counter).values())
-1657. Determine if Two Strings Are Close
-1759. Count Number of Homogenous Substrings | split, arithmetic sum
+1282. Group the People Given the Group Size They Belong To | D, ans = defaultdict(lambda :[]), []. for i,size in enumerate(groupSizes): D[size].append(i) if len(D[size])==size: ans.append(D[size]). D[size]=[]
+1759. Count Number of Homogenous Substrings | split all segments L=[[char,times], ...]. arithmetic sum
 1814. Count Nice Pairs in an Array | remember to move terms first
 1887. Reduction Operations to Make the Array Elements Equal | Counter -> sort -> sum
-1930. Unique Length-3 Palindromic Subsequences | for c in set(s): lfind, rfind -> count sum
+1930. Unique Length-3 Palindromic Subsequences | for c in set(s): l=s.find(c), r=s.rfind(c) -> ans += len(set(s[l+1:r]))
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
-2225. Find Players With Zero or One Losses | defaultdict count lose times
-2352. Equal Row and Column Pairs | Counter, sum(D[key]*E[key] for key in D.keys()&E.keys()）
-2610. Convert an Array Into a 2D Array With Conditions
+2225. Find Players With Zero or One Losses | defaultdict count lose times. loseD[win]+=0, loseD[win]+=1
+
+Heap0
+
+Heap
+355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq.heapify while calling getNewsFeed
+
+@
 
 Iteration 0
 1220. Count Vowels Permutation
