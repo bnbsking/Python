@@ -46,8 +46,8 @@ DP Arr2d Backward
 
 Graph Traversal 0 (graph traversal needs set unless no back edge)
 
-Graph Traversal
-399. Evaluate Division | f(start, end, visit), use graph as memorization, return find, G[start,end]. visitS should be reinitialized per query, don't add unfind query so G can keep disconnection.
+Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
+399. Evaluate Division | dfs f(start, end, visit), use graph as memorization, return find, G[start,end]. visitS should be reinitialized per query, don't add unfind query so G can keep disconnection.
 433. Minimum Genetic Mutation | BFS, visitS. can add memory
 542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
 
@@ -56,15 +56,14 @@ Graph - Spanning tree
 1584. Min Cost to Connect All Points | Prim. Init graph. Heap(dist2mst,node), L=[dist,...], visitS, ans. while heap: pop, visitS.add, for nei in G[x]: if shorter update and push. Very similar to 743. O((v+e)logv)
   + Kruskal: Union find, sort edges reversely, pop, merge 2 point if union. O(eloge). same complexity.
 
-Graph - Shortest path
+Graph - Weighted shortest path (Dijkstra init H, L, S)
 -
 743. Network Delay Time | Dijkstra. Init graph. Heap(dist2node,node), L=[dist, ...], visitS. while heap: pop, visitS.add, for nei in G[x]: if shorter: update and push. (No relaxation, Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
+   + Bellman-Ford: for _ in range(1,n): for l,r,w in times: L[r] = min(L[r], L[l]+w). O(ve)
 787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap, NO visitS. Q(accum,node,depth), L=[dist, ...]. if shorter: update and push
-
 1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance | Floyd-WarShall O(v^3). for mid for vi for vj: relaxation. cannot modify the loop order. Becuase previous optimization results may not hold if mid changes.
-1514. Path with Maximum Probability | Dijkstra. same as 743
-1631. Path With Minimum Effort | Dijkstra. Heap(accum_delta,node), relaxation on accum_delta.
-another -> Bellman Ford O(ve): for node for edges: relaxation
+1514. Path with Maximum Probability | same as 743 Heap(-prob,node)
+1631. Path With Minimum Effort | same as 743. Heap(accum_delta,node)
 
 Graph - Topological sort
 207. Course Schedule    | Kahn's algorithm. G(constant), inDegL. while leaves (DFS)
