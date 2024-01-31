@@ -105,12 +105,11 @@ Hash
 128. Longest Consecutive Sequence | S=set(L); while S: while x-l in S, while x+r in S
 447. Number of Boomerangs | for x1,y1 in points: defaultdict for x2,y2 in points: D[dist]+=1 ans += sum( cnt*(cnt-1) for dist,cnt in D.items() if cnt>1 )
 454. 4Sum II | O(n^2) Counter collect -x-y, O(n^2) find +x+y
-467. Unique Substrings in Wraparound String | D, l = { c: 1 for c in s }, 1. D substr end with char -> numbers. l = l+1 if (ord(s[i])-ord(s[i-1]))%26 == 1 else 1. D[s[i]] = max(D[s[i]], l)
+467. Unique Substrings in Wraparound String | D={c:1 for c in s}, cont=1. D substr end with char -> numbers. for i in range(1,len(s)): cont = cont+1 if (ord(s[i])-ord(s[i-1]))%26==1 else 1. D[s[i]]=max(D[s[i]],cont)
 532. K-diff Pairs in an Array | S, ans = set(nums), 0. for x in sorted(list(S)): if x+k in S: ans+=1
 554. Brick Wall | spaces=Counter(). for row in wall: for x in accumulate(row[-1]): spaces[x]+=1
 1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
 1282. Group the People Given the Group Size They Belong To | D, ans = defaultdict(lambda :[]), []. for i,size in enumerate(groupSizes): D[size].append(i) if len(D[size])==size: ans.append(D[size]). D[size]=[]
-1759. Count Number of Homogenous Substrings | split all segments L=[[char,times], ...]. arithmetic sum
 1814. Count Nice Pairs in an Array | remember to move terms first
 1887. Reduction Operations to Make the Array Elements Equal | Counter -> sort -> sum
 1930. Unique Length-3 Palindromic Subsequences | for c in set(s): l=s.find(c), r=s.rfind(c) -> ans += len(set(s[l+1:r]))
@@ -140,6 +139,7 @@ Iteration i with accum
 121. Best Time to Buy and Sell Stock | ans=0, lowest=L[0]. for x in L: lowest=min(lowest,x), ans=max(ans, x-lowest)
 134. Gas Station | ans=0, acc=0. for i in range(len(gas)): acc+=gas[i]-cost[i], if acc<0: ans=i+1, acc=0
 152. Maximum Product Subarray | ans=nums[0], minv=1, maxv=1. for x in L: minv=min(x,minv*x,maxv*x), maxv=max(x,minv*x,maxv*x), ans=max(ans,maxv)
+1759. Count Number of Homogenous Substrings | ans=1, cont=1. for x in L[1:]: cont=cont+1 if s[i]==s[i-1] else 1. ans+=cont (ans+=cont due to arithmetic sum, similar to 467)
 
 Iteration start i
 26. Remove Duplicates from Sorted Array
