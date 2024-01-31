@@ -44,22 +44,23 @@ DP Arr2d Backward
 799. Champagne Tower | init triangular 0s, L[0][0]=poured. triangular update by excess: if L[i][j]>1: excess=L[i][j]-1, L[i][j]=1 -> if i+1<len(L): L[i+1][j], L[i+1][j+1] = L[i+1][j]+excess/2., L[i+1][j+1]+excess/2.
 1143. Longest Common Subsequence | L[i][j] = L[i-1][j-1] + 1 if text1[i-1]==text2[j-1] else max(L[i][j-1],L[i-1][j])
 
-Graph Traversal 0
+Graph Traversal 0 (graph traversal needs set unless no back edge)
 
 Graph Traversal
 399. Evaluate Division | f(start, end, visit), use graph as memorization, return find, G[start,end]. visitS should be reinitialized per query, don't add unfind query so G can keep disconnection.
+433. Minimum Genetic Mutation | BFS, visitS. can add memory
+542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
 
 Graph - Spanning tree
 -
-1584. Min Cost to Connect All Points | Prim. Init graph. Heap(dist2mst,node), L=[dist,...], visitS, ans. while heap: pop, """if x in visitS else""", for nei in G[x]: if shorter update and push. Very similar to 743. O((v+e)logv)
+1584. Min Cost to Connect All Points | Prim. Init graph. Heap(dist2mst,node), L=[dist,...], visitS, ans. while heap: pop, visitS.add, for nei in G[x]: if shorter update and push. Very similar to 743. O((v+e)logv)
   + Kruskal: Union find, sort edges reversely, pop, merge 2 point if union. O(eloge). same complexity.
 
 Graph - Shortest path
-433. Minimum Genetic Mutation | BFS
-542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s update 1s
 -
-743. Network Delay Time | Dijkstra. Init graph. Heap(dist2node,node), L=[dist, ...]. while heap: pop, for nei in G[x]: if shorter: update and push. Relaxation on distance.(Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
-787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap + No visitS. Q(sumPath,node), relaxation on sumPath
+743. Network Delay Time | Dijkstra. Init graph. Heap(dist2node,node), L=[dist, ...], visitS. while heap: pop, visitS.add, for nei in G[x]: if shorter: update and push. (No relaxation, Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
+787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap, NO visitS. Q(accum,node,depth), L=[dist, ...]. if shorter: update and push
+
 1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance | Floyd-WarShall O(v^3). for mid for vi for vj: relaxation. cannot modify the loop order. Becuase previous optimization results may not hold if mid changes.
 1514. Path with Maximum Probability | Dijkstra. same as 743
 1631. Path With Minimum Effort | Dijkstra. Heap(accum_delta,node), relaxation on accum_delta.
