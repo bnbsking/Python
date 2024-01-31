@@ -51,6 +51,11 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 433. Minimum Genetic Mutation | BFS, visitS. can add memory
 542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
 
+Graph - Topological sort (Kahn's: init inDegL=[inDeg,...], leaves=[inDeg==0 node, ...])
+207. Course Schedule    | DFS, G is constant, while leaves
+210. Course Schedule II | DFS, G is constant, while leaves
+310. Minimum Height Trees | BFS, G is varied, while len(G)>2: init leaves
+
 Graph - Spanning tree (Prim: init H, L, S)
 -
 1584. Min Cost to Connect All Points | Prim. Init graph. Heap(dist2mst,node), L=[dist,...], visitS, ans. while heap: pop, visitS.add, for nei in G[x]: if shorter update and push. Very similar to 743. O((v+e)logv)
@@ -64,11 +69,6 @@ Graph - Weighted shortest path (Dijkstra: init H, L, S)
 1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance | Floyd-WarShall O(v^3). for mid for vi for vj: relaxation. cannot modify the loop order. Becuase previous optimization results may not hold if mid changes.
 1514. Path with Maximum Probability | same as 743 Heap(-prob,node)
 1631. Path With Minimum Effort | same as 743. Heap(accum_delta,node)
-
-Graph - Topological sort (Kahn's: init inDegL=[inDeg,...], leaves=[inDeg==0 node, ...])
-207. Course Schedule    | DFS, G is constant, while leaves
-210. Course Schedule II | DFS, G is constant, while leaves
-310. Minimum Height Trees | BFS, G is varied, while len(G)>2: init leaves
 
 Hash 0
 1. Two Sum
