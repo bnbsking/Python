@@ -51,12 +51,12 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 433. Minimum Genetic Mutation | BFS, visitS. can add memory
 542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
 
-Graph - Spanning tree
+Graph - Spanning tree (Prim: init H, L, S)
 -
 1584. Min Cost to Connect All Points | Prim. Init graph. Heap(dist2mst,node), L=[dist,...], visitS, ans. while heap: pop, visitS.add, for nei in G[x]: if shorter update and push. Very similar to 743. O((v+e)logv)
   + Kruskal: Union find, sort edges reversely, pop, merge 2 point if union. O(eloge). same complexity.
 
-Graph - Weighted shortest path (Dijkstra init H, L, S)
+Graph - Weighted shortest path (Dijkstra: init H, L, S)
 -
 743. Network Delay Time | Dijkstra. Init graph. Heap(dist2node,node), L=[dist, ...], visitS. while heap: pop, visitS.add, for nei in G[x]: if shorter: update and push. (No relaxation, Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
    + Bellman-Ford: for _ in range(1,n): for l,r,w in times: L[r] = min(L[r], L[l]+w). O(ve)
@@ -65,10 +65,10 @@ Graph - Weighted shortest path (Dijkstra init H, L, S)
 1514. Path with Maximum Probability | same as 743 Heap(-prob,node)
 1631. Path With Minimum Effort | same as 743. Heap(accum_delta,node)
 
-Graph - Topological sort
-207. Course Schedule    | Kahn's algorithm. G(constant), inDegL. while leaves (DFS)
-210. Course Schedule II | Kahn's algorithm. G(constant), inDegL. while leaves (DFS)
-310. Minimum Height Trees | Kahn's algorithm. G(varied), inDegL. while len(G)>2 (BFS)
+Graph - Topological sort (Kahn's: init inDegL=[inDeg,...], leaves=[inDeg==0 node, ...])
+207. Course Schedule    | DFS, G is constant, while leaves
+210. Course Schedule II | DFS, G is constant, while leaves
+310. Minimum Height Trees | BFS, G is varied, while len(G)>2: init leaves
 
 Hash 0
 1. Two Sum
