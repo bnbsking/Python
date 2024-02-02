@@ -120,6 +120,7 @@ Heap0
 
 Heap
 355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq.heapify while calling getNewsFeed
+373. Find K Pairs with Smallest Sums | heap(sumv,i,j), inH(i,j)
 
 @
 138. Copy List with Random Pointer | ll. D[id(p)]=idx, L=[Node(p.val)]
@@ -134,6 +135,7 @@ Iteration 0
 238. Product of Array Except Self | math.prod(list)
 289. Game of Life | binary_encode=(next)(prev)
 
+
 Iteration i lr
 5. Longest Palindromic Substring
 
@@ -142,6 +144,9 @@ Iteration i with accum
 121. Best Time to Buy and Sell Stock | ans=0, lowest=L[0]. for x in L: lowest=min(lowest,x), ans=max(ans, x-lowest)
 134. Gas Station | ans=0, acc=0. for i in range(len(gas)): acc+=gas[i]-cost[i], if acc<0: ans=i+1, acc=0
 152. Maximum Product Subarray | ans=nums[0], minv=1, maxv=1. for x in L: minv=min(x,minv*x,maxv*x), maxv=max(x,minv*x,maxv*x), ans=max(ans,maxv)
+331. Verify Preorder Serialization of a Binary Tree | slot=1 if # slot-=1 else slot+=1, slot must >0 during iteration and =0 finally
+376. Wiggle Subsequence | similar to 152. up, down = 1, 1 (first wiggle is up or down). for i in range(1,len(nums)): if nums[i]>nums[i-1]: up = down+1 elif nums[i]<nums[i-1]: down = up+1. return max(up, down)
+334. Increasing Triplet Subsequence | min1, min2 = float('inf'), float('inf'). for x in nums: if x<=min1: min1 = x elif x<=min2: min2 = x else: return True
 1759. Count Number of Homogenous Substrings | ans=1, cont=1. for x in L[1:]: cont=cont+1 if s[i]==s[i-1] else 1. ans+=cont (ans+=cont due to arithmetic sum, similar to 467)
 
 Iteration start i
@@ -163,11 +168,9 @@ Iteration
 201. Bitwise AND of Numbers Range | a=bin(l)[2:], b=bin(r)[2:]. if len(a)!=len(b): return 0. same_leading_bits = next((i for i in range(len(a)) if a[i]!=b[i]), len(a))
 283. Move Zeroes | zeros, saves = nums.count(0), 0. while saves<len(nums)-zeros: find save_idx by next, swap, saves+=1 (saves mean found non-zero elements)
 328. Odd Even Linked List | ll. interleaving points
-331. Verify Preorder Serialization of a Binary Tree | slot=1 if # slot-=1 else slot+=1, slot must >0 during iteration and =0 finally
 
-334. Increasing Triplet Subsequence | iteratively update min1 and min2
-373. Find K Pairs with Smallest Sums | heap and visitS
-376. Wiggle Subsequence | slightly similar to 152. up,down=1,1 up=down+1 or down=up+1 or None
+1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
+
 380. Insert Delete GetRandom O(1) | dict+list, remove do nothing for list, remove from list while getRandom if needed
 382. Linked List Random Node | to list
 384. Shuffle an Array
