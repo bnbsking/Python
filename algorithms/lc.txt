@@ -170,6 +170,8 @@ Iteration i with accum
 331. Verify Preorder Serialization of a Binary Tree | slot=1 if # slot-=1 else slot+=1, slot must >0 during iteration and =0 finally
 376. Wiggle Subsequence | similar to 152. up, down = 1, 1 (first wiggle is up or down). for i in range(1,len(nums)): if nums[i]>nums[i-1]: up = down+1 elif nums[i]<nums[i-1]: down = up+1. return max(up, down)
 334. Increasing Triplet Subsequence | min1, min2 = float('inf'), float('inf'). for x in nums: if x<=min1: min1 = x elif x<=min2: min2 = x else: return True
+746. Min Cost Climbing Stairs | a,b=cost[0],cost[1]. for i in range(2,len(L)): c=cost[i]+min(a,b), a=b, b=c. return min(a,b)
+1535. Find the Winner of an Array Game | current_winner(cwr), consecutive_wins(cws) = L[0], 0. for i in range(1,len(L)): if L[i]>cwr: cwr, cws = L[i], 1 else cws+=1 if cws==k: break
 1759. Count Number of Homogenous Substrings | ans=1, cont=1. for x in L[1:]: cont=cont+1 if s[i]==s[i-1] else 1. ans+=cont (ans+=cont due to arithmetic sum, similar to 467)
 
 Iteration start i
@@ -200,11 +202,9 @@ Iteration
 442. Find All Duplicates in an Array | Use negative sign to save visited. ans = []. for i in range(len(L)): store_idx = abs(nums[i])-1 if nums[store_idx]<0: ans.append(abs(nums[i])). nums[store_idx]*=-1
 470. Implement Rand10() Using Rand7() | 7-carry while x>=40
 524. Longest Word in Dictionary through Deleting | find longest issubsequence
-746. Min Cost Climbing Stairs | a,b=cost[0],cost[1]. for i in range(2,len(L)): c=cost[i]+min(a,b), a=b, b=c. return min(a,b)
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
-1535. Find the Winner of an Array Game | current_winner(cwr), consecutive_wins(cws) = L[0], 0. for i in range(1,len(L)): if L[i]>cwr: cwr, cws = L[i], 1 else cws+=1 if cws==k: break
 1980. Find Unique Binary String | return "".join( str(int(L[i][i]=="0")) for i in range(len(L)) ) # diagnoal algorithm
 149*. Max Points on a Line | use determinant, O(n^3)
 
