@@ -22,6 +22,7 @@ DP 1d Backward
 368. Largest Divisible Subset | init1. similar to 300 but each cell stores divisors
 646. Maximum Length of Pair Chain | init 1. similar to 300
 823. Binary Trees With Factors | init D[ele]->idx, [1]*len(arr). similar to 300
+1846. Maximum Element After Decreasing and Rearranging | sort, for loop revise
 2707. Extra Characters in a String | init 1. similar to 300.
 
 DP 1d Forward
@@ -33,6 +34,7 @@ DP 1d Forward
 322. coin change | init [0]+[inf]*amount. for i for coin: if i+c<len(L): L[i+c] = min(L[i+c], L[i]+1)
 377. Combination Sum IV | init [1]+[0]*target. for i for num: if i+x<len(L): L[i+x] += L[i]
 1048. Longest String Chain | Must sort by len first. Create "next node" graph where key=remove_each_char. init [1]*len(words). for i for nei_idx: L[nei_idx] = max(L[nei_idx], L[i]+1)
+135*. Candy | for i in range(R): if i is smallest: lr expand (L[r]=max(L[r],L[r-1]+1))
 
 DP Arr2d Backward
 72. Edit Distance | init 1r1c. L[i][j] = 1 + min(L[i-1][j-1], L[i-1][j], L[i][j-1])
@@ -49,6 +51,7 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 399. Evaluate Division | dfs f(start, end, visit), use graph as memorization, return find, G[start,end]. visitS should be reinitialized per query, don't add unfind query so G can keep disconnection.
 433. Minimum Genetic Mutation | BFS, visitS. can add memory
 542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
+1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
 
 Graph - Topological sort (Kahn's: init inDegL=[inDeg,...], leaves=[inDeg==0 node, ...])
 207. Course Schedule    | DFS, G is constant, while leaves
@@ -95,6 +98,7 @@ Hash 0
 500. Keyboard Row
 519. Random Flip Matrix | while 1: pick not selected
 706. Design HashMap
+859. Buddy Strings
 1347. Minimum Number of Steps to Make Two Strings Anagram | sum((Counter-Counter).values())
 1657. Determine if Two Strings Are Close | set(word1)==set(word2) and sorted(Counter(word1).values()) == sorted(Counter(word2).values())
 2352. Equal Row and Column Pairs | Counter, sum(D[key]*E[key] for key in D.keys()&E.keys()
@@ -105,6 +109,7 @@ Hash
 36. Valid Sudoku | check (i,ele), (ele,j), (i//3,j//3,ele) in S
 128. Longest Consecutive Sequence | S=set(L); while S: while x-l in S, while x+r in S
 380. Insert Delete GetRandom O(1) | dict+list, remove do nothing for list, remove from list while getRandom if needed
+438. Find All Anagrams in a String | sliding window Counter
 447. Number of Boomerangs | for x1,y1 in points: defaultdict for x2,y2 in points: D[dist]+=1 ans += sum( cnt*(cnt-1) for dist,cnt in D.items() if cnt>1 )
 454. 4Sum II | O(n^2) Counter collect -x-y, O(n^2) find +x+y
 467. Unique Substrings in Wraparound String | D={c:1 for c in s}, cont=1. D substr end with char -> numbers. for i in range(1,len(s)): cont = cont+1 if (ord(s[i])-ord(s[i-1]))%26==1 else 1. D[s[i]]=max(D[s[i]],cont)
@@ -112,6 +117,7 @@ Hash
 554. Brick Wall | spaces=Counter(). for row in wall: for x in accumulate(row[-1]): spaces[x]+=1
 1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
 1282. Group the People Given the Group Size They Belong To | D, ans = defaultdict(lambda :[]), []. for i,size in enumerate(groupSizes): D[size].append(i) if len(D[size])==size: ans.append(D[size]). D[size]=[]
+1647. Minimum Deletions to Make Character Frequencies Unique | Counter, ans, freqS
 1814. Count Nice Pairs in an Array | remember to move terms first
 1887. Reduction Operations to Make the Array Elements Equal | Counter -> sort -> sum
 1930. Unique Length-3 Palindromic Subsequences | for c in set(s): l=s.find(c), r=s.rfind(c) -> ans += len(set(s[l+1:r]))
@@ -119,11 +125,14 @@ Hash
 2225. Find Players With Zero or One Losses | defaultdict count lose times. loseD[win]+=0, loseD[win]+=1
 
 Heap0
-23*. Merge k Sorted Lists | heap
+23*. Merge k Sorted Lists
+1962. Remove Stones to Minimize the Total
 
 Heap
-355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq.heapify while calling getNewsFeed
+355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq.heapify((time,posts)) while calling getNewsFeed
 373. Find K Pairs with Smallest Sums | heap(sumv,i,j), inH(i,j)
+767. Reorganize String | heap(-timees,char). while len(H)>=2.
+2462. Total Cost to Hire K Workers | heap(cost[i] or cost[-1-i],'l'or'r') with l, r pointers
 
 @
 138. Copy List with Random Pointer | ll. D[id(p)]=idx, L=[Node(p.val)]
@@ -140,10 +149,18 @@ Iteration 0
 382. Linked List Random Node | ll.
 384. Shuffle an Array
 392. Is Subsequence
-
-
-Iteration i lr
-5. Longest Palindromic Substring
+443. String Compression | general splitting
+453. Minimum Moves to Equal Array Elements
+455. Assign Cookies
+459. Repeated Substring Pattern
+461. Hamming Distance
+539. Minimum Time Difference | ans=min(ans,abs(diff),1440-abs(diff))
+725. Split Linked List in Parts | ll.
+1351. Count Negative Numbers in a Sorted Matrix
+1441. Build an Array With Stack Operations
+1582. Special Positions in a Binary Matrix
+1877. Minimize Maximum Pair Sum in Array | sort, max of head-tail pair
+2279. Maximum Bags With Full Capacity of Rocks
 
 Iteration i with accum
 53. Maximum Subarray | ans=L[0], acc=0. for x in L: acc=max(acc+x,x), ans=max(ans,acc)
@@ -162,13 +179,14 @@ Iteration start i
 674. Longest Continuous Increasing Subsequence | start, ans = 0, 1 for if else (compare to 300 is continuous)
 
 Iteration
+5. Longest Palindromic Substring
 31. Next Permutation | e.g. 246531. from right to left: i at peak. if i>0: from right to left: L[j]>L[i-1], swap(L[i-1],L[j]). swap all ele >=i
 48. Rotate Image
 396. Rotate Function | init ans=current, sumv. current += sumv - nums[-1-i]*len(nums). consider rotate difference only
 556. Next Greater Element III | same as 31
 93. Restore IP Addresses | cut i,j,k four pieces, each piece: non-empty, <255, no leading 0
 122. Best Time to Buy and Sell Stock II | ans += max(0,num[i]-num[i-1])
-165. Compare Version Numbers | split each and fill zeros to align length 
+165. Compare Version Numbers | split each and fill zeros to align length
 168. Excel Sheet Column Title  | L=[]. while x>0: x-=1, r=x%26, L.append(chr(r+ord('A'))), x=(x-r)//26
 171. Excel Sheet Column Number | for i,c in enumerate(s[::-1]): ans += (ord(c)-ord("A")+1) * 26**i
 172. Factorial Trailing Zeroes | ans, factor = 0, 5. while factor<=n: ans+=n//factor, factor*=5
@@ -179,65 +197,34 @@ Iteration
 386. Lexicographical Numbers | sort in str or key=cmp_to_key(lex). def lex(x,y): compare if len(x)==len(y) else fill samllest at the shorter of the end and compare (different from 179)
 405. Convert a Number to Hexadecimal | find -x of binary: get +x binary -> reverse bits -> +1 || get +x+1 binary -> reverse bits
 406. Queue Reconstruction by Height | sort by (-p[0],p[1]). then L.insert(p[1],p). (if all p[1]=0, tall first; if all p[0]=h, small p[1] first)
-438. Find All Anagrams in a String | sliding window Counter
 442. Find All Duplicates in an Array | Use negative sign to save visited. ans = []. for i in range(len(L)): store_idx = abs(nums[i])-1 if nums[store_idx]<0: ans.append(abs(nums[i])). nums[store_idx]*=-1
-
-1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
-
-443. String Compression | split strategy
-445. Add Two Numbers II | reverse list and same as 2.
-453. Minimum Moves to Equal Array Elements
-455. Assign Cookies
-459. Repeated Substring Pattern
 470. Implement Rand10() Using Rand7() | 7-carry while x>=40
 524. Longest Word in Dictionary through Deleting | find longest issubsequence
-539. Minimum Time Difference
--
-725. Split Linked List in Parts
-746. Min Cost Climbing Stairs | for i in range(2,len(L)+1): c = min(a+L[-2], b+L[-1])
-767. Reorganize String | Heap
-859. Buddy Strings | check whether elements count are same; diff==2: True; diff==1: has duplicate; others: False
+746. Min Cost Climbing Stairs | a,b=cost[0],cost[1]. for i in range(2,len(L)): c=cost[i]+min(a,b), a=b, b=c. return min(a,b)
 1232. Check If It Is a Straight Line | use determinants instead of slopes
-1351. Count Negative Numbers in a Sorted Matrix | j stands at rightest >=0 for each row
-1441. Build an Array With Stack Operations
-1503. Last Moment Before All Ants Fall Out of a Plank | don't trace ant-i but switch id while collision
-1535. Find the Winner of an Array Game | current_winner, consecutive_wins = L[0], 0. Similar to splitting strategy
-1582. Special Positions in a Binary Matrix | iterate over rows: if row.count(1)==1: ...
-1647. Minimum Deletions to Make Character Frequencies Unique | Counter, ans, freqS
-1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal
-1846. Maximum Element After Decreasing and Rearranging | sort, for loop revise
-1877. Minimize Maximum Pair Sum in Array | sort, max of head-tail pair
-1962. Remove Stones to Minimize the Total | Max-heap
-1980. Find Unique Binary String | diagonal
-2279. Maximum Bags With Full Capacity of Rocks
-2462. Total Cost to Hire K Workers | heap
---
-
-124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
-135*. Candy | for i in range(R): if i is smallest: lr expand (L[r]=max(L[r],L[r-1]+1))
-127*. Word Ladder
+1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
+1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
+1535. Find the Winner of an Array Game | current_winner(cwr), consecutive_wins(cws) = L[0], 0. for i in range(1,len(L)): if L[i]>cwr: cwr, cws = L[i], 1 else cws+=1 if cws==k: break
+1980. Find Unique Binary String | return "".join( str(int(L[i][i]=="0")) for i in range(len(L)) ) # diagnoal algorithm
 149*. Max Points on a Line | use determinant, O(n^3)
 
 Iteration - Arithmetic sort
-268. Missing Number | while i<len(L) and L[i]!=L[L[i]]: L[L[i]], L[i] = L[i], L[L[i]] # CANNOT REVERSE
-287. Find the Duplicate Number | return when nums[nums[i]]==nums[i] or at the final
+268. Missing Number | while i<len(L): if L[i]<len(L) and L[i]!=L[L[i]]: L[L[i]], L[i] = L[i], L[L[i]] else i+=1 # CANNOT REVERSE
+287. Find the Duplicate Number
 448. Find All Numbers Disappeared in an Array
---
-41*. First Missing Positive | arithmetic sequence sort, consider infinite swap, consider nums[0] might let ans+1
 645. Set Mismatch
+41*. First Missing Positive
 
 Iteration - Bit operations
-136. Single Number
-137. Single Number II | tenary, add-mod3
-260. Single Number III | xor all to get ans1^ans2 -> pick 1 difference bit to divide all into 2 groups -> xor group individually
-268. Missing Number | xor 1~n then xor all since a^a=0 always
-461. Hamming Distance
-477. Total Hamming Distance |
-    # b 0s, n-b 1s # total dist = b*(n-b) # consider bipartite only
-    # check whether the i-th bit of a number x is 1: x >> i & 1 # shift is always prior than and
----
-779. K-th Symbol in Grammar | left remains, right flips -> count how many right (flips)
+136. Single Number | return ^:all
+137. Single Number II | tenary, add_mod3:all
+268. Missing Number | allxor = 0 for i in range(1,len(nums)+1): allxor ^= i. for x in nums: allxor ^= x. return allxor
+477. Total Hamming Distance | ans=0. for i in range(32): b=sum(x>>&i for x in nums). ans+=b*(len(nums)-b). return ans
+    # consider n numbers 1 bit only # b 0s, n-b 1s # total dist = b*(n-b) # consider bipartite only
+    # check whether the i-th bit of a number x is 1: "x>>i&1" # shift is always prior than and
 2433. Find The Original Array of Prefix Xor | ^ has association
+
+@
 
 Iteration - FSM
 309. Best Time to Buy and Sell Stock with Cooldown | buy, sel, col = 0, -p, -p
@@ -399,8 +386,13 @@ Naive
 Queue
 498. Diagonal Traverse | BFS add down when i=0 + add right always, use i+j to judge even or odd
 --
+127*. Word Ladder
 239*. Sliding Window Maximum | (val,idx) in queue, length is not const, always desc sorted
 1424. Diagonal Traverse II | simpler than 498.
+
+Recursion
+779. K-th Symbol in Grammar | left remains, right flips -> count how many right (flips)
+124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
 
 Recursion Arg Bottom-up <1/4>
 17. Letter Combinations of a Phone Number
@@ -418,6 +410,7 @@ Recursion Arg Bottom-up <1/4>
 
 Recursion Arg Top-Down <2/4>
 2. Add Two Numbers
+445. Add Two Numbers II | reverse list and same as 2.
 21. Merge Two Sorted Lists
 24. Swap Nodes in Pairs
 57. Insert Interval
