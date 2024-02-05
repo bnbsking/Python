@@ -108,6 +108,7 @@ Hash
 3. Longest Substring Without Repeating Character | if s[i] not in D or accum<D[s[i]]: accum+=1, else accum=i-D[s[i]]
 36. Valid Sudoku | check (i,ele), (ele,j), (i//3,j//3,ele) in S
 128. Longest Consecutive Sequence | S=set(L); while S: while x-l in S, while x+r in S
+138. Copy List with Random Pointer | ll. D[id(p)]=idx for raw ll, L=[Node(p.val)] for new ll
 380. Insert Delete GetRandom O(1) | dict+list, remove do nothing for list, remove from list while getRandom if needed
 438. Find All Anagrams in a String | sliding window Counter
 447. Number of Boomerangs | for x1,y1 in points: defaultdict for x2,y2 in points: D[dist]+=1 ans += sum( cnt*(cnt-1) for dist,cnt in D.items() if cnt>1 )
@@ -133,9 +134,6 @@ Heap
 373. Find K Pairs with Smallest Sums | heap(sumv,i,j), inH(i,j)
 767. Reorganize String | heap(-timees,char). while len(H)>=2.
 2462. Total Cost to Hire K Workers | heap(cost[i] or cost[-1-i],'l'or'r') with l, r pointers
-
-@
-138. Copy List with Random Pointer | ll. D[id(p)]=idx, L=[Node(p.val)]
 
 Iteration 0
 54. Spiral Matrix
@@ -224,13 +222,10 @@ Iteration - Bit operations
     # check whether the i-th bit of a number x is 1: "x>>i&1" # shift is always prior than and
 2433. Find The Original Array of Prefix Xor | ^ has association
 
-@
-
 Iteration - FSM
-309. Best Time to Buy and Sell Stock with Cooldown | buy, sel, col = 0, -p, -p
-714. Best Time to Buy and Sell Stock with Transaction Fee | buy, sel = 0, -p
---
-123*. Best Time to Buy and Sell Stock III | sel1, buy2, sel2, ans = -p, 0, -float('inf'), -float('inf)
+309. Best Time to Buy and Sell Stock with Cooldown | b, s, c = -P[0], 0, o. for p in P: b, s, c = max(b,c-p), max(s,b+p), max(c,s). return max(s,c)
+714. Best Time to Buy and Sell Stock with Transaction Fee | b, s = 0, -p. for p in P: b, s = max(b,s-p), max(s,b+p-fee). return s
+123*. Best Time to Buy and Sell Stock III | b1, s1, b2, s2 = -P[0], 0, -P[0], 0. for p in P: b1, s1, b2, s2 = max(b1,-p), max(s1, b1+p), max(b2, s1-p), max(s2, b2+p). return sel2
 
 Iteration - Left-Right
 11. Container With Most Water
