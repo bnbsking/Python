@@ -228,15 +228,16 @@ Iteration - FSM
 123*. Best Time to Buy and Sell Stock III | b1, s1, b2, s2 = -P[0], 0, -P[0], 0. for p in P: b1, s1, b2, s2 = max(b1,-p), max(s1, b1+p), max(b2, s1-p), max(s2, b2+p). return sel2
 
 Iteration - Left-Right
-11. Container With Most Water
-16. 3Sum Closest | sort + binary search
-33. Search in Rotated Sorted Array | judge pivot -> judge left or right
-34. Find First and Last Position of Element in Sorted Array
-35. Search Insert Position
-74. Search a 2D Matrix
-81. Search in Rotated Sorted Array II | based on 33. add if nums[l]==nums[m]==nums[r]: l, r = l+1, r-1
-153. Find Minimum in Rotated Sorted Array | min(nums[l],nums[m],nums[r]), special case nums[m] is min and also ans (check neighbors circularly)
-162. Find Peak Element | max(L[m-1], L[m], L[m+1])
+11. Container With Most Water | ans=0. while l<=r: ans=max(ans,(r-l)*min(L[l],L[r])). if height[l]<=height[r]: l+=1 else: r-=1
+16. 3Sum Closest | L.sort(). ans_dist, ans = float('inf'), sum(nums[:3]). for i in range(len(L)-2): l=i+1, r=len(L)-1. while l<r:...
+33. Search in Rotated Sorted Array | while l<=r -> judge pivot left or right (nums[l]<=nums[m]) -> judge whether target value is between the other side
+34. Find First and Last Position of Element in Sorted Array | while l<=r
+35. Search Insert Position | while l<=r. return l.
+74. Search a 2D Matrix | while l<=r
+81. Search in Rotated Sorted Array II | based on 33. add if nums[l]==nums[m]==nums[r]: l, r = l+1, r-1.
+153. Find Minimum in Rotated Sorted Array | min(L[m-1],L[m],L[m+1]). elif nums[l]<=nums[m]: if nums[l]<nums[r]: return nums[l] else l=m+1. else r=m-1
+162. Find Peak Element | max(L[m-1],L[m],L[m+1]). if maxv==v2: return m elif maxv==v1: r = m-1 else: l = m+1
+
 167. Two Sum II - Input Array Is Sorted
 240. Search a 2D Matrix II
 274. H-Index | reverse n, n-1, ..., 2, 1. L[-1-i]<1+i
@@ -255,7 +256,7 @@ Iteration - Left-Right
 42*. Trapping Rain Water | find maxidx, collect left with lmax, collect right with rmax
 
 Iteration - Monte Carlo
-169. Majority Element
+169. Majority Element | sample x, L.count(x)
 229. Majority Element II
 
 Iteration - Non-overlapping interval
