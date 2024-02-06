@@ -125,6 +125,11 @@ Hash
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 2225. Find Players With Zero or One Losses | defaultdict count lose times. loseD[win]+=0, loseD[win]+=1
 
+Hash subarray sum all
+523. Continuous Subarray Sum | D={0:-1} (sumv%k->first_occur_idx). for x: sumv=(sumv+x)%k. if sumv in D: if index_diff>1:return True, else: D[sumv]=i
+525. Contiguous Array | Similar to 523
+560. Subarray Sum Equals K | D={0:1} (sumv->counts). for x: sumv=sumv+x, if sumv-k in D: sumv+=D[sumv-k], D[sumv]+=1
+
 Heap0
 23*. Merge k Sorted Lists
 1962. Remove Stones to Minimize the Total
@@ -172,11 +177,18 @@ Iteration i with accum
 1535. Find the Winner of an Array Game | current_winner(cwr), consecutive_wins(cws) = L[0], 0. for i in range(1,len(L)): if L[i]>cwr: cwr, cws = L[i], 1 else cws+=1 if cws==k: break
 1759. Count Number of Homogenous Substrings | ans=1, cont=1. for x in L[1:]: cont=cont+1 if s[i]==s[i-1] else 1. ans+=cont (ans+=cont due to arithmetic sum, similar to 467)
 
-Iteration start i
+Iteration i with start
 26. Remove Duplicates from Sorted Array
 80. Remove Duplicates from Sorted Array II | same as 26 but add dup=1or2
 413. Arithmetic Slices | similar to 674 but ans+=i-start-1
 674. Longest Continuous Increasing Subsequence | start, ans = 0, 1 for if else (compare to 300 is continuous)
+
+Iteration i with start and accum: sliding window
+209. Minimum Size Subarray Sum | start,acc,ans=0,0,len(L). for i in range(len(L)): acc+=L[i], while acc>=target: ans=min(ans,end-start+1), sumv-=nums[start], start+=1.
+1658. Minimum Operations to Reduce X to Zero | similar to 209, but while acc>=target>0:
+1838. Frequency of the Most Frequent Element | L.sort(). start,acc,ans=0,0,1. for i in range(1,len(L)): accum+=(L[i]-L[i-1])*(i-start). while acc>k: acc-=L[i]-L[start], start+=1. ans=max(ans,i-start+1)
+@
+424. Longest Repeating Character Replacement
 
 Iteration
 5. Longest Palindromic Substring
@@ -261,20 +273,6 @@ Iteration - Left-Right
 Iteration - Monte Carlo
 169. Majority Element | sample x, L.count(x)
 229. Majority Element II
-
-Iteration - sliding window
-1838. Frequency of the Most Frequent Element
-
-Iteration - subarray sum all: hash
-523. Continuous Subarray Sum | D={0:-1} initially (sumv%k->first_occur_idx). for x: sumv=(sumv+x)%k. if sumv in D and index_diff >1, if sumv not in D: D[sumv]=i
-525. Contiguous Array | Similar to 523
-560. Subarray Sum Equals K | D={0:1} initially (sumv->counts). for x: sumv=sumv+x, if sumv-k in D: sumv+=D[sumv-k], D[sumv]+=1
-
-Iteration - subarry sum pos: caterpillar 
-209. Minimum Size Subarray Sum | extend front and cut back (similar to 187)
-424. Longest Repeating Character Replacement
---
-1658. Minimum Operations to Reduce X to Zero | while accum>=target and start<=i:, return ans if maxLen>0 or target==0 else -1
 
 Iteration - Sort
 75. Sort Colors | Dutch Flag Algorithm. l=m=0, r=len(L)-1. while m<=r: if nums[m]==0: swap(L[l],[m]), l+=1, m+=1 elif nums[m]==1: m+=1, else: swap(L[m],L[r]), r-=1
