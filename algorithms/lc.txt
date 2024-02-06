@@ -182,8 +182,7 @@ Iteration
 5. Longest Palindromic Substring
 31. Next Permutation | e.g. 246531. from right to left: i at peak. if i>0: from right to left: L[j]>L[i-1], swap(L[i-1],L[j]). swap all ele >=i
 48. Rotate Image
-396. Rotate Function | init ans=current, sumv. current += sumv - nums[-1-i]*len(nums). consider rotate difference only
-556. Next Greater Element III | same as 31
+56. Merge Intervals | sort and greedy merge
 93. Restore IP Addresses | cut i,j,k four pieces, each piece: non-empty, <255, no leading 0
 122. Best Time to Buy and Sell Stock II | ans += max(0,num[i]-num[i-1])
 165. Compare Version Numbers | split each and fill zeros to align length
@@ -195,16 +194,21 @@ Iteration
 283. Move Zeroes | zeros, saves = nums.count(0), 0. while saves<len(nums)-zeros: find save_idx by next, swap, saves+=1 (saves mean found non-zero elements)
 328. Odd Even Linked List | ll. interleaving points
 386. Lexicographical Numbers | sort in str or key=cmp_to_key(lex). def lex(x,y): compare if len(x)==len(y) else fill samllest at the shorter of the end and compare (different from 179)
+396. Rotate Function | init ans=current, sumv. current += sumv - nums[-1-i]*len(nums). consider rotate difference only
 405. Convert a Number to Hexadecimal | find -x of binary: get +x binary -> reverse bits -> +1 || get +x+1 binary -> reverse bits
 406. Queue Reconstruction by Height | sort by (-p[0],p[1]). then L.insert(p[1],p). (if all p[1]=0, tall first; if all p[0]=h, small p[1] first)
+435. Non-overlapping Intervals | sort by last key and greedy remove. L.sort(key=lambda x:x[-1]). for i in range(1,len(L)): if non-overlap with prev: prev=i else ans+=1
 442. Find All Duplicates in an Array | Use negative sign to save visited. ans = []. for i in range(len(L)): store_idx = abs(nums[i])-1 if nums[store_idx]<0: ans.append(abs(nums[i])). nums[store_idx]*=-1
+452. Minimum Number of Arrows to Burst Balloons | similar to 56, but apply intersection instead of union.
 470. Implement Rand10() Using Rand7() | 7-carry while x>=40
 524. Longest Word in Dictionary through Deleting | find longest issubsequence
+556. Next Greater Element III | same as 31
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
 1980. Find Unique Binary String | return "".join( str(int(L[i][i]=="0")) for i in range(len(L)) ) # diagnoal algorithm
 149*. Max Points on a Line | use determinant, O(n^3)
+*. Maximum overlap interval | sort (start,1) and (end,-1). Accumulation count and find max.
 
 Iteration - Arithmetic sort
 268. Missing Number | while i<len(L): if L[i]<len(L) and L[i]!=L[L[i]]: L[L[i]], L[i] = L[i], L[L[i]] else i+=1 # CANNOT REVERSE
@@ -254,19 +258,9 @@ Iteration - Left-Right
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity). l,r=max(weights),sum(weights). while l<=r.
 2187. Minimum Time to Complete Trips | l,r,f=0,totalTrips*min(time),lambda m:sum(int(m/t) for t in time). while l<=r: if trip==totalTrips: return m-min(m%t for t in time).
 
-@
-1201. Ugly Number III | gcd, binary search find m -> while not multiple: m-=1
-
 Iteration - Monte Carlo
 169. Majority Element | sample x, L.count(x)
 229. Majority Element II
-
-Iteration - Non-overlapping interval
-56. Merge Intervals | sort and merge
-435. Non-overlapping Intervals | sort by end. for i in range(L): if non-overlap with prev: prev=i else ans+=1
-452. Minimum Number of Arrows to Burst Balloons | Like 56. But intersection instead of union.
--
-*. Maximum overlap interval | sort (start,1) and (end,-1). Accumulation count and find max.
 
 Iteration - sliding window
 1838. Frequency of the Most Frequent Element
