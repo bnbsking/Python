@@ -227,33 +227,35 @@ Iteration - FSM
 714. Best Time to Buy and Sell Stock with Transaction Fee | b, s = 0, -p. for p in P: b, s = max(b,s-p), max(s,b+p-fee). return s
 123*. Best Time to Buy and Sell Stock III | b1, s1, b2, s2 = -P[0], 0, -P[0], 0. for p in P: b1, s1, b2, s2 = max(b1,-p), max(s1, b1+p), max(b2, s1-p), max(s2, b2+p). return sel2
 
+Iteration - Left-Right 0
+34. Find First and Last Position of Element in Sorted Array | while l<=r
+35. Search Insert Position | while l<=r. return l.
+74. Search a 2D Matrix | while l<=r twice
+240. Search a 2D Matrix II | while l<=r once+for
+278. First Bad Version | while l<=r.
+374. Guess Number Higher or Lower | while l<=r.
+436. Find Right Interval | for while l<=r.
+
+Iteration - Left-Right m-1,m,m+1
+153. Find Minimum in Rotated Sorted Array | while l<=r. min(L[m-1],L[m],L[m+1]). elif nums[l]<=nums[m]: if nums[l]<nums[r]: return nums[l] else l=m+1. else r=m-1
+162. Find Peak Element | while l<=r. max(L[m-1],L[m],L[m+1]). if maxv==v2: return m elif maxv==v1: r = m-1 else: l = m+1
+462. Minimum Moves to Equal Array Elements II | similar to 162. l,r,f=min(L),max(L),lambda level:sum(abs(x-level) for x in nums). while l<=r:
+540. Single Element in a Sorted Array | test cases:1/112/122/12233/11233/11223. while l<=r: if l==r or L[m-1]!=L[m]!=L[m+1]: return L[m] (always valid index since l-r=odd), consider c0 to c4...
+
 Iteration - Left-Right
 11. Container With Most Water | ans=0. while l<=r: ans=max(ans,(r-l)*min(L[l],L[r])). if height[l]<=height[r]: l+=1 else: r-=1
 16. 3Sum Closest | L.sort(). ans_dist, ans = float('inf'), sum(nums[:3]). for i in range(len(L)-2): l=i+1, r=len(L)-1. while l<r:...
 33. Search in Rotated Sorted Array | while l<=r -> judge pivot left or right (nums[l]<=nums[m]) -> judge whether target value is between the other side
-34. Find First and Last Position of Element in Sorted Array | while l<=r
-35. Search Insert Position | while l<=r. return l.
-74. Search a 2D Matrix | while l<=r
 81. Search in Rotated Sorted Array II | based on 33. add if nums[l]==nums[m]==nums[r]: l, r = l+1, r-1.
-153. Find Minimum in Rotated Sorted Array | min(L[m-1],L[m],L[m+1]). elif nums[l]<=nums[m]: if nums[l]<nums[r]: return nums[l] else l=m+1. else r=m-1
-162. Find Peak Element | max(L[m-1],L[m],L[m+1]). if maxv==v2: return m elif maxv==v1: r = m-1 else: l = m+1
+167. Two Sum II - Input Array Is Sorted | while l<r
+274. H-Index | L.sort(). ans=0. while ans<len(L) and L[-1-ans]>=ans+1: ans+=1
+275. H-Index II | while l<=r: m = (l+r)//2. if L[m]==len(L)-m: return len(L)-m. .... return len(L)-l
+475. Heaters | ans=0. for x in house: while l<=r: l=closest heater. if l==0: ans=max(ans,heaters[l]-x) elif l==len(heaters):ans=max(ans,x-heaters[l-1]) else: ans=max(ans,min(x-heaters[l-1],heaters[l]-x))
+1011. Capacity To Ship Packages Within D Days | def isValid(capacity). l,r=max(weights),sum(weights). while l<=r.
+2187. Minimum Time to Complete Trips | l,r,f=0,totalTrips*min(time),lambda m:sum(int(m/t) for t in time). while l<=r: if trip==totalTrips: return m-min(m%t for t in time).
 
-167. Two Sum II - Input Array Is Sorted
-240. Search a 2D Matrix II
-274. H-Index | reverse n, n-1, ..., 2, 1. L[-1-i]<1+i
-275. H-Index II
-278. First Bad Version
-374. Guess Number Higher or Lower
-436. Find Right Interval
-462. Minimum Moves to Equal Array Elements II | similar to 162. Or sort and use median as level.
-475. Heaters | search len(houses) times
-540. Single Element in a Sorted Array | while 1: if l==r or L[m-1]!=L[m]!=L[m+1]: return L[m] (always valid index since l-r=odd), consider c0 to c4...
--
-1011. Capacity To Ship Packages Within D Days | def isValid(capacity), binary search [max(weights),sum(weights)]
+@
 1201. Ugly Number III | gcd, binary search find m -> while not multiple: m-=1
-2187. Minimum Time to Complete Trips | binary search + linear search
---
-42*. Trapping Rain Water | find maxidx, collect left with lmax, collect right with rmax
 
 Iteration - Monte Carlo
 169. Majority Element | sample x, L.count(x)
