@@ -88,18 +88,24 @@ Hash 0
 260. Single Number III
 290. Word Pattern | same as 205
 299. Bulls and Cows | same as 205 and 290
+347. Top K Frequent Elements
 349. Intersection of Two Arrays
 350. Intersection of Two Arrays II
 383. Ransom Note
 387. First Unique Character in a String
 389. Find the Difference
 398. Random Pick Index
+409. Longest Palindrome
+451. Sort Characters By Frequency
 423. Reconstruct Original Digits from English | order: 0246813579
 500. Keyboard Row
 519. Random Flip Matrix | while 1: pick not selected
 706. Design HashMap
 859. Buddy Strings
+1160. Find Words That Can Be Formed by Characters
+1207. Unique Number of Occurrences
 1347. Minimum Number of Steps to Make Two Strings Anagram | sum((Counter-Counter).values())
+1436. Destination City
 1657. Determine if Two Strings Are Close | set(word1)==set(word2) and sorted(Counter(word1).values()) == sorted(Counter(word2).values())
 2352. Equal Row and Column Pairs | Counter, sum(D[key]*E[key] for key in D.keys()&E.keys()
 2610. Convert an Array Into a 2D Array With Conditions
@@ -124,6 +130,7 @@ Hash
 1930. Unique Length-3 Palindromic Subsequences | for c in set(s): l=s.find(c), r=s.rfind(c) -> ans += len(set(s[l+1:r]))
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 2225. Find Players With Zero or One Losses | defaultdict count lose times. loseD[win]+=0, loseD[win]+=1
+2870. Minimum Number of Operations to Make Array Empty | C,ans=Counter(L),0. for x in C.values(): if x==1: return -1. ans+=(x+2)//3
 
 Hash subarray sum all
 523. Continuous Subarray Sum | D={0:-1} (sumv%k->first_occur_idx). for x: sumv=(sumv+x)%k. if sumv in D: if index_diff>1:return True, else: D[sumv]=i
@@ -132,6 +139,8 @@ Hash subarray sum all
 
 Heap0
 23*. Merge k Sorted Lists
+1845. Seat Reservation Manager
+1921. Eliminate Maximum Number of Monsters
 1962. Remove Stones to Minimize the Total
 
 Heap
@@ -140,30 +149,97 @@ Heap
 767. Reorganize String | heap(-timees,char). while len(H)>=2.
 2462. Total Cost to Hire K Workers | heap(cost[i] or cost[-1-i],'l'or'r') with l, r pointers
 
-Iteration 0
+Iteration or naive 0
+7. Reverse Integer
+8. String to Integer (atoi)
+9. Palindrome Number
+12. Integer to Roman
+13. Roman to Integer
+14. Longest Common Prefix
+19. Remove Nth Node From End of List
+43. Multiply Strings
+50. Pow(x, n)
 54. Spiral Matrix
+58. Length of Last Word
 59. Spiral Matrix II
 61. Rotate List | ll.
+66. Plus One
+67. Add Binary
+69. Sqrt(x)
+70. Climbing Stairs
 73. Set Matrix Zeroes | O(1) space: let 1 change to 0.5
-1220. Count Vowels Permutation
+88. Merge Sorted Array
+125. Valid Palindrome
+143. Reorder List
+147. Insertion Sort List
+148. Sort List
+151. Reverse Words in a String
+189. Rotate Array | reverse 3 times O(1) space
+190. Reverse Bits
+191. Number of 1 Bits
 228. Summary Ranges | general splitting
+231. Power of Two | bin
+237. Delete Node in a Linked List
 238. Product of Array Except Self | math.prod(list)
+242. Valid Anagram
+258. Add Digits
+263. Ugly Number
+284. Peeking Iterator
 289. Game of Life | binary_encode=(next)(prev)
+292. Nim Game
+318. Maximum Product of Word Lengths
+319. Bulb Switcher
+342. Power of Four | bin
+344. Reverse String
+345. Reverse Vowels of a String
+367. Valid Perfect Square
 382. Linked List Random Node | ll.
 384. Shuffle an Array
 392. Is Subsequence
+412. Fizz Buzz
+414. Third Maximum Number
+415. Add Strings
 443. String Compression | general splitting
 453. Minimum Moves to Equal Array Elements
 455. Assign Cookies
 459. Repeated Substring Pattern
 461. Hamming Distance
+463. Island Perimeter
+468. Validate IP Address
+476. Number Complement
+478. Generate Random Point in a Circle | parameter r=sqrt(rand)*self.r
+485. Max Consecutive Ones
+495. Teemo Attacking
+497. Random Point in Non-overlapping Rectangles | random.choices(L, weights, k=1)[0]
+506. Relative Ranks
+507. Perfect Number
+509. Fibonacci Number
+520. Detect Capital
+528. Random Pick with Weight
+537. Complex Number Multiplication
 539. Minimum Time Difference | ans=min(ans,abs(diff),1440-abs(diff))
+551. Student Attendance Record I
 725. Split Linked List in Parts | ll.
+744. Find Smallest Letter Greater Than Target
+1220*. Count Vowels Permutation
+1266. Minimum Time Visiting All Points
+1318. Minimum Flips to Make a OR b Equal to c
 1351. Count Negative Numbers in a Sorted Matrix
 1441. Build an Array With Stack Operations
+1464. Maximum Product of Two Elements in an Array
+1502. Can Make Arithmetic Progression From Sequence
+1572. Matrix Diagonal Sum
 1582. Special Positions in a Binary Matrix
+1662. Check If Two String Arrays are Equivalent
+1688. Count of Matches in Tournament
+1704. Determine if String Halves Are Alike
 1877. Minimize Maximum Pair Sum in Array | sort, max of head-tail pair
+1903. Largest Odd Number in String
+2125. Number of Laser Beams in a Bank
+2148. Count Elements With Strictly Smaller and Greater Elements
+2264. Largest 3-Same-Digit Number in String
 2279. Maximum Bags With Full Capacity of Rocks
+2482. Difference Between Ones and Zeros in Row and Column | record row1s & col1s
 
 Iteration i with accum
 53. Maximum Subarray | ans=L[0], acc=0. for x in L: acc=max(acc+x,x), ans=max(ans,acc)
@@ -176,6 +252,7 @@ Iteration i with accum
 746. Min Cost Climbing Stairs | a,b=cost[0],cost[1]. for i in range(2,len(L)): c=cost[i]+min(a,b), a=b, b=c. return min(a,b)
 1535. Find the Winner of an Array Game | current_winner(cwr), consecutive_wins(cws) = L[0], 0. for i in range(1,len(L)): if L[i]>cwr: cwr, cws = L[i], 1 else cws+=1 if cws==k: break
 1759. Count Number of Homogenous Substrings | ans=1, cont=1. for x in L[1:]: cont=cont+1 if s[i]==s[i-1] else 1. ans+=cont (ans+=cont due to arithmetic sum, similar to 467)
+2483. Minimum Penalty for a Shop | ans=0, lowestPenalty=penalty=L.count("Y"). for i in range(len(L)): penalty += (-1)**int(L[i]=="Y"). if penalty<lowestPenalty: ans, lowestPenalty = i+1, penalty
 
 Iteration i with start
 26. Remove Duplicates from Sorted Array
@@ -289,86 +366,6 @@ Math
 441. Arranging Coins | x*(x+1)/2=n, x^2+x-2n=0, x=(-1+sqrt(1+8n))/2.
 492. Construct the Rectangle | edge = int(area**0.5). while area%edge: edge-=1
 1359. Count All Valid Pickup and Delivery Options | suppose ans=f(i-1) has got, there are 2i-2 parentheses (2i-1 spaces). Insert possibilities: (2i-1)+(2i-2)+...+1=2i*(2i-1)/2=i*(2i-1). ans=ans*i*(2i-1)%m
-
-Naive
-7. Reverse Integer
-8. String to Integer (atoi)
-9. Palindrome Number
-12. Integer to Roman
-13. Roman to Integer
-14. Longest Common Prefix
-19. Remove Nth Node From End of List
-43. Multiply Strings
-50. Pow(x, n)
-58. Length of Last Word
-66. Plus One
-67. Add Binary
-69. Sqrt(x)
-70. Climbing Stairs
-88. Merge Sorted Array
-125. Valid Palindrome
-143. Reorder List
-147. Insertion Sort List
-148. Sort List
-151. Reverse Words in a String
-189. Rotate Array | reverse 3 times O(1) space
-190. Reverse Bits
-191. Number of 1 Bits
-231. Power of Two | bin
-237. Delete Node in a Linked List
-242. Valid Anagram
-258. Add Digits
-263. Ugly Number
-284. Peeking Iterator
-292. Nim Game
-318. Maximum Product of Word Lengths
-319. Bulb Switcher
-342. Power of Four | bin
-344. Reverse String
-345. Reverse Vowels of a String
-347. Top K Frequent Elements
-367. Valid Perfect Square
-409. Longest Palindrome
-412. Fizz Buzz
-414. Third Maximum Number
-415. Add Strings
-451. Sort Characters By Frequency
-463. Island Perimeter
-468. Validate IP Address
-476. Number Complement
-478. Generate Random Point in a Circle | parameter r=sqrt(rand)*self.r
-485. Max Consecutive Ones
-495. Teemo Attacking
-497. Random Point in Non-overlapping Rectangles | random.choices(L, weights, k=1)[0]
-506. Relative Ranks
-507. Perfect Number
-509. Fibonacci Number
-520. Detect Capital
-528. Random Pick with Weight
-537. Complex Number Multiplication
-551. Student Attendance Record I
--
-744. Find Smallest Letter Greater Than Target
-1160. Find Words That Can Be Formed by Characters
-1207. Unique Number of Occurrences
-1266. Minimum Time Visiting All Points
-1318. Minimum Flips to Make a OR b Equal to c
-1436. Destination City
-1464. Maximum Product of Two Elements in an Array
-1502. Can Make Arithmetic Progression From Sequence
-1572. Matrix Diagonal Sum
-1662. Check If Two String Arrays are Equivalent
-1688. Count of Matches in Tournament
-1704. Determine if String Halves Are Alike
-1845. Seat Reservation Manager | Heap
-1903. Largest Odd Number in String
-1921. Eliminate Maximum Number of Monsters | Heap
-2125. Number of Laser Beams in a Bank
-2148. Count Elements With Strictly Smaller and Greater Elements
-2264. Largest 3-Same-Digit Number in String
-2482. Difference Between Ones and Zeros in Row and Column | record row1s & col1s
-2483. Minimum Penalty for a Shop
-2870. Minimum Number of Operations to Make Array Empty
 
 Queue
 498. Diagonal Traverse | BFS add down when i=0 + add right always, use i+j to judge even or odd
