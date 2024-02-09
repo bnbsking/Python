@@ -409,6 +409,8 @@ Recursion 0 (bottom-up or top-down)
 230. Kth Smallest Element in a BST
 234. Palindrome Linked List
 404. Sum of Left Leaves | f(T,isLeft)
+429. N-ary Tree Level Order Traversal
+430. Flatten a Multilevel Doubly Linked List | D-child-next traversal
 445. Add Two Numbers II | reverse list and same as 2.
 
 Recursion non-return
@@ -465,11 +467,13 @@ Recursion return
     # (x-i)*i = -i^2 + ix -> i=x/2 # split 2 or 3 (odd number) only
 365. Water and Jug Problem | visitS=set(). def f(x=0): if x==tc: return True, elif x in visitS or x<0 or x>j1+j2: return False, else: visitS.add(x) return f(x+j1) or f(x-j1) or f(x+j2) or f(x-j2)
 394. Decode String | find ] -> rfind ( -> flatten -> recusion call
+395. Longest Substring with At Least K Repeating Characters | for c in set(s): if s.count(c)<k: return max( f(substr,k) for substr in s.split(c) ). return len(s)
 397. Integer Replacement | def f(n=n): if n not in self.D: self.D[n] = 1+f(n//2) if n%2==0 else 1+min(f(n-1), f(n+1)). return self.D[n]
 427. Construct Quad Tree | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
 450. Delete Node in a BST | if not left: elif not right: else find rightest node in left subtree -> copy its value and delete such node
 449. Serialize and Deserialize BST
-486. Predict the Winner | add memory, f(l,r)->score
+464. Can I Win | if sum(choices)<total: return False (before start recursion), recursion condition: false initially, for i in range(len(L)): if not f: true and break
+486. Predict the Winner | similar to 464. add memory, f(l,r)->score
 491. Non-decreasing Subsequences | f(tup) -> set[non-desc-tuple] with each ele len>=1, filter finally
 501. Find Mode in Binary Search Tree
 543. Diameter of Binary Tree | self.ans=0. insert "self.ans=max(self.ans, l+r)" in "get treeheight recursion function"
@@ -481,10 +485,9 @@ Recursion mix
 
 
 
-395. Longest Substring with At Least K Repeating Characters | for c in set(s): Use s.count(c)<k as splitting seperator
-429. N-ary Tree Level Order Traversal
-430. Flatten a Multilevel Doubly Linked List
-464. Can I Win | if sum(choices)<total: return False (before start recursion), recursion condition: false initially, for i in range(len(L)): if not f: true and break
+
+
+
 508. Most Frequent Subtree Sum
 513. Find Bottom Left Tree Value
 515. Find Largest Value in Each Tree Row
