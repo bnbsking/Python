@@ -283,9 +283,10 @@ Iteration - Sort
 912. Sort an Array | Quick sort. if l<r. random pivot + Dutch flag. f(l,lo-1), f(hi+1,r)
 
 Math
-357. Count Numbers with Unique Digits
-441. Arranging Coins
-492. Construct the Rectangle | sqrt(x), while not divisible: x-=1
+223. Rectangle Area | max(0,min()-max())
+357. Count Numbers with Unique Digits | 10, 10+9*9, 10+9*9+9*9*8, ...
+441. Arranging Coins | x*(x+1)/2=n, x^2+x-2n=0, x=(-1+sqrt(1+8n))/2.
+492. Construct the Rectangle | edge = int(area**0.5). while area%edge: edge-=1
 -
 1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
 --
@@ -544,7 +545,6 @@ Trie
 Special
 28. Find the Index of the First Occurrence in a String | lcps + KMP
 146. LRU Cache | dict+double linked list OR OrderedDict with O.popitem(last=False)
-223. Rectangle Area | max(0,min()-max())
 307. Range Sum Query - Mutable | Segment tree. (T,T.l,T.r)=(sum(L),sum(left),sum(right)). same inputs of 3 methods f(i=0,l=0,r=len(L)-1)
 --
 *1483. Kth Ancestor of a Tree Node | Binary lifting. self.D[i][j]=i-th node's 2**j ancestor. Column major filling since it may not have ancestor before filling parent. To fill self.D[i][j-1], parent=self.D[i][j-1] 
