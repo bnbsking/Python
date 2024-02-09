@@ -376,7 +376,7 @@ Queue
 127*. Word Ladder
 239*. Sliding Window Maximum | (val,idx) in queue, length is not const, always desc sorted
 
-Recursion 0
+Recursion 0 (bottom-up or top-down)
 2. Add Two Numbers | ll
 21. Merge Two Sorted Lists | ll
 24. Swap Nodes in Pairs | ll
@@ -393,6 +393,9 @@ Recursion 0
 173. Binary Search Tree Iterator
 203. Remove Linked List Elements
 222. Count Complete Tree Nodes
+226. Invert Binary Tree
+230. Kth Smallest Element in a BST
+234. Palindrome Linked List
 445. Add Two Numbers II | reverse list and same as 2.
 
 Recursion non-return
@@ -401,8 +404,17 @@ Recursion non-return
 47. Permutations II | same as 46, but use dict instead of set
 144. Binary Tree Preorder Traversal
 145. Binary Tree Postorder Traversal
+529. Minesweeper
+530. Minimum Absolute Difference in BST | self.ans, self.prev = 10**5, 10**5. def f(T): if T: f(T.left), self.ans, self.prev, f(T.right)
+
+Recursion non-return - start or path
+39. Combination Sum | f(path={},start=0,target=target), similar than 40. for t in range(targer//can+1)
+40. Combination Sum II | collections.counter, f(path=[],start=0,target=target), for t in range(times+1)
+77. Combinations | f(path=[], start=0) simpler than 40. skip L[start] or add L[start]
+518. Coin Change II | f(start=0,x=amount) and memorization
 
 Recursion return
+25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
 60*. Permutation Sequence | def f(L=[], M=list(range(1,1+n)), k=k-1, each=fac(n-1)) if not M: return "".join(L) else: i = k//each, L.append( M.pop(i) ), return f(L,M,k-i*each,each/len(M) if len(M) else 0)
 95. Unique Binary Search Trees II | f(L=list(range(1,1+n)))
 96. Unique Binary Search Trees
@@ -415,44 +427,29 @@ Recursion return
 112. Path Sum
 129. Sum Root to Leaf Numbers
 <206.> Reverse Linked List | ll. if not head or not head.next: return head. reverse=self.reverseList(head.next). head.next.next=head. head.next=None. return reverse.
+241. Different Ways to Add Parentheses | similar to 95.
+306. Additive Number | cut all possibilities of 3 parts, each do recursive call
+337. House Robber III | add memory D:id->best_val
+343. Integer Break | if n==2 or n==3: return n-1. self.D={1:1,2:2,3:3}. def f(n=n): self.D[n] = self.D[n] if n in self.D else max(f(n-2)*2, f(n-3)*3). return self.D[n]
+    # (x-i)*i = -i^2 + ix -> i=x/2 # split 2 or 3 (odd number) only
 365. Water and Jug Problem | visitS=set(). def f(x=0): if x==tc: return True, elif x in visitS or x<0 or x>j1+j2: return False, else: visitS.add(x) return f(x+j1) or f(x-j1) or f(x+j2) or f(x-j2)
+394. Decode String | find ] -> rfind ( -> flatten -> recusion call
+397. Integer Replacement | def f(n=n): if n not in self.D: self.D[n] = 1+f(n//2) if n%2==0 else 1+min(f(n-1), f(n+1)). return self.D[n]
+427. Construct Quad Tree | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
+450. Delete Node in a BST | if not left: elif not right: else find rightest node in left subtree -> copy its value and delete such node
+449. Serialize and Deserialize BST
+486. Predict the Winner | add memory, f(l,r)->score
+491. Non-decreasing Subsequences | f(tup) -> set[non-desc-tuple] with each ele len>=1, filter finally
+501. Find Mode in Binary Search Tree
+543. Diameter of Binary Tree | self.ans=0. insert "self.ans=max(self.ans, l+r)" in "get treeheight recursion function"
+652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
+894. All Possible Full Binary Trees | similar to 95.
 
 Recursion mix
 880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha(): ( if cnt==k: return char else cnt+=1 ) else: ( if cnt*int(char)>k: return f( k%cnt ) else cnt*=int(char) ).
 
----------
-
-226. Invert Binary Tree
-230. Kth Smallest Element in a BST
-234. Palindrome Linked List
-241. Different Ways to Add Parentheses | similar to 95.
-306. Additive Number | cut 3 parts sequentially, each do recursive call
-337. House Robber III | add memory
-343. Integer Break | initial n<4 return. f(n) recursion cut 2 or 3 where f(1) and f(2) and f(3) are different from the initial. add memory
-394. Decode String | find ] -> rfind ( -> flatten -> recusion call
-397. Integer Replacement | add memory
-427. Construct Quad Tree | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
-449. Serialize and Deserialize BST
-450. Delete Node in a BST | if not left: elif not right: else find rightest node in left subtree -> copy its value and delete such node
-486. Predict the Winner | add memory, f(l,r) -> score
-491. Non-decreasing Subsequences | f(tup) -> set[non-desc-tuple] with each ele len>=1, filter finally
-501. Find Mode in Binary Search Tree
-518. Coin Change II | f(start, target) and memorization
-529. Minesweeper
-530. Minimum Absolute Difference in BST | f(T.left) -> self.ans -> self.prev -> f(T.right)
-543. Diameter of Binary Tree | insert updating ans in treeheight recursion function
--
-652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
-894. All Possible Full Binary Trees | similar to 95.
-912. Sort an Array
---
-25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
-
 Recursion Share Bottom-up <3/4>
-39. Combination Sum | f(path={},start=0,target=target), similar than 40. for t in range(targer//can+1)
-40. Combination Sum II | collections.counter, f(path=[],start=0,target=target), for t in range(times+1)
-77. Combinations | f(path=[], start=0) simpler than 40. skip L[start] or add L[start]
-79. Word Search | retrievable f(position,match,visitS) # retrievable = backtracking
+79. Word Search | f(position,match,visitS) backtracking
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge + add memory
 216. Combination Sum III | f(path=[],start=1,sumv=n), similar as 77.
 404. Sum of Left Leaves | f(T,isLeft)
@@ -464,8 +461,8 @@ Recursion Share Bottom-up <3/4>
 2305. Fair Distribution of Cookies | O(n^k) retreivable
 --
 30*. Substring with Concatenation of All Words
-37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, retrievable + must copy L since has L.pop  
-51*. N-Queens | retrievable + no need copy B since B is invariant
+37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop  
+51*. N-Queens | backtracking + no need copy B since B is invariant
 52*. N-Queens II
 140*. Word Break II | similar as 40
 
