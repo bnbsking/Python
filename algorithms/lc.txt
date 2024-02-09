@@ -50,8 +50,10 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 133. Clone Graph | node2dict, dict2node
 399. Evaluate Division | dfs f(start, end, visit), use graph as memorization, return find, G[start,end]. visitS should be reinitialized per query, don't add unfind query so G can keep disconnection.
 433. Minimum Genetic Mutation | BFS, visitS. can add memory
+498. Diagonal Traverse | BFS add down when i=0 + add right always, use i+j to judge even or odd
 542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
+1424. Diagonal Traverse II | simpler than 498.
 
 Graph - Topological sort (Kahn's: init inDegL=[inDeg,...], leaves=[inDeg==0 node, ...])
 207. Course Schedule    | DFS, G is constant, while leaves
@@ -270,9 +272,12 @@ with hash
 
 Iteration
 5. Longest Palindromic Substring
+17. Letter Combinations of a Phone Number
 31. Next Permutation | e.g. 246531. from right to left: i at peak. if i>0: from right to left: L[j]>L[i-1], swap(L[i-1],L[j]). swap all ele >=i
 48. Rotate Image
 56. Merge Intervals | sort and greedy merge
+78. Subsets | ans=[[]]. for x in nums: ans = ans + [ l+[x] for l in ans  ]
+90. Subsets II | ans = {tuple()}. for x in sorted(nums): ans = ans | { t+(x,) for t in ans }
 93. Restore IP Addresses | cut i,j,k four pieces, each piece: non-empty, <255, no leading 0
 122. Best Time to Buy and Sell Stock II | ans += max(0,num[i]-num[i-1])
 165. Compare Version Numbers | split each and fill zeros to align length
@@ -368,35 +373,30 @@ Math
 1359. Count All Valid Pickup and Delivery Options | suppose ans=f(i-1) has got, there are 2i-2 parentheses (2i-1 spaces). Insert possibilities: (2i-1)+(2i-2)+...+1=2i*(2i-1)/2=i*(2i-1). ans=ans*i*(2i-1)%m
 
 Queue
-498. Diagonal Traverse | BFS add down when i=0 + add right always, use i+j to judge even or odd
---
 127*. Word Ladder
 239*. Sliding Window Maximum | (val,idx) in queue, length is not const, always desc sorted
-1424. Diagonal Traverse II | simpler than 498.
 
-Recursion
-779. K-th Symbol in Grammar | left remains, right flips -> count how many right (flips)
-124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
-
-Recursion Arg Bottom-up <1/4>
-17. Letter Combinations of a Phone Number
-46. Permutations
-47. Permutations II
-22. Generate Parentheses | f(L=['('],l=1,r=0)
-78. Subsets | f(i=0, L=[[]]) concatenate add nums[i] or not add
-90. Subsets II
-110. Balanced Binary Tree
-365. Water and Jug Problem | DFS f(total), 4 dirs: total+j1, total+j2, total-j1, total-j2
--
-880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha()... else
---
-60*. Permutation Sequence
-
-Recursion Arg Top-Down <2/4>
-2. Add Two Numbers
+Recursion 0
+2. Add Two Numbers | ll
+21. Merge Two Sorted Lists | ll
+24. Swap Nodes in Pairs | ll
 445. Add Two Numbers II | reverse list and same as 2.
-21. Merge Two Sorted Lists
-24. Swap Nodes in Pairs
+
+Recursion non-return
+22. Generate Parentheses | f(L=['('],l=1,r=0) if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
+46. Permutations | def f(L=[], S=set(nums)): if len(L)==len(nums): ans.append(L) else: for ele in S: f(L+[ele], S-{ele})
+47. Permutations II | same as 46, but use dict instead of set
+
+Recursion return
+60*. Permutation Sequence | def f(L=[], M=list(range(1,1+n)), k=k-1, each=fac(n-1)) if not M: return "".join(L) else: i = k//each, L.append( M.pop(i) ), return f(L,M,k-i*each,each/len(M) if len(M) else 0)
+110. Balanced Binary Tree | self.ans=True. def f(T): if not self.ans: ... return left_tree_height, right_tree_height
+365. Water and Jug Problem | visitS=set(). def f(x=0): if x==tc: return True, elif x in visitS or x<0 or x>j1+j2: return False, else: visitS.add(x) return f(x+j1) or f(x-j1) or f(x+j2) or f(x-j2)
+
+Recursion mix
+880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha(): ( if cnt==k: return char else cnt+=1 ) else: ( if cnt*int(char)>k: return f( k%cnt ) else cnt*=int(char) ).
+
+
+
 57. Insert Interval
 82. Remove Duplicates from Sorted List II
 83. Remove Duplicates from Sorted List
@@ -505,6 +505,11 @@ Recursion Share Top-Down <4/4>
 1361. Validate Binary Tree Nodes
 1457. Pseudo-Palindromic Paths in a Binary Tree
 2385. Amount of Time for Binary Tree to Be Infected | Tree to Graph by add parent link + BFS
+
+Recursion
+779. K-th Symbol in Grammar | left remains, right flips -> count how many right (flips)
+124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
+
 
 SortedContainers
 2353. Design a Food Rating System | functools.cmp_to_key, Dict[cusine] -> SortedList(rate,food) & Dict[food] -> [cusine,rate] 
