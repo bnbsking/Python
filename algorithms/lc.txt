@@ -396,12 +396,14 @@ Recursion 0 (bottom-up or top-down)
 226. Invert Binary Tree
 230. Kth Smallest Element in a BST
 234. Palindrome Linked List
+404. Sum of Left Leaves | f(T,isLeft)
 445. Add Two Numbers II | reverse list and same as 2.
 
 Recursion non-return
 22. Generate Parentheses | f(L=['('],l=1,r=0) if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
 46. Permutations | def f(L=[], S=set(nums)): if len(L)==len(nums): ans.append(L) else: for ele in S: f(L+[ele], S-{ele})
 47. Permutations II | same as 46, but use dict instead of set
+131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge + add memory
 144. Binary Tree Preorder Traversal
 145. Binary Tree Postorder Traversal
 529. Minesweeper
@@ -409,8 +411,11 @@ Recursion non-return
 
 Recursion non-return - start or path
 39. Combination Sum | f(path={},start=0,target=target), similar than 40. for t in range(targer//can+1)
-40. Combination Sum II | collections.counter, f(path=[],start=0,target=target), for t in range(times+1)
+40. Combination Sum II | C,ans=sorted(Counter(candidates).items()), []. f(path=[],start=0,target=target), for t in range(times+1)
 77. Combinations | f(path=[], start=0) simpler than 40. skip L[start] or add L[start]
+79. Word Search | f(position,match,visitS) backtracking
+216. Combination Sum III | f(path=[],start=1,sumv=n), similar as 77.
+416. Partition Equal Subset Sum | Similar to 40. visitS((start,val)). def f(start=0, val=sumv//2)
 518. Coin Change II | f(start=0,x=amount) and memorization
 
 Recursion return
@@ -445,15 +450,14 @@ Recursion return
 652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
 894. All Possible Full Binary Trees | similar to 95.
 
+
 Recursion mix
 880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha(): ( if cnt==k: return char else cnt+=1 ) else: ( if cnt*int(char)>k: return f( k%cnt ) else cnt*=int(char) ).
 
-Recursion Share Bottom-up <3/4>
-79. Word Search | f(position,match,visitS) backtracking
-131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge + add memory
-216. Combination Sum III | f(path=[],start=1,sumv=n), similar as 77.
-404. Sum of Left Leaves | f(T,isLeft)
-416. Partition Equal Subset Sum | Similar to 40. no path so add memorization.
+
+
+
+
 457. Circular Array Loop | f(i,pathS,isPos) while not self.ans and nodeS: f(i,set(),isPos)
 473. Matchsticks to Square | Similar to 40. + 416.
 494. Target Sum | f(methods={0:1}, start=0), for i in range(times+1) for key,val in methods
