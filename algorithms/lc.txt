@@ -440,11 +440,11 @@ Recursion non-return - start or path
 113. Path Sum II | def f(T=root, s=targetSum, L=[])
 216. Combination Sum III | f(path=[],start=1,sumv=n), similar as 77.
 416. Partition Equal Subset Sum | Similar to 40. visitS((start,val)). def f(start=0, val=sumv//2)
-457. Circular Array Loop | f(node,pathS=set(),isPos=bool(i>0))->set. while not self.ans and nodeS: f(next_node,pathS,isPos)
+457. Circular Array Loop | self.ans, visitEdgeS = False, set(). def f(i, pathS): nexti=(i+nums[i])%len(nums). if i!=nexti and (i,nexti) not in visitEdgeS:
 473. Matchsticks to Square | Similar to 40. + 416.
 494. Target Sum | C, self.ans = sorted(Counter(nums).items()), 0. def f(methods={0:1}, start=0): for i in range(times+1) for key,val in methods
 518. Coin Change II | f(start=0,x=amount) and memorization
-2305. Fair Distribution of Cookies | O(n^k) backtracking. self.ans = float('inf'). def f(L=[0]*k, start=0):
+2305. Fair Distribution of Cookies | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
 
 Recursion return
 25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
@@ -472,7 +472,8 @@ Recursion return
 427. Construct Quad Tree | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
 450. Delete Node in a BST | if not left: elif not right: else find rightest node in left subtree -> copy its value and delete such node
 449. Serialize and Deserialize BST
-464. Can I Win | if sum(choices)<total: return False (before start recursion), recursion condition: false initially, for i in range(len(L)): if not f: true and break
+464. Can I Win | D = {}. def f(L=[True]*maxChoosableInteger, total=desiredTotal): state=(tuple(L), total). if state not in D:.... win = False. for i in range(len(L)):
+    if not win and L[i]: L[i]=False. win=<<<not>>> f(L, total-(i+1)). L[i]=True
 486. Predict the Winner | similar to 464. add memory, f(l,r)->score
 491. Non-decreasing Subsequences | f(tup) -> set[non-desc-tuple] with each ele len>=1, filter finally
 501. Find Mode in Binary Search Tree
