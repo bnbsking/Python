@@ -55,8 +55,11 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 498. Diagonal Traverse | BFS add down when i=0 + add right always, use i+j to judge even or odd
 529. Minesweeper
 542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
+547. Number of Provinces
+863. All Nodes Distance K in Binary Tree | Tree to Graph by add parent link + BFS
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
 1424. Diagonal Traverse II | simpler than 498.
+2385. Amount of Time for Binary Tree to Be Infected | Same as 863.
 
 Graph - Topological sort (Kahn's: init inDegL=[inDeg,...], leaves=[inDeg==0 node, ...])
 <207.> Course Schedule    | DFS, G is constant, while leaves
@@ -412,6 +415,13 @@ Recursion 0 (bottom-up or top-down)
 429. N-ary Tree Level Order Traversal
 430. Flatten a Multilevel Doubly Linked List | D-child-next traversal
 445. Add Two Numbers II | reverse list and same as 2.
+508. Most Frequent Subtree Sum
+513. Find Bottom Left Tree Value
+515. Find Largest Value in Each Tree Row
+538. Convert BST to Greater Tree
+1026. Maximum Difference Between Node and Ancestor
+1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
+1457. Pseudo-Palindromic Paths in a Binary Tree
 
 Recursion non-return
 22. Generate Parentheses | f(L=['('],l=1,r=0) if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
@@ -444,6 +454,7 @@ Recursion non-return - start or path
 473. Matchsticks to Square | Similar to 40. + 416.
 494. Target Sum | C, self.ans = sorted(Counter(nums).items()), 0. def f(methods={0:1}, start=0): for i in range(times+1) for key,val in methods
 518. Coin Change II | f(start=0,x=amount) and memorization
+1361. Validate Binary Tree Nodes | if all(ele<2 for ele in inL) and inL.count(0)==1: root, visitS = inL.index(0), set(range(n)). def g(i=root).
 2305. Fair Distribution of Cookies | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
 
 Recursion return
@@ -458,6 +469,7 @@ Recursion return
 110. Balanced Binary Tree | self.ans=True. def f(T): if not self.ans: ... return left_tree_height, right_tree_height
 111. Minimum Depth of Binary Tree
 112. Path Sum
+124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
 129. Sum Root to Leaf Numbers
 <206.> Reverse Linked List | ll. if not head or not head.next: return head. reverse=self.reverseList(head.next). head.next.next=head. head.next=None. return reverse.
 241. Different Ways to Add Parentheses | similar to 95.
@@ -466,7 +478,7 @@ Recursion return
 343. Integer Break | if n==2 or n==3: return n-1. self.D={1:1,2:2,3:3}. def f(n=n): self.D[n] = self.D[n] if n in self.D else max(f(n-2)*2, f(n-3)*3). return self.D[n]
     # (x-i)*i = -i^2 + ix -> i=x/2 # split 2 or 3 (odd number) only
 365. Water and Jug Problem | visitS=set(). def f(x=0): if x==tc: return True, elif x in visitS or x<0 or x>j1+j2: return False, else: visitS.add(x) return f(x+j1) or f(x-j1) or f(x+j2) or f(x-j2)
-394. Decode String | find ] -> rfind ( -> flatten -> recusion call
+<394>. Decode String | find ] -> rfind ( -> flatten -> recusion call
 395. Longest Substring with At Least K Repeating Characters | for c in set(s): if s.count(c)<k: return max( f(substr,k) for substr in s.split(c) ). return len(s)
 397. Integer Replacement | def f(n=n): if n not in self.D: self.D[n] = 1+f(n//2) if n%2==0 else 1+min(f(n-1), f(n+1)). return self.D[n]
 427. Construct Quad Tree | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
@@ -474,52 +486,31 @@ Recursion return
 449. Serialize and Deserialize BST
 464. Can I Win | D = {}. def f(L=[True]*maxChoosableInteger, total=desiredTotal): state=(tuple(L), total). if state not in D:.... win = False. for i in range(len(L)):
     if not win and L[i]: L[i]=False. win=<<<not>>> f(L, total-(i+1)). L[i]=True
-486. Predict the Winner | similar to 464. add memory, f(l,r)->score
+<486>. Predict the Winner | similar to 464. add memory, f(l,r)->score
 491. Non-decreasing Subsequences | f(tup) -> set[non-desc-tuple] with each ele len>=1, filter finally
 501. Find Mode in Binary Search Tree
 543. Diameter of Binary Tree | self.ans=0. insert "self.ans=max(self.ans, l+r)" in "get treeheight recursion function"
+606. Construct String from Binary Tree | l="("+f(T.left)+")" if T.left or T.right else "". r="("+f(T.right)+")" if T.right else "". return str(T.val)+l+r
 652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
+779. K-th Symbol in Grammar | if n<3: return k-1. prev = self.kthGrammar(n-1, (k+1)//2). return k%2 if prev==1 else (k+1)%2
+802. Find Eventual Safe States | recursive call if n not in ans and isSafe and n not in visit
 894. All Possible Full Binary Trees | similar to 95.
+
 
 Recursion mix
 880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha(): ( if cnt==k: return char else cnt+=1 ) else: ( if cnt*int(char)>k: return f( k%cnt ) else cnt*=int(char) ).
 
-
-
-
-
-
-508. Most Frequent Subtree Sum
-513. Find Bottom Left Tree Value
-515. Find Largest Value in Each Tree Row
-538. Convert BST to Greater Tree
-547. Number of Provinces
---
-606. Construct String from Binary Tree
-802. Find Eventual Safe States | args+share. recursive call if n not in ans, if isSafe and n not in visit 
-863. All Nodes Distance K in Binary Tree | Tree to Graph + BFS
-1026. Maximum Difference Between Node and Ancestor
-1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
-1361. Validate Binary Tree Nodes
-1457. Pseudo-Palindromic Paths in a Binary Tree
-2385. Amount of Time for Binary Tree to Be Infected | Tree to Graph by add parent link + BFS
-
-Recursion
-779. K-th Symbol in Grammar | left remains, right flips -> count how many right (flips)
-124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
-
-
-SortedContainers
-2353. Design a Food Rating System | functools.cmp_to_key, Dict[cusine] -> SortedList(rate,food) & Dict[food] -> [cusine,rate] 
-
-Stack
+Stack 0
 20. Valid Parentheses | dict + lr matching
 71. Simplify Path
+225. Implement Stack using Queues
+232. Implement Queue using Stacks
+
+Stack
 150. Evaluate Reverse Polish Notation | complete version 227. 224.
 155. Min Stack | a stack store (val,min)
 227. Basic Calculator II | totally 3 steps
-225. Implement Stack using Queues
-232. Implement Queue using Stacks
+
 316. Remove Duplicate Letters | lastIdx, stack, stackS. stack is the final answer, so pop if top is larger and top will be scanned later.
 402. Remove K Digits | while stack and k and stack[-1]>x. Exceptions: leading 0s, k>0, empty str
 456. 132 Pattern | stack, secondmax = [], float('-inf'). stack[-1] is always max; iterate reversely.
@@ -532,6 +523,9 @@ Stack
 1081. Smallest Subsequence of Distinct Characters | same as 316
 --
 224*. Basic Calculator
+
+SortedContainers
+2353. Design a Food Rating System | functools.cmp_to_key, Dict[cusine]->SortedList(rate,food) & Dict[food] -> [cusine,rate] 
 
 Trie
 208. Implement Trie (Prefix Tree) | Dict, the end of inserting: p["*"]="". e.g. insert apple, insert app, search app
