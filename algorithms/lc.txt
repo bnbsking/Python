@@ -227,6 +227,9 @@ Iteration or naive 0
 537. Complex Number Multiplication
 539. Minimum Time Difference | ans=min(ans,abs(diff),1440-abs(diff))
 551. Student Attendance Record I
+557. Reverse Words in a String III
+561. Array Partition
+566. Reshape the Matrix
 725. Split Linked List in Parts | ll.
 744. Find Smallest Letter Greater Than Target
 1220*. Count Vowels Permutation
@@ -316,6 +319,7 @@ Iteration - Arithmetic sort
 <268.> Missing Number | while i<len(L): if L[i]<len(L) and L[i]!=L[L[i]]: L[L[i]], L[i] = L[i], L[L[i]] else i+=1 # CANNOT REVERSE
 287. Find the Duplicate Number
 448. Find All Numbers Disappeared in an Array
+565. Array Nesting | i, accum, start = 0, 1, 1
 645. Set Mismatch
 41*. First Missing Positive
 
@@ -420,6 +424,8 @@ Recursion 0 (bottom-up or top-down)
 513. Find Bottom Left Tree Value
 515. Find Largest Value in Each Tree Row
 538. Convert BST to Greater Tree
+559. Maximum Depth of N-ary Tree
+563. Binary Tree Tilt
 1026. Maximum Difference Between Node and Ancestor
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
 1457. Pseudo-Palindromic Paths in a Binary Tree
@@ -554,6 +560,7 @@ Bad
 535. Encode and Decode TinyURL
 541. Reverse String II
 553. Optimal Division
+558. Logical OR of Two Binary Grids Represented as Quad-Trees
 
 Unknown
 86. Partition List
