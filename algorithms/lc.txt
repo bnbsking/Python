@@ -115,6 +115,7 @@ Hash 0
 1207. Unique Number of Occurrences
 1347. Minimum Number of Steps to Make Two Strings Anagram | sum((Counter-Counter).values())
 1436. Destination City
+1481. Least Number of Unique Integers after K Removals
 1657. Determine if Two Strings Are Close | set(word1)==set(word2) and sorted(Counter(word1).values()) == sorted(Counter(word2).values())
 2352. Equal Row and Column Pairs | Counter, sum(D[key]*E[key] for key in D.keys()&E.keys()
 2610. Convert an Array Into a 2D Array With Conditions
@@ -250,9 +251,11 @@ Iteration or naive 0
 2108. Find First Palindromic String in the Array
 2125. Number of Laser Beams in a Bank
 2148. Count Elements With Strictly Smaller and Greater Elements
+2149. Rearrange Array Elements by Sign
 2264. Largest 3-Same-Digit Number in String
 2279. Maximum Bags With Full Capacity of Rocks
 2482. Difference Between Ones and Zeros in Row and Column | record row1s & col1s
+2971. Find Polygon With the Largest Perimeter
 
 Iteration i with accum
 53. Maximum Subarray | ans=L[0], acc=0. for x in L: acc=max(acc+x,x), ans=max(ans,acc)
