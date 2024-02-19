@@ -238,6 +238,7 @@ Iteration or naive 0
 593. Valid Square
 598. Range Addition II
 599. Minimum Index Sum of Two Lists
+605. Can Place Flowers
 725. Split Linked List in Parts | ll.
 744. Find Smallest Letter Greater Than Target
 1220*. Count Vowels Permutation
