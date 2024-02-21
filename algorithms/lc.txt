@@ -159,6 +159,7 @@ Heap0
 Heap
 355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq.heapify((time,posts)) while calling getNewsFeed
 373. Find K Pairs with Smallest Sums | heap(sumv,i,j), inH(i,j)
+621. Task Scheduler | heap[(-val,key)], D[key]->last_idx, ans. while H: collect while H and ans-D[H[0][1]]<=n:. if H:... (find task) else ... (idle).
 767. Reorganize String | heap(-timees,char). while len(H)>=2.
 1642. Furthest Building You Can Reach | L=[(diff,idx)], heap=[] stores (-diff,idx). while L and bricks>0 or ladders>0: if bricks>=L[-1][0]: -bricks add heap, elif ladders>0: compare heap_top and L[-1] and replace either with ladder, else break. return L[-1][1]
 2462. Total Cost to Hire K Workers | heap(cost[i] or cost[-1-i],'l'or'r') with l, r pointers
@@ -240,6 +241,7 @@ Iteration or naive 0
 598. Range Addition II
 599. Minimum Index Sum of Two Lists
 605. Can Place Flowers
+633. Sum of Square Numbers | int(round(x**0.5,10))**2==x
 725. Split Linked List in Parts | ll.
 744. Find Smallest Letter Greater Than Target
 1220*. Count Vowels Permutation
@@ -325,6 +327,7 @@ Iteration
 470. Implement Rand10() Using Rand7() | 7-carry while x>=40
 524. Longest Word in Dictionary through Deleting | find longest issubsequence
 556. Next Greater Element III | same as 31.
+628. Maximum Product of Three Numbers | Sliding window at border
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
@@ -401,6 +404,9 @@ Math
 492. Construct the Rectangle | edge = int(area**0.5). while area%edge: edge-=1
 1359. Count All Valid Pickup and Delivery Options | suppose ans=f(i-1) has got, there are 2i-2 parentheses (2i-1 spaces). Insert possibilities: (2i-1)+(2i-2)+...+1=2i*(2i-1)/2=i*(2i-1). ans=ans*i*(2i-1)%m
 
+Queue 0
+622. Design Circular Queue
+
 Queue difficult
 127*. Word Ladder
 239*. Sliding Window Maximum | (val,idx) in queue, length is not const, always desc sorted
@@ -446,6 +452,9 @@ Recursion 0 (bottom-up or top-down)
 563. Binary Tree Tilt
 589. N-ary Tree Preorder Traversal
 590. N-ary Tree Postorder Traversal
+617. Merge Two Binary Trees
+623. Add One Row to Tree
+637. Average of Levels in Binary Tree
 1026. Maximum Difference Between Node and Ancestor
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
 1457. Pseudo-Palindromic Paths in a Binary Tree
@@ -583,6 +592,7 @@ Bad
 541. Reverse String II
 553. Optimal Division
 558. Logical OR of Two Binary Grids Represented as Quad-Trees
+636. Exclusive Time of Functions
 
 Unknown
 86. Partition List
