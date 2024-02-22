@@ -242,6 +242,8 @@ Iteration or naive 0
 599. Minimum Index Sum of Two Lists
 605. Can Place Flowers
 633. Sum of Square Numbers | int(round(x**0.5,10))**2==x
+640. Solve the Equation | general splitting
+643. Maximum Average Subarray I
 725. Split Linked List in Parts | ll.
 744. Find Smallest Letter Greater Than Target
 1220*. Count Vowels Permutation
@@ -406,6 +408,7 @@ Math
 
 Queue 0
 622. Design Circular Queue
+641. Design Circular Deque
 
 Queue difficult
 127*. Word Ladder
@@ -490,6 +493,7 @@ Recursion non-return - start or path
 473. Matchsticks to Square | Similar to 40. + 416.
 494. Target Sum | C, self.ans = sorted(Counter(nums).items()), 0. def f(methods={0:1}, start=0): for i in range(times+1) for key,val in methods
 518. Coin Change II | f(start=0,x=amount) and memorization
+638. Shopping Offers | f(start=0,accum=0,N=needs)
 1361. Validate Binary Tree Nodes | if all(ele<2 for ele in inL) and inL.count(0)==1: root, visitS = inL.index(0), set(range(n)). def g(i=root).
 2305. Fair Distribution of Cookies | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
 
