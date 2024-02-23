@@ -533,6 +533,7 @@ Recursion return
 572. Subtree of Another Tree | check issubstr of "ldr_include_out_nodes" and "dlr_include_out_nodes"
 592. Fraction Addition and Subtraction | def gcd(a,b): sort. return a if b==0 else gcd(b,a%b)
 606. Construct String from Binary Tree | l="("+f(T.left)+")" if T.left or T.right else "". r="("+f(T.right)+")" if T.right else "". return str(T.val)+l+r
+650. 2 Keys Keyboard | def f(chars=1, copy=0): if chars==n: return 0, elif n%chars==0: return 2 + f(chars*2, chars), else: return 1 + f(chars+copy, copy).
 652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
 779. K-th Symbol in Grammar | if n<3: return k-1. prev = self.kthGrammar(n-1, (k+1)//2). return k%2 if prev==1 else (k+1)%2
 802. Find Eventual Safe States | recursive call if n not in ans and isSafe and n not in visit
