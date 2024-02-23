@@ -568,6 +568,7 @@ SortedContainers
 Trie
 208. Implement Trie (Prefix Tree) | Dict, the end of inserting: p["*"]="". e.g. insert apple, insert app, search app
 211. Design Add and Search Words Data Structure | Trie + recursion
+648. Replace Words
 
 ----------
 
