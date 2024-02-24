@@ -74,9 +74,9 @@ Graph - Spanning tree (Prim: init H, L, S)
 
 Graph - Weighted shortest path (Dijkstra: init H, L, S)
 -
-<743.> Network Delay Time | Dijkstra. Init graph. Heap(dist2node,node), L=[dist, ...], visitS. while heap: pop, visitS.add, for nei in G[x]: if shorter: update and push. (No relaxation, Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
+<743.> Network Delay Time | Dijkstra. Init graph. Heap(accum,node), L=[dist, ...], visitS. while H: pop, if not in visitS: visitS.add, for nei in G[x]: if shorter: update and push. (No relaxation, Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
    + Bellman-Ford: for _ in range(1,n): for l,r,w in times: L[r] = min(L[r], L[l]+w). O(ve)
-787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap, NO visitS. Q(accum,node,depth), L=[dist, ...]. if shorter: update and push
+787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap, NO visitS. Q(accum,node,depth), L=[dist, ...]. while Q: pop, if depth<k+1: for nei in G[x]: if shorter: update and push.
 1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance | Floyd-WarShall O(v^3). for mid for vi for vj: relaxation. cannot modify the loop order. Becuase previous optimization results may not hold if mid changes.
 1514. Path with Maximum Probability | same as 743 Heap(-prob,node)
 1631. Path With Minimum Effort | same as 743. Heap(accum_delta,node)
