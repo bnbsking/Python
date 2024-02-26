@@ -410,6 +410,9 @@ Queue 0
 622. Design Circular Queue
 641. Design Circular Deque
 
+Queue
+649. Dota2 Senate | C,Q=Counter(senate),deque(senate). while C["R"]*C["D"]: ego,chance,max_chance=Q.popleft(),1,1. rival="D" if ego=="R" else "R". while chance*C[rival]:...
+
 Queue difficult
 127*. Word Ladder
 239*. Sliding Window Maximum | (val,idx) in queue, length is not const, always desc sorted
