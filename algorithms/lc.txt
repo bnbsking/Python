@@ -244,6 +244,7 @@ Iteration or naive 0
 633. Sum of Square Numbers | int(round(x**0.5,10))**2==x
 640. Solve the Equation | general splitting
 643. Maximum Average Subarray I
+657. Robot Return to Origin
 725. Split Linked List in Parts | ll.
 744. Find Smallest Letter Greater Than Target
 1220*. Count Vowels Permutation
@@ -461,6 +462,8 @@ Recursion 0 (bottom-up or top-down)
 617. Merge Two Binary Trees
 623. Add One Row to Tree
 637. Average of Levels in Binary Tree
+653. Two Sum IV - Input is a BST
+654. Maximum Binary Tree
 1026. Maximum Difference Between Node and Ancestor
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
 1457. Pseudo-Palindromic Paths in a Binary Tree
@@ -477,6 +480,7 @@ Recursion non-return
 257. Binary Tree Paths
 341. Flatten Nested List Iterator
 530. Minimum Absolute Difference in BST | self.ans, self.prev = 10**5, 10**5. def f(T): if T: f(T.left), self.ans, self.prev, f(T.right)
+655. Print Binary Tree | get height first and create matrix. f(T=root, i=0, j=len(ans[0])//2): 
 -
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop  
@@ -576,6 +580,7 @@ Trie
 ----------
 
 Pending diffiuclt
+611. Valid Triangle Number
 907. Sum of Subarray Minimums | stack+DP | pop while smaller, dp[stack[-1]] + arr[i]*(i-stack[-1]) if stack else arr[i]*(i+1) [difficult]
 1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
 28. Find the Index of the First Occurrence in a String | lcps + KMP
