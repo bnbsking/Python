@@ -160,6 +160,7 @@ Heap
 355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq.heapify((time,posts)) while calling getNewsFeed
 373. Find K Pairs with Smallest Sums | heap(sumv,i,j), inH(i,j)
 621. Task Scheduler | heap[(-val,key)], D[key]->last_idx, ans. while H: collect while H and ans-D[H[0][1]]<=n:. if H:... (find task) else ... (idle).
+659. Split Array into Consecutive Subsequences | H=[[1,nums[0]]] #(len, max). for i in range(1,len(nums)): L,find=[],False. while not find and H: length,maxv=heapq.heappop(H). if nums[i]-maxv>1:check, elif nums[i]-maxv==1:extend, else:collect L
 767. Reorganize String | heap(-timees,char). while len(H)>=2.
 1642. Furthest Building You Can Reach | L=[(diff,idx)], heap=[] stores (-diff,idx). while L and bricks>0 or ladders>0: if bricks>=L[-1][0]: -bricks add heap, elif ladders>0: compare heap_top and L[-1] and replace either with ladder, else break. return L[-1][1]
 2462. Total Cost to Hire K Workers | heap(cost[i] or cost[-1-i],'l'or'r') with l, r pointers
@@ -245,6 +246,7 @@ Iteration or naive 0
 640. Solve the Equation | general splitting
 643. Maximum Average Subarray I
 657. Robot Return to Origin
+661. Image Smoother
 725. Split Linked List in Parts | ll.
 744. Find Smallest Letter Greater Than Target
 1220*. Count Vowels Permutation
@@ -331,6 +333,7 @@ Iteration
 524. Longest Word in Dictionary through Deleting | find longest issubsequence
 556. Next Greater Element III | same as 31.
 628. Maximum Product of Three Numbers | Sliding window at border
+665. Non-decreasing Array | for i in range(len(nums)-1): if nums[i]>nums[i+1]: tmp = nums[i+1]. do irregular depends right or depends left respeectively. O(3n)
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
@@ -385,6 +388,7 @@ Iteration - Left-Right
 275. H-Index II | while l<=r: m = (l+r)//2. if L[m]==len(L)-m: return len(L)-m. .... return len(L)-l
 475. Heaters | ans=0. for x in house: while l<=r: l=closest heater. if l==0: ans=max(ans,heaters[l]-x) elif l==len(heaters):ans=max(ans,x-heaters[l-1]) else: ans=max(ans,min(x-heaters[l-1],heaters[l]-x))
 611. Valid Triangle Number
+658. Find K Closest Elements | find insertion l. c=l-int(l==len(arr) or l>0 and x-arr[l-1]<=arr[l]-x). l, r expand
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity). l,r=max(weights),sum(weights). while l<=r.
 2187. Minimum Time to Complete Trips | l,r,f=0,totalTrips*min(time),lambda m:sum(int(m/t) for t in time). while l<=r: if trip==totalTrips: return m-min(m%t for t in time).
 
@@ -467,6 +471,7 @@ Recursion 0 (bottom-up or top-down)
 1026. Maximum Difference Between Node and Ancestor
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
 1457. Pseudo-Palindromic Paths in a Binary Tree
+1609. Even Odd Tree
 
 Recursion non-return
 22. Generate Parentheses | f(L=['('],l=1,r=0) if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
@@ -480,7 +485,8 @@ Recursion non-return
 257. Binary Tree Paths
 341. Flatten Nested List Iterator
 530. Minimum Absolute Difference in BST | self.ans, self.prev = 10**5, 10**5. def f(T): if T: f(T.left), self.ans, self.prev, f(T.right)
-655. Print Binary Tree | get height first and create matrix. f(T=root, i=0, j=len(ans[0])//2): 
+655. Print Binary Tree | get height first and create matrix. f(T=root, i=0, j=len(ans[0])//2): ...
+662. Maximum Width of Binary Tree | collect each level leftest and rightest binary path
 -
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop  
