@@ -270,6 +270,7 @@ Iteration or naive 0
 2264. Largest 3-Same-Digit Number in String
 2279. Maximum Bags With Full Capacity of Rocks
 2482. Difference Between Ones and Zeros in Row and Column | record row1s & col1s
+2864. Maximum Odd Binary Number
 2971. Find Polygon With the Largest Perimeter
 
 Iteration i with accum
@@ -506,6 +507,7 @@ Recursion non-return - start or path
 473. Matchsticks to Square | Similar to 40. + 416.
 494. Target Sum | C, self.ans = sorted(Counter(nums).items()), 0. def f(methods={0:1}, start=0): for i in range(times+1) for key,val in methods
 518. Coin Change II | f(start=0,x=amount) and memorization
+526. Beautiful Arrangement | f(path=[], L=list(range(1,1+n)))
 638. Shopping Offers | f(start=0,accum=0,N=needs)
 1361. Validate Binary Tree Nodes | if all(ele<2 for ele in inL) and inL.count(0)==1: root, visitS = inL.index(0), set(range(n)). def g(i=root).
 2305. Fair Distribution of Cookies | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
