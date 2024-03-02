@@ -336,6 +336,7 @@ Iteration
 628. Maximum Product of Three Numbers | Sliding window at border
 665. Non-decreasing Array | for i in range(len(nums)-1): if nums[i]>nums[i+1]: tmp = nums[i+1]. do irregular depends right or depends left respeectively. O(3n)
 667. Beautiful Arrangement II | L, l, r = [1], 2, n. for i in range(k-1): if i%2==0:.... left right alternate. return L+list(range(l,r+1))[::(-1)**parity]
+670. Maximum Swap | compare to sort, find first diff idx i. find max idx from len(L)-1 to i, swap, break return
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
@@ -397,14 +398,6 @@ Iteration - Left-Right
 Iteration - Monte Carlo
 169. Majority Element | sample x, L.count(x)
 229. Majority Element II
-
-Iteration - Sort
-<75.> Sort Colors | Dutch Flag Algorithm. l=m=0, r=len(L)-1. while m<=r: if nums[m]==0: swap(L[l],[m]), l+=1, m+=1 elif nums[m]==1: m+=1, else: swap(L[m],L[r]), r-=1
-    + while m<=r, m+=1 only if L[m]=0or1
-<215.> Kth Largest Element in an Array | Quick select. if l<r: random pivot + Dutch flag. if k<lo: f(l,lo-1) elif k>hi: f(hi+1,r)
-324. Wiggle Sort II | find median=pivot=L[len(L)//2]. rewinding index function e.g. (even) 0 1 2 3 -> 1 3 0 2, (odd) 0 1 2 3 4 -> 2 4 1 3 0
-905. Sort Array By Parity | Dutch Flag Algorithm
-<912.> Sort an Array | Quick sort. if l<r. random pivot + Dutch flag. f(l,lo-1), f(hi+1,r)
 
 Math
 223. Rectangle Area | max(0,min()-max())
@@ -489,6 +482,7 @@ Recursion non-return
 530. Minimum Absolute Difference in BST | self.ans, self.prev = 10**5, 10**5. def f(T): if T: f(T.left), self.ans, self.prev, f(T.right)
 655. Print Binary Tree | get height first and create matrix. f(T=root, i=0, j=len(ans[0])//2): ...
 662. Maximum Width of Binary Tree | collect each level leftest and rightest binary path
+669. Trim a Binary Search Tree | while root not in [lo,hi]:.... def f(T): if T: while T.left and T.left.val<lo:... f(T.left). f(T.left). ...
 -
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop  
@@ -557,6 +551,15 @@ Recursion return
 
 Recursion mix
 880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha(): ( if cnt==k: return char else cnt+=1 ) else: ( if cnt*int(char)>k: return f( k%cnt ) else cnt*=int(char) ).
+
+Recursion - Sort
+<75.> Sort Colors | Dutch Flag Algorithm. l=m=0, r=len(L)-1. while m<=r: if nums[m]==0: swap(L[l],[m]), l+=1, m+=1 elif nums[m]==1: m+=1, else: swap(L[m],L[r]), r-=1
+    + while m<=r, m+=1 only if L[m]=0or1
+<215.> Kth Largest Element in an Array | Quick select. if l<r: random pivot + Dutch flag. if k<lo: f(l,lo-1) elif k>hi: f(hi+1,r)
+324. Wiggle Sort II | find median=pivot=L[len(L)//2]. rewinding index function e.g. (even) 0 1 2 3 -> 1 3 0 2, (odd) 0 1 2 3 4 -> 2 4 1 3 0
+905. Sort Array By Parity | Dutch Flag Algorithm
+<912.> Sort an Array | Quick sort. if l<r. random pivot + Dutch flag. f(l,lo-1), f(hi+1,r)
+977. Squares of a Sorted Array
 
 Stack 0
 20. Valid Parentheses | dict + lr matching
