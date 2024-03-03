@@ -588,6 +588,7 @@ Trie
 208. Implement Trie (Prefix Tree) | Dict, the end of inserting: p["*"]="". e.g. insert apple, insert app, search app
 211. Design Add and Search Words Data Structure | Trie + recursion
 648. Replace Words
+676. Implement Magic Dictionary | Build Trie. def f(c=0,p=self.T,err=0): if c==len(word): return "end" in p and err==1. if word[c] in p and find(c+1, p[word[c]], err): return True. if err==0 and (len(p)>1 or "end" not in p): .... # if "end" be the unique key, not traversal. # call both match and unmatch even c is match (err must be 0) 
 
 ----------
 
