@@ -593,6 +593,7 @@ Trie
 
 Pending diffiuclt
 611. Valid Triangle Number
+673. Number of Longest Increasing Subsequence
 907. Sum of Subarray Minimums | stack+DP | pop while smaller, dp[stack[-1]] + arr[i]*(i-stack[-1]) if stack else arr[i]*(i+1) [difficult]
 1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
 28. Find the Index of the First Occurrence in a String | lcps + KMP
@@ -619,6 +620,7 @@ Bad
 553. Optimal Division
 558. Logical OR of Two Binary Grids Represented as Quad-Trees
 636. Exclusive Time of Functions
+672. Bulb Switcher II
 
 Unknown
 86. Partition List
