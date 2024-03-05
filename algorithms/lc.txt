@@ -374,6 +374,7 @@ Iteration - Left-Right 0
 278. First Bad Version | while l<=r.
 374. Guess Number Higher or Lower | while l<=r.
 436. Find Right Interval | for while l<=r.
+1750. Minimum Length of String After Deleting Similar Ends
 
 Iteration - Left-Right m-1,m,m+1
 <153.> Find Minimum in Rotated Sorted Array | while l<=r. min(L[m-1],L[m],L[m+1]). elif nums[l]<=nums[m]: if nums[l]<nums[r]: return nums[l] else l=m+1. else r=m-1
