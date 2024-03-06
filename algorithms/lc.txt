@@ -335,7 +335,6 @@ Iteration
 556. Next Greater Element III | same as 31.
 628. Maximum Product of Three Numbers | Sliding window at border
 665. Non-decreasing Array | for i in range(len(nums)-1): if nums[i]>nums[i+1]: tmp = nums[i+1]. do irregular depends right or depends left respeectively. O(3n)
-667. Beautiful Arrangement II | L, l, r = [1], 2, n. for i in range(k-1): if i%2==0:.... left right alternate. return L+list(range(l,r+1))[::(-1)**parity]
 670. Maximum Swap | compare to sort, find first diff idx i. find max idx from len(L)-1 to i, swap, break return
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
@@ -393,6 +392,8 @@ Iteration - Left-Right
 475. Heaters | ans=0. for x in house: while l<=r: l=closest heater. if l==0: ans=max(ans,heaters[l]-x) elif l==len(heaters):ans=max(ans,x-heaters[l-1]) else: ans=max(ans,min(x-heaters[l-1],heaters[l]-x))
 611. Valid Triangle Number
 658. Find K Closest Elements | find insertion l. c=l-int(l==len(arr) or l>0 and x-arr[l-1]<=arr[l]-x). l, r expand
+667. Beautiful Arrangement II | L, l, r = [1], 2, n. for i in range(k-1): if i%2==0:.... left right alternate. return L+list(range(l,r+1))[::(-1)**parity]
+680. Valid Palindrome II | while l<r and s[l]==s[r]: l, r = l+1, r-1. if odd, even, remove_left, remove_right, ....
 948. Bag of Tokens | _, ans, l, r = tokens.sort(), 0, 0, len(tokens)-1. while l<=r:...
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity). l,r=max(weights),sum(weights). while l<=r.
 2187. Minimum Time to Complete Trips | l,r,f=0,totalTrips*min(time),lambda m:sum(int(m/t) for t in time). while l<=r: if trip==totalTrips: return m-min(m%t for t in time).
@@ -506,6 +507,7 @@ Recursion non-return - start or path
 518. Coin Change II | f(start=0,x=amount) and memorization
 526. Beautiful Arrangement | f(path=[], L=list(range(1,1+n)))
 638. Shopping Offers | f(start=0,accum=0,N=needs)
+678. Valid Parenthesis String | f(start=0, l=0, r=0) + mem
 1361. Validate Binary Tree Nodes | if all(ele<2 for ele in inL) and inL.count(0)==1: root, visitS = inL.index(0), set(range(n)). def g(i=root).
 2305. Fair Distribution of Cookies | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
 
