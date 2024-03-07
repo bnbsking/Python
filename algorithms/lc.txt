@@ -525,7 +525,7 @@ Recursion return
 106. Construct Binary Tree from Inorder and Postorder Traversal
 110. Balanced Binary Tree | self.ans=True. def f(T): if not self.ans: ... return left_tree_height, right_tree_height
 111. Minimum Depth of Binary Tree
-124*. Binary Tree Maximum Path Sum | like 53., ans=max(ans,T.val,T.val+l,T.val+r,T.val+l+r), return max(T.val, T.val+l, T.val+r)
+124*. Binary Tree Maximum Path Sum | similar to 687, self.ans=root.val. def f(T=root). return max-path-sum pass T. (self.ans = max(self.ans, l+r+T.val))
 129. Sum Root to Leaf Numbers
 <206.> Reverse Linked List | ll. if not head or not head.next: return head. reverse=self.reverseList(head.next). head.next.next=head. head.next=None. return reverse.
 241. Different Ways to Add Parentheses | similar to 95.
@@ -556,7 +556,7 @@ Recursion return
 802. Find Eventual Safe States | recursive call if n not in ans and isSafe and n not in visit
 894. All Possible Full Binary Trees | similar to 95.
 
-Recursion mix
+Recursion mix DP
 880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha(): ( if cnt==k: return char else cnt+=1 ) else: ( if cnt*int(char)>k: return f( k%cnt ) else cnt*=int(char) ).
 
 Recursion - Sort
