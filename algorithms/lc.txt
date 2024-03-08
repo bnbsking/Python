@@ -42,10 +42,13 @@ DP Arr2d Backward
 221. Maximal Square  | init 1r1c. L[i][j] = L[i][j] * (min(L[i-1][j-1], L[i-1][j], L[i][j-1]) + 1)
 474. Ones and Zeroes | init all 0s. for s in strs for i in range(m,c0-1,-1) for j in range(n,c1-1,-1): L[i][j] = max(L[i][j], L[i-c0][j-c1]+1). must reverse order filling !!!
 516. Longest Palindromic Subsequence | init diagonal. L[i][j] means f(s[i:j+1]), fill from i-j=0,-1,-2,..., diag0=1 diag1=1 or 2, others: L[i+1][j-1] if s[i]==s[j] else max(L[i+1][j], L[i][j-1])
-576. Out of Boundary Paths | init all 0s one 1. renew matrix per step: inner zeros, outer inherit. update inner by forward dp
 583. Delete Operation for Two Strings | same as 1143.
+688. Knight Probability in Chessboard | for step: copy board, for i for j: reset grid[i][j], for a,b in dirs: update
 799. Champagne Tower | init triangular 0s, L[0][0]=poured. triangular update by excess: if L[i][j]>1: excess=L[i][j]-1, L[i][j]=1 -> if i+1<len(L): L[i+1][j], L[i+1][j+1] = L[i+1][j]+excess/2., L[i+1][j+1]+excess/2.
 <1143.> Longest Common Subsequence | L[i][j] = L[i-1][j-1] + 1 if text1[i-1]==text2[j-1] else max(L[i][j-1],L[i-1][j])
+
+DP Arr2d Forward
+576. Out of Boundary Paths | init all 0s one 1. renew matrix per step: inner zeros, outer inherit. update inner by forward dp
 
 Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 130. Surrounded Regions | GO chess
@@ -112,6 +115,7 @@ Hash 0
 575. Distribute Candies
 594. Longest Harmonious Subsequence
 609. Find Duplicate File in System | re, (.*?), \s, \(, \)
+692. Top K Frequent Words
 706. Design HashMap
 859. Buddy Strings
 1160. Find Words That Can Be Formed by Characters
@@ -122,6 +126,7 @@ Hash 0
 1657. Determine if Two Strings Are Close | set(word1)==set(word2) and sorted(Counter(word1).values()) == sorted(Counter(word2).values())
 2352. Equal Row and Column Pairs | Counter, sum(D[key]*E[key] for key in D.keys()&E.keys()
 2610. Convert an Array Into a 2D Array With Conditions
+3005. Count Elements With Maximum Frequency
 
 Hash
 3. Longest Substring Without Repeating Character | if s[i] not in D or accum<D[s[i]]: accum+=1, else accum=i-D[s[i]]
@@ -247,6 +252,7 @@ Iteration or naive 0
 643. Maximum Average Subarray I
 657. Robot Return to Origin
 661. Image Smoother
+693. Binary Number with Alternating Bits
 725. Split Linked List in Parts | ll.
 744. Find Smallest Letter Greater Than Target
 1220*. Count Vowels Permutation
@@ -467,6 +473,7 @@ Recursion 0 (bottom-up or top-down)
 637. Average of Levels in Binary Tree
 653. Two Sum IV - Input is a BST
 654. Maximum Binary Tree
+690. Employee Importance
 1026. Maximum Difference Between Node and Ancestor
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
 1457. Pseudo-Palindromic Paths in a Binary Tree
@@ -487,6 +494,7 @@ Recursion non-return
 655. Print Binary Tree | get height first and create matrix. f(T=root, i=0, j=len(ans[0])//2): ...
 662. Maximum Width of Binary Tree | collect each level leftest and rightest binary path
 669. Trim a Binary Search Tree | while root not in [lo,hi]:.... def f(T): if T: while T.left and T.left.val<lo:... f(T.left). f(T.left). ...
+695. Max Area of Island | use self.ans and self.local + DFS
 -
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop  
