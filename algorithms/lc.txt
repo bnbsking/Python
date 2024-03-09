@@ -277,6 +277,7 @@ Iteration or naive 0
 2264. Largest 3-Same-Digit Number in String
 2279. Maximum Bags With Full Capacity of Rocks
 2482. Difference Between Ones and Zeros in Row and Column | record row1s & col1s
+2540. Minimum Common Value
 2864. Maximum Odd Binary Number
 2971. Find Polygon With the Largest Perimeter
 
