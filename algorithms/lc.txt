@@ -476,6 +476,7 @@ Recursion 0 (bottom-up or top-down)
 653. Two Sum IV - Input is a BST
 654. Maximum Binary Tree
 690. Employee Importance
+700. Search in a Binary Search Tree
 1026. Maximum Difference Between Node and Ancestor
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
 1457. Pseudo-Palindromic Paths in a Binary Tree
