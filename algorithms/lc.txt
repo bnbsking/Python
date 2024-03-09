@@ -116,6 +116,7 @@ Hash 0
 594. Longest Harmonious Subsequence
 609. Find Duplicate File in System | re, (.*?), \s, \(, \)
 692. Top K Frequent Words
+697. Degree of an Array
 706. Design HashMap
 859. Buddy Strings
 1160. Find Words That Can Be Formed by Characters
@@ -311,6 +312,7 @@ Iteration lr-spread
 5. Longest Palindromic Substring | while c-e>=0 and c+e<len(s) and s[c-e]==s[c+e]: if 2*e+1>ar-al+1: al, ar = c-e, c+e
 581. Shortest Unsorted Continuous Subarray | find first decrease -> spread l,le by while while. find last decrease -> spread re,r by while while. return r-l-1
 647. Palindromic Substrings | same as 5.
+696. Count Binary Substrings | match.start(0) for match in re.finditer(pattern,s)
 
 Iteration
 17. Letter Combinations of a Phone Number
@@ -519,6 +521,7 @@ Recursion non-return - start or path
 526. Beautiful Arrangement | f(path=[], L=list(range(1,1+n)))
 638. Shopping Offers | f(start=0,accum=0,N=needs)
 678. Valid Parenthesis String | f(start=0, l=0, r=0) + mem
+698. Partition to K Equal Sum Subsets | nums.sort(reverse=True). trim ele>each and ele+min>each. L=[0]*k. f(start=0)
 1361. Validate Binary Tree Nodes | if all(ele<2 for ele in inL) and inL.count(0)==1: root, visitS = inL.index(0), set(range(n)). def g(i=root).
 2305. Fair Distribution of Cookies | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
 
