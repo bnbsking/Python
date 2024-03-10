@@ -117,6 +117,7 @@ Hash 0
 609. Find Duplicate File in System | re, (.*?), \s, \(, \)
 692. Top K Frequent Words
 697. Degree of an Array
+705. Design HashSet
 706. Design HashMap
 859. Buddy Strings
 1160. Find Words That Can Be Formed by Characters
@@ -158,6 +159,7 @@ Hash subarray sum all
 
 Heap0
 23*. Merge k Sorted Lists
+703. Kth Largest Element in a Stream
 1845. Seat Reservation Manager
 1921. Eliminate Maximum Number of Monsters
 1962. Remove Stones to Minimize the Total
@@ -254,6 +256,7 @@ Iteration or naive 0
 657. Robot Return to Origin
 661. Image Smoother
 693. Binary Number with Alternating Bits
+709. To Lower Case
 725. Split Linked List in Parts | ll.
 744. Find Smallest Letter Greater Than Target
 1220*. Count Vowels Permutation
@@ -383,6 +386,7 @@ Iteration - Left-Right 0
 278. First Bad Version | while l<=r.
 374. Guess Number Higher or Lower | while l<=r.
 436. Find Right Interval | for while l<=r.
+704. Binary Search
 1750. Minimum Length of String After Deleting Similar Ends
 
 Iteration - Left-Right m-1,m,m+1
