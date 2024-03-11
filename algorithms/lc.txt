@@ -119,6 +119,7 @@ Hash 0
 697. Degree of an Array
 705. Design HashSet
 706. Design HashMap
+791. Custom Sort String
 859. Buddy Strings
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
@@ -256,6 +257,7 @@ Iteration or naive 0
 657. Robot Return to Origin
 661. Image Smoother
 693. Binary Number with Alternating Bits
+707. Design Linked List | ll.
 709. To Lower Case
 725. Split Linked List in Parts | ll.
 744. Find Smallest Letter Greater Than Target
