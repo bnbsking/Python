@@ -207,7 +207,6 @@ Iteration or naive 0
 228. Summary Ranges | general splitting
 231. Power of Two | bin
 237. Delete Node in a Linked List
-238. Product of Array Except Self | math.prod(list)
 242. Valid Anagram
 258. Add Digits
 263. Ugly Number
@@ -273,6 +272,7 @@ Iteration or naive 0
 1572. Matrix Diagonal Sum
 1582. Special Positions in a Binary Matrix
 1662. Check If Two String Arrays are Equivalent
+1669. Merge In Between Linked Lists | ll.
 1688. Count of Matches in Tournament
 1704. Determine if String Halves Are Alike
 1877. Minimize Maximum Pair Sum in Array | sort, max of head-tail pair
@@ -337,6 +337,7 @@ Iteration
 172. Factorial Trailing Zeroes | ans, factor = 0, 5. while factor<=n: ans+=n//factor, factor*=5
 179. Largest Number | L=[str(x) for x in L]. L.sort(key=cmp_to_key(lambda x,y:int(x+y)-int(y+x)), reverse=True)
 201. Bitwise AND of Numbers Range | a=bin(l)[2:], b=bin(r)[2:]. if len(a)!=len(b): return 0. same_leading_bits = next((i for i in range(len(a)) if a[i]!=b[i]), len(a))
+238. Product of Array Except Self | left_accum, right_accum
 283. Move Zeroes | zeros, saves = nums.count(0), 0. while saves<len(nums)-zeros: find save_idx by next, swap, saves+=1 (saves mean found non-zero elements)
 328. Odd Even Linked List | ll. interleaving points
 386. Lexicographical Numbers | sort in str or key=cmp_to_key(lex). def lex(x,y): compare if len(x)==len(y) else fill samllest at the shorter of the end and compare (different from 179)
@@ -392,6 +393,7 @@ Iteration - Left-Right 0
 436. Find Right Interval | for while l<=r.
 704. Binary Search
 1750. Minimum Length of String After Deleting Similar Ends
+2485. Find the Pivot Integer | while l<=r.
 
 Iteration - Left-Right m-1,m,m+1
 <153.> Find Minimum in Rotated Sorted Array | while l<=r. min(L[m-1],L[m],L[m+1]). elif nums[l]<=nums[m]: if nums[l]<nums[r]: return nums[l] else l=m+1. else r=m-1
