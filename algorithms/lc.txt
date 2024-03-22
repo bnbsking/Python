@@ -305,11 +305,11 @@ Iteration i with start
 26. Remove Duplicates from Sorted Array
 80. Remove Duplicates from Sorted Array II | same as 26 but add dup=1or2
 413. Arithmetic Slices | similar to 674 but ans+=i-start-1
-567. Permutation in String | start,C,D=0,Counter(s1),Counter(). for i,c in enumerate(s2): if c in C: while C[c]==0:..., else: start,C,D=i+1,C+D,Counter()
 <674.> Longest Continuous Increasing Subsequence | start, ans = 0, 1 for if else (compare to 300 is continuous)
 
 Iteration i with start and accum: sliding window
 <209.> Minimum Size Subarray Sum | start,acc,ans=0,0,len(L). for i in range(len(L)): acc+=L[i], while acc>=target: ans=min(ans,end-start+1), sumv-=nums[start], start+=1.
+567. Permutation in String | start,accum,match=0,Counter(),Counter(s1). for i,c in enumerate(s2): if c in match: while match[c]==0:update, update. else: restore
 1658. Minimum Operations to Reduce X to Zero | similar to 209, but while acc>=target>0:
 1838. Frequency of the Most Frequent Element | L.sort(). start,acc,ans=0,0,1. for i in range(1,len(L)): accum+=(L[i]-L[i-1])*(i-start). while acc>k: acc-=L[i]-L[start], start+=1. ans=max(ans,i-start+1)
 @with hash
