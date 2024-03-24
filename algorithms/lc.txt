@@ -293,7 +293,7 @@ Iteration i with accum
 <121.> Best Time to Buy and Sell Stock | ans=0, lowest=L[0]. for x in L: lowest=min(lowest,x), ans=max(ans, x-lowest)
 134. Gas Station | ans=0, acc=0. for i in range(len(gas)): acc+=gas[i]-cost[i], if acc<0: ans=i+1, acc=0
 152. Maximum Product Subarray | ans=nums[0], minv=1, maxv=1. for x in L: minv=min(x,minv*x,maxv*x), maxv=max(x,minv*x,maxv*x), ans=max(ans,maxv)
-331. Verify Preorder Serialization of a Binary Tree | slot=1 if # slot-=1 else slot+=1, slot must >0 during iteration and =0 finally
+331. Verify Preorder Serialization of a Binary Tree | slot=1 if slot-=1 else slot+=1, slot must >0 during iteration and =0 finally
 376. Wiggle Subsequence | similar to 152. up, down = 1, 1 (first wiggle is up or down). for i in range(1,len(nums)): if nums[i]>nums[i-1]: up = down+1 elif nums[i]<nums[i-1]: down = up+1. return max(up, down)
 334. Increasing Triplet Subsequence | min1, min2 = float('inf'), float('inf'). for x in nums: if x<=min1: min1 = x elif x<=min2: min2 = x else: return True
 746. Min Cost Climbing Stairs | a,b=cost[0],cost[1]. for i in range(2,len(L)): c=cost[i]+min(a,b), a=b, b=c. return min(a,b)
@@ -309,12 +309,11 @@ Iteration i with start -> for if else
 
 Iteration i with start and accum: sliding window -> for sum while
 <209.> Minimum Size Subarray Sum | start,acc,ans=0,0,len(L). for i in range(len(L)): acc+=L[i], while acc>=target: ans=min(ans,end-start+1), sumv-=nums[start], start+=1.
-567. Permutation in String | start,accum,match=0,Counter(),Counter(s1). for i,c in enumerate(s2): if c in match: while match[c]==0:update, update. else: restore
-1658. Minimum Operations to Reduce X to Zero | similar to 209, but target<=0 return first, because while acc>=target cause acc negative.
-1838. Frequency of the Most Frequent Element | L.sort(). start,acc,ans=0,0,1. for i in range(1,len(L)): accum+=(L[i]-L[i-1])*(i-start). while acc>k: acc-=L[i]-L[start], start+=1. ans=max(ans,i-start+1)
-@with hash
-424. Longest Repeating Character Replacement | D,start,acc,ans={},0,0,0. (D:char->cnts, acc:max_val_in_D). for i,c in enumerate(s): D[c]=D.get(c,0)+1. acc=max(acc,D[c]).
-    if i-start+1 - acc <= k: ans = max(ans, i-start+1) else: D[s[start]]-=1, start+=1.
+424. Longest Repeating Character Replacement | separate k==0 (for start) and k>0 (sliding window) since start and unmatch behaves different.
+    consider sliding window: O(26n). if s[i]==c: ..., elif ki>0: ..., else: while 1: if s[start]!=c: start+=1, break, start+=1.
+567. Permutation in String | start,accum,match=0,Counter(),Counter(s1). for i,c in enumerate(s2): if c in match: while match[c]==0:update, update. else: start+=1,restore match%count.
+1658. Minimum Operations to Reduce X to Zero | similar to 209, but initially target<=0 need return, because while acc>=target cause acc negative.
+1838. Frequency of the Most Frequent Element | L.sort(). start,acc,ans=0,0,1. for i in range(1,len(L)): accum+=(L[i]-L[i-1])*(i-start). while acc>k: acc-=L[i]-L[start], start+=1. ans=max(ans,i-start+1). (while exclusive, update ans at last)
 
 Iteration lr-spread
 5. Longest Palindromic Substring | while c-e>=0 and c+e<len(s) and s[c-e]==s[c+e]: if 2*e+1>ar-al+1: al, ar = c-e, c+e
