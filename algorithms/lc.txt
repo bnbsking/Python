@@ -260,6 +260,7 @@ Iteration or naive 0
 693. Binary Number with Alternating Bits
 707. Design Linked List | ll.
 709. To Lower Case
+717. 1-bit and 2-bit Characters
 725. Split Linked List in Parts | ll.
 744. Find Smallest Letter Greater Than Target
 1220*. Count Vowels Permutation
@@ -429,6 +430,9 @@ Math
 441. Arranging Coins | x*(x+1)/2=n, x^2+x-2n=0, x=(-1+sqrt(1+8n))/2.
 492. Construct the Rectangle | edge = int(area**0.5). while area%edge: edge-=1
 1359. Count All Valid Pickup and Delivery Options | suppose ans=f(i-1) has got, there are 2i-2 parentheses (2i-1 spaces). Insert possibilities: (2i-1)+(2i-2)+...+1=2i*(2i-1)/2=i*(2i-1). ans=ans*i*(2i-1)%m
+
+OrderedDict
+146. LRU Cache | dict+double linked list OR OrderedDict with O.popitem(last=False)
 
 Queue 0
 622. Design Circular Queue
@@ -630,11 +634,11 @@ UnionFind
 
 Pending diffiuclt
 611. Valid Triangle Number
-673. Number of Longest Increasing Subsequence
+673. Number of Longest Increasing Subsequence | 2d dp
+718. Maximum Length of Repeated Subarray | 2d dp reversed
 907. Sum of Subarray Minimums | stack+DP | pop while smaller, dp[stack[-1]] + arr[i]*(i-stack[-1]) if stack else arr[i]*(i+1) [difficult]
 1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
 28. Find the Index of the First Occurrence in a String | lcps + KMP
-146. LRU Cache | dict+double linked list OR OrderedDict with O.popitem(last=False)
 307. Range Sum Query - Mutable | Segment tree. (T,T.l,T.r)=(sum(L),sum(left),sum(right)). same inputs of 3 methods f(i=0,l=0,r=len(L)-1)
 --
 *1483. Kth Ancestor of a Tree Node | Binary lifting. self.D[i][j]=i-th node's 2**j ancestor. Column major filling since it may not have ancestor before filling parent. To fill self.D[i][j-1], parent=self.D[i][j-1] 
