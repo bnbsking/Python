@@ -23,16 +23,16 @@ b.py: hello=2
 b/__init_ _.py: from .b import hello (1)
 a/__init_ _.py: from b import hello (2)
 a.py: from . import hello (3)
-def func(): print(hello)
-a/__init_ _.py: from .a import func (2)
+	def func(): print(hello)
+a/__init_ _.py: from .a import func (1)
 main.py: import a
-a.func()
+	a.func()
 
 4 If one wants to execute module:
 a.py
-from . import hello
-def func(): print(hello)
-print(hello)
+	from . import hello
+	def func(): print(hello)
+	print(hello)
 python -m a.a
 	# use . instead of /
 	# no .py anymore
