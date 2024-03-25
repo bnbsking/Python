@@ -7,36 +7,36 @@ For relative import, both package and module cannot be executed directly!
 
 3
 Let a.py use sth in b.py
-Package_init: use “from .module import ?” to extract from same-level module
-Package_init: use absolute import to extract from parent package
-module use “from . import ?” to extract from package_init
+	(1) Package_init: use “from .module import ?” to extract from same-level module
+	(2) Package_init: use absolute import to extract from parent package
+	(3) module use “from . import ?” to extract from package_init
 [files]
-a/
-	__init_ _.py
-	a.py
-b/
-	__init_ _.py
-	b.py
-main.py
+	a/
+		__init_ _.py
+		a.py
+	b/
+		__init_ _.py
+		b.py
+	main.py
 
 [code]
-b.py: hello=2
-b/__init_ _.py: from .b import hello (1)
-a/__init_ _.py: from b import hello (2)
-a.py: from . import hello (3)
-	def func(): print(hello)
-a/__init_ _.py: from .a import func (1)
-main.py: import a
-	a.func()
+	b.py: hello=2
+	b/__init_ _.py: from .b import hello (1)
+	a/__init_ _.py: from b import hello (2)
+	a.py: from . import hello (3)
+		def func(): print(hello)
+	a/__init_ _.py: from .a import func (1)
+	main.py: import a
+		a.func()
 [command]
-python main.py
+	python main.py
 
 4 If one wants to execute module:
 [code]
-a.py
-	from . import hello
-	def func(): print(hello)
-	print(hello)
+	a.py
+		from . import hello
+		def func(): print(hello)
+		print(hello)
 [command]
-python -m a.a
-	# use . instead of /, no .py anymore
+	python -m a.a
+		# use . instead of /, no .py anymore
