@@ -341,7 +341,7 @@ Iteration
 238. Product of Array Except Self | left_accum, right_accum
 283. Move Zeroes | zeros, saves = nums.count(0), 0. while saves<len(nums)-zeros: find save_idx by next, swap, saves+=1 (saves mean found non-zero elements)
 328. Odd Even Linked List | ll. interleaving points
-386. Lexicographical Numbers | sort in str or key=cmp_to_key(lex). def lex(x,y): compare if len(x)==len(y) else fill samllest at the shorter of the end and compare (different from 179)
+386. Lexicographical Numbers | sort in str or key=cmp_to_key(lex). def lex(x,y): compare if len(x)==len(y) else fill samllest element " " at the shorter of the end and compare (different from 179)
 396. Rotate Function | init ans=current, sumv. current += sumv - nums[-1-i]*len(nums). consider rotate difference only
 405. Convert a Number to Hexadecimal | find -x of binary: get +x binary -> reverse bits -> +1 || get +x+1 binary -> reverse bits
 406. Queue Reconstruction by Height | sort by (-p[0],p[1]). then L.insert(p[1],p). (if all p[1]=0, tall first; if all p[0]=h, small p[1] first)
@@ -626,6 +626,7 @@ Trie
 648. Replace Words
 676. Implement Magic Dictionary | Build Trie. def f(c=0,p=self.T,err=0): if c==len(word): return "end" in p and err==1. if word[c] in p and find(c+1, p[word[c]], err): return True. if err==0 and (len(p)>1 or "end" not in p): .... # if "end" be the unique key, not traversal. # call both match and unmatch even c is match (err must be 0)
 677. Map Sum Pairs | self.D[key]->val, self.T:trie
+720. Longest Word in Dictionary
 
 UnionFind
 684. Redundant Connection
