@@ -318,6 +318,8 @@ Iteration i with start and accum: sliding window -> for sum while
 1658. Minimum Operations to Reduce X to Zero | similar to 209, but initially target<=0 need return, because while acc>=target cause acc negative.
 1838. Frequency of the Most Frequent Element | L.sort(). start,acc,ans=0,0,1. for i in range(1,len(L)): accum+=(L[i]-L[i-1])*(i-start). while acc>k: acc-=L[i]-L[start], start+=1. ans=max(ans,i-start+1). (while exclusive, update ans at last)
 2958. Length of Longest Subarray With at Most K Frequency | start,acc,ans=0,{},0. similar as 1838.
+2962. Count Subarrays Where Max Element Appears at Least K Times | No while | maxv=max(L). maxv_indices=[i for i in range(len(L)) if L[i]==maxv]. start,accum,ans=0,0,0. 
+    for i in range(len(L)): accum+=L[i]==maxv. if accum>=k: ans+=maxv_indices[accum-k]+1.
 
 Iteration lr-spread
 5. Longest Palindromic Substring | while c-e>=0 and c+e<len(s) and s[c-e]==s[c+e]: if 2*e+1>ar-al+1: al, ar = c-e, c+e
