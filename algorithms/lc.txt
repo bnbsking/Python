@@ -61,6 +61,7 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 529. Minesweeper
 542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
 547. Number of Provinces
+733. Flood Fill
 863. All Nodes Distance K in Binary Tree | Tree to Graph by add parent link + BFS
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
 1424. Diagonal Traverse II | simpler than 498.
@@ -263,6 +264,7 @@ Iteration or naive 0
 717. 1-bit and 2-bit Characters
 724. Find Pivot Index
 725. Split Linked List in Parts | ll.
+728. Self Dividing Numbers
 744. Find Smallest Letter Greater Than Target
 1220*. Count Vowels Permutation
 1266. Minimum Time Visiting All Points
@@ -365,7 +367,7 @@ Iteration
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
 1980. Find Unique Binary String | return "".join( str(int(L[i][i]=="0")) for i in range(len(L)) ) # diagnoal algorithm
 149*. Max Points on a Line | use determinant, O(n^3)
-*. Maximum overlap interval | sort (start,1) and (end,-1). Accumulation count and find max.
+S1. Maximum overlap interval | sort (start,1) and (end,-1). Accumulation count and find max.
 
 Iteration - Arithmetic sort
 <268.> Missing Number | while i<len(L): if L[i]<len(L) and L[i]!=L[L[i]]: L[L[i]], L[i] = L[i], L[L[i]] else i+=1 # CANNOT REVERSE
@@ -622,7 +624,10 @@ Stack
 1081. Smallest Subsequence of Distinct Characters | same as 316
 
 SortedContainers
-2353. Design a Food Rating System | functools.cmp_to_key, Dict[cusine]->SortedList(rate,food) & Dict[food] -> [cusine,rate] 
+729. My Calendar I | O(qlogn). idx=L.bisect_left(x)
+731. My Calendar II | O(qn). similar as S1. L.add((start,1)). L.add((end,-1)). count=0. for _,state in L.irange(): if count>2: remove and return False.
+732*. My Calendar III | O(qn). similar as 731.
+2353. Design a Food Rating System | functools.cmp_to_key, Dict[cusine]->SortedList(rate,food) & Dict[food] -> [cusine,rate]
 
 Trie
 208. Implement Trie (Prefix Tree) | Dict, the end of inserting: p["*"]="". e.g. insert apple, insert app, search app
