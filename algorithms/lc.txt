@@ -608,6 +608,7 @@ Stack 0
 71. Simplify Path
 225. Implement Stack using Queues
 232. Implement Queue using Stacks
+735. Asteroid Collision | L=[]. for x in asteroids: if L and L[-1]>0 and x<0: addx=True. while L and addx:..., else: L.append(x)
 844. Backspace String Compare
 
 Stack
