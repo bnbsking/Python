@@ -61,8 +61,10 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 498. Diagonal Traverse | BFS add down when i=0 + add right always, use i+j to judge even or odd
 529. Minesweeper
 542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
-547. Number of Provinces
-733. Flood Fill
+547. Number of Provinces | dfs
+733. Flood Fill | dfs
+752. Open the Lock | bfs
+756. Pyramid Transition Matrix | dfs + itertools.product
 863. All Nodes Distance K in Binary Tree | Tree to Graph by add parent link + BFS
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
 1424. Diagonal Traverse II | simpler than 498.
@@ -365,6 +367,7 @@ Iteration
 665. Non-decreasing Array | for i in range(len(nums)-1): if nums[i]>nums[i+1]: tmp = nums[i+1]. do irregular depends right or depends left respeectively. O(3n)
 670. Maximum Swap | compare to sort, find first diff idx i. find max idx from len(L)-1 to i, swap, break return
 686. Repeated String Match | i = b.find(a). if i==-1: check a.find(b) and 2a.find(b). else return left-right times.
+762. Prime Number of Set Bits in Binary Representation
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
