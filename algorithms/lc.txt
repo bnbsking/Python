@@ -151,6 +151,7 @@ Hash
 467. Unique Substrings in Wraparound String | D={c:1 for c in s}, cont=1. D substr end with char -> numbers. for i in range(1,len(s)): cont = cont+1 if (ord(s[i])-ord(s[i-1]))%26==1 else 1. D[s[i]]=max(D[s[i]],cont)
 532. K-diff Pairs in an Array | S, ans = set(nums), 0. for x in sorted(list(S)): if x+k in S: ans+=1
 554. Brick Wall | spaces=Counter(). for row in wall: for x in accumulate(row[-1]): spaces[x]+=1
+781. Rabbits in Forest | C,ans=Counter(x+1 for x in answers),0. for k,v in C.items(): ans += k if k>=v else v//k*k + (k if v%k else 0). return ans
 1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
 1282. Group the People Given the Group Size They Belong To | D, ans = defaultdict(lambda :[]), []. for i,size in enumerate(groupSizes): D[size].append(i) if len(D[size])==size: ans.append(D[size]). D[size]=[]
 1647. Minimum Deletions to Make Character Frequencies Unique | Counter, ans, freqS
@@ -275,6 +276,7 @@ Iteration or naive 0
 747. Largest Number At Least Twice of Others
 762. Prime Number of Set Bits in Binary Representation
 766. Toeplitz Matrix
+784. Letter Case Permutation | same as 43.
 1220*. Count Vowels Permutation
 1266. Minimum Time Visiting All Points
 1318. Minimum Flips to Make a OR b Equal to c
@@ -374,6 +376,8 @@ Iteration
 686. Repeated String Match | i = b.find(a). if i==-1: check a.find(b) and 2a.find(b). else return left-right times.
 763. Partition Labels | similar as 56.
 769. Max Chunks To Make Sorted | enumerate(L). similar as 56.
+775. Global and Local Inversions | for i in range(len(L)): if i!=L[i]: if L[i]!=i+1 or i!=L[L[i]]: return False. swap. return True
+777. Swap Adjacent in LR String | check non-X str consistent. L index smaller, R index larger.
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
@@ -511,6 +515,7 @@ Recursion 0 (bottom-up or top-down)
 654. Maximum Binary Tree
 690. Employee Importance
 700. Search in a Binary Search Tree
+783. Minimum Distance Between BST Nodes
 1026. Maximum Difference Between Node and Ancestor
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
 1457. Pseudo-Palindromic Paths in a Binary Tree
