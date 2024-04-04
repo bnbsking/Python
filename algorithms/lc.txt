@@ -126,6 +126,7 @@ Hash 0
 705. Design HashSet
 706. Design HashMap
 748. Shortest Completing Word
+771. Jewels and Stones
 791. Custom Sort String
 859. Buddy Strings
 1160. Find Words That Can Be Formed by Characters
@@ -179,7 +180,6 @@ Heap
 355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq.heapify((time,posts)) while calling getNewsFeed
 373. Find K Pairs with Smallest Sums | heap(sumv,i,j), inH(i,j)
 659. Split Array into Consecutive Subsequences | H=[[1,nums[0]]] #(len, max). for i in range(1,len(nums)): L,find=[],False. while not find and H: length,maxv=heapq.heappop(H). if nums[i]-maxv>1:check, elif nums[i]-maxv==1:extend, else:collect L
-767. Reorganize String | heap(-timees,char). while len(H)>=2.
 1642. Furthest Building You Can Reach | L=[(diff,idx)], heap=[] stores (-diff,idx). while L and bricks>0 or ladders>0: if bricks>=L[-1][0]: -bricks add heap, elif ladders>0: compare heap_top and L[-1] and replace either with ladder, else break. return L[-1][1]
 2462. Total Cost to Hire K Workers | heap(cost[i] or cost[-1-i],'l'or'r') with l, r pointers
 
@@ -284,6 +284,7 @@ Iteration or naive 0
 1502. Can Make Arithmetic Progression From Sequence
 1572. Matrix Diagonal Sum
 1582. Special Positions in a Binary Matrix
+1614. Maximum Nesting Depth of the Parentheses
 1662. Check If Two String Arrays are Equivalent
 1669. Merge In Between Linked Lists | ll.
 1688. Count of Matches in Tournament
@@ -309,6 +310,7 @@ Iteration i with accum
 331. Verify Preorder Serialization of a Binary Tree | slot=1 if slot-=1 else slot+=1, slot must >0 during iteration and =0 finally
 376. Wiggle Subsequence | similar to 152. up, down = 1, 1 (first wiggle is up or down). for i in range(1,len(nums)): if nums[i]>nums[i-1]: up = down+1 elif nums[i]<nums[i-1]: down = up+1. return max(up, down)
 334. Increasing Triplet Subsequence | min1, min2 = float('inf'), float('inf'). for x in nums: if x<=min1: min1 = x elif x<=min2: min2 = x else: return True
+581. Shortest Unsorted Continuous Subarray | current_max,end=nums[0],None. .... current_min,start=nums[-1],None. .... return end-start+1
 746. Min Cost Climbing Stairs | a,b=cost[0],cost[1]. for i in range(2,len(L)): c=cost[i]+min(a,b), a=b, b=c. return min(a,b)
 1535. Find the Winner of an Array Game | current_winner(cwr), consecutive_wins(cws) = L[0], 0. for i in range(1,len(L)): if L[i]>cwr: cwr, cws = L[i], 1 else cws+=1 if cws==k: break
 1759. Count Number of Homogenous Substrings | ans=1, cont=1. for x in L[1:]: cont=cont+1 if s[i]==s[i-1] else 1. ans+=cont (ans+=cont due to arithmetic sum, similar to 467)
@@ -334,7 +336,6 @@ Iteration i with start and accum: sliding window -> for sum while
 
 Iteration lr-spread
 5. Longest Palindromic Substring | while c-e>=0 and c+e<len(s) and s[c-e]==s[c+e]: if 2*e+1>ar-al+1: al, ar = c-e, c+e
-581. Shortest Unsorted Continuous Subarray | find first decrease -> spread l,le by while while. find last decrease -> spread re,r by while while. return r-l-1
 647. Palindromic Substrings | same as 5.
 696. Count Binary Substrings | match.start(0) for match in re.finditer(pattern,s)
 
@@ -372,6 +373,7 @@ Iteration
 670. Maximum Swap | compare to sort, find first diff idx i. find max idx from len(L)-1 to i, swap, break return
 686. Repeated String Match | i = b.find(a). if i==-1: check a.find(b) and 2a.find(b). else return left-right times.
 763. Partition Labels | similar as 56.
+769. Max Chunks To Make Sorted | enumerate(L). similar as 56.
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
