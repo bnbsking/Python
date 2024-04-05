@@ -66,6 +66,7 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 733. Flood Fill | dfs
 752. Open the Lock | bfs
 756. Pyramid Transition Matrix | dfs + itertools.product
+785. Is Graph Bipartite? | dfs. P(parity)=[-1]*n. f(x,parent=-1). P[x]=int(P[parent]==-1 or P[parent]==0). for nei in G[x]: if P[nei]==P[x]: False elif P[nei]==-1: f(nei, x)
 863. All Nodes Distance K in Binary Tree | Tree to Graph by add parent link + BFS
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
 1424. Diagonal Traverse II | simpler than 498.
@@ -627,6 +628,7 @@ Stack 0
 232. Implement Queue using Stacks
 735. Asteroid Collision | L=[]. for x in asteroids: if L and L[-1]>0 and x<0: addx=True. while L and addx:..., else: L.append(x)
 844. Backspace String Compare
+1544. Make The String Great
 
 Stack
 150. Evaluate Reverse Polish Notation | complete version 227. 224.
