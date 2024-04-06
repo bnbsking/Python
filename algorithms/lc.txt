@@ -278,6 +278,8 @@ Iteration or naive 0
 762. Prime Number of Set Bits in Binary Representation
 766. Toeplitz Matrix
 784. Letter Case Permutation | same as 43.
+788. Rotated Digits
+789. Escape The Ghosts
 1220*. Count Vowels Permutation
 1266. Minimum Time Visiting All Points
 1318. Minimum Flips to Make a OR b Equal to c
@@ -379,7 +381,9 @@ Iteration
 769. Max Chunks To Make Sorted | enumerate(L). similar as 56.
 775. Global and Local Inversions | for i in range(len(L)): if i!=L[i]: if L[i]!=i+1 or i!=L[L[i]]: return False. swap. return True
 777. Swap Adjacent in LR String | check non-X str consistent. L index smaller, R index larger.
+786. K-th Smallest Prime Fraction | O(n^2)
 1232. Check If It Is a Straight Line | use determinants instead of slopes
+1249. Minimum Remove to Make Valid Parentheses
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
 1980. Find Unique Binary String | return "".join( str(int(L[i][i]=="0")) for i in range(len(L)) ) # diagnoal algorithm
