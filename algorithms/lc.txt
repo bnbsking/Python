@@ -47,6 +47,7 @@ DP Arr2d Backward
 583. Delete Operation for Two Strings | same as 1143.
 688. Knight Probability in Chessboard | for step: copy board, for i for j: reset grid[i][j], for a,b in dirs: update
 712. Minimum ASCII Delete Sum for Two Strings | similar as 1143.
+790. Domino and Tromino Tiling | full, up, down.
 799. Champagne Tower | init triangular 0s, L[0][0]=poured. triangular update by excess: if L[i][j]>1: excess=L[i][j]-1, L[i][j]=1 -> if i+1<len(L): L[i+1][j], L[i+1][j+1] = L[i+1][j]+excess/2., L[i+1][j+1]+excess/2.
 <1143.> Longest Common Subsequence | L[i][j] = L[i-1][j-1] + 1 if text1[i-1]==text2[j-1] else max(L[i][j-1],L[i-1][j])
 
@@ -464,6 +465,7 @@ OrderedDict
 Queue 0
 622. Design Circular Queue
 641. Design Circular Deque
+2073. Time Needed to Buy Tickets
 
 Queue
 649. Dota2 Senate | C,Q=Counter(senate),deque(senate). while C["R"]*C["D"]: ego,chance,max_chance=Q.popleft(),1,1. rival="D" if ego=="R" else "R". while chance*C[rival]:...
