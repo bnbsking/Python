@@ -154,6 +154,7 @@ Hash
 532. K-diff Pairs in an Array | S, ans = set(nums), 0. for x in sorted(list(S)): if x+k in S: ans+=1
 554. Brick Wall | spaces=Counter(). for row in wall: for x in accumulate(row[-1]): spaces[x]+=1
 781. Rabbits in Forest | C,ans=Counter(x+1 for x in answers),0. for k,v in C.items(): ans += k if k>=v else v//k*k + (k if v%k else 0). return ans
+792. Number of Matching Subsequences | D=defaultdict(lambda:[]) (start_char -> [[word, match], ...]). for c in s: raw_words=D[c], D[c]=[]. for word,match in raw_words: if else....
 1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
 1282. Group the People Given the Group Size They Belong To | D, ans = defaultdict(lambda :[]), []. for i,size in enumerate(groupSizes): D[size].append(i) if len(D[size])==size: ans.append(D[size]). D[size]=[]
 1647. Minimum Deletions to Make Character Frequencies Unique | Counter, ans, freqS
@@ -281,6 +282,7 @@ Iteration or naive 0
 784. Letter Case Permutation | same as 43.
 788. Rotated Digits
 789. Escape The Ghosts
+796. Rotate String
 1220*. Count Vowels Permutation
 1266. Minimum Time Visiting All Points
 1318. Minimum Flips to Make a OR b Equal to c
@@ -383,6 +385,7 @@ Iteration
 775. Global and Local Inversions | for i in range(len(L)): if i!=L[i]: if L[i]!=i+1 or i!=L[L[i]]: return False. swap. return True
 777. Swap Adjacent in LR String | check non-X str consistent. L index smaller, R index larger.
 786. K-th Smallest Prime Fraction | O(n^2)
+794. Valid Tic-Tac-Toe State | count 1 and -1. sum of 8 lines.
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1249. Minimum Remove to Make Valid Parentheses
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
@@ -653,6 +656,7 @@ SortedContainers
 729. My Calendar I | O(qlogn). idx=L.bisect_left(x)
 731. My Calendar II | O(qn). similar as S1. L.add((start,1)). L.add((end,-1)). count=0. for _,state in L.irange(): if count>2: remove and return False.
 732*. My Calendar III | O(qn). similar as 731.
+795. Number of Subarrays with Bounded Maximum | sliding window. window=SortedList(). for i in range(len(L)): if L[i]>right: window.clear(), start=i+1. else: window.add(L[i]). j=next((j for j in range(i,start-1,-1) if L[j]>=left), None).
 2353. Design a Food Rating System | functools.cmp_to_key, Dict[cusine]->SortedList(rate,food) & Dict[food] -> [cusine,rate]
 
 Trie
