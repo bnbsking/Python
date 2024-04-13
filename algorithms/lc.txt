@@ -470,6 +470,7 @@ Queue 0
 622. Design Circular Queue
 641. Design Circular Deque
 796. Rotate String
+950. Reveal Cards In Increasing Order
 2073. Time Needed to Buy Tickets
 
 Queue
