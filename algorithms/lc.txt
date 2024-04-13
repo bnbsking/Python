@@ -68,6 +68,7 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 752. Open the Lock | bfs
 756. Pyramid Transition Matrix | dfs + itertools.product
 785. Is Graph Bipartite? | dfs. P(parity)=[-1]*n. f(x,parent=-1). P[x]=int(P[parent]==-1 or P[parent]==0). for nei in G[x]: if P[nei]==P[x]: False elif P[nei]==-1: f(nei, x)
+797. All Paths From Source to Target | dfs + backtracking. f(x=0, path=[0], S={0})
 863. All Nodes Distance K in Binary Tree | Tree to Graph by add parent link + BFS
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
 1424. Diagonal Traverse II | simpler than 498.
@@ -335,6 +336,7 @@ Iteration i with start and accum: sliding window -> for sum while
     consider sliding window: O(26n). if s[i]==c: ..., elif ki>0: ..., else: while 1: if s[start]!=c: start+=1, break, start+=1.
 567. Permutation in String | start,accum,match=0,Counter(),Counter(s1). for i,c in enumerate(s2): if c in match: while match[c]==0:update, update. else: start+=1,restore match%count.
 713. Subarray Product Less Than K | if k<2: return 0. start,acc,ans=0,1,0. for i in range(len(L)): acc*=L[i]. while acc>=k: acc,start=acc//L[start],start+1. ans+=i-start+1. (while inclusive, update ans at last)
+795. Number of Subarrays with Bounded Maximum | start,larger_left_idx,ans=0,None,0. for i in range(len(L)): if L[i]>right: start,larger_left_idx=i+1,None. else: if nums[i]>=left:larger_left_idx=i. if larger_left_idx: ans+=larger_left_idx-start+1
 1658. Minimum Operations to Reduce X to Zero | similar to 209, but initially target<=0 need return, because while acc>=target cause acc negative.
 1838. Frequency of the Most Frequent Element | L.sort(). start,acc,ans=0,0,1. for i in range(1,len(L)): accum+=(L[i]-L[i-1])*(i-start). while acc>k: acc-=L[i]-L[start], start+=1. ans=max(ans,i-start+1). (while exclusive, update ans at last)
 2958. Length of Longest Subarray With at Most K Frequency | start,acc,ans=0,{},0. similar as 1838.
@@ -656,7 +658,6 @@ SortedContainers
 729. My Calendar I | O(qlogn). idx=L.bisect_left(x)
 731. My Calendar II | O(qn). similar as S1. L.add((start,1)). L.add((end,-1)). count=0. for _,state in L.irange(): if count>2: remove and return False.
 732*. My Calendar III | O(qn). similar as 731.
-795. Number of Subarrays with Bounded Maximum | sliding window. window=SortedList(). for i in range(len(L)): if L[i]>right: window.clear(), start=i+1. else: window.add(L[i]). j=next((j for j in range(i,start-1,-1) if L[j]>=left), None).
 2353. Design a Food Rating System | functools.cmp_to_key, Dict[cusine]->SortedList(rate,food) & Dict[food] -> [cusine,rate]
 
 Trie
