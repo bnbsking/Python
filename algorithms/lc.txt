@@ -131,6 +131,7 @@ Hash 0
 748. Shortest Completing Word
 771. Jewels and Stones
 791. Custom Sort String
+804. Unique Morse Code Words
 859. Buddy Strings
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
@@ -283,6 +284,8 @@ Iteration or naive 0
 784. Letter Case Permutation | same as 43.
 788. Rotated Digits
 789. Escape The Ghosts
+806. Number of Lines To Write String
+807. Max Increase to Keep City Skyline
 1220*. Count Vowels Permutation
 1266. Minimum Time Visiting All Points
 1318. Minimum Flips to Make a OR b Equal to c
