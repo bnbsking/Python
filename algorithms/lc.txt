@@ -132,6 +132,8 @@ Hash 0
 771. Jewels and Stones
 791. Custom Sort String
 804. Unique Morse Code Words
+811. Subdomain Visit Count
+812. Largest Triangle Area
 859. Buddy Strings
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
@@ -286,6 +288,7 @@ Iteration or naive 0
 789. Escape The Ghosts
 806. Number of Lines To Write String
 807. Max Increase to Keep City Skyline
+809. Expressive Words | general splitting
 1220*. Count Vowels Permutation
 1266. Minimum Time Visiting All Points
 1318. Minimum Flips to Make a OR b Equal to c
