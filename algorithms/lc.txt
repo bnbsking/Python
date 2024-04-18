@@ -134,6 +134,7 @@ Hash 0
 804. Unique Morse Code Words
 811. Subdomain Visit Count
 812. Largest Triangle Area
+819. Most Common Word
 859. Buddy Strings
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
@@ -678,6 +679,8 @@ Trie
 676. Implement Magic Dictionary | Build Trie. def f(c=0,p=self.T,err=0): if c==len(word): return "end" in p and err==1. if word[c] in p and find(c+1, p[word[c]], err): return True. if err==0 and (len(p)>1 or "end" not in p): .... # if "end" be the unique key, not traversal. # call both match and unmatch even c is match (err must be 0)
 677. Map Sum Pairs | self.D[key]->val, self.T:trie
 720. Longest Word in Dictionary
+820. Short Encoding of Words | Trie by reversed words. Use top-down recusion: def f(T=T, depth=0): if len(T)==1 and "end" in T: return depth+1 else: return sum(f(T[child], depth+1) for child in T if child!="end")
+    (each node has unknown contributions, bottom-up recursion needs to return list instead of int)
 
 UnionFind
 684. Redundant Connection
