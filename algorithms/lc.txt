@@ -72,6 +72,7 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 863. All Nodes Distance K in Binary Tree | Tree to Graph by add parent link + BFS
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
 1424. Diagonal Traverse II | simpler than 498.
+1971. Find if Path Exists in Graph | dfs
 2385. Amount of Time for Binary Tree to Be Infected | Same as 863.
 
 Graph - Topological sort (Kahn's: init inDegL=[inDeg,...], leaves=[inDeg==0 node, ...])
@@ -136,6 +137,7 @@ Hash 0
 812. Largest Triangle Area
 819. Most Common Word
 822. Card Flipping Game
+833. Find And Replace in String
 859. Buddy Strings
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
@@ -295,6 +297,7 @@ Iteration or naive 0
 821. Shortest Distance to a Character
 824. Goat Latin
 830. Positions of Large Groups | general splitting
+832. Flipping an Image
 1220*. Count Vowels Permutation
 1266. Minimum Time Visiting All Points
 1318. Minimum Flips to Make a OR b Equal to c
@@ -405,6 +408,7 @@ Iteration
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
 1980. Find Unique Binary String | return "".join( str(int(L[i][i]=="0")) for i in range(len(L)) ) # diagnoal algorithm
+1992. Find All Groups of Farmland | add switchD (i,j)->(i,j+rect)
 149*. Max Points on a Line | use determinant, O(n^3)
 S1. Maximum overlap interval | sort (start,1) and (end,-1). Accumulation count and find max.
 
