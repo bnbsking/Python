@@ -403,6 +403,7 @@ Iteration
 786. K-th Smallest Prime Fraction | O(n^2)
 794. Valid Tic-Tac-Toe State | count 1 and -1. sum of 8 lines.
 817. Linked List Components | Compare 2 arr find "components"
+826. Most Profit Assigning Work | sort(zip(diff,prof)) -> change prof to curr_max_prof -> start=0. for loading in sorted(workers): if L[start][0]<=loading:...
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1249. Minimum Remove to Make Valid Parentheses
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
