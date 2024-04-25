@@ -404,6 +404,7 @@ Iteration
 794. Valid Tic-Tac-Toe State | count 1 and -1. sum of 8 lines.
 817. Linked List Components | Compare 2 arr find "components"
 826. Most Profit Assigning Work | sort(zip(diff,prof)) -> change prof to curr_max_prof -> start=0. for loading in sorted(workers): if L[start][0]<=loading:...
+835. Image Overlap | O(n^4). 1 left up conv. 2 right down conv. 3 horizontal flip of 1. 4 horizontal flip of 2.
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1249. Minimum Remove to Make Valid Parentheses
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
@@ -479,6 +480,7 @@ Math
 357. Count Numbers with Unique Digits | 10, 10+9*9, 10+9*9+9*9*8, ...
 441. Arranging Coins | x*(x+1)/2=n, x^2+x-2n=0, x=(-1+sqrt(1+8n))/2.
 492. Construct the Rectangle | edge = int(area**0.5). while area%edge: edge-=1
+836. Rectangle Overlap | similar to 223
 1359. Count All Valid Pickup and Delivery Options | suppose ans=f(i-1) has got, there are 2i-2 parentheses (2i-1 spaces). Insert possibilities: (2i-1)+(2i-2)+...+1=2i*(2i-1)/2=i*(2i-1). ans=ans*i*(2i-1)%m
 
 OrderedDict
