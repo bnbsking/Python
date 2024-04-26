@@ -172,6 +172,7 @@ Hash
 1930. Unique Length-3 Palindromic Subsequences | for c in set(s): l=s.find(c), r=s.rfind(c) -> ans += len(set(s[l+1:r]))
 2133. Check if Every Row and Column Contains All Numbers | same as 36.
 2225. Find Players With Zero or One Losses | defaultdict count lose times. loseD[win]+=0, loseD[win]+=1
+2370. Longest Ideal Subsequence | O(2kn) D[c]->ans. for c in s: new = D.get(c,0) for i in range(-k,k+1): if ord('a') <= ord(c)+i <= ord('z'): ...
 2870. Minimum Number of Operations to Make Array Empty | C,ans=Counter(L),0. for x in C.values(): if x==1: return -1. ans+=(x+2)//3
 
 Hash subarray sum all -> for sum if (else)
@@ -298,6 +299,7 @@ Iteration or naive 0
 824. Goat Latin
 830. Positions of Large Groups | general splitting
 832. Flipping an Image
+1137. N-th Tribonacci Number
 1220*. Count Vowels Permutation
 1266. Minimum Time Visiting All Points
 1318. Minimum Flips to Make a OR b Equal to c
