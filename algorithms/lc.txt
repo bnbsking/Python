@@ -147,6 +147,7 @@ Hash 0
 1481. Least Number of Unique Integers after K Removals
 1657. Determine if Two Strings Are Close | set(word1)==set(word2) and sorted(Counter(word1).values()) == sorted(Counter(word2).values())
 2352. Equal Row and Column Pairs | Counter, sum(D[key]*E[key] for key in D.keys()&E.keys()
+2441. Largest Positive Integer That Exists With Its Negative
 2610. Convert an Array Into a 2D Array With Conditions
 3005. Count Elements With Maximum Frequency
 
@@ -317,6 +318,7 @@ Iteration or naive 0
 1704. Determine if String Halves Are Alike
 1877. Minimize Maximum Pair Sum in Array | sort, max of head-tail pair
 1903. Largest Odd Number in String
+2000. Reverse Prefix of Word
 2108. Find First Palindromic String in the Array
 2125. Number of Laser Beams in a Bank
 2148. Count Elements With Strictly Smaller and Greater Elements
