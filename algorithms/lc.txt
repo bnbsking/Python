@@ -166,6 +166,7 @@ Hash
 781. Rabbits in Forest | C,ans=Counter(x+1 for x in answers),0. for k,v in C.items(): ans += k if k>=v else v//k*k + (k if v%k else 0). return ans
 792. Number of Matching Subsequences | D=defaultdict(lambda:[]) (start_char -> [[word, match], ...]). for c in s: raw_words=D[c], D[c]=[]. for word,match in raw_words: if else....
 825. Friends Of Appropriate Ages | C, req = Counter(ages), lambda x, y: int(y>0.5*x+7 and y<=x and (y<=100 or x>=100))....
+1915. Number of Wonderful Substrings | D,acc,ans={0:1},0,0. for c in word: acc^=2**(ord(c)-ord("a")). ans+=D.get(acc,0) diff0. ans+=D.get(acc^(1<<i),0) diff1. D[acc]=D.get(acc,0)+1. 
 1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
 1282. Group the People Given the Group Size They Belong To | D, ans = defaultdict(lambda :[]), []. for i,size in enumerate(groupSizes): D[size].append(i) if len(D[size])==size: ans.append(D[size]). D[size]=[]
 1647. Minimum Deletions to Make Character Frequencies Unique | Counter, ans, freqS
@@ -412,6 +413,7 @@ Iteration
 835. Image Overlap | O(n^4). 1 left up conv. 2 right down conv. 3 horizontal flip of 1. 4 horizontal flip of 2.
 838. Push Dominoes
 840. Magic Squares In Grid
+842. Split Array into Fibonacci Sequence | brute force
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1249. Minimum Remove to Make Valid Parentheses
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
@@ -475,6 +477,7 @@ Iteration - Left-Right
 658. Find K Closest Elements | find insertion l. c=l-int(l==len(arr) or l>0 and x-arr[l-1]<=arr[l]-x). l, r expand
 667. Beautiful Arrangement II | L, l, r = [1], 2, n. for i in range(k-1): if i%2==0:.... left right alternate. return L+list(range(l,r+1))[::(-1)**parity]
 680. Valid Palindrome II | while l<r and s[l]==s[r]: l, r = l+1, r-1. if odd, even, remove_left, remove_right, ....
+881. Boats to Save People
 948. Bag of Tokens | _, ans, l, r = tokens.sort(), 0, 0, len(tokens)-1. while l<=r:...
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity). l,r=max(weights),sum(weights). while l<=r.
 2187. Minimum Time to Complete Trips | l,r,f=0,totalTrips*min(time),lambda m:sum(int(m/t) for t in time). while l<=r: if trip==totalTrips: return m-min(m%t for t in time).
