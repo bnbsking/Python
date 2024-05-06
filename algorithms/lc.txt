@@ -688,6 +688,7 @@ Stack
 503. Next Greater Element II | decrease is regular. similar to 739 but iterate 2n times
 739. Daily Temperatures | decrease is regular. stack=[ith_day]. while stack and tmp[stack[-1]]<tmp[i]: prev_i=stack.pop(). ans[prev_i]=i-prev_i
 1081. Smallest Subsequence of Distinct Characters | same as 316
+2487. Remove Nodes From Linked List | doubly LL
 
 SortedContainers
 729. My Calendar I | O(qlogn). idx=L.bisect_left(x)
