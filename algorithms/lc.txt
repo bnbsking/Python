@@ -192,6 +192,7 @@ Heap0
 1845. Seat Reservation Manager
 1921. Eliminate Maximum Number of Monsters
 1962. Remove Stones to Minimize the Total
+3075. Maximize Happiness of Selected Children
 
 Heap
 355. Design Twitter | {userId:follower set}, {userId: queue(time,tweetID)}, heapq.heapify((time,posts)) while calling getNewsFeed
@@ -418,6 +419,7 @@ Iteration
 840. Magic Squares In Grid
 842. Split Array into Fibonacci Sequence | brute force
 849. Maximize Distance to Closest Person | G,prev,ans=(i for i in range(len(L)) if L[i]), -inf, L.index(1)
+853. Car Fleet | for p1, s1 in sorted(zip(position, speed), reverse=True): if fleet and s1 > s2 and p1 + s1 * (p2-p1)/(s1-s2) <= target: continue # p1 + s1*t = p2 + s2*t --> t = (p2-p1)/(s1-s2). fleet.append([p1,s1])
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1249. Minimum Remove to Make Valid Parentheses
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
