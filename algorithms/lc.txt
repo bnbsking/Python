@@ -71,6 +71,7 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 797. All Paths From Source to Target | dfs + backtracking. f(x=0, path=[0], S={0})
 841. Keys and Rooms | D={i:False for i in range(len(rooms))}  # key: not visited, val: can visit 
 863. All Nodes Distance K in Binary Tree | Tree to Graph by add parent link + BFS
+1219. Path with Maximum Gold | all source dfs + backtracking
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
 1424. Diagonal Traverse II | simpler than 498.
 1971. Find if Path Exists in Graph | dfs
@@ -147,6 +148,7 @@ Hash 0
 1481. Least Number of Unique Integers after K Removals
 1657. Determine if Two Strings Are Close | set(word1)==set(word2) and sorted(Counter(word1).values()) == sorted(Counter(word2).values())
 2352. Equal Row and Column Pairs | Counter, sum(D[key]*E[key] for key in D.keys()&E.keys()
+2373. Largest Local Values in a Matrix
 2441. Largest Positive Integer That Exists With Its Negative
 2610. Convert an Array Into a 2D Array With Conditions
 3005. Count Elements With Maximum Frequency
@@ -424,6 +426,8 @@ Iteration
 1249. Minimum Remove to Make Valid Parentheses
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
+1608. Special Array With X Elements Greater Than or Equal X | C, acc = sorted(Counter(L).items(), reverse=True), 0. for x, times in C: if acc>x: return acc. acc+=times. if acc==x: return x. elif acc>x: return -1.
+1863. Sum of All Subset XOR Totals
 1980. Find Unique Binary String | return "".join( str(int(L[i][i]=="0")) for i in range(len(L)) ) # diagnoal algorithm
 1992. Find All Groups of Farmland | add switchD (i,j)->(i,j+rect)
 149*. Max Points on a Line | use determinant, O(n^3)
@@ -571,6 +575,7 @@ Recursion 0 (bottom-up or top-down)
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
 1457. Pseudo-Palindromic Paths in a Binary Tree
 1609. Even Odd Tree
+2331. Evaluate Boolean Binary Tree
 
 Recursion non-return
 22. Generate Parentheses | f(L=['('],l=1,r=0) if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
@@ -588,9 +593,10 @@ Recursion non-return
 662. Maximum Width of Binary Tree | collect each level leftest and rightest binary path
 669. Trim a Binary Search Tree | while root not in [lo,hi]:.... def f(T): if T: while T.left and T.left.val<lo:... f(T.left). f(T.left). ...
 695. Max Area of Island | use self.ans and self.local + DFS
+861. Score After Flipping Matrix | 1st col greedy, >=2nd col backtracking (1rate >0.5, =0.5, <0.5)
 -
 30*. Substring with Concatenation of All Words
-37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop  
+37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop
 51*. N-Queens | backtracking + no need copy B since B is invariant
 52*. N-Queens II
 140*. Word Break II | similar as 40
@@ -615,6 +621,7 @@ Recursion non-return - start or path
 698. Partition to K Equal Sum Subsets | nums.sort(reverse=True). trim ele>each and ele+min>each. L=[0]*k. f(start=0)
 1361. Validate Binary Tree Nodes | if all(ele<2 for ele in inL) and inL.count(0)==1: root, visitS = inL.index(0), set(range(n)). def g(i=root).
 2305. Fair Distribution of Cookies | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
+2597. The Number of Beautiful Subsets | L.sort(). self.ans=0. def f(start=0, path=set()): self.ans+=1. for i in range(start, len(L)): if L[i]-k not in path: f(i+1, path|{nums[i]}).
 
 Recursion return
 25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
@@ -660,6 +667,8 @@ Recursion return
 894. All Possible Full Binary Trees | similar to 95.
 813. Largest Sum of Averages | f(start,k) with memeory
 814. Binary Tree Pruning | f(T) -> return prunedTree, isEmpty
+979. Distribute Coins in Binary Tree | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
+1325. Delete Leaves With a Given Value | def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
 
 Recursion mix DP
 880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha(): ( if cnt==k: return char else cnt+=1 ) else: ( if cnt*int(char)>k: return f( k%cnt ) else cnt*=int(char) ).
