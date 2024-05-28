@@ -306,6 +306,8 @@ Iteration or naive 0
 830. Positions of Large Groups | general splitting
 832. Flipping an Image
 848. Shifting Letters
+860. Lemonade Change
+868. Binary Gap
 1137. N-th Tribonacci Number
 1220*. Count Vowels Permutation
 1266. Minimum Time Visiting All Points
@@ -422,6 +424,7 @@ Iteration
 842. Split Array into Fibonacci Sequence | brute force
 849. Maximize Distance to Closest Person | G,prev,ans=(i for i in range(len(L)) if L[i]), -inf, L.index(1)
 853. Car Fleet | for p1, s1 in sorted(zip(position, speed), reverse=True): if fleet and s1 > s2 and p1 + s1 * (p2-p1)/(s1-s2) <= target: continue # p1 + s1*t = p2 + s2*t --> t = (p2-p1)/(s1-s2). fleet.append([p1,s1])
+855. Exam Room | O(n) insert and remove
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1249. Minimum Remove to Make Valid Parentheses
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
@@ -502,6 +505,7 @@ Math
 441. Arranging Coins | x*(x+1)/2=n, x^2+x-2n=0, x=(-1+sqrt(1+8n))/2.
 492. Construct the Rectangle | edge = int(area**0.5). while area%edge: edge-=1
 836. Rectangle Overlap | similar to 223
+858. Mirror Reflection | geometry optic, gcd, lcm
 1359. Count All Valid Pickup and Delivery Options | suppose ans=f(i-1) has got, there are 2i-2 parentheses (2i-1 spaces). Insert possibilities: (2i-1)+(2i-2)+...+1=2i*(2i-1)/2=i*(2i-1). ans=ans*i*(2i-1)%m
 
 OrderedDict
@@ -594,6 +598,7 @@ Recursion non-return
 669. Trim a Binary Search Tree | while root not in [lo,hi]:.... def f(T): if T: while T.left and T.left.val<lo:... f(T.left). f(T.left). ...
 695. Max Area of Island | use self.ans and self.local + DFS
 861. Score After Flipping Matrix | 1st col greedy, >=2nd col backtracking (1rate >0.5, =0.5, <0.5)
+869. Reordered Power of 2 | permutation backtracking
 -
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop
@@ -667,6 +672,7 @@ Recursion return
 894. All Possible Full Binary Trees | similar to 95.
 813. Largest Sum of Averages | f(start,k) with memeory
 814. Binary Tree Pruning | f(T) -> return prunedTree, isEmpty
+865. Smallest Subtree with all the Deepest Nodes | Collect deepest node id by f(T)->None. self.ans=None. g(T)->count_deepest_nodes_in_subtree (first acheive collection node is ans)
 979. Distribute Coins in Binary Tree | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
 1325. Delete Leaves With a Given Value | def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
 
@@ -702,6 +708,7 @@ Stack
 496. Next Greater Element I | decrease is regular. nextD, stack = {}, [nums2[0]]. for i in range(1,len(nums2)): while stack and stack[-1]<nums2[i]: nextD[stack.pop()]=nums2[i]
 503. Next Greater Element II | decrease is regular. similar to 739 but iterate 2n times
 739. Daily Temperatures | decrease is regular. stack=[ith_day]. while stack and tmp[stack[-1]]<tmp[i]: prev_i=stack.pop(). ans[prev_i]=i-prev_i
+856. Score of Parentheses | append if c="(" else (stack[-1]="1" if stack[-1]=="(" else merge. while can merge: merge)
 1081. Smallest Subsequence of Distinct Characters | same as 316
 2487. Remove Nodes From Linked List | doubly LL
 
