@@ -583,8 +583,6 @@ Recursion 0 (bottom-up or top-down)
 
 Recursion non-return
 22. Generate Parentheses | f(L=['('],l=1,r=0) if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
-46. Permutations | def f(L=[], S=set(nums)): if len(L)==len(nums): ans.append(L) else: for ele in S: f(L+[ele], S-{ele})
-47. Permutations II | same as 46, but use dict instead of set
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge + add memory
 235. Lowest Common Ancestor of a Binary Search Tree
 236. Lowest Common Ancestor of a Binary Tree
@@ -609,6 +607,8 @@ Recursion non-return
 Recursion non-return - start or path
 39. Combination Sum | f(path={},start=0,target=target), similar than 40. for t in range(targer//can+1)
 40. Combination Sum II | C,ans=sorted(Counter(candidates).items()), []. f(path=[],start=0,target=target), for t in range(times+1)
+46. Permutations | def f(start=0): if start==len(nums): ans.append(L) else: for i in range(start,len(L)): swap, f(start+1),swap
+47. Permutations II | same as 46, but add tuple instead of list
 77. Combinations | f(path=[], start=0) simpler than 40. skip L[start] or add L[start]
 79. Word Search | f(position,match,visitS) backtracking
 112. Path Sum | def f(T=root, x=targetSum) if not self.ans and T: if not T.left and not T.right: else ...
