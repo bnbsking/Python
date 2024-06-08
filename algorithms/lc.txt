@@ -141,6 +141,7 @@ Hash 0
 822. Card Flipping Game
 833. Find And Replace in String
 859. Buddy Strings
+1002. Find Common Characters
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
 1347. Minimum Number of Steps to Make Two Strings Anagram | sum((Counter-Counter).values())
@@ -333,6 +334,7 @@ Iteration or naive 0
 2264. Largest 3-Same-Digit Number in String
 2279. Maximum Bags With Full Capacity of Rocks
 2482. Difference Between Ones and Zeros in Row and Column | record row1s & col1s
+2486. Append Characters to String to Make Subsequence
 2540. Minimum Common Value
 2816. Double a Number Represented as a Linked List | reverse twice ll.
 2864. Maximum Odd Binary Number
