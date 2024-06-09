@@ -144,6 +144,7 @@ Hash 0
 859. Buddy Strings
 874. Walking Robot Simulation
 884. Uncommon Words from Two Sentences
+890. Find and Replace Pattern
 1002. Find Common Characters
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
@@ -172,6 +173,7 @@ Hash
 781. Rabbits in Forest | C,ans=Counter(x+1 for x in answers),0. for k,v in C.items(): ans += k if k>=v else v//k*k + (k if v%k else 0). return ans
 792. Number of Matching Subsequences | D=defaultdict(lambda:[]) (start_char -> [[word, match], ...]). for c in s: raw_words=D[c], D[c]=[]. for word,match in raw_words: if else....
 825. Friends Of Appropriate Ages | C, req = Counter(ages), lambda x, y: int(y>0.5*x+7 and y<=x and (y<=100 or x>=100))....
+888. Fair Candy Swap | # suma-x+y=avg # y=x+avg-suma
 1915. Number of Wonderful Substrings | D,acc,ans={0:1},0,0. for c in word: acc^=2**(ord(c)-ord("a")). ans+=D.get(acc,0) diff0. ans+=D.get(acc^(1<<i),0) diff1. D[acc]=D.get(acc,0)+1. 
 1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
 1282. Group the People Given the Group Size They Belong To | D, ans = defaultdict(lambda :[]), []. for i,size in enumerate(groupSizes): D[size].append(i) if len(D[size])==size: ans.append(D[size]). D[size]=[]
@@ -586,6 +588,7 @@ Recursion 0 (bottom-up or top-down)
 700. Search in a Binary Search Tree
 783. Minimum Distance Between BST Nodes
 872. Leaf-Similar Trees
+897. Increasing Order Search Tree
 988. Smallest String Starting From Leaf
 1026. Maximum Difference Between Node and Ancestor
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
@@ -681,10 +684,11 @@ Recursion return
 701. Insert into a Binary Search Tree | if can insert left elif can insert right else recursion 
 779. K-th Symbol in Grammar | if n<3: return k-1. prev = self.kthGrammar(n-1, (k+1)//2). return k%2 if prev==1 else (k+1)%2
 802. Find Eventual Safe States | recursive call if n not in ans and isSafe and n not in visit
-894. All Possible Full Binary Trees | similar to 95.
 813. Largest Sum of Averages | f(start,k) with memeory
 814. Binary Tree Pruning | f(T) -> return prunedTree, isEmpty
 865. Smallest Subtree with all the Deepest Nodes | Collect deepest node id by f(T)->None. self.ans=None. g(T)->count_deepest_nodes_in_subtree (first acheive collection node is ans)
+889. Construct Binary Tree from Preorder and Postorder Traversal | preorder[0] is root, DLR LRD find the cut.
+894. All Possible Full Binary Trees | similar to 95.
 979. Distribute Coins in Binary Tree | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
 1325. Delete Leaves With a Given Value | def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
 
