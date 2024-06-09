@@ -71,6 +71,7 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 797. All Paths From Source to Target | dfs + backtracking. f(x=0, path=[0], S={0})
 841. Keys and Rooms | D={i:False for i in range(len(rooms))}  # key: not visited, val: can visit 
 863. All Nodes Distance K in Binary Tree | Tree to Graph by add parent link + BFS
+886. Possible Bipartition | multi-source BFS
 1219. Path with Maximum Gold | all source dfs + backtracking
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
 1424. Diagonal Traverse II | simpler than 498.
@@ -141,6 +142,8 @@ Hash 0
 822. Card Flipping Game
 833. Find And Replace in String
 859. Buddy Strings
+874. Walking Robot Simulation
+884. Uncommon Words from Two Sentences
 1002. Find Common Characters
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
@@ -309,6 +312,10 @@ Iteration or naive 0
 848. Shifting Letters
 860. Lemonade Change
 868. Binary Gap
+873. Length of Longest Fibonacci Subsequence
+876. Middle of the Linked List
+883. Projection Area of 3D Shapes
+
 1137. N-th Tribonacci Number
 1220*. Count Vowels Permutation
 1266. Minimum Time Visiting All Points
@@ -427,6 +434,7 @@ Iteration
 849. Maximize Distance to Closest Person | G,prev,ans=(i for i in range(len(L)) if L[i]), -inf, L.index(1)
 853. Car Fleet | for p1, s1 in sorted(zip(position, speed), reverse=True): if fleet and s1 > s2 and p1 + s1 * (p2-p1)/(s1-s2) <= target: continue # p1 + s1*t = p2 + s2*t --> t = (p2-p1)/(s1-s2). fleet.append([p1,s1])
 855. Exam Room | O(n) insert and remove
+885. Spiral Matrix III
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1249. Minimum Remove to Make Valid Parentheses
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
@@ -492,6 +500,7 @@ Iteration - Left-Right
 658. Find K Closest Elements | find insertion l. c=l-int(l==len(arr) or l>0 and x-arr[l-1]<=arr[l]-x). l, r expand
 667. Beautiful Arrangement II | L, l, r = [1], 2, n. for i in range(k-1): if i%2==0:.... left right alternate. return L+list(range(l,r+1))[::(-1)**parity]
 680. Valid Palindrome II | while l<r and s[l]==s[r]: l, r = l+1, r-1. if odd, even, remove_left, remove_right, ....
+875. Koko Eating Bananas | finish_time=sum(math.ceil(p/m) for p in piles). if finish_time ""<="" h: r=m-1, ...
 881. Boats to Save People
 948. Bag of Tokens | _, ans, l, r = tokens.sort(), 0, 0, len(tokens)-1. while l<=r:...
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity). l,r=max(weights),sum(weights). while l<=r.
@@ -576,6 +585,7 @@ Recursion 0 (bottom-up or top-down)
 690. Employee Importance
 700. Search in a Binary Search Tree
 783. Minimum Distance Between BST Nodes
+872. Leaf-Similar Trees
 988. Smallest String Starting From Leaf
 1026. Maximum Difference Between Node and Ancestor
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
