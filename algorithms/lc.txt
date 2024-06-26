@@ -437,6 +437,7 @@ Iteration
 853. Car Fleet | for p1, s1 in sorted(zip(position, speed), reverse=True): if fleet and s1 > s2 and p1 + s1 * (p2-p1)/(s1-s2) <= target: continue # p1 + s1*t = p2 + s2*t --> t = (p2-p1)/(s1-s2). fleet.append([p1,s1])
 855. Exam Room | O(n) insert and remove
 885. Spiral Matrix III
+1052. Grumpy Bookstore Owner | constant sliding window
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1248. Count Number of Nice Subarrays | collect odd_indices. for i in range(len(odd_indices)-k+1): ans+=l*r. return ans
 1249. Minimum Remove to Make Valid Parentheses
@@ -507,6 +508,7 @@ Iteration - Left-Right
 881. Boats to Save People
 948. Bag of Tokens | _, ans, l, r = tokens.sort(), 0, 0, len(tokens)-1. while l<=r:...
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity). l,r=max(weights),sum(weights). while l<=r.
+1552. Magnetic Force Between Two Balls
 2187. Minimum Time to Complete Trips | l,r,f=0,totalTrips*min(time),lambda m:sum(int(m/t) for t in time). while l<=r: if trip==totalTrips: return m-min(m%t for t in time).
 
 Iteration - Monte Carlo
@@ -594,6 +596,7 @@ Recursion 0 (bottom-up or top-down)
 1026. Maximum Difference Between Node and Ancestor
 1038. Binary Search Tree to Greater Sum Tree
 1239. Maximum Length of a Concatenated String with Unique Characters | O(2^n)
+1382. Balance a Binary Search Tree
 1457. Pseudo-Palindromic Paths in a Binary Tree
 1609. Even Odd Tree
 2331. Evaluate Boolean Binary Tree
@@ -735,7 +738,7 @@ SortedContainers
 731. My Calendar II | O(qn). similar as S1. L.add((start,1)). L.add((end,-1)). count=0. for _,state in L.irange(): if count>2: remove and return False.
 732*. My Calendar III | O(qn). similar as 731.
 846. Hand of Straights
-1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | start, L, ans = 0, SL(L[0]), 1. sliding window.
+1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | start, L, ans = 0, SL(L[0]), 1. constant sliding window
 2353. Design a Food Rating System | functools.cmp_to_key, Dict[cusine]->SortedList(rate,food) & Dict[food] -> [cusine,rate]
 
 Trie
