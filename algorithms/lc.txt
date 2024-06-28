@@ -145,7 +145,7 @@ Hash 0
 874. Walking Robot Simulation
 884. Uncommon Words from Two Sentences
 890. Find and Replace Pattern
-1002. Find Common Characters
+1002. Find Common Characters | ans &= Counter(word)
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
 1347. Minimum Number of Steps to Make Two Strings Anagram | sum((Counter-Counter).values())
@@ -174,6 +174,7 @@ Hash
 781. Rabbits in Forest | C,ans=Counter(x+1 for x in answers),0. for k,v in C.items(): ans += k if k>=v else v//k*k + (k if v%k else 0). return ans
 792. Number of Matching Subsequences | D=defaultdict(lambda:[]) (start_char -> [[word, match], ...]). for c in s: raw_words=D[c], D[c]=[]. for word,match in raw_words: if else....
 825. Friends Of Appropriate Ages | C, req = Counter(ages), lambda x, y: int(y>0.5*x+7 and y<=x and (y<=100 or x>=100))....
+846. Hand of Straights
 888. Fair Candy Swap | # suma-x+y=avg # y=x+avg-suma
 945. Minimum Increment to Make Array Unique | start = key+1 if start<key else start
 1915. Number of Wonderful Substrings | D,acc,ans={0:1},0,0. for c in word: acc^=2**(ord(c)-ord("a")). ans+=D.get(acc,0) diff0. ans+=D.get(acc^(1<<i),0) diff1. D[acc]=D.get(acc,0)+1. 
@@ -743,7 +744,6 @@ SortedContainers
 729. My Calendar I | O(qlogn). idx=L.bisect_left(x)
 731. My Calendar II | O(qn). similar as S1. L.add((start,1)). L.add((end,-1)). count=0. for _,state in L.irange(): if count>2: remove and return False.
 732*. My Calendar III | O(qn). similar as 731.
-846. Hand of Straights
 1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit | start, L, ans = 0, SL(L[0]), 1. constant sliding window
 2353. Design a Food Rating System | functools.cmp_to_key, Dict[cusine]->SortedList(rate,food) & Dict[food] -> [cusine,rate]
 
