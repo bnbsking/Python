@@ -177,6 +177,7 @@ Hash
 825. Friends Of Appropriate Ages | C, req = Counter(ages), lambda x, y: int(y>0.5*x+7 and y<=x and (y<=100 or x>=100))....
 846. Hand of Straights
 888. Fair Candy Swap | # suma-x+y=avg # y=x+avg-suma
+898. Bitwise ORs of Subarrays | acc, ors = set(), set(). for x in arr: acc = {x} | { x | y for y in acc }. ors |= acc. return len(ors)
 945. Minimum Increment to Make Array Unique | start = key+1 if start<key else start
 1915. Number of Wonderful Substrings | D,acc,ans={0:1},0,0. for c in word: acc^=2**(ord(c)-ord("a")). ans+=D.get(acc,0) diff0. ans+=D.get(acc^(1<<i),0) diff1. D[acc]=D.get(acc,0)+1. 
 1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
@@ -702,6 +703,7 @@ Recursion return
 865. Smallest Subtree with all the Deepest Nodes | Collect deepest node id by f(T)->None. self.ans=None. g(T)->count_deepest_nodes_in_subtree (first acheive collection node is ans)
 889. Construct Binary Tree from Preorder and Postorder Traversal | preorder[0] is root, DLR LRD find the cut.
 894. All Possible Full Binary Trees | similar to 95.
+900. RLE Iterator
 979. Distribute Coins in Binary Tree | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
 1325. Delete Leaves With a Given Value | def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
 
@@ -738,6 +740,7 @@ Stack
 503. Next Greater Element II | decrease is regular. similar to 739 but iterate 2n times
 739. Daily Temperatures | decrease is regular. stack=[ith_day]. while stack and tmp[stack[-1]]<tmp[i]: prev_i=stack.pop(). ans[prev_i]=i-prev_i
 856. Score of Parentheses | append if c="(" else (stack[-1]="1" if stack[-1]=="(" else merge. while can merge: merge)
+901. Online Stock Span | eaten = 1. while self.stack and self.stack[-1][0]<=price: eaten += self.stack.pop()[1]. self.stack.append([price, eaten])
 1081. Smallest Subsequence of Distinct Characters | same as 316
 2487. Remove Nodes From Linked List | doubly LL
 
