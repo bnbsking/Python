@@ -72,6 +72,7 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 841. Keys and Rooms | D={i:False for i in range(len(rooms))}  # key: not visited, val: can visit 
 863. All Nodes Distance K in Binary Tree | Tree to Graph by add parent link + BFS
 886. Possible Bipartition | multi-source BFS
+909. Snakes and Ladders | bfs. Q,S=deque([(node=1, depth=0)]), {1}.
 1219. Path with Maximum Gold | all source dfs + backtracking
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
 1424. Diagonal Traverse II | simpler than 498.
@@ -448,12 +449,14 @@ Iteration
 853. Car Fleet | for p1, s1 in sorted(zip(position, speed), reverse=True): if fleet and s1 > s2 and p1 + s1 * (p2-p1)/(s1-s2) <= target: continue # p1 + s1*t = p2 + s2*t --> t = (p2-p1)/(s1-s2). fleet.append([p1,s1])
 855. Exam Room | O(n) insert and remove
 885. Spiral Matrix III
+910. Smallest Range II | up,..,up,down,...,down (scan all boundary). ans=min(ans, max(nums[i-1]+k, nums[-1]-k) - min(nums[i]-k, nums[0]+k)).
 1052. Grumpy Bookstore Owner | constant sliding window
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1248. Count Number of Nice Subarrays | collect odd_indices. for i in range(len(odd_indices)-k+1): ans+=l*r. return ans
 1249. Minimum Remove to Make Valid Parentheses
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
+1509. Minimum Difference Between Largest and Smallest Value in Three Moves | min(max4-min0, max3-min1, max2-min2, max1-min3)
 1608. Special Array With X Elements Greater Than or Equal X | C, acc = sorted(Counter(L).items(), reverse=True), 0. for x, times in C: if acc>x: return acc. acc+=times. if acc==x: return x. elif acc>x: return -1.
 1863. Sum of All Subset XOR Totals
 1980. Find Unique Binary String | return "".join( str(int(L[i][i]=="0")) for i in range(len(L)) ) # diagnoal algorithm
