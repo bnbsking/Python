@@ -450,6 +450,7 @@ Iteration
 855. Exam Room | O(n) insert and remove
 885. Spiral Matrix III
 910. Smallest Range II | up,..,up,down,...,down (scan all boundary). ans=min(ans, max(nums[i-1]+k, nums[-1]-k) - min(nums[i]-k, nums[0]+k)).
+915. Partition Array into Disjoint Intervals | mins arr append, while lmax<mins[-1]: ...
 1052. Grumpy Bookstore Owner | constant sliding window
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1248. Count Number of Nice Subarrays | collect odd_indices. for i in range(len(odd_indices)-k+1): ans+=l*r. return ans
@@ -520,6 +521,7 @@ Iteration - Left-Right
 680. Valid Palindrome II | while l<r and s[l]==s[r]: l, r = l+1, r-1. if odd, even, remove_left, remove_right, ....
 875. Koko Eating Bananas | finish_time=sum(math.ceil(p/m) for p in piles). if finish_time ""<="" h: r=m-1, ...
 881. Boats to Save People
+911. Online Election | D:person->[votes,latest], self.L saves [(time, winner)]. l = l - int(l==len(self.L) or self.L[l][0]!=t)
 948. Bag of Tokens | _, ans, l, r = tokens.sort(), 0, 0, len(tokens)-1. while l<=r:...
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity). l,r=max(weights),sum(weights). while l<=r.
 1482. Minimum Number of Days to Make m Bouquets | acc_bouquets, acc_continuous, can_collect_in_mid_days = 0, 0, False. for day in bloomDay:...
@@ -710,6 +712,7 @@ Recursion return
 889. Construct Binary Tree from Preorder and Postorder Traversal | preorder[0] is root, DLR LRD find the cut.
 894. All Possible Full Binary Trees | similar to 95.
 900. RLE Iterator
+914. X of a Kind in a Deck of Cards | gcd of all C.values > 1
 979. Distribute Coins in Binary Tree | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
 1325. Delete Leaves With a Given Value | def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
 
