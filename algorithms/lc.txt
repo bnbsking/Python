@@ -179,6 +179,7 @@ Hash
 846. Hand of Straights
 888. Fair Candy Swap | # suma-x+y=avg # y=x+avg-suma
 898. Bitwise ORs of Subarrays | acc, ors = set(), set(). for x in arr: acc = {x} | { x | y for y in acc }. ors |= acc. return len(ors)
+916. Word Subsets | return [w1 for w1 in words1 if Counter(w1)&C==C]
 945. Minimum Increment to Make Array Unique | start = key+1 if start<key else start
 1915. Number of Wonderful Substrings | D,acc,ans={0:1},0,0. for c in word: acc^=2**(ord(c)-ord("a")). ans+=D.get(acc,0) diff0. ans+=D.get(acc^(1<<i),0) diff1. D[acc]=D.get(acc,0)+1. 
 1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
@@ -346,6 +347,7 @@ Iteration or naive 0
 1903. Largest Odd Number in String
 2000. Reverse Prefix of Word
 2037. Minimum Number of Moves to Seat Everyone
+2058. Find the Minimum and Maximum Number of Nodes Between Critical Points | ll.
 2108. Find First Palindromic String in the Array
 2125. Number of Laser Beams in a Bank
 2148. Count Elements With Strictly Smaller and Greater Elements
