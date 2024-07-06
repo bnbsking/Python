@@ -358,6 +358,7 @@ Iteration or naive 0
 2482. Difference Between Ones and Zeros in Row and Column | record row1s & col1s
 2486. Append Characters to String to Make Subsequence
 2540. Minimum Common Value
+2582. Pass the Pillow | time %= (n-1)*2. return time + 1 if time <= n-1 else n - time % (n-1)
 2816. Double a Number Represented as a Linked List | reverse twice ll.
 2864. Maximum Odd Binary Number
 2971. Find Polygon With the Largest Perimeter
@@ -373,6 +374,7 @@ Iteration i with accum
 581. Shortest Unsorted Continuous Subarray | current_max,end=nums[0],None. .... current_min,start=nums[-1],None. .... return end-start+1
 746. Min Cost Climbing Stairs | a,b=cost[0],cost[1]. for i in range(2,len(L)): c=cost[i]+min(a,b), a=b, b=c. return min(a,b)
 845. Longest Mountain in Array | i,acc,trend,ans=1,1,-1,1  # trend -> -1:init, 0:up, 1:down. while i<len(L): compare=(same,up,down) x trend=(-1,0,1)
+918. Maximum Sum Circular Subarray | use 53. to find max_arr and min_arr. return max(max_arr,sum-min_arr)
 1535. Find the Winner of an Array Game | current_winner(cwr), consecutive_wins(cws) = L[0], 0. for i in range(1,len(L)): if L[i]>cwr: cwr, cws = L[i], 1 else cws+=1 if cws==k: break
 1759. Count Number of Homogenous Substrings | ans=1, cont=1. for x in L[1:]: cont=cont+1 if s[i]==s[i-1] else 1. ans+=cont (ans+=cont due to arithmetic sum, similar to 467)
 2483. Minimum Penalty for a Shop | ans=0, lowestPenalty=penalty=L.count("Y"). for i in range(len(L)): penalty += (-1)**int(L[i]=="Y"). if penalty<lowestPenalty: ans, lowestPenalty = i+1, penalty
@@ -716,6 +718,7 @@ Recursion return
 894. All Possible Full Binary Trees | similar to 95.
 900. RLE Iterator
 914. X of a Kind in a Deck of Cards | gcd of all C.values > 1
+919. Complete Binary Tree Inserter | count nodes. nodes_idx->depth->level_idx->path by bin.
 979. Distribute Coins in Binary Tree | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
 1325. Delete Leaves With a Given Value | def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
 
