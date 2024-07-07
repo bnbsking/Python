@@ -327,6 +327,7 @@ Iteration or naive 0
 876. Middle of the Linked List
 883. Projection Area of 3D Shapes
 917. Reverse Only Letters | negative idx practice
+925. Long Pressed Name | general splitting
 1051. Height Checker
 1122. Relative Sort Array
 1137. N-th Tribonacci Number
