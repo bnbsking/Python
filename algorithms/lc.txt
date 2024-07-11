@@ -73,6 +73,7 @@ Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 863. All Nodes Distance K in Binary Tree | Tree to Graph by add parent link + BFS
 886. Possible Bipartition | multi-source BFS
 909. Snakes and Ladders | bfs. Q,S=deque([(node=1, depth=0)]), {1}.
+934. Shortest Bridge | dfs + multi-source BFS
 1219. Path with Maximum Gold | all source dfs + backtracking
 1743. Restore the Array From Adjacent Pairs | create graph, find indegree==1, traversal. delete instead of visitS
 1424. Diagonal Traverse II | simpler than 498.
@@ -766,6 +767,7 @@ Stack
 856. Score of Parentheses | append if c="(" else (stack[-1]="1" if stack[-1]=="(" else merge. while can merge: merge)
 901. Online Stock Span | eaten = 1. while self.stack and self.stack[-1][0]<=price: eaten += self.stack.pop()[1]. self.stack.append([price, eaten])
 1081. Smallest Subsequence of Distinct Characters | same as 316
+1190. Reverse Substrings Between Each Pair of Parentheses | multilevel stack
 2487. Remove Nodes From Linked List | doubly LL
 
 SortedContainers
