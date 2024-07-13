@@ -334,6 +334,7 @@ Iteration or naive 0
 941. Valid Mountain Array | remember all increase or all decrease
 942. DI String Match | l r greedy
 944. Delete Columns to Make Sorted
+946. Validate Stack Sequences
 1051. Height Checker
 1122. Relative Sort Array
 1137. N-th Tribonacci Number
