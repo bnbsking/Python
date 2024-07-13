@@ -183,6 +183,7 @@ Hash
 898. Bitwise ORs of Subarrays | acc, ors = set(), set(). for x in arr: acc = {x} | { x | y for y in acc }. ors |= acc. return len(ors)
 916. Word Subsets | return [w1 for w1 in words1 if Counter(w1)&C==C]
 923. 3Sum With Multiplicity | consider (3,) or (1,1,1) or (1,2) or (2,1)
+939. Minimum Area Rectangle | collect X (sorted by tup), Y (sorted by tup[::-1]). iterate down_left, find up_left, find do_right, find up_right in set.
 945. Minimum Increment to Make Array Unique | start = key+1 if start<key else start
 1915. Number of Wonderful Substrings | D,acc,ans={0:1},0,0. for c in word: acc^=2**(ord(c)-ord("a")). ans+=D.get(acc,0) diff0. ans+=D.get(acc^(1<<i),0) diff1. D[acc]=D.get(acc,0)+1. 
 1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
@@ -330,6 +331,9 @@ Iteration or naive 0
 883. Projection Area of 3D Shapes
 917. Reverse Only Letters | negative idx practice
 925. Long Pressed Name | general splitting
+941. Valid Mountain Array | remember all increase or all decrease
+942. DI String Match | l r greedy
+944. Delete Columns to Make Sorted
 1051. Height Checker
 1122. Relative Sort Array
 1137. N-th Tribonacci Number
