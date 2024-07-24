@@ -156,6 +156,7 @@ Hash 0
 1436. Destination City
 1481. Least Number of Unique Integers after K Removals
 1657. Determine if Two Strings Are Close | set(word1)==set(word2) and sorted(Counter(word1).values()) == sorted(Counter(word2).values())
+2196. Create Binary Tree From Descriptions
 2285. Maximum Total Importance of Roads
 2352. Equal Row and Column Pairs | Counter, sum(D[key]*E[key] for key in D.keys()&E.keys()
 2373. Largest Local Values in a Matrix
@@ -343,6 +344,7 @@ Iteration or naive 0
 1266. Minimum Time Visiting All Points
 1318. Minimum Flips to Make a OR b Equal to c
 1351. Count Negative Numbers in a Sorted Matrix
+1380. Lucky Numbers in a Matrix
 1441. Build an Array With Stack Operations
 1464. Maximum Product of Two Elements in an Array
 1502. Can Make Arithmetic Progression From Sequence
@@ -351,6 +353,7 @@ Iteration or naive 0
 1572. Matrix Diagonal Sum
 1582. Special Positions in a Binary Matrix
 1614. Maximum Nesting Depth of the Parentheses
+1636. Sort Array by Increasing Frequency
 1662. Check If Two String Arrays are Equivalent
 1669. Merge In Between Linked Lists | ll.
 1688. Count of Matches in Tournament
@@ -364,6 +367,7 @@ Iteration or naive 0
 2125. Number of Laser Beams in a Bank
 2148. Count Elements With Strictly Smaller and Greater Elements
 2149. Rearrange Array Elements by Sign
+2191. Sort the Jumbled Numbers
 2264. Largest 3-Same-Digit Number in String
 2279. Maximum Bags With Full Capacity of Rocks
 2482. Difference Between Ones and Zeros in Row and Column | record row1s & col1s
@@ -643,7 +647,7 @@ Recursion non-return
 22. Generate Parentheses | f(L=['('],l=1,r=0) if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
 131. Palindrome Partitioning | f(tuple) for loop check if can odd or even merge + add memory
 235. Lowest Common Ancestor of a Binary Search Tree
-236. Lowest Common Ancestor of a Binary Tree
+236. Lowest Common Ancestor of a Binary Tree | (LCA)
   + Naive recursion (good at balanced)
   + Change to Range min query (good at general): euler path, depth path, D: T.val->"first occurence index in euler path". Build segment tree each node (T.val,index) then query(D[p.val],D[q.val])
 257. Binary Tree Paths
@@ -655,6 +659,8 @@ Recursion non-return
 695. Max Area of Island | use self.ans and self.local + DFS
 861. Score After Flipping Matrix | 1st col greedy, >=2nd col backtracking (1rate >0.5, =0.5, <0.5)
 869. Reordered Power of 2 | permutation backtracking
+1530. Number of Good Leaf Nodes Pairs | (LCA)
+2096. Step-By-Step Directions From a Binary Tree Node to Another | (LCA)
 -
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop
