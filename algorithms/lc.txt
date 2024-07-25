@@ -71,19 +71,17 @@ Graph Traversal bfs (shortest distance, unweighted shortest path by parent arr)
 433. Minimum Genetic Mutation | A1 | x,depth=Q.popleft() | memory is for is_neighbor NOT main problem
 498. Diagonal Traverse | A0 | x=Q.popleft() | add down when i=0 + add right always, use i+j to judge even or odd
 542. 01 Matrix | C1 | x,depth=Q.popleft() | one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
+752. Open the Lock | A1 | x,depth=Q.popleft()
 
 Graph Traversal dfs (achievable, path by backtracking)
 130. Surrounded Regions | C1 | f(x)
 133. Clone Graph | A1 | f(x) | node2dict, dict2node
 200. Number of Islands | C1 | f(x) | same as 130.
-529. Minesweeper | | f(x)
+529. Minesweeper | f(x)
+547. Number of Provinces | A1 | f(x)
+733. Flood Fill | f(x)
 
-
-
-Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
-547. Number of Provinces | dfs
-733. Flood Fill | dfs
-752. Open the Lock | bfs
+?Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
 756. Pyramid Transition Matrix | dfs + itertools.product
 785. Is Graph Bipartite? | dfs. P(parity)=[-1]*n. f(x,parent=-1). P[x]=int(P[parent]==-1 or P[parent]==0). for nei in G[x]: if P[nei]==P[x]: False elif P[nei]==-1: f(nei, x)
 797. All Paths From Source to Target | dfs + backtracking. f(x=0, path=[0], S={0})
