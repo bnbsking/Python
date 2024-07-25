@@ -54,15 +54,33 @@ DP Arr2d Backward
 DP Arr2d Forward
 576. Out of Boundary Paths | init all 0s one 1. renew matrix per step: inner zeros, outer inherit. update inner by forward dp
 
++ Graph (cycle) traversal
+A record visit by
+    A0 itself or prevent cycle
+    A1 hash at this layer, if child not in hash then call
+    A2 hash at child layer
+B memorization (subproblem of main problem)
+    B0 no
+    B1 yes
+C sources
+    C0 single
+    C1 multiple
+
+Graph Traversal bfs (shortest distance, unweighted shortest path by parent arr)
+399. Evaluate Division | A1B1 | x,val=Q.popleft() | V.add(x). G[start][x]=val. if x==end:...break. elif end in G[x]:...break. else ...
+433. Minimum Genetic Mutation | A1 | x,depth=Q.popleft() | memory is for is_neighbor NOT main problem
+498. Diagonal Traverse | A0 | x=Q.popleft() | add down when i=0 + add right always, use i+j to judge even or odd
+542. 01 Matrix | C1 | x,depth=Q.popleft() | one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
+
+Graph Traversal dfs (achievable, path by backtracking)
+130. Surrounded Regions | C1 | f(x)
+133. Clone Graph | A1 | f(x) | node2dict, dict2node
+200. Number of Islands | C1 | f(x) | same as 130.
+529. Minesweeper | | f(x)
+
+
+
 Graph Traversal or Unweighted shorted path (DFS-recursion/BFS-queue + visitS)
-130. Surrounded Regions | GO chess
-133. Clone Graph | node2dict, dict2node
-200. Number of Islands
-<399.> Evaluate Division | dfs f(start, end, visit), use graph as memorization, return find, G[start,end]. visitS should be reinitialized per query, don't add unfind query so G can keep disconnection.
-<433.> Minimum Genetic Mutation | BFS, visitS. can add memory
-498. Diagonal Traverse | BFS add down when i=0 + add right always, use i+j to judge even or odd
-529. Minesweeper
-542. 01 Matrix | queue in (i,j,depth), one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
 547. Number of Provinces | dfs
 733. Flood Fill | dfs
 752. Open the Lock | bfs
