@@ -469,6 +469,7 @@ Iteration
 524. Longest Word in Dictionary through Deleting | find longest issubsequence
 556. Next Greater Element III | same as 31.
 621. Task Scheduler | idleBound = (n+1)*(maxv-1) + maxvCount. tasksBound = len(tasks). return max(idleBound, tasksBound)
+624. Maximum Distance in Arrays | collect minL, maxL, min1v, min1i, min2v, min2i, max1v, max1i, max2v, max2i.
 628. Maximum Product of Three Numbers | Sliding window at border
 665. Non-decreasing Array | for i in range(len(nums)-1): if nums[i]>nums[i+1]: tmp = nums[i+1]. do irregular depends right or depends left respeectively. O(3n)
 670. Maximum Swap | compare to sort, find first diff idx i. find max idx from len(L)-1 to i, swap, break return
