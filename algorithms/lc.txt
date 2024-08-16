@@ -58,7 +58,7 @@ DP Arr2d Forward
 A record visit by
     A0 itself or prevent cycle
     A1 hash at this layer, if child not in hash then call
-    (A2 hash at child layer, if self not in hash then continue) tree use this is convenient, graph not use
+    (A2 hash at child layer, if self not in hash then continue) tree or ll use this is convenient, graph not use
 B memorization (subproblem of main problem)
     B0 no
     B1 yes
