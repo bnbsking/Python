@@ -71,11 +71,12 @@ D backtracking (get path)
     D0 no
     D1 yes
 
-Graph Traversal bfs (shortest distance, unweighted shortest path can be get by parent arr)
+?Graph Traversal bfs (shortest distance, unweighted shortest path can be get by parent arr)
 433. Minimum Genetic Mutation | A1 | x,depth=Q.popleft() | memory is for is_neighbor NOT main problem
 498. Diagonal Traverse | x=Q.popleft(). add down when i=0 + add right always, use i+j to judge even or odd
 542. 01 Matrix | C1 | x,depth=Q.popleft(). one queue multi-source BFS start from 0s (put into Q) update 1s (set -1 as unvisited initially)
 752. Open the Lock | A1 | x,depth=Q.popleft()
+841. Keys and Rooms | A1 | D={i:False for i in range(len(rooms))}  # key: not visited, val: can visit. f(x)
 886. Possible Bipartition | A1C1 | while dislike: Q, V = deque([dislikes.pop()]), set(). while Q: a, b = Q.popleft()
 909. Snakes and Ladders | A1 | Q,S=deque([(node=1, depth=0)]), {1}. .... x, depth = Q.popleft()
 1424. Diagonal Traverse II | simpler than 498. x=Q.popleft()
@@ -89,19 +90,20 @@ Graph Traversal dfs (achievable, get path by backtracking)
 529. Minesweeper | f(x)
 547. Number of Provinces | A1B1 | f(x)
 733. Flood Fill | f(x)
-785. Is Graph Bipartite? | A1B1 | Use parity array (-1: not visited, 0: c0, 1: c1). f(x,parent=-1). P[x]=int(P[parent]==-1 or P[parent]==0). for nei in G[x]: if P[nei]==P[x]: False elif P[nei]==-1: f(nei, x)
 797. All Paths From Source to Target | A1D1 | backtracking. f(x=0, path=[0], S={0})
-841. Keys and Rooms | A1 | D={i:False for i in range(len(rooms))}  # key: not visited, val: can visit. f(x)
+1219. Path with Maximum Gold | A1B1D1 | f(x, visitS, acc) all source dfs + backtracking
 
 ---
 
-1219. Path with Maximum Gold | A1C1 | all source dfs + backtracking
+785. Is Graph Bipartite? | A1B1 | Use parity array (-1: not visited, 0: c0, 1: c1). f(x,parent=-1). P[x]=int(P[parent]==-1 or P[parent]==0). for nei in G[x]: if P[nei]==P[x]: False elif P[nei]==-1: f(nei, x)
 1971. Find if Path Exists in Graph | A1
 
 Grapg Traversal dfs+bfs
+934. Shortest Bridge | A1 | A1B1 | dfs f(x) to collect all boundary of island1 + multi-source BFS (i, j, depth = Q.popleft())
+
+?
 863. All Nodes Distance K in Binary Tree | f(T, parent=None). dfs to tree to Graph by add parent link. x, depth = self.Q.popleft()
 756. Pyramid Transition Matrix | f(x), collect all combinations by functools.pairwise. use itertools.product to search all
-934. Shortest Bridge | A1 | dfs f(x) to collect all boundary of island1 + multi-source BFS (i, j, depth = Q.popleft())
 2385. Amount of Time for Binary Tree to Be Infected | Same as 863.
 
 Graph - Topological sort (Kahn's: init inDegL=[inDeg,...], leaves=[inDeg==0 node, ...])
