@@ -57,9 +57,8 @@ DP Arr2d Forward
 + Graph (cycle) traversal, X0 is default
 A record visit by
     A0 record itself or no cycle - ll, tree
-    A1 if child not in hash then call - the most graph, not visit node twice in once traversal
-    A2 if self not in hash then continue - some graph, can visit node twice in once traversal
-    A3 both A1+A2
+    A1 if child not in hash then call - graph (most), node in stack or queue just once 
+    A2 if self not in hash then continue, if child not in hash then call - graph, node in stack or queue more than once
 B sources
     B0 single
     B1 multiple - iteratively dfs or interleavedly bfs
@@ -103,7 +102,7 @@ Graph Traversal dfs+bfs
 
 Graph - Topological sort (Kahn's: init inDegL=[inDeg,...], leaves=[inDeg==0 node, ...])
 <207.> Course Schedule | B1 | DFS, G is constant, while leaves
-210. Course Schedule II | B1 |DFS, G is constant, while leaves
+210. Course Schedule II | B1 | DFS, G is constant, while leaves
 310. Minimum Height Trees | B1 | BFS, G is varied, while len(G)>2: init leaves
 2192. All Ancestors of a Node in a Directed Acyclic Graph | B1 | parentD const, children const, parentD_topo varied. Q, ans = deque(roots), [set() for i in range(n)]. while Q: add parent to ans from parentD. add new roots to Q by parent_topo.
 
