@@ -57,8 +57,8 @@ DP Arr2d Forward
 + Graph (cycle) traversal, X0 is default
 A record visit by
     A0 record itself or no cycle - ll, tree
-    A1 if child not in hash then call - graph (most), node in stack or queue just once 
-    A2 if self not in hash then continue, if child not in hash then call - graph, node in stack or queue more than once
+    A1 if child not in hash then call - graph (most), node in stack or queue just once in a traversal
+    A2 if self not in hash then continue, if child not in hash then call - graph, node in stack or queue more than once in a traversal
 B sources
     B0 single
     B1 multiple - iteratively dfs or interleavedly bfs
@@ -106,19 +106,19 @@ Graph - Topological sort (Kahn's: init inDegL=[inDeg,...], leaves=[inDeg==0 node
 310. Minimum Height Trees | B1 | BFS, G is varied, while len(G)>2: init leaves
 2192. All Ancestors of a Node in a Directed Acyclic Graph | B1 | parentD const, children const, parentD_topo varied. Q, ans = deque(roots), [set() for i in range(n)]. while Q: add parent to ans from parentD. add new roots to Q by parent_topo.
 
-?Graph - Spanning tree (Prim: init H, L, S)
+Graph - Spanning tree (Prim: init H, L, S)
 -
-<1584.> Min Cost to Connect All Points | Prim. Init graph. Heap(dist2mst,node), L=[dist,...], visitS, ans. while heap: pop, visitS.add, for nei in G[x]: if shorter update and push. Very similar to 743. O((v+e)logv)
-  + Kruskal: Union find, sort edges reversely, pop, merge 2 point if union. O(eloge). same complexity.
+<1584.> Min Cost to Connect All Points | A2 | Prim. Init graph. Heap(dist2mst,node) init by random 1 node, L=[dist,...], visitS, ans. while heap: pop, if not in visitS: visitS.add, for nei in G[x]: if D[nei]>G[x][nei]: update and push. Very similar to 743. O((v+e)logv)
+  + Kruskal: Union find, E(w,p,q) = decreasingly sort edges, while len(mst)<len(nodes)-1: E.pop, merge 2 point if U.union(p,q). O(eloge). same complexity.
 
-?Graph - Weighted shortest path (Dijkstra: init H, L, S)
+Graph - Weighted shortest path (Dijkstra: init H, L, S)
 -
-<743.> Network Delay Time | Dijkstra. Init graph. Heap(accum,node), L=[dist, ...], visitS. while H: pop, if not in visitS: visitS.add, for nei in G[x]: if shorter: update and push. (No relaxation, Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
+<743.> Network Delay Time | A2 | Dijkstra. Init graph. Heap(accum,node), L=[dist, ...], visitS. while H: pop, if not in visitS: visitS.add, for nei in G[x]: if L[nei]>accum+G[x][nei]: update and push. (No relaxation, Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
    + Bellman-Ford: for _ in range(1,n): for l,r,w in times: L[r] = min(L[r], L[l]+w). O(ve)
 787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap, NO visitS. Q(accum,node,depth), L=[dist, ...]. while Q: pop, if depth<k+1: for nei in G[x]: if shorter: update and push.
 1334. Find the City With the Smallest Number of Neighbors at a Threshold Distance | Floyd-WarShall O(v^3). for mid for vi for vj: relaxation. cannot modify the loop order. Becuase previous optimization results may not hold if mid changes.
-1514. Path with Maximum Probability | same as 743 Heap(-prob,node)
-1631. Path With Minimum Effort | same as 743. Heap(accum_delta,node)
+1514. Path with Maximum Probability | A2 | same as 743 Heap(-prob,node)
+1631. Path With Minimum Effort | A2 | same as 743. Heap(accum_delta,node)
 
 Hash 0
 1. Two Sum
@@ -833,6 +833,9 @@ Trie
     (each node has unknown contributions, bottom-up recursion needs to return list instead of int)
 
 UnionFind
+  self.parentD
+  find(x)  # find parent
+  union(p, q)  # if same parent return False else merge and return True
 684. Redundant Connection
 721. Accounts Merge | output final forest
 
