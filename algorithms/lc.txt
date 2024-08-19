@@ -404,7 +404,7 @@ Iteration or naive 0
 2864. Maximum Odd Binary Number
 2971. Find Polygon With the Largest Perimeter
 
-Iteration i with accum (additional accumulation not ans)
+?Iteration i with accum (additional accumulation not ans)
 53. Maximum Subarray | ans=L[0], acc=0. for x in L: acc=max(acc+x,x), ans=max(ans,acc)
 <121.> Best Time to Buy and Sell Stock | ans=0, lowest=L[0]. for x in L: lowest=min(lowest,x), ans=max(ans, x-lowest)
 134. Gas Station | ans=0, acc=0. for i in range(len(gas)): acc+=gas[i]-cost[i], if acc<0: ans=i+1, acc=0
@@ -423,7 +423,7 @@ Iteration i with accum (additional accumulation not ans)
 1759. Count Number of Homogenous Substrings | ans=1, cont=1. for x in L[1:]: cont=cont+1 if s[i]==s[i-1] else 1. ans+=cont (ans+=cont due to arithmetic sum, similar to 467)
 2483. Minimum Penalty for a Shop | ans=0, lowestPenalty=penalty=L.count("Y"). for i in range(len(L)): penalty += (-1)**int(L[i]=="Y"). if penalty<lowestPenalty: ans, lowestPenalty = i+1, penalty
 
-Iteration i with start (passed ptr not current) -> for if else
+?Iteration i with start (passed ptr not current) -> for if else
 26. Remove Duplicates from Sorted Array
 80. Remove Duplicates from Sorted Array II | same as 26 but add dup=1or2
 413. Arithmetic Slices | similar to 674 but ans+=i-start-1
@@ -431,7 +431,7 @@ Iteration i with start (passed ptr not current) -> for if else
 904. Fruit Into Baskets | a, b, start_a, ans = None, None, None, 0
 905. Sort Array By Parity
 
-Iteration i with start and accum: sliding window -> for sum while
+?Iteration i with start and accum: sliding window -> for sum while
 <209.> Minimum Size Subarray Sum | start,acc,ans=0,0,len(L). for i in range(len(L)): acc+=L[i], while acc>=target: ans=min(ans,end-start+1), sumv-=nums[start], start+=1.
 424. Longest Repeating Character Replacement | separate k==0 (for start) and k>0 (sliding window) since start and unmatch behaves different.
     consider sliding window: O(26n). if s[i]==c: ..., elif ki>0: ..., else: while 1: if s[start]!=c: start+=1, break, start+=1.
@@ -675,7 +675,7 @@ C memorization: C0 no, C1 yes
 D backtracking: D0 no, D1 yes
 E args: E1 start, E2 accum, E3 start with accum
 
-Recursion non-return
+?Recursion non-return
 22. Generate Parentheses | E2E3 | f(L=['('],l=1,r=0) if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
 131. Palindrome Partitioning | C1 | f(tuple(s)) for loop check if can odd or even merge + add memory
 235. Lowest Common Ancestor of a Binary Search Tree
@@ -700,7 +700,7 @@ Recursion non-return
 52*. N-Queens II
 140*. Word Break II | similar as 40
 
-Recursion non-return - start or path
+?Recursion non-return - start or path
 39. Combination Sum | f(path={},start=0,target=target), similar than 40. for t in range(targer//can+1)
 40. Combination Sum II | C,ans=sorted(Counter(candidates).items()), []. f(path=[],start=0,target=target), for t in range(times+1)
 46. Permutations | def f(start=0): if start==len(nums): ans.append(L) else: for i in range(start,len(L)): swap, f(start+1),swap
@@ -723,7 +723,7 @@ Recursion non-return - start or path
 2305. Fair Distribution of Cookies | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
 2597. The Number of Beautiful Subsets | L.sort(). self.ans=0. def f(start=0, path=set()): self.ans+=1. for i in range(start, len(L)): if L[i]-k not in path: f(i+1, path|{nums[i]}).
 
-Recursion return
+?Recursion return
 25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
 60*. Permutation Sequence | def f(L=[], M=list(range(1,1+n)), k=k-1, each=fac(n-1)) if not M: return "".join(L) else: i = k//each, L.append( M.pop(i) ), return f(L,M,k-i*each,each/len(M) if len(M) else 0)
 95. Unique Binary Search Trees II | f(L=list(range(1,1+n)))
@@ -775,7 +775,7 @@ Recursion return
 979. Distribute Coins in Binary Tree | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
 1325. Delete Leaves With a Given Value | def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
 
-Recursion mix DP
+?Recursion mix DP
 880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha(): ( if cnt==k: return char else cnt+=1 ) else: ( if cnt*int(char)>k: return f( k%cnt ) else cnt*=int(char) ).
 
 Segment tree
