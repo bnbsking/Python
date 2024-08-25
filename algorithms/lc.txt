@@ -408,15 +408,17 @@ Iteration i with accum (additional accumulation not ans)
 <121.> Best Time to Buy and Sell Stock | ans=0, lowest=L[0]. for x in L: lowest=min(lowest,x), ans=max(ans, x-lowest)
 134. Gas Station | ans=0, acc=0. for i in range(len(gas)): acc+=gas[i]-cost[i], if acc<0: ans=i+1, acc=0
 152. Maximum Product Subarray | ans=nums[0], minv=1, maxv=1. for x in L: minv=min(x,minv*x,maxv*x), maxv=max(x,minv*x,maxv*x), ans=max(ans,maxv)
+238. Product of Array Except Self | left_accum, right_accum
 331. Verify Preorder Serialization of a Binary Tree | slot=1 if slot-=1 else slot+=1, slot must >0 during iteration and =0 finally
 376. Wiggle Subsequence | similar to 152. up, down = 1, 1 (first wiggle is up or down). for i in range(1,len(nums)): if nums[i]>nums[i-1]: up = down+1 elif nums[i]<nums[i-1]: down = up+1. return max(up, down)
 334. Increasing Triplet Subsequence | min1, min2 = float('inf'), float('inf'). for x in nums: if x<=min1: min1 = x elif x<=min2: min2 = x else: return True
+396. Rotate Function | init ans=current, sumv. current += sumv - nums[-1-i]*len(nums). consider rotate difference only
 581. Shortest Unsorted Continuous Subarray | current_max,end=nums[0],None. for i in range(1,len(nums)): nums[i] vs cmax ... current_min,start=nums[-1],None. .... return end-start+1
 746. Min Cost Climbing Stairs | a,b=cost[0],cost[1]. for i in range(2,len(L)): c=cost[i]+min(a,b), a=b, b=c. return min(a,b)
 845. Longest Mountain in Array | i,acc,trend,ans=1,1,-1,1  # trend -> -1:init, 0:up, 1:down. while i<len(L): compare=(same,up,down) x trend=(-1,0,1)
 918. Maximum Sum Circular Subarray | use 53. to find max_arr and min_arr. return max(max_arr,sum-min_arr)
 921. Minimum Add to Make Parentheses Valid | diff, ans = 0, 0. simpler than 53.
-926. Flip String to Monotone Increasing | all0, all1 = s.count(0), s.count(1). l0, l1, ans = 0, 0, all1, iterate from 11..11 -> 00..11 -> 00..00.
+926. Flip String to Monotone Increasing | like 238. all0, all1 = s.count(0), s.count(1). l0, l1, ans = 0, 0, all1, iterate from 11..11 -> 00..11 -> 00..00.
 1535. Find the Winner of an Array Game | current_winner(cwr), consecutive_wins(cws) = L[0], 0. for i in range(1,len(L)): if L[i]>cwr: cwr, cws = L[i], 1 else cws+=1 if cws==k: break
 1701. Average Waiting Time | wait_time, sum_wait_time, prev_arrive = 0, 0, 0
 1759. Count Number of Homogenous Substrings | ans=1, cont=1. for x in L[1:]: cont=cont+1 if s[i]==s[i-1] else 1. ans+=cont (ans+=cont due to arithmetic sum, similar to 467)
@@ -426,10 +428,11 @@ Iteration i with accum (additional accumulation not ans)
 Iteration i with start (passed ptr not current) -> for if else
 26. Remove Duplicates from Sorted Array
 80. Remove Duplicates from Sorted Array II | same as 26 but add dup=1or2
+<283.> Move Zeroes | start = 0. for i in range(len(L)): if L[i]: L[start], L[i] = L[i], L[start]. start += 1.
 413. Arithmetic Slices | similar to 674 but ans+=i-start-1
 <674.> Longest Continuous Increasing Subsequence | start, ans = 0, 1 for if else (compare to 300 is continuous)
 904. Fruit Into Baskets | a, b, start_a, ans = None, None, None, 0
-905. Sort Array By Parity
+905. Sort Array By Parity | like 283.
 
 Iteration i with start and accum: sliding window -> for sum while
 <209.> Minimum Size Subarray Sum | start,acc,ans=0,0,len(L). for i in range(len(L)): acc+=L[i], while acc>=target: ans=min(ans,end-start+1), sumv-=nums[start], start+=1.
@@ -461,12 +464,10 @@ Iteration lr-spread
 171. Excel Sheet Column Number | for i,c in enumerate(s[::-1]): ans += (ord(c)-ord("A")+1) * 26**i
 172. Factorial Trailing Zeroes | ans, factor = 0, 5. while factor<=n: ans+=n//factor, factor*=5
 179. Largest Number | L=[str(x) for x in L]. L.sort(key=cmp_to_key(lambda x,y:int(x+y)-int(y+x)), reverse=True)
-201. Bitwise AND of Numbers Range | a=bin(l)[2:], b=bin(r)[2:]. if len(a)!=len(b): return 0. same_leading_bits = next((i for i in range(len(a)) if a[i]!=b[i]), len(a))
-238. Product of Array Except Self | left_accum, right_accum
-283. Move Zeroes | zeros, saves = nums.count(0), 0. while saves<len(nums)-zeros: find save_idx by next, swap, saves+=1 (saves mean found non-zero elements)
+201. Bitwise AND of Numbers Range | a=bin(l)[2:], b=bin(r)[2:]. if len(a)!=len(b): return 0. same_leading_bits = next((i for i in range(len(a)) if a[i]!=b[i]), len(a)).
+    return int(a[:same_leading_bits]+'0'*(len(a)-same_leading_bits), 2) 
 328. Odd Even Linked List | ll. interleaving points
-386. Lexicographical Numbers | sort in str or key=cmp_to_key(lex). def lex(x,y): compare if len(x)==len(y) else fill samllest element " " at the shorter of the end and compare (different from 179)
-396. Rotate Function | init ans=current, sumv. current += sumv - nums[-1-i]*len(nums). consider rotate difference only
+386. Lexicographical Numbers | sort in str or key=cmp_to_key(lex). def lex(x,y): compare if len(x)==len(y) else fill samllest element " " after the shorter one and compare (different from 179)
 405. Convert a Number to Hexadecimal | find -x of binary: get +x binary -> reverse bits -> +1 || get +x+1 binary -> reverse bits
 406. Queue Reconstruction by Height | sort by (-p[0],p[1]). then L.insert(p[1],p). (if all p[1]=0, tall first; if all p[0]=h, small p[1] first)
 435. Non-overlapping Intervals | sort by last key and greedy remove. L.sort(key=lambda x:x[-1]). for i in range(1,len(L)): if non-overlap with prev: prev=i else ans+=1
@@ -475,6 +476,7 @@ Iteration lr-spread
 470. Implement Rand10() Using Rand7() | 7-carry while x>=40
 524. Longest Word in Dictionary through Deleting | find longest issubsequence
 556. Next Greater Element III | same as 31.
+?
 621. Task Scheduler | idleBound = (n+1)*(maxv-1) + maxvCount. tasksBound = len(tasks). return max(idleBound, tasksBound)
 624. Maximum Distance in Arrays | collect minL, maxL, min1v, min1i, min2v, min2i, max1v, max1i, max2v, max2i.
 628. Maximum Product of Three Numbers | Sliding window at border
