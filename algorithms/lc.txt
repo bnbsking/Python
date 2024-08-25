@@ -19,11 +19,11 @@ DP 1d Backward
 <279.> Perfect Squares | L = [0,1]; for i in range(2,n+1): L.append( min( L[i-x**2]+1 for x in squares if i-x**2 >=0 ) )
 300. Longest Increasing Subsequence | similar to 279
 338. Counting Bits | L=[0]*(n+1), i=1. L[i]=L[i//2]+i%2
-368. Largest Divisible Subset | init1. similar to 300 but each cell stores divisors
-646. Maximum Length of Pair Chain | init 1. similar to 300
+368. Largest Divisible Subset | init1. similar to 300. but each cell stores divisors
+646. Maximum Length of Pair Chain | init 1. similar to 300.
 740. Delete and Earn | C,D=Counter(L),defaultdict(lambda :0). for x,times in sorted(C.items()): D[x]=max(D[y] for y in D if x-y>=2)+x*times. similar to 300.
 764. Largest Plus Sign | for way dp
-823. Binary Trees With Factors | init D[ele]->ans. return sum(D.values()). similar to 300
+823. Binary Trees With Factors | init D[ele]->ans. return sum(D.values()). similar to 300.
 1846. Maximum Element After Decreasing and Rearranging | L.sort(). L[0]=1. for i in range(1,len(L)): if L[i]-L[i-1]>1: L[i]=L[i-1]+1. return L[-1]
 2707. Extra Characters in a String | init 1. similar to 300.
 
@@ -183,7 +183,7 @@ Hash 0
 2373. Largest Local Values in a Matrix
 2441. Largest Positive Integer That Exists With Its Negative
 2610. Convert an Array Into a 2D Array With Conditions
-3005. Count Elements With Maximum Frequency
+5. Count Elements With Maximum Frequency
 3016. Minimum Number of Pushes to Type Word II
 
 Hash
@@ -430,7 +430,7 @@ Iteration i with start (passed ptr not current) -> for if else
 80. Remove Duplicates from Sorted Array II | same as 26 but add dup=1or2
 <283.> Move Zeroes | start = 0. for i in range(len(L)): if L[i]: L[start], L[i] = L[i], L[start]. start += 1.
 413. Arithmetic Slices | similar to 674 but ans+=i-start-1
-<674.> Longest Continuous Increasing Subsequence | start, ans = 0, 1 for if else (compare to 300 is continuous)
+<674.> Longest Continuous Increasing Subsequence | start, ans = 0, 1 for if else (compare to 300. which is not continuous)
 904. Fruit Into Baskets | a, b, start_a, ans = None, None, None, 0
 905. Sort Array By Parity | like 283.
 
