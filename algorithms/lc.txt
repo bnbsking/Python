@@ -413,7 +413,6 @@ Iteration i with accum (additional accumulation not ans)
 334. Increasing Triplet Subsequence | min1, min2 = float('inf'), float('inf'). for x in nums: if x<=min1: min1 = x elif x<=min2: min2 = x else: return True
 581. Shortest Unsorted Continuous Subarray | current_max,end=nums[0],None. for i in range(1,len(nums)): nums[i] vs cmax ... current_min,start=nums[-1],None. .... return end-start+1
 746. Min Cost Climbing Stairs | a,b=cost[0],cost[1]. for i in range(2,len(L)): c=cost[i]+min(a,b), a=b, b=c. return min(a,b)
-?
 845. Longest Mountain in Array | i,acc,trend,ans=1,1,-1,1  # trend -> -1:init, 0:up, 1:down. while i<len(L): compare=(same,up,down) x trend=(-1,0,1)
 918. Maximum Sum Circular Subarray | use 53. to find max_arr and min_arr. return max(max_arr,sum-min_arr)
 921. Minimum Add to Make Parentheses Valid | diff, ans = 0, 0. simpler than 53.
@@ -422,6 +421,7 @@ Iteration i with accum (additional accumulation not ans)
 1701. Average Waiting Time | wait_time, sum_wait_time, prev_arrive = 0, 0, 0
 1759. Count Number of Homogenous Substrings | ans=1, cont=1. for x in L[1:]: cont=cont+1 if s[i]==s[i-1] else 1. ans+=cont (ans+=cont due to arithmetic sum, similar to 467)
 2483. Minimum Penalty for a Shop | ans=0, lowestPenalty=penalty=L.count("Y"). for i in range(len(L)): penalty += (-1)**int(L[i]=="Y"). if penalty<lowestPenalty: ans, lowestPenalty = i+1, penalty
+2962. Count Subarrays Where Max Element Appears at Least K Times | maxv,maxv_indices(mi),ans=max(L),[],0. for i in range(len(L)): if nums[i]==maxv: mi.append(i). if len(mi)>=k: ans+=mi[-k]+1
 
 Iteration i with start (passed ptr not current) -> for if else
 26. Remove Duplicates from Sorted Array
@@ -431,18 +431,16 @@ Iteration i with start (passed ptr not current) -> for if else
 904. Fruit Into Baskets | a, b, start_a, ans = None, None, None, 0
 905. Sort Array By Parity
 
-?Iteration i with start and accum: sliding window -> for sum while
+Iteration i with start and accum: sliding window -> for sum while
 <209.> Minimum Size Subarray Sum | start,acc,ans=0,0,len(L). for i in range(len(L)): acc+=L[i], while acc>=target: ans=min(ans,end-start+1), sumv-=nums[start], start+=1.
-424. Longest Repeating Character Replacement | separate k==0 (for start) and k>0 (sliding window) since start and unmatch behaves different.
-    consider sliding window: O(26n). if s[i]==c: ..., elif ki>0: ..., else: while 1: if s[start]!=c: start+=1, break, start+=1.
+424. Longest Repeating Character Replacement | # window_max_cnt_char is the char in window that has the most cnt. # assume window_max_cnt_char is x, change all chars in window to x
+    start, window, window_max_cnt, ans = 0, defaultdict(int), 0, 0.
 567. Permutation in String | start,accum,match=0,Counter(),Counter(s1). for i,c in enumerate(s2): if c in match: while match[c]==0:update, update. else: start+=1,restore match%count.
 713. Subarray Product Less Than K | if k<2: return 0. start,acc,ans=0,1,0. for i in range(len(L)): acc*=L[i]. while acc>=k: acc,start=acc//L[start],start+1. ans+=i-start+1. (while inclusive, update ans at last)
 795. Number of Subarrays with Bounded Maximum | start,larger_left_idx,ans=0,None,0. for i in range(len(L)): if L[i]>right: start,larger_left_idx=i+1,None. else: if nums[i]>=left:larger_left_idx=i. if larger_left_idx: ans+=larger_left_idx-start+1
 1658. Minimum Operations to Reduce X to Zero | similar to 209, but initially target<=0 need return, because while acc>=target cause acc negative.
 1838. Frequency of the Most Frequent Element | L.sort(). start,acc,ans=0,0,1. for i in range(1,len(L)): accum+=(L[i]-L[i-1])*(i-start). while acc>k: acc-=L[i]-L[start], start+=1. ans=max(ans,i-start+1). (while exclusive, update ans at last)
 2958. Length of Longest Subarray With at Most K Frequency | start,acc,ans=0,{},0. similar as 1838.
-2962. Count Subarrays Where Max Element Appears at Least K Times | No while | maxv=max(L). maxv_indices=[i for i in range(len(L)) if L[i]==maxv]. start,accum,ans=0,0,0. 
-    for i in range(len(L)): accum+=L[i]==maxv. if accum>=k: ans+=maxv_indices[accum-k]+1.
 
 Iteration lr-spread
 5. Longest Palindromic Substring | while c-e>=0 and c+e<len(s) and s[c-e]==s[c+e]: if 2*e+1>ar-al+1: al, ar = c-e, c+e
