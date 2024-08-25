@@ -521,11 +521,11 @@ Iteration - Arithmetic sort
 645. Set Mismatch
 41*. First Missing Positive
 
-?Iteration - Bit operations
+Iteration - Bit operations
 <136.> Single Number | return ^:all
 137. Single Number II | tenary, add_mod3:all
-268. Missing Number | allxor = 0 for i in range(1,len(nums)+1): allxor ^= i. for x in nums: allxor ^= x. return allxor
-477. Total Hamming Distance | ans=0. for i in range(32): b=sum(x>>&i for x in nums). ans+=b*(len(nums)-b). return ans
+268. Missing Number | reduce(lambda x, y: x^y, nums+list(range(len(nums)+1)))
+?477. Total Hamming Distance | ans=0. for i in range(32): b=sum(x>>&i for x in nums). ans+=b*(len(nums)-b). return ans
     # consider n numbers 1 bit only # b 0s, n-b 1s # total dist = b*(n-b) # consider bipartite only
     # check whether the i-th bit of a number x is 1: "x>>i&1" # shift is always prior than and
 ?1863. Sum of All Subset XOR Totals
