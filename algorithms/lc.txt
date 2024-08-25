@@ -414,12 +414,17 @@ Iteration i with accum (additional accumulation not ans)
 334. Increasing Triplet Subsequence | min1, min2 = float('inf'), float('inf'). for x in nums: if x<=min1: min1 = x elif x<=min2: min2 = x else: return True
 396. Rotate Function | init ans=current, sumv. current += sumv - nums[-1-i]*len(nums). consider rotate difference only
 581. Shortest Unsorted Continuous Subarray | current_max,end=nums[0],None. for i in range(1,len(nums)): nums[i] vs cmax ... current_min,start=nums[-1],None. .... return end-start+1
+624. Maximum Distance in Arrays | curr_min, curr_max, ans
 746. Min Cost Climbing Stairs | a,b=cost[0],cost[1]. for i in range(2,len(L)): c=cost[i]+min(a,b), a=b, b=c. return min(a,b)
 845. Longest Mountain in Array | i,acc,trend,ans=1,1,-1,1  # trend -> -1:init, 0:up, 1:down. while i<len(L): compare=(same,up,down) x trend=(-1,0,1)
+915. Partition Array into Disjoint Intervals | like 238. mins arr append, while lmax<mins[-1]: ...
 918. Maximum Sum Circular Subarray | use 53. to find max_arr and min_arr. return max(max_arr,sum-min_arr)
 921. Minimum Add to Make Parentheses Valid | diff, ans = 0, 0. simpler than 53.
 926. Flip String to Monotone Increasing | like 238. all0, all1 = s.count(0), s.count(1). l0, l1, ans = 0, 0, all1, iterate from 11..11 -> 00..11 -> 00..00.
+1052. Grumpy Bookstore Owner | constant sliding window
+1249. Minimum Remove to Make Valid Parentheses
 1535. Find the Winner of an Array Game | current_winner(cwr), consecutive_wins(cws) = L[0], 0. for i in range(1,len(L)): if L[i]>cwr: cwr, cws = L[i], 1 else cws+=1 if cws==k: break
+1608. Special Array With X Elements Greater Than or Equal X | C, acc = sorted(Counter(L).items(), reverse=True), 0. for x, times in C: if acc>x: return acc. acc+=times. if acc==x: return x. elif acc>x: return -1.
 1701. Average Waiting Time | wait_time, sum_wait_time, prev_arrive = 0, 0, 0
 1759. Count Number of Homogenous Substrings | ans=1, cont=1. for x in L[1:]: cont=cont+1 if s[i]==s[i-1] else 1. ans+=cont (ans+=cont due to arithmetic sum, similar to 467)
 2483. Minimum Penalty for a Shop | ans=0, lowestPenalty=penalty=L.count("Y"). for i in range(len(L)): penalty += (-1)**int(L[i]=="Y"). if penalty<lowestPenalty: ans, lowestPenalty = i+1, penalty
@@ -431,6 +436,7 @@ Iteration i with start (passed ptr not current) -> for if else
 <283.> Move Zeroes | start = 0. for i in range(len(L)): if L[i]: L[start], L[i] = L[i], L[start]. start += 1.
 413. Arithmetic Slices | similar to 674 but ans+=i-start-1
 <674.> Longest Continuous Increasing Subsequence | start, ans = 0, 1 for if else (compare to 300. which is not continuous)
+826. Most Profit Assigning Work | sort(zip(diff,prof)) -> change prof to curr_max_prof -> start=0. for loading in sorted(workers): if L[start][0]<=loading:...
 904. Fruit Into Baskets | a, b, start_a, ans = None, None, None, 0
 905. Sort Array By Parity | like 283.
 
@@ -450,7 +456,7 @@ Iteration lr-spread
 647. Palindromic Substrings | same as 5.
 696. Count Binary Substrings | match.start(0) for match in re.finditer(pattern,s)
 
-?Iteration
+Iteration
 17. Letter Combinations of a Phone Number
 31. Next Permutation | e.g. 246531. from right to left: i at peak. if i>0: from right to left: L[j]>L[i-1], swap(L[i-1],L[j]). swap all ele >=i
 48. Rotate Image
@@ -476,10 +482,8 @@ Iteration lr-spread
 470. Implement Rand10() Using Rand7() | 7-carry while x>=40
 524. Longest Word in Dictionary through Deleting | find longest issubsequence
 556. Next Greater Element III | same as 31.
-?
 621. Task Scheduler | idleBound = (n+1)*(maxv-1) + maxvCount. tasksBound = len(tasks). return max(idleBound, tasksBound)
-624. Maximum Distance in Arrays | collect minL, maxL, min1v, min1i, min2v, min2i, max1v, max1i, max2v, max2i.
-628. Maximum Product of Three Numbers | Sliding window at border
+628. Maximum Product of Three Numbers | sort and sliding window at border
 665. Non-decreasing Array | for i in range(len(nums)-1): if nums[i]>nums[i+1]: tmp = nums[i+1]. do irregular depends right or depends left respeectively. O(3n)
 670. Maximum Swap | compare to sort, find first diff idx i. find max idx from len(L)-1 to i, swap, break return
 686. Repeated String Match | i = b.find(a). if i==-1: check a.find(b) and 2a.find(b). else return left-right times.
@@ -490,30 +494,23 @@ Iteration lr-spread
 786. K-th Smallest Prime Fraction | O(n^2)
 794. Valid Tic-Tac-Toe State | count 1 and -1. sum of 8 lines.
 817. Linked List Components | Compare 2 arr find "components"
-826. Most Profit Assigning Work | sort(zip(diff,prof)) -> change prof to curr_max_prof -> start=0. for loading in sorted(workers): if L[start][0]<=loading:...
 835. Image Overlap | O(n^4). 1 left up conv. 2 right down conv. 3 horizontal flip of 1. 4 horizontal flip of 2.
 838. Push Dominoes
 840. Magic Squares In Grid
 842. Split Array into Fibonacci Sequence | brute force
 849. Maximize Distance to Closest Person | G,prev,ans=(i for i in range(len(L)) if L[i]), -inf, L.index(1)
-853. Car Fleet | for p1, s1 in sorted(zip(position, speed), reverse=True): if fleet and s1 > s2 and p1 + s1 * (p2-p1)/(s1-s2) <= target: continue # p1 + s1*t = p2 + s2*t --> t = (p2-p1)/(s1-s2). fleet.append([p1,s1])
+853. Car Fleet | like 56. for p1, s1 in sorted(zip(position, speed), reverse=True): if fleet and s1 > s2 and p1 + s1 * (p2-p1)/(s1-s2) <= target: continue # p1 + s1*t = p2 + s2*t --> t = (p2-p1)/(s1-s2). fleet.append([p1,s1])
 855. Exam Room | O(n) insert and remove
 885. Spiral Matrix III
-910. Smallest Range II | up,..,up,down,...,down (scan all boundary). ans=min(ans, max(nums[i-1]+k, nums[-1]-k) - min(nums[i]-k, nums[0]+k)).
-915. Partition Array into Disjoint Intervals | mins arr append, while lmax<mins[-1]: ...
-1052. Grumpy Bookstore Owner | constant sliding window
+910. Smallest Range II | up,..,up,down,...,down (scan all boundary), like 238. sort, for i in range(len(L)): ans=min(ans, max(nums[i-1]+k, nums[-1]-k) - min(nums[i]-k, nums[0]+k)).
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1248. Count Number of Nice Subarrays | collect odd_indices. for i in range(len(odd_indices)-k+1): ans+=l*r. return ans
-1249. Minimum Remove to Make Valid Parentheses
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
-1509. Minimum Difference Between Largest and Smallest Value in Three Moves | min(max4-min0, max3-min1, max2-min2, max1-min3)
-1608. Special Array With X Elements Greater Than or Equal X | C, acc = sorted(Counter(L).items(), reverse=True), 0. for x, times in C: if acc>x: return acc. acc+=times. if acc==x: return x. elif acc>x: return -1.
-1863. Sum of All Subset XOR Totals
+1509. Minimum Difference Between Largest and Smallest Value in Three Moves | bubble sort. min(max4-min0, max3-min1, max2-min2, max1-min3)
 1980. Find Unique Binary String | return "".join( str(int(L[i][i]=="0")) for i in range(len(L)) ) # diagnoal algorithm
 1992. Find All Groups of Farmland | add switchD (i,j)->(i,j+rect)
 149*. Max Points on a Line | use determinant, O(n^3)
-2997. Minimum Number of Operations to Make Array XOR Equal to K | XOR all and count 1
 S1. Maximum overlap interval | sort (start,1) and (end,-1). Accumulation count and find max.
 
 Iteration - Arithmetic sort
@@ -524,14 +521,16 @@ Iteration - Arithmetic sort
 645. Set Mismatch
 41*. First Missing Positive
 
-Iteration - Bit operations
+?Iteration - Bit operations
 <136.> Single Number | return ^:all
 137. Single Number II | tenary, add_mod3:all
 268. Missing Number | allxor = 0 for i in range(1,len(nums)+1): allxor ^= i. for x in nums: allxor ^= x. return allxor
 477. Total Hamming Distance | ans=0. for i in range(32): b=sum(x>>&i for x in nums). ans+=b*(len(nums)-b). return ans
     # consider n numbers 1 bit only # b 0s, n-b 1s # total dist = b*(n-b) # consider bipartite only
     # check whether the i-th bit of a number x is 1: "x>>i&1" # shift is always prior than and
+?1863. Sum of All Subset XOR Totals
 2433. Find The Original Array of Prefix Xor | ^ has association
+2997. Minimum Number of Operations to Make Array XOR Equal to K | XOR all. return count 1 of total^1
 
 Iteration - FSM
 <309.> Best Time to Buy and Sell Stock with Cooldown | b, s, c = -P[0], 0, o. for p in P: b, s, c = max(b,c-p), max(s,b+p), max(c,s). return max(s,c)
