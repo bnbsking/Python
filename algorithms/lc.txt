@@ -86,6 +86,7 @@ Graph Traversal dfs (achievable, get path by backtracking)
 133. Clone Graph | A1 | f(x) | node2dict, dict2node
 200. Number of Islands | B1 | f(x) | same as 130.
 399. Evaluate Division | A1B1C1 | f(x, target, visitS). for start, end in queries: ans.append(f(start, end, set()))
+457. Circular Array Loop | A1B1 | self.ans, visitEdgeS = False, set(). def f(i, pathS): nexti=(i+nums[i])%len(nums). if i!=nexti and (i,nexti) not in visitEdgeS:
 529. Minesweeper | f(x)
 547. Number of Provinces | A1B1 | f(x)
 695. Max Area of Island | A1B1 | f(x)
@@ -676,16 +677,36 @@ D backtracking: D0 no, D1 yes
 E accum or index args: E0 no, E1 yes
 
 Recursion non-return
+39. Combination Sum | E1 | f(path={},start=0,target=target), simpler than 40. for t in range(targer//can+1)
+40. Combination Sum II | E1 | C,ans=sorted(Counter(candidates).items()), []. f(path=[],start=0,target=target), for t in range(times+1)
+46. Permutations | D1 | def f(start=0): if start==len(nums): ans.append(L) else: for i in range(start,len(L)): swap, f(start+1),swap
+47. Permutations II | D1 | same as 46, but add tuple instead of list
+77. Combinations | E1 | f(path=[], start=0) simpler than 40. skip L[start] or add L[start]
+112. Path Sum | E1 | def f(T=root, x=targetSum) if not self.ans and T: if not T.left and not T.right: else ...
+113. Path Sum II | E1 | def f(T=root, x=targetSum, L=[]) similar as 112.
 131. Palindrome Partitioning | C1 | f(tuple(s)). for loop check if can odd or even merge + add memory
+216. Combination Sum III | E1 | f(path=[],start=1,sumv=n), similar as 77.
 341. Flatten Nested List Iterator | | f(ll).
+416. Partition Equal Subset Sum | E1 | Similar to 40. visitS((start,val)). def f(start=0, val=sumv//2)
+437. Path Sum III | E1 | def f(T=root, accum=0, D={0:1}). similar as 112. + 560.
+473. Matchsticks to Square | E1 | Similar to 40. + 416.
+494. Target Sum | E1 | C, self.ans = sorted(Counter(nums).items()), 0. def f(methods={0:1}, start=0): for i in range(times+1) for key,val in methods
+518. Coin Change II | C1E1 | f(start=0,x=amount) and memorization
+526. Beautiful Arrangement | E1 | f(path=[], L=list(range(1,1+n)))
 530. Minimum Absolute Difference in BST | | f(T). self.ans, self.prev = 10**5, 10**5. def f(T): if T: f(T.left), self.ans, self.prev, f(T.right)
+638. Shopping Offers | E1 | f(start=0,accum=0,N=needs)
 655. Print Binary Tree | E1 | get height first and create matrix. f(T=root, i=0, j=len(ans[0])//2): ...
 662. Maximum Width of Binary Tree | E1 | f(T, level=0, path=""). collect each level leftest and rightest binary path
 669. Trim a Binary Search Tree | | while root not in [lo,hi]:.... def f(T): if T: while T.left and T.left.val<lo:... f(T.left). f(T.left). ...
-861. Score After Flipping Matrix | D1E1 | f(start=1). 1st col greedy, >=2nd col backtracking (1rate >0.5, =0.5, <0.5)
-869. Reordered Power of 2 | D1E1 | f(L=list(str(n)), start=0) permutation backtracking
+678. Valid Parenthesis String | C1E1 | f(start=0, l=0, r=0) + mem
+698. Partition to K Equal Sum Subsets | | nums.sort(reverse=True). trim ele>each and ele+min>each. L=[0]*k. f(start=0)
+861. Score After Flipping Matrix | D1 | f(start=1). 1st col greedy, >=2nd col backtracking (1rate >0.5, =0.5, <0.5)
+869. Reordered Power of 2 | D1 | f(start=0) like 46.
+1361. Validate Binary Tree Nodes | | if all(ele<2 for ele in inL) and inL.count(0)==1: root, visitS = inL.index(0), set(range(n)). def g(i=root).
 1530. Number of Good Leaf Nodes Pairs | E1 | f(T,path=[]). (LCA like 235.)
 2096. Step-By-Step Directions From a Binary Tree Node to Another | E1 | f(T,path=[]). (LCA like 235.)
+2305. Fair Distribution of Cookies | C1D1E1 | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
+2597. The Number of Beautiful Subsets | E1 | L.sort(). self.ans=0. def f(start=0, path=set()): self.ans+=1. for i in range(start, len(L)): if L[i]-k not in path: f(i+1, path|{nums[i]}).
 -
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop
@@ -693,37 +714,14 @@ Recursion non-return
 52*. N-Queens II
 140*. Word Break II | similar as 40
 
-?Recursion non-return - start or path
-39. Combination Sum | f(path={},start=0,target=target), similar than 40. for t in range(targer//can+1)
-40. Combination Sum II | C,ans=sorted(Counter(candidates).items()), []. f(path=[],start=0,target=target), for t in range(times+1)
-46. Permutations | def f(start=0): if start==len(nums): ans.append(L) else: for i in range(start,len(L)): swap, f(start+1),swap
-47. Permutations II | same as 46, but add tuple instead of list
-77. Combinations | f(path=[], start=0) simpler than 40. skip L[start] or add L[start]
-112. Path Sum | def f(T=root, x=targetSum) if not self.ans and T: if not T.left and not T.right: else ...
-113. Path Sum II | def f(T=root, x=targetSum, L=[]) similar as 112.
-216. Combination Sum III | f(path=[],start=1,sumv=n), similar as 77.
-416. Partition Equal Subset Sum | Similar to 40. visitS((start,val)). def f(start=0, val=sumv//2)
-437. Path Sum III | def f(T=root, accum=0, D={0:1}). similar as 112. + 560.
-457. Circular Array Loop | self.ans, visitEdgeS = False, set(). def f(i, pathS): nexti=(i+nums[i])%len(nums). if i!=nexti and (i,nexti) not in visitEdgeS:
-473. Matchsticks to Square | Similar to 40. + 416.
-494. Target Sum | C, self.ans = sorted(Counter(nums).items()), 0. def f(methods={0:1}, start=0): for i in range(times+1) for key,val in methods
-518. Coin Change II | f(start=0,x=amount) and memorization
-526. Beautiful Arrangement | f(path=[], L=list(range(1,1+n)))
-638. Shopping Offers | f(start=0,accum=0,N=needs)
-678. Valid Parenthesis String | f(start=0, l=0, r=0) + mem
-698. Partition to K Equal Sum Subsets | nums.sort(reverse=True). trim ele>each and ele+min>each. L=[0]*k. f(start=0)
-1361. Validate Binary Tree Nodes | if all(ele<2 for ele in inL) and inL.count(0)==1: root, visitS = inL.index(0), set(range(n)). def g(i=root).
-2305. Fair Distribution of Cookies | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
-2597. The Number of Beautiful Subsets | L.sort(). self.ans=0. def f(start=0, path=set()): self.ans+=1. for i in range(start, len(L)): if L[i]-k not in path: f(i+1, path|{nums[i]}).
-
-?Recursion return
+Recursion return
 22. Generate Parentheses | | f(L=['('],l=1,r=0)->ans. if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
 235. Lowest Common Ancestor of a Binary Search Tree | | f(T, target) -> find, path.
 236. Lowest Common Ancestor of a Binary Tree | (LCA)
   + Naive recursion (good at balanced) as 235.
   + Change to Range min query (good at general): euler path, depth path, D: T.val->"first occurence index in euler path". Build segment tree each node (T.val,index) then query(D[p.val],D[q.val])
 257. Binary Tree Paths | | f(T)->path
-
+?
 25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
 60*. Permutation Sequence | def f(L=[], M=list(range(1,1+n)), k=k-1, each=fac(n-1)) if not M: return "".join(L) else: i = k//each, L.append( M.pop(i) ), return f(L,M,k-i*each,each/len(M) if len(M) else 0)
 95. Unique Binary Search Trees II | f(L=list(range(1,1+n)))
