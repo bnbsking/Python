@@ -109,12 +109,10 @@ Graph - Topological sort (Kahn's: init inDegL=[inDeg,...], leaves=[inDeg==0 node
 2192. All Ancestors of a Node in a Directed Acyclic Graph | B1 | parentD const, children const, parentD_topo varied. Q, ans = deque(roots), [set() for i in range(n)]. while Q: add parent to ans from parentD. add new roots to Q by parent_topo.
 
 Graph - Spanning tree (Prim: init H, L, S)
--
 <1584.> Min Cost to Connect All Points | A2 | Prim. Init graph. Heap(dist2mst,node) init by random 1 node, L=[dist,...], visitS, ans. while heap: pop, if not in visitS: visitS.add, for nei in G[x]: if D[nei]>G[x][nei]: update and push. Very similar to 743. O((v+e)logv)
   + Kruskal: Union find, E(w,p,q) = decreasingly sort edges, while len(mst)<len(nodes)-1: E.pop, merge 2 point if U.union(p,q). O(eloge). same complexity.
 
 Graph - Weighted shortest path (Dijkstra: init H, L, S)
--
 <743.> Network Delay Time | A2 | Dijkstra. Init graph. Heap(accum,node), L=[dist, ...], visitS. while H: pop, if not in visitS: visitS.add, for nei in G[x]: if L[nei]>accum+G[x][nei]: update and push. (No relaxation, Heap O((v+e)log(v)), Queue can get correct answer but O(v^2))
    + Bellman-Ford: for _ in range(1,n): for l,r,w in times: L[r] = min(L[r], L[l]+w). O(ve)
 787. Cheapest Flights Within K Stops | Dijkstra but MUST use Queue instead of Heap since relaxation cause error for heap, NO visitS. Q(accum,node,depth), L=[dist, ...]. while Q: pop, if depth<k+1: for nei in G[x]: if shorter: update and push.
@@ -606,8 +604,7 @@ Queue 0
 
 Queue
 649. Dota2 Senate | C,Q=Counter(senate),deque(senate). while C["R"]*C["D"]: ego,chance,max_chance=Q.popleft(),1,1. rival="D" if ego=="R" else "R". while chance*C[rival]:...
-
-Queue difficult
+--
 127*. Word Ladder
 239*. Sliding Window Maximum | (val,idx) in queue, length is not const, always desc sorted
 
@@ -707,7 +704,7 @@ Recursion non-return
 2096. Step-By-Step Directions From a Binary Tree Node to Another | E1 | f(T,path=[]). (LCA like 235.)
 2305. Fair Distribution of Cookies | C1D1E1 | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
 2597. The Number of Beautiful Subsets | E1 | L.sort(). self.ans=0. def f(start=0, path=set()): self.ans+=1. for i in range(start, len(L)): if L[i]-k not in path: f(i+1, path|{nums[i]}).
--
+--
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop
 51*. N-Queens | backtracking + no need copy B since B is invariant
