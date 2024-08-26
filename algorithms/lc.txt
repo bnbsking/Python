@@ -88,6 +88,7 @@ Graph Traversal dfs (achievable, get path by backtracking)
 399. Evaluate Division | A1B1C1 | f(x, target, visitS). for start, end in queries: ans.append(f(start, end, set()))
 529. Minesweeper | f(x)
 547. Number of Provinces | A1B1 | f(x)
+695. Max Area of Island | A1B1 | f(x)
 733. Flood Fill | f(x)
 756. Pyramid Transition Matrix | C1 | f(x), collect all combinations by functools.pairwise. use itertools.product to search all
 785. Is Graph Bipartite? | A1B1 | Use parity array (-1: not visited, 0: c0, 1: c1). f(x,parent=-1). P[x]=int(P[parent]==-1 or P[parent]==0). for nei in G[x]: if P[nei]==P[x]: False elif P[nei]==-1: f(nei, x)
@@ -669,29 +670,22 @@ Recursion 0 (bottom-up or top-down)
 1609. Even Odd Tree
 2331. Evaluate Boolean Binary Tree
 
-+ non-return (global easier) / return (local hard)
++ non-return (global easier) / return (local hard but concise)
 C memorization: C0 no, C1 yes
 D backtracking: D0 no, D1 yes
-E args: E1 start, E2 accum, E3 start with accum
+E accum or index args: E0 no, E1 yes
 
-?Recursion non-return
-22. Generate Parentheses | E2E3 | f(L=['('],l=1,r=0) if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
-131. Palindrome Partitioning | C1 | f(tuple(s)) for loop check if can odd or even merge + add memory
-235. Lowest Common Ancestor of a Binary Search Tree
-236. Lowest Common Ancestor of a Binary Tree | (LCA)
-  + Naive recursion (good at balanced)
-  + Change to Range min query (good at general): euler path, depth path, D: T.val->"first occurence index in euler path". Build segment tree each node (T.val,index) then query(D[p.val],D[q.val])
-257. Binary Tree Paths
-341. Flatten Nested List Iterator
-530. Minimum Absolute Difference in BST | self.ans, self.prev = 10**5, 10**5. def f(T): if T: f(T.left), self.ans, self.prev, f(T.right)
-655. Print Binary Tree | get height first and create matrix. f(T=root, i=0, j=len(ans[0])//2): ...
-662. Maximum Width of Binary Tree | collect each level leftest and rightest binary path
-669. Trim a Binary Search Tree | while root not in [lo,hi]:.... def f(T): if T: while T.left and T.left.val<lo:... f(T.left). f(T.left). ...
-695. Max Area of Island | use self.ans and self.local + DFS
-861. Score After Flipping Matrix | 1st col greedy, >=2nd col backtracking (1rate >0.5, =0.5, <0.5)
-869. Reordered Power of 2 | permutation backtracking
-1530. Number of Good Leaf Nodes Pairs | (LCA)
-2096. Step-By-Step Directions From a Binary Tree Node to Another | (LCA)
+Recursion non-return
+131. Palindrome Partitioning | C1 | f(tuple(s)). for loop check if can odd or even merge + add memory
+341. Flatten Nested List Iterator | | f(ll).
+530. Minimum Absolute Difference in BST | | f(T). self.ans, self.prev = 10**5, 10**5. def f(T): if T: f(T.left), self.ans, self.prev, f(T.right)
+655. Print Binary Tree | E1 | get height first and create matrix. f(T=root, i=0, j=len(ans[0])//2): ...
+662. Maximum Width of Binary Tree | E1 | f(T, level=0, path=""). collect each level leftest and rightest binary path
+669. Trim a Binary Search Tree | | while root not in [lo,hi]:.... def f(T): if T: while T.left and T.left.val<lo:... f(T.left). f(T.left). ...
+861. Score After Flipping Matrix | D1E1 | f(start=1). 1st col greedy, >=2nd col backtracking (1rate >0.5, =0.5, <0.5)
+869. Reordered Power of 2 | D1E1 | f(L=list(str(n)), start=0) permutation backtracking
+1530. Number of Good Leaf Nodes Pairs | E1 | f(T,path=[]). (LCA like 235.)
+2096. Step-By-Step Directions From a Binary Tree Node to Another | E1 | f(T,path=[]). (LCA like 235.)
 -
 30*. Substring with Concatenation of All Words
 37*. Sudoku Solver | use L but not S to prevent unorder traversal, just pop and try 1-9, backtracking + must copy L since has L.pop
@@ -723,6 +717,13 @@ E args: E1 start, E2 accum, E3 start with accum
 2597. The Number of Beautiful Subsets | L.sort(). self.ans=0. def f(start=0, path=set()): self.ans+=1. for i in range(start, len(L)): if L[i]-k not in path: f(i+1, path|{nums[i]}).
 
 ?Recursion return
+22. Generate Parentheses | | f(L=['('],l=1,r=0)->ans. if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
+235. Lowest Common Ancestor of a Binary Search Tree | | f(T, target) -> find, path.
+236. Lowest Common Ancestor of a Binary Tree | (LCA)
+  + Naive recursion (good at balanced) as 235.
+  + Change to Range min query (good at general): euler path, depth path, D: T.val->"first occurence index in euler path". Build segment tree each node (T.val,index) then query(D[p.val],D[q.val])
+257. Binary Tree Paths | | f(T)->path
+
 25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
 60*. Permutation Sequence | def f(L=[], M=list(range(1,1+n)), k=k-1, each=fac(n-1)) if not M: return "".join(L) else: i = k//each, L.append( M.pop(i) ), return f(L,M,k-i*each,each/len(M) if len(M) else 0)
 95. Unique Binary Search Trees II | f(L=list(range(1,1+n)))
@@ -832,12 +833,13 @@ Trie
 820. Short Encoding of Words | Trie by reversed words. Use top-down recusion: def f(T=T, depth=0): if len(T)==1 and "end" in T: return depth+1 else: return sum(f(T[child], depth+1) for child in T if child!="end")
     (each node has unknown contributions, bottom-up recursion needs to return list instead of int)
 
-UnionFind
+?UnionFind
   self.parentD
   find(x)  # find parent
   union(p, q)  # if same parent return False else merge and return True
 684. Redundant Connection
 721. Accounts Merge | output final forest
+1584. Min Cost to Connect All Points
 
 ----------
 
