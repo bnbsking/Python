@@ -830,9 +830,9 @@ Trie
     (each node has unknown contributions, bottom-up recursion needs to return list instead of int)
 
 ?UnionFind
-  self.parentD
-  find(x)  # find parent
-  union(p, q)  # if same parent return False else merge and return True
+  self.forest = {i:i for ...}
+  find(T) -> root  # find parent
+  union(root1, root2) -> None  # merge one to another
 684. Redundant Connection
 721. Accounts Merge | output final forest
 1584. Min Cost to Connect All Points
