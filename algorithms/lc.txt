@@ -713,40 +713,34 @@ Recursion non-return
 
 Recursion return
 22. Generate Parentheses | | f(L=['('],l=1,r=0)->ans. if r==self.n: return L elif l==r: call l elif l<self.n: call l call r elif l==self.n: call r
+95. Unique Binary Search Trees II | f(L=list(range(1,1+n))) -> List[Tree]
+96. Unique Binary Search Trees | same as 95. or Catalan number
+100. Same Tree | | f(T)->bool 
+101. Symmetric Tree | | f(T)->bool
+105. Construct Binary Tree from Inorder and Preorder Traversal | | f(preorder,inorder)->Tree
+106. Construct Binary Tree from Inorder and Postorder Traversal | | f(inorder, postorder)->Tree
+110. Balanced Binary Tree | | self.ans=True. def f(T): if not self.ans: ... return left_tree_height, right_tree_height
+111. Minimum Depth of Binary Tree | | f(T) -> height
+129. Sum Root to Leaf Numbers | | f(T)->List[path]
+<206.> Reverse Linked List | | ll. f(L)->Node. if not head or not head.next: return head. reverse=self.reverseList(head.next). head.next.next=head. head.next=None. return reverse.
 235. Lowest Common Ancestor of a Binary Search Tree | | f(T, target) -> find, path.
 236. Lowest Common Ancestor of a Binary Tree | (LCA)
   + Naive recursion (good at balanced) as 235.
   + Change to Range min query (good at general): euler path, depth path, D: T.val->"first occurence index in euler path". Build segment tree each node (T.val,index) then query(D[p.val],D[q.val])
+241. Different Ways to Add Parentheses | | split + similar to 95.
 257. Binary Tree Paths | | f(T)->path
-?
-25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
-60*. Permutation Sequence | def f(L=[], M=list(range(1,1+n)), k=k-1, each=fac(n-1)) if not M: return "".join(L) else: i = k//each, L.append( M.pop(i) ), return f(L,M,k-i*each,each/len(M) if len(M) else 0)
-95. Unique Binary Search Trees II | f(L=list(range(1,1+n)))
-96. Unique Binary Search Trees
-100. Same Tree
-101. Symmetric Tree
-105. Construct Binary Tree from Inorder and Preorder Traversal
-106. Construct Binary Tree from Inorder and Postorder Traversal
-110. Balanced Binary Tree | self.ans=True. def f(T): if not self.ans: ... return left_tree_height, right_tree_height
-111. Minimum Depth of Binary Tree
-124*. Binary Tree Maximum Path Sum | similar to 687, self.ans=root.val. def f(T=root). return max-path-sum pass T. (self.ans = max(self.ans, l+r+T.val))
-129. Sum Root to Leaf Numbers
-<206.> Reverse Linked List | ll. if not head or not head.next: return head. reverse=self.reverseList(head.next). head.next.next=head. head.next=None. return reverse.
-241. Different Ways to Add Parentheses | similar to 95.
-306. Additive Number | cut all possibilities of 3 parts, each do recursive call
-337. House Robber III | add memory D:id->best_val
-343. Integer Break | if n==2 or n==3: return n-1. self.D={1:1,2:2,3:3}. def f(n=n): self.D[n] = self.D[n] if n in self.D else max(f(n-2)*2, f(n-3)*3). return self.D[n]
+306. Additive Number | | f(a,b,c)->bool. cut all possibilities of 3 parts, each do recursive call
+337. House Robber III | C1 | add memory D:id->best_val. f(T) -> ans
+343. Integer Break | C1 | if n==2 or n==3: return n-1. self.D={1:1,2:2,3:3}. def f(n=n): self.D[n] = self.D[n] if n in self.D else max(f(n-2)*2, f(n-3)*3). return self.D[n]
     # (x-i)*i = -i^2 + ix -> i=x/2 # split 2 or 3 (odd number) only
-365. Water and Jug Problem | visitS=set(). def f(x=0): if x==tc: return True, elif x in visitS or x<0 or x>j1+j2: return False, else: visitS.add(x) return f(x+j1) or f(x-j1) or f(x+j2) or f(x-j2)
-<394>. Decode String | find ] -> rfind ( -> flatten -> recusion call
-395. Longest Substring with At Least K Repeating Characters | for c in set(s): if s.count(c)<k: return max( f(substr,k) for substr in s.split(c) ). return len(s)
-397. Integer Replacement | def f(n=n): if n not in self.D: self.D[n] = 1+f(n//2) if n%2==0 else 1+min(f(n-1), f(n+1)). return self.D[n]
-427. Construct Quad Tree | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
-450. Delete Node in a BST | if not left: elif not right: else find rightest node in left subtree -> copy its value and delete such node
-449. Serialize and Deserialize BST
-464. Can I Win | D = {}. def f(L=[True]*maxChoosableInteger, total=desiredTotal): state=(tuple(L), total). if state not in D:.... win = False. for i in range(len(L)):
-    if not win and L[i]: L[i]=False. win=<<<not>>> f(L, total-(i+1)). L[i]=True
-<486>. Predict the Winner | similar to 464. add memory, f(l,r)->score
+365. Water and Jug Problem | C1 | visitS=set(). def f(x=0): if x==tc: return True, elif x in visitS or x<0 or x>j1+j2: return False, else: visitS.add(x) return f(x+j1) or f(x-j1) or f(x+j2) or f(x-j2)
+<394>. Decode String | | f(s)->ans. l=s.find(']'). r=s[:r].rfind(']'). m = next(m for m in range(l-1, -1, -1) if not s[m-1].isnumeric()). return f(s[:m]+s[l+1:r]*int(s[m:l])+s[r+1:])
+395. Longest Substring with At Least K Repeating Characters | | f(s,k)->ans. c is split token. for c in set(s): if s.count(c)<k: return max( f(substr,k) for substr in s.split(c) ). return len(s)
+397. Integer Replacement | C1 | f(n)->ans. self.D={1:0}. def f(n=n): if n not in self.D: self.D[n] = 1+f(n//2) if n%2==0 else 1+min(f(n-1), f(n+1)). return self.D[n]
+427. Construct Quad Tree | | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
+449. Serialize and Deserialize BST | | f(T)->inorder. f(inorder)->T
+450. Delete Node in a BST | | f(T)->tree. if not left: elif not right: else find rightest node in left subtree -> copy its value and delete such node
+
 491. Non-decreasing Subsequences | f(tup) -> set[non-desc-tuple] with each ele len>=1, filter finally
 501. Find Mode in Binary Search Tree
 543. Diameter of Binary Tree | self.ans=0. insert "self.ans=max(self.ans, l+r)" in "get treeheight recursion function"
@@ -769,11 +763,19 @@ Recursion return
 919. Complete Binary Tree Inserter | count nodes. nodes_idx->depth->level_idx->path by bin.
 979. Distribute Coins in Binary Tree | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
 1325. Delete Leaves With a Given Value | def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
+25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
+60*. Permutation Sequence | def f(L=[], M=list(range(1,1+n)), k=k-1, each=fac(n-1)) if not M: return "".join(L) else: i = k//each, L.append( M.pop(i) ), return f(L,M,k-i*each,each/len(M) if len(M) else 0)
+124*. Binary Tree Maximum Path Sum | similar to 687, self.ans=root.val. def f(T=root). return max-path-sum pass T. (self.ans = max(self.ans, l+r+T.val))
+
+?Recursion gaming
+464. Can I Win | D = {}. def f(L=[True]*maxChoosableInteger, total=desiredTotal): state=(tuple(L), total). if state not in D:.... win = False. for i in range(len(L)):
+    if not win and L[i]: L[i]=False. win=<<<not>>> f(L, total-(i+1)). L[i]=True
+<486>. Predict the Winner | similar to 464. add memory, f(l,r)->score
 
 ?Recursion mix DP
 880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha(): ( if cnt==k: return char else cnt+=1 ) else: ( if cnt*int(char)>k: return f( k%cnt ) else cnt*=int(char) ).
 
-Segment tree
+?Segment tree
 
 
 Sort
