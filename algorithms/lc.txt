@@ -85,15 +85,16 @@ Graph Traversal dfs (achievable, get path by backtracking)
 130. Surrounded Regions | B1 | f(x)
 133. Clone Graph | A1 | f(x) | node2dict, dict2node
 200. Number of Islands | B1 | f(x) | same as 130.
-399. Evaluate Division | A1B1C1 | f(x, target, visitS). for start, end in queries: ans.append(f(start, end, set()))
+399. Evaluate Division | A1B1C1 | f(x, target, visitS)->ans. for start, end in queries: ans.append(f(start, end, set()))
 457. Circular Array Loop | A1B1 | self.ans, visitEdgeS = False, set(). def f(i, pathS): nexti=(i+nums[i])%len(nums). if i!=nexti and (i,nexti) not in visitEdgeS:
 529. Minesweeper | f(x)
 547. Number of Provinces | A1B1 | f(x)
 695. Max Area of Island | A1B1 | f(x)
 733. Flood Fill | f(x)
-756. Pyramid Transition Matrix | C1 | f(x), collect all combinations by functools.pairwise. use itertools.product to search all
+756. Pyramid Transition Matrix | C1 | f(x)->bool, collect all combinations by functools.pairwise. use itertools.product to search all
 785. Is Graph Bipartite? | A1B1 | Use parity array (-1: not visited, 0: c0, 1: c1). f(x,parent=-1). P[x]=int(P[parent]==-1 or P[parent]==0). for nei in G[x]: if P[nei]==P[x]: False elif P[nei]==-1: f(nei, x)
 797. All Paths From Source to Target | A1D1 | backtracking. f(x=0, path=[0], S={0})
+802. Find Eventual Safe States | A1B1 | f(x)->bool. recursive call if n not in ans and isSafe and n not in visit
 1219. Path with Maximum Gold | A1B1D1 | f(x, visitS, acc) all source dfs + backtracking
 1971. Find if Path Exists in Graph | A1
 
@@ -480,6 +481,7 @@ Iteration
 442. Find All Duplicates in an Array | Use negative sign to save visited. ans = []. for i in range(len(L)): store_idx = abs(nums[i])-1 if nums[store_idx]<0: ans.append(abs(nums[i])). nums[store_idx]*=-1
 452. Minimum Number of Arrows to Burst Balloons | similar to 56, but apply intersection instead of union.
 470. Implement Rand10() Using Rand7() | 7-carry while x>=40
+491. Non-decreasing Subsequences | similar as 78.
 524. Longest Word in Dictionary through Deleting | find longest issubsequence
 556. Next Greater Element III | same as 31.
 621. Task Scheduler | idleBound = (n+1)*(maxv-1) + maxvCount. tasksBound = len(tasks). return max(idleBound, tasksBound)
@@ -641,6 +643,7 @@ Recursion 0 (bottom-up or top-down)
 429. N-ary Tree Level Order Traversal
 430. Flatten a Multilevel Doubly Linked List | D-child-next traversal
 445. Add Two Numbers II | reverse list and same as 2.
+501. Find Mode in Binary Search Tree
 508. Most Frequent Subtree Sum
 513. Find Bottom Left Tree Value
 515. Find Largest Value in Each Tree Row
@@ -737,32 +740,28 @@ Recursion return
 <394>. Decode String | | f(s)->ans. l=s.find(']'). r=s[:r].rfind(']'). m = next(m for m in range(l-1, -1, -1) if not s[m-1].isnumeric()). return f(s[:m]+s[l+1:r]*int(s[m:l])+s[r+1:])
 395. Longest Substring with At Least K Repeating Characters | | f(s,k)->ans. c is split token. for c in set(s): if s.count(c)<k: return max( f(substr,k) for substr in s.split(c) ). return len(s)
 397. Integer Replacement | C1 | f(n)->ans. self.D={1:0}. def f(n=n): if n not in self.D: self.D[n] = 1+f(n//2) if n%2==0 else 1+min(f(n-1), f(n+1)). return self.D[n]
-427. Construct Quad Tree | | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
-449. Serialize and Deserialize BST | | f(T)->inorder. f(inorder)->T
+427. Construct Quad Tree | E1 | f(i=0,j=0,ref=len(grid)//2) -> (Node, val if all same else -1); ref==0 or allsame is leaf otherwise non-leaf
+449. Serialize and Deserialize BST | | f(T)->inorder. f(inorder)->T.
 450. Delete Node in a BST | | f(T)->tree. if not left: elif not right: else find rightest node in left subtree -> copy its value and delete such node
-
-491. Non-decreasing Subsequences | f(tup) -> set[non-desc-tuple] with each ele len>=1, filter finally
-501. Find Mode in Binary Search Tree
-543. Diameter of Binary Tree | self.ans=0. insert "self.ans=max(self.ans, l+r)" in "get treeheight recursion function"
-572. Subtree of Another Tree | check issubstr of "ldr_include_out_nodes" and "dlr_include_out_nodes"
-592. Fraction Addition and Subtraction | def gcd(a,b): sort. return a if b==0 else gcd(b,a%b)
-606. Construct String from Binary Tree | l="("+f(T.left)+")" if T.left or T.right else "". r="("+f(T.right)+")" if T.right else "". return str(T.val)+l+r
-650. 2 Keys Keyboard | def f(chars=1, copy=0): if chars==n: return 0, elif n%chars==0: return 2 + f(chars*2, chars), else: return 1 + f(chars+copy, copy).
-652. Find Duplicate Subtrees | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
-687. Longest Univalue Path | self.ans = 0. def f(T=root, prev=-0.5). similar to 543, but return max tree height that has same value (self.ans=max(self.ans, l+r))
-701. Insert into a Binary Search Tree | if can insert left elif can insert right else recursion 
-779. K-th Symbol in Grammar | if n<3: return k-1. prev = self.kthGrammar(n-1, (k+1)//2). return k%2 if prev==1 else (k+1)%2
-802. Find Eventual Safe States | recursive call if n not in ans and isSafe and n not in visit
-813. Largest Sum of Averages | f(start,k) with memeory
-814. Binary Tree Pruning | f(T) -> return prunedTree, isEmpty
-865. Smallest Subtree with all the Deepest Nodes | Collect deepest node id by f(T)->None. self.ans=None. g(T)->count_deepest_nodes_in_subtree (first acheive collection node is ans)
-889. Construct Binary Tree from Preorder and Postorder Traversal | preorder[0] is root, DLR LRD find the cut.
-894. All Possible Full Binary Trees | similar to 95.
-900. RLE Iterator
-914. X of a Kind in a Deck of Cards | gcd of all C.values > 1
-919. Complete Binary Tree Inserter | count nodes. nodes_idx->depth->level_idx->path by bin.
-979. Distribute Coins in Binary Tree | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
-1325. Delete Leaves With a Given Value | def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
+543. Diameter of Binary Tree | | f(T)->height. self.ans=0. insert "self.ans=max(self.ans, l+r)" in "get treeheight recursion function"
+572. Subtree of Another Tree | | f(T)->preoder,inorder. check issubstr of "ldr_include_out_nodes" and "dlr_include_out_nodes"
+592. Fraction Addition and Subtraction | | def gcd(a,b): sort. return a if b==0 else gcd(b,a%b)
+606. Construct String from Binary Tree | | f(T)->ans. l="("+f(T.left)+")" if T.left or T.right else "". r="("+f(T.right)+")" if T.right else "". return str(T.val)+l+r
+650. 2 Keys Keyboard | E1 | def f(chars=1, copy=0): if chars==n: return 0, elif n%chars==0: return 2 + f(chars*2, chars), else: return 1 + f(chars+copy, copy).
+652. Find Duplicate Subtrees | | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
+687. Longest Univalue Path | E1 | self.ans = 0. def f(T=root, prev=-0.5). similar to 543, but return max tree height that has same value (self.ans=max(self.ans, l+r))
+701. Insert into a Binary Search Tree | | f(x,val)->tree. if can insert left elif can insert right else recursion
+779. K-th Symbol in Grammar | | f(n,k)->ans. if n<3: return k-1. prev = self.kthGrammar(n-1, (k+1)//2). return k%2 if prev==1 else (k+1)%2
+813. Largest Sum of Averages | C1E1 | f(start=0,k=k) with memeory
+814. Binary Tree Pruning | | f(T) -> return prunedTree, isEmpty
+865. Smallest Subtree with all the Deepest Nodes | | Collect deepest node id by f(T)->None. self.ans=None. g(T)->count_deepest_nodes_in_subtree (first acheive collection node is ans)
+889. Construct Binary Tree from Preorder and Postorder Traversal | | f(preorder,postorder)->tree. preorder[0] is root, DLR LRD find the cut.
+894. All Possible Full Binary Trees | | f(n)->List[Tree]. similar to 95.
+900. RLE Iterator | | f(n)->ans
+914. X of a Kind in a Deck of Cards | | f(a,b)->gcd. whether gcd of all C.values() must > 1
+919. Complete Binary Tree Inserter | | f(T)->num_nodes. count nodes. nodes_idx->depth->level_idx->path by bin.
+979. Distribute Coins in Binary Tree | | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
+1325. Delete Leaves With a Given Value | | f(T)->T. simpler than 450. def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
 25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
 60*. Permutation Sequence | def f(L=[], M=list(range(1,1+n)), k=k-1, each=fac(n-1)) if not M: return "".join(L) else: i = k//each, L.append( M.pop(i) ), return f(L,M,k-i*each,each/len(M) if len(M) else 0)
 124*. Binary Tree Maximum Path Sum | similar to 687, self.ans=root.val. def f(T=root). return max-path-sum pass T. (self.ans = max(self.ans, l+r+T.val))
