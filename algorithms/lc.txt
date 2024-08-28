@@ -96,6 +96,7 @@ Graph Traversal dfs (achievable, get path by backtracking)
 797. All Paths From Source to Target | A1D1 | backtracking. f(x=0, path=[0], S={0})
 802. Find Eventual Safe States | A1B1 | f(x)->bool. recursive call if n not in ans and isSafe and n not in visit
 1219. Path with Maximum Gold | A1B1D1 | f(x, visitS, acc) all source dfs + backtracking
+1905. Count Sub Islands | A1B1 | dfs first island to get "cord2islandidx". dfs second island to check all pixel belongs to same islandidx
 1971. Find if Path Exists in Graph | A1
 
 Graph Traversal dfs+bfs
@@ -829,7 +830,7 @@ Trie
 820. Short Encoding of Words | Trie by reversed words. Use top-down recusion: def f(T=T, depth=0): if len(T)==1 and "end" in T: return depth+1 else: return sum(f(T[child], depth+1) for child in T if child!="end")
     (each node has unknown contributions, bottom-up recursion needs to return list instead of int)
 
-?UnionFind
+UnionFind
   self.forest = {i:i for ...}
   find(T) -> root  # find parent
   union(root1, root2) -> None  # merge one to another
