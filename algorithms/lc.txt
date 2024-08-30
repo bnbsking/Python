@@ -767,16 +767,11 @@ Recursion return
 60*. Permutation Sequence | def f(L=[], M=list(range(1,1+n)), k=k-1, each=fac(n-1)) if not M: return "".join(L) else: i = k//each, L.append( M.pop(i) ), return f(L,M,k-i*each,each/len(M) if len(M) else 0)
 124*. Binary Tree Maximum Path Sum | similar to 687, self.ans=root.val. def f(T=root). return max-path-sum pass T. (self.ans = max(self.ans, l+r+T.val))
 
-?Recursion gaming
-464. Can I Win | D = {}. def f(L=[True]*maxChoosableInteger, total=desiredTotal): state=(tuple(L), total). if state not in D:.... win = False. for i in range(len(L)):
-    if not win and L[i]: L[i]=False. win=<<<not>>> f(L, total-(i+1)). L[i]=True
-<486>. Predict the Winner | similar to 464. add memory, f(l,r)->score
-
-?Recursion mix DP
-880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha(): ( if cnt==k: return char else cnt+=1 ) else: ( if cnt*int(char)>k: return f( k%cnt ) else cnt*=int(char) ).
+Recursion gaming
+464. Can I Win | C1E1 | f(cards,cards_sum,total)->bool. if total<=0: lose, elif max_card>=total: win, else bool(any of one strategy let opponent lose). # get ith bit: cards>>i&1 # flip ith bit from 1 to 0: mask=~(1<<i)
+486. Predict the Winner | C1 | f(l,r)->score. L=L[l]+min(f(l+2,r),f(l+1,r-1)). R=L[r]+min(f(l+1,r-1),f(l,r-2)). D[(l,r)] = max(L,R).
 
 ?Segment tree
-
 
 Sort
 <75.> Sort Colors | Dutch Flag Algorithm. l=m=0, r=len(L)-1. while m<=r: if nums[m]==0: swap(L[l],[m]), l+=1, m+=1 elif nums[m]==1: m+=1, else: swap(L[m],L[r]), r-=1
@@ -848,6 +843,7 @@ Pending diffiuclt
 1802. Maximum Value at a Given Index in a Bounded Array | reach l/r -> reach r/l -> go up
 28. Find the Index of the First Occurrence in a String | lcps + KMP
 307. Range Sum Query - Mutable | Segment tree. (T,T.l,T.r)=(sum(L),sum(left),sum(right)). same inputs of 3 methods f(i=0,l=0,r=len(L)-1)
+880. Decoded String at Index | f(k=k-1) cnt=0 for c in s: if c.isalpha(): ( if cnt==k: return char else cnt+=1 ) else: ( if cnt*int(char)>k: return f( k%cnt ) else cnt*=int(char) ).
 --
 *1483. Kth Ancestor of a Tree Node | Binary lifting. self.D[i][j]=i-th node's 2**j ancestor. Column major filling since it may not have ancestor before filling parent. To fill self.D[i][j-1], parent=self.D[i][j-1] 
 
