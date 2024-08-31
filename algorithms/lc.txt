@@ -731,6 +731,7 @@ Recursion return
 236. Lowest Common Ancestor of a Binary Tree | (LCA)
   + Naive recursion (good at balanced) as 235.
   + (Too complex) Change to Range min query (good at general): euler path, depth path, D: T.val->"first occurence index in euler path". Build segment tree each node (T.val,index) then query(D[p.val],D[q.val])
+  + (Too complex) binary lifting
 241. Different Ways to Add Parentheses | | split + similar to 95.
 257. Binary Tree Paths | | f(T)->path
 306. Additive Number | | f(a,b,c)->bool. cut all possibilities of 3 parts, each do recursive call
