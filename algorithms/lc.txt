@@ -387,6 +387,7 @@ Iteration or naive 0
 1877. Minimize Maximum Pair Sum in Array | sort, max of head-tail pair
 1903. Largest Odd Number in String
 2000. Reverse Prefix of Word
+2022. Convert 1D Array Into 2D Array
 2037. Minimum Number of Moves to Seat Everyone
 2058. Find the Minimum and Maximum Number of Nodes Between Critical Points | ll.
 2108. Find First Palindromic String in the Array
