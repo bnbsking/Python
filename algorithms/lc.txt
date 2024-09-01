@@ -80,6 +80,7 @@ Graph Traversal bfs (shortest distance, unweighted shortest path can be get by p
 886. Possible Bipartition | A1B1 | while dislike: Q, V = deque([dislikes.pop()]), set(). while Q: a, b = Q.popleft()
 909. Snakes and Ladders | A1 | Q,S=deque([(node=1, depth=0)]), {1}. .... x, depth = Q.popleft()
 1424. Diagonal Traverse II | simpler than 498. x=Q.popleft()
+1971. Find if Path Exists in Graph | A1
 
 Graph Traversal dfs (achievable, get path by backtracking)
 79. Word Search | A1B1D1 | backtracking. f(x, match, visitS) 
@@ -90,17 +91,15 @@ Graph Traversal dfs (achievable, get path by backtracking)
 457. Circular Array Loop | A1B1 | self.ans, visitEdgeS = False, set(). def f(i, pathS): nexti=(i+nums[i])%len(nums). if i!=nexti and (i,nexti) not in visitEdgeS:
 529. Minesweeper | f(x)
 547. Number of Provinces | A1B1 | f(x)
-?
 695. Max Area of Island | A1B1 | f(x)
 733. Flood Fill | f(x)
 756. Pyramid Transition Matrix | C1 | f(x)->bool, collect all combinations by functools.pairwise. use itertools.product to search all
-785. Is Graph Bipartite? | A1B1 | Use parity array (-1: not visited, 0: c0, 1: c1). f(x,parent=-1). P[x]=int(P[parent]==-1 or P[parent]==0). for nei in G[x]: if P[nei]==P[x]: False elif P[nei]==-1: f(nei, x)
+785. Is Graph Bipartite? | B1 | Use parity array (-1: not visited, 0: c0, 1: c1). f(x,parent=-1). P[x]=int(P[parent]==-1 or P[parent]==0). for nei in G[x]: if P[nei]==P[x]: False elif P[nei]==-1: f(nei, x)
 797. All Paths From Source to Target | A1D1 | backtracking. f(x=0, path=[0], S={0})
 802. Find Eventual Safe States | A1B1 | f(x)->bool. recursive call if n not in ans and isSafe and n not in visit
 <841.> Keys and Rooms | A1 | f(x)
 1219. Path with Maximum Gold | A1B1D1 | f(x, visitS, acc) all source dfs + backtracking
 1905. Count Sub Islands | A1B1 | dfs first island to get "cord2islandidx". dfs second island to check all pixel belongs to same islandidx
-1971. Find if Path Exists in Graph | A1
 
 Graph Traversal dfs+bfs
 863. All Nodes Distance K in Binary Tree | , | f(T, parent=None). dfs to tree to Graph by add parent link. x, depth = self.Q.popleft()
