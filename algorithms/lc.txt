@@ -387,6 +387,7 @@ Iteration or naive 0
 1704. Determine if String Halves Are Alike
 1743. Restore the Array From Adjacent Pairs | ll. create graph, find indegree==1, traversal. delete instead of visitS
 1877. Minimize Maximum Pair Sum in Array | sort, max of head-tail pair
+1894. Find the Student that Will Replace the Chalk
 1903. Largest Odd Number in String
 2000. Reverse Prefix of Word
 2022. Convert 1D Array Into 2D Array
@@ -666,6 +667,7 @@ Recursion 0 (bottom-up or top-down)
 783. Minimum Distance Between BST Nodes
 872. Leaf-Similar Trees
 897. Increasing Order Search Tree
+951. Flip Equivalent Binary Trees
 988. Smallest String Starting From Leaf
 1026. Maximum Difference Between Node and Ancestor
 1038. Binary Search Tree to Greater Sum Tree
