@@ -770,6 +770,7 @@ Recursion return
 900. RLE Iterator | | f(n)->ans
 914. X of a Kind in a Deck of Cards | | f(a,b)->gcd. whether gcd of all C.values() must > 1
 919. Complete Binary Tree Inserter | | f(T)->num_nodes. count nodes. nodes_idx->depth->level_idx->path by bin.
+955. Delete Columns to Make Sorted II | | irregular_idx(s1,s2)->idx. f(L)->None. for if idx!=-1: f([s[:idx]+s[idx+1:] for s in L])
 979. Distribute Coins in Binary Tree | | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
 1325. Delete Leaves With a Given Value | | f(T)->T. simpler than 450. def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
 25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
