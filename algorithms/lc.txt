@@ -189,6 +189,7 @@ Hash 0
 2610. Convert an Array Into a 2D Array With Conditions
 5. Count Elements With Maximum Frequency
 3016. Minimum Number of Pushes to Type Word II
+3217. Delete Nodes From Linked List Present in Array | ll.
 
 Hash
 3. Longest Substring Without Repeating Character | if s[i] not in D or accum<D[s[i]]: accum+=1, else accum=i-D[s[i]]
@@ -539,6 +540,7 @@ Iteration - Bit operations
 477. Total Hamming Distance | ans=0. for i in range(32): b=sum(x>>&i for x in nums). ans+=b*(len(nums)-b). return ans
     # consider n numbers 1 bit only # b 0s, n-b 1s # total dist = b*(n-b) # consider bipartite only
     # check whether the i-th bit of a number x is 1: "x>>i&1" # shift is always prior than and
+958. Check Completeness of a Binary Tree | Q(tree, depth, path). L=[[path for nodes] for layer]
 1863. Sum of All Subset XOR Totals | complex than 477. for i in range(32): count 0s and 1s. for get_all in range(1,len(L)+1): for get_1 in range(1, get_all+1, 2): ....
 2433. Find The Original Array of Prefix Xor | ^ has association
 2997. Minimum Number of Operations to Make Array XOR Equal to K | XOR all. return count 1 of total^1
