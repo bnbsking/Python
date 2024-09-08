@@ -214,6 +214,7 @@ Hash
 939. Minimum Area Rectangle | collect X (sorted by tup), Y (sorted by tup[::-1]). iterate down_left, find up_left, find do_right, find up_right in set.
 945. Minimum Increment to Make Array Unique | start = key+1 if start<key else start
 954. Array of Doubled Pairs | arr.sort(key=lambda x: abs(x)). for i, x in enumerate(arr): indices[x].add(i). in_arr_c = Counter(arr). iterate and update indices and in_arr_c
+962. Maximum Width Ramp | D val->idx, D_min, ans. 
 1915. Number of Wonderful Substrings | D,acc,ans={0:1},0,0. for c in word: acc^=2**(ord(c)-ord("a")). ans+=D.get(acc,0) diff0. ans+=D.get(acc^(1<<i),0) diff1. D[acc]=D.get(acc,0)+1. 
 1218. Longest Arithmetic Subsequence of Given Difference | D[x] = 1 if x-difference not in D else D[x-difference]+1
 1282. Group the People Given the Group Size They Belong To | D, ans = defaultdict(lambda :[]), []. for i,size in enumerate(groupSizes): D[size].append(i) if len(D[size])==size: ans.append(D[size]). D[size]=[]
@@ -675,6 +676,7 @@ Recursion 0 (bottom-up or top-down)
 872. Leaf-Similar Trees
 897. Increasing Order Search Tree
 951. Flip Equivalent Binary Trees
+965. Univalued Binary Tree
 988. Smallest String Starting From Leaf
 1026. Maximum Difference Between Node and Ancestor
 1038. Binary Search Tree to Greater Sum Tree
