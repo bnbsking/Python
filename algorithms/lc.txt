@@ -173,6 +173,7 @@ Hash 0
 884. Uncommon Words from Two Sentences
 890. Find and Replace Pattern
 929. Unique Email Addresses
+970. Powerful Integers
 1002. Find Common Characters | ans &= Counter(word)
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
@@ -402,9 +403,10 @@ Iteration or naive 0
 2148. Count Elements With Strictly Smaller and Greater Elements
 2149. Rearrange Array Elements by Sign
 2191. Sort the Jumbled Numbers
+2220. Minimum Bit Flips to Convert Number
 2264. Largest 3-Same-Digit Number in String
-2326. Spiral Matrix IV | ll.
 2279. Maximum Bags With Full Capacity of Rocks
+2326. Spiral Matrix IV | ll.
 2482. Difference Between Ones and Zeros in Row and Column | record row1s & col1s
 2486. Append Characters to String to Make Subsequence
 2540. Minimum Common Value
