@@ -367,6 +367,7 @@ Iteration or naive 0
 944. Delete Columns to Make Sorted
 946. Validate Stack Sequences
 949. Largest Time for Given Digits | remember 20:66 failed but 06:26 succeed
+973. K Closest Points to Origin
 1051. Height Checker
 1122. Relative Sort Array
 1137. N-th Tribonacci Number
@@ -387,6 +388,7 @@ Iteration or naive 0
 1636. Sort Array by Increasing Frequency
 1662. Check If Two String Arrays are Equivalent
 1669. Merge In Between Linked Lists | ll.
+1684. Count the Number of Consistent Strings
 1688. Count of Matches in Tournament
 1704. Determine if String Halves Are Alike
 1743. Restore the Array From Adjacent Pairs | ll. create graph, find indegree==1, traversal. delete instead of visitS
