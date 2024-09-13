@@ -373,6 +373,7 @@ Iteration or naive 0
 1137. N-th Tribonacci Number
 1220*. Count Vowels Permutation
 1266. Minimum Time Visiting All Points
+1310. XOR Queries of a Subarray | like 303.
 1318. Minimum Flips to Make a OR b Equal to c
 1351. Count Negative Numbers in a Sorted Matrix
 1380. Lucky Numbers in a Matrix
@@ -523,6 +524,7 @@ Iteration
 957. Prison Cells After N Days | L=[]. nextT. while n>0: if L and nextT==L[0]: return L[(n-1)%len(L)] else ...
 967. Numbers With Same Consecutive Differences | like 78.
 969. Pancake Sorting | len(ans)=2N
+976. Largest Perimeter Triangle | naive reverse iteration
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1248. Count Number of Nice Subarrays | collect odd_indices. for i in range(len(odd_indices)-k+1): ans+=l*r. return ans
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
