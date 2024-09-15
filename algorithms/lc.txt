@@ -234,7 +234,8 @@ Hash subarray sum all -> for sum if (else)
 560. Subarray Sum Equals K | Counts -> all update | D,sumv,ans={0:1},0,0 (sumv->counts). for x: sumv=sumv+x, if sumv-k in D: sumv+=D[sumv-k], D[sumv]+=1
 930. Binary Subarrays With Sum | Counts -> all update | same as 560
 974. Subarray Sums Divisible by K | D,acc,ans={0:1},0,0 | same as 560
-1171. Remove Zero Sum Consecutive Nodes from Linked List | Cut all -> all update | D,sumv,L={0:-1},0,[]. while head: L.append(x), sumv+=x, if sumv in D: for i in range(len(L)-D[sumv]-1): sumv-=L.pop(), D.pop(sumv). D[sumv]=len(L)-1. 
+1171. Remove Zero Sum Consecutive Nodes from Linked List | Cut all -> all update | D,sumv,L={0:-1},0,[]. while head: L.append(x), sumv+=x, if sumv in D: for i in range(len(L)-D[sumv]-1): sumv-=L.pop(), D.pop(sumv). D[sumv]=len(L)-1.
+1371. Find the Longest Substring Containing Vowels in Even Counts | D,V,acc,ans={0:-1},"aeiou",0,0. for i in range(len(s)): flip ith bit if is vowel. if acc in D: ans=max(ans,i-D[acc]) else: D[acc]=i
 
 Heap0
 23*. Merge k Sorted Lists
@@ -525,6 +526,7 @@ Iteration
 967. Numbers With Same Consecutive Differences | like 78.
 969. Pancake Sorting | len(ans)=2N
 976. Largest Perimeter Triangle | naive reverse iteration
+978. Longest Turbulent Subarray | ans, acc_up, acc_do, next_act = 1, 1, 1, "". for i in range(1, len(arr)): if larger/smaller/equal x next_act=down/up/"".
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1248. Count Number of Nice Subarrays | collect odd_indices. for i in range(len(odd_indices)-k+1): ans+=l*r. return ans
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
