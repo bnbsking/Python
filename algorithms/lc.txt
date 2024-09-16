@@ -570,8 +570,9 @@ Iteration - Left-Right 0
 278. First Bad Version | while l<=r.
 374. Guess Number Higher or Lower | while l<=r.
 436. Find Right Interval | for while l<=r.
-704. Binary Search
-1750. Minimum Length of String After Deleting Similar Ends
+704. Binary Search | while l<=r.
+981. Time Based Key-Value Store | while l<=r.
+1750. Minimum Length of String After Deleting Similar Ends | while len(s)>1 and s[0]==s[-1]
 2485. Find the Pivot Integer | while l<=r.
 
 Iteration - Left-Right m-1,m,m+1
