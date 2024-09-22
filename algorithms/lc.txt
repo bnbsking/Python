@@ -369,6 +369,8 @@ Iteration or naive 0
 946. Validate Stack Sequences
 949. Largest Time for Given Digits | remember 20:66 failed but 06:26 succeed
 973. K Closest Points to Origin
+984. String Without AAA or BBB
+985. Sum of Even Numbers After Queries
 1051. Height Checker
 1122. Relative Sort Array
 1137. N-th Tribonacci Number
@@ -472,6 +474,7 @@ Iteration lr-spread
 5. Longest Palindromic Substring | while c-e>=0 and c+e<len(s) and s[c-e]==s[c+e]: if 2*e+1>ar-al+1: al, ar = c-e, c+e
 647. Palindromic Substrings | same as 5.
 696. Count Binary Substrings | match.start(0) for match in re.finditer(pattern,s)
+*214. Shortest Palindrome | similar as 5.
 
 Iteration
 17. Letter Combinations of a Phone Number
@@ -791,11 +794,12 @@ Recursion return
 919. Complete Binary Tree Inserter | | f(T)->num_nodes. count nodes. nodes_idx->depth->level_idx->path by bin.
 955. Delete Columns to Make Sorted II | | irregular_idx(s1,s2)->idx. f(L)->None. for if idx!=-1: f([s[:idx]+s[idx+1:] for s in L])
 979. Distribute Coins in Binary Tree | | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
+983. Minimum Cost For Tickets | C1 | f(i=0)->ans.
 1325. Delete Leaves With a Given Value | | f(T)->T. simpler than 450. def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
 2807. Insert Greatest Common Divisors in Linked List | | gcd(a,b)->x. ll.
-25*. Reverse Nodes in k-Group | split all sublists -> call 206. -> connect
-60*. Permutation Sequence | def f(L=[], M=list(range(1,1+n)), k=k-1, each=fac(n-1)) if not M: return "".join(L) else: i = k//each, L.append( M.pop(i) ), return f(L,M,k-i*each,each/len(M) if len(M) else 0)
-124*. Binary Tree Maximum Path Sum | similar to 687, self.ans=root.val. def f(T=root). return max-path-sum pass T. (self.ans = max(self.ans, l+r+T.val))
+25*. Reverse Nodes in k-Group | | split all sublists -> call 206. -> connect
+60*. Permutation Sequence | | def f(L=[], M=list(range(1,1+n)), k=k-1, each=fac(n-1)) if not M: return "".join(L) else: i = k//each, L.append( M.pop(i) ), return f(L,M,k-i*each,each/len(M) if len(M) else 0)
+124*. Binary Tree Maximum Path Sum | | similar to 687, self.ans=root.val. def f(T=root). return max-path-sum pass T. (self.ans = max(self.ans, l+r+T.val))
 
 Recursion gaming
 464. Can I Win | C1E1 | f(cards,cards_sum,total)->bool. if total<=0: lose, elif max_card>=total: win, else bool(any of one strategy let opponent lose). # get ith bit: cards>>i&1 # flip ith bit from 1 to 0: mask=~(1<<i)
