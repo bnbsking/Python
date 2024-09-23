@@ -530,6 +530,7 @@ Iteration
 969. Pancake Sorting | len(ans)=2N
 976. Largest Perimeter Triangle | naive reverse iteration
 978. Longest Turbulent Subarray | ans, acc_up, acc_do, next_act = 1, 1, 1, "". for i in range(1, len(arr)): if larger/smaller/equal x next_act=down/up/"".
+986. Interval List Intersections | ans, startj = [], 0. for fs, fe in fL: for j in range(startj, len(sL)): ss, se = sL[j]. if fs > se: startj+=1 elif fe >= ss: .... (like 223.)
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1248. Count Number of Nice Subarrays | collect odd_indices. for i in range(len(odd_indices)-k+1): ans+=l*r. return ans
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
