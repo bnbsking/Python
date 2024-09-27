@@ -371,6 +371,7 @@ Iteration or naive 0
 973. K Closest Points to Origin
 984. String Without AAA or BBB
 985. Sum of Even Numbers After Queries
+989. Add to Array-Form of Integer | pad to same length
 1051. Height Checker
 1122. Relative Sort Array
 1137. N-th Tribonacci Number
@@ -865,10 +866,11 @@ Trie
 
 UnionFind
   self.forest = {i:i for ...}
-  find(T) -> root  # find parent
+  find(node) -> root  # find parent
   union(root1, root2) -> None  # merge one to another
 684. Redundant Connection
 721. Accounts Merge | output final forest
+990. Satisfiability of Equality Equations | build by eqs, test by neqs
 1584. Min Cost to Connect All Points
 
 ----------
