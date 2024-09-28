@@ -863,6 +863,8 @@ Trie
 720. Longest Word in Dictionary
 820. Short Encoding of Words | Trie by reversed words. Use top-down recusion: def f(T=T, depth=0): if len(T)==1 and "end" in T: return depth+1 else: return sum(f(T[child], depth+1) for child in T if child!="end")
     (each node has unknown contributions, bottom-up recursion needs to return list instead of int)
+3043. Find the Length of the Longest Common Prefix
+*2416. Sum of Prefix Scores of Strings
 
 UnionFind
   self.forest = {i:i for ...}
