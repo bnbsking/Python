@@ -379,6 +379,7 @@ Iteration or naive 0
 1266. Minimum Time Visiting All Points
 1310. XOR Queries of a Subarray | like 303.
 1318. Minimum Flips to Make a OR b Equal to c
+1331. Rank Transform of an Array
 1351. Count Negative Numbers in a Sorted Matrix
 1380. Lucky Numbers in a Matrix
 1441. Build an Array With Stack Operations
@@ -535,6 +536,7 @@ Iteration
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1248. Count Number of Nice Subarrays | collect odd_indices. for i in range(len(odd_indices)-k+1): ans+=l*r. return ans
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
+1497. Check If Array Pairs Are Divisible by k | L=[0]*k. for x in arr: L[x%k] += 1.
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
 1509. Minimum Difference Between Largest and Smallest Value in Three Moves | bubble sort. min(max4-min0, max3-min1, max2-min2, max1-min3)
 1980. Find Unique Binary String | return "".join( str(int(L[i][i]=="0")) for i in range(len(L)) ) # diagnoal algorithm
