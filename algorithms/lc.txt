@@ -507,6 +507,7 @@ Iteration
 556. Next Greater Element III | same as 31.
 621. Task Scheduler | idleBound = (n+1)*(maxv-1) + maxvCount. tasksBound = len(tasks). return max(idleBound, tasksBound)
 628. Maximum Product of Three Numbers | sort and sliding window at border
+650. 2 Keys Keyboard | i,copy,ans=1,0,0. while i<n: if n%i==0: i,copy,ans=i*2,i,ans+2 else: i,ans=i+copy,ans+1
 665. Non-decreasing Array | for i in range(len(nums)-1): if nums[i]>nums[i+1]: tmp = nums[i+1]. do irregular depends right or depends left respeectively. O(3n)
 670. Maximum Swap | compare to sort, find first diff idx i. find max idx from len(L)-1 to i, swap, break return
 686. Repeated String Match | i = b.find(a). if i==-1: check a.find(b) and 2a.find(b). else return left-right times.
@@ -533,6 +534,7 @@ Iteration
 976. Largest Perimeter Triangle | naive reverse iteration
 978. Longest Turbulent Subarray | ans, acc_up, acc_do, next_act = 1, 1, 1, "". for i in range(1, len(arr)): if larger/smaller/equal x next_act=down/up/"".
 986. Interval List Intersections | ans, startj = [], 0. for fs, fe in fL: for j in range(startj, len(sL)): ss, se = sL[j]. if fs > se: startj+=1 elif fe >= ss: .... (like 223.)
+991. Broken Calculator | like 650 but backward (end to start, x to / and - to +). ans=0. while startValue<target: if target%2: target += 1 else: target //= 2. ans += 1
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1248. Count Number of Nice Subarrays | collect odd_indices. for i in range(len(odd_indices)-k+1): ans+=l*r. return ans
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
@@ -736,6 +738,7 @@ Recursion non-return
 698. Partition to K Equal Sum Subsets | | nums.sort(reverse=True). trim ele>each and ele+min>each. L=[0]*k. f(start=0)
 861. Score After Flipping Matrix | D1 | f(start=1). 1st col greedy, >=2nd col backtracking (1rate >0.5, =0.5, <0.5)
 869. Reordered Power of 2 | D1 | f(start=0) like 46.
+993. Cousins in Binary Tree | E1 | f(target, T, depth, parent)
 1361. Validate Binary Tree Nodes | | if all(ele<2 for ele in inL) and inL.count(0)==1: root, visitS = inL.index(0), set(range(n)). def g(i=root).
 1367. Linked List in Binary Tree | C1 | f(T=root,i=0). self.ans=False. if i == len(L): self.ans = True. ... f(T.left, i+1), f(T.right, i+1), f(T.left, 0), f(T.right, 0)
 1530. Number of Good Leaf Nodes Pairs | E1 | f(T,path=[]). (LCA like 235.)
@@ -783,7 +786,6 @@ Recursion return
 572. Subtree of Another Tree | | f(T)->preoder,inorder. check issubstr of "ldr_include_out_nodes" and "dlr_include_out_nodes"
 592. Fraction Addition and Subtraction | | def gcd(a,b): sort. return a if b==0 else gcd(b,a%b)
 606. Construct String from Binary Tree | | f(T)->ans. l="("+f(T.left)+")" if T.left or T.right else "". r="("+f(T.right)+")" if T.right else "". return str(T.val)+l+r
-650. 2 Keys Keyboard | E1 | def f(chars=1, copy=0): if chars==n: return 0, elif n%chars==0: return 2 + f(chars*2, chars), else: return 1 + f(chars+copy, copy).
 652. Find Duplicate Subtrees | | D:tuple(*dlr,-2,*ldr)->int; f(T=root)->DLR tuple(int), LDR tuple(int); if not T: return (-1,), (-1,)
 687. Longest Univalue Path | E1 | self.ans = 0. def f(T=root, prev=-0.5). similar to 543, but return max tree height that has same value (self.ans=max(self.ans, l+r))
 701. Insert into a Binary Search Tree | | f(x,val)->tree. if can insert left elif can insert right else recursion
