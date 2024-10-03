@@ -175,6 +175,7 @@ Hash 0
 890. Find and Replace Pattern
 929. Unique Email Addresses
 970. Powerful Integers
+997. Find the Town Judge
 1002. Find Common Characters | ans &= Counter(word)
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
@@ -374,6 +375,7 @@ Iteration or naive 0
 984. String Without AAA or BBB
 985. Sum of Even Numbers After Queries
 989. Add to Array-Form of Integer | pad to same length
+999. Available Captures for Rook
 1051. Height Checker
 1122. Relative Sort Array
 1137. N-th Tribonacci Number
