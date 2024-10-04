@@ -376,6 +376,7 @@ Iteration or naive 0
 985. Sum of Even Numbers After Queries
 989. Add to Array-Form of Integer | pad to same length
 999. Available Captures for Rook
+1002. Find Common Characters
 1051. Height Checker
 1122. Relative Sort Array
 1137. N-th Tribonacci Number
@@ -421,6 +422,7 @@ Iteration or naive 0
 2326. Spiral Matrix IV | ll.
 2482. Difference Between Ones and Zeros in Row and Column | record row1s & col1s
 2486. Append Characters to String to Make Subsequence
+2491. Divide Players Into Teams of Equal Skill
 2540. Minimum Common Value
 2582. Pass the Pillow | time %= (n-1)*2. return time + 1 if time <= n-1 else n - time % (n-1)
 2678. Number of Senior Citizens
