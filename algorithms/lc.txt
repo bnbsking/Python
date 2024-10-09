@@ -377,6 +377,7 @@ Iteration or naive 0
 989. Add to Array-Form of Integer | pad to same length
 999. Available Captures for Rook
 1002. Find Common Characters
+1003. Check If Word Is Valid After Substitutions
 1051. Height Checker
 1122. Relative Sort Array
 1137. N-th Tribonacci Number
@@ -426,7 +427,7 @@ Iteration or naive 0
 2540. Minimum Common Value
 2582. Pass the Pillow | time %= (n-1)*2. return time + 1 if time <= n-1 else n - time % (n-1)
 2678. Number of Senior Citizens
-2696. Minimum String Length After Removing Substrings
+2696. Minimum String Length After Removing Substrings | similar as 1003.
 2816. Double a Number Represented as a Linked List | reverse twice ll.
 2864. Maximum Odd Binary Number
 2971. Find Polygon With the Largest Perimeter
@@ -478,12 +479,6 @@ Iteration i with start and accum: sliding window -> for sum while
 1658. Minimum Operations to Reduce X to Zero | similar to 209, but initially target<=0 need return, because while acc>=target cause acc negative.
 1838. Frequency of the Most Frequent Element | L.sort(). start,acc,ans=0,0,1. for i in range(1,len(L)): accum+=(L[i]-L[i-1])*(i-start). while acc>k: acc-=L[i]-L[start], start+=1. ans=max(ans,i-start+1). (while exclusive, update ans at last)
 2958. Length of Longest Subarray With at Most K Frequency | start,acc,ans=0,{},0. similar as 1838.
-
-Iteration lr-spread
-5. Longest Palindromic Substring | while c-e>=0 and c+e<len(s) and s[c-e]==s[c+e]: if 2*e+1>ar-al+1: al, ar = c-e, c+e
-647. Palindromic Substrings | same as 5.
-696. Count Binary Substrings | match.start(0) for match in re.finditer(pattern,s)
-*214. Shortest Palindrome | similar as 5.
 
 Iteration
 17. Letter Combinations of a Phone Number
@@ -620,6 +615,12 @@ Iteration - Left-Right
 1552. Magnetic Force Between Two Balls
 1963. Minimum Number of Swaps to Make the String Balanced | L,l,r,ldiff,rdiff,ans=list(s),0,len(s)-1,0,0,0. while l<r: while l<r:... while l<r:...
 2187. Minimum Time to Complete Trips | l,r,f=0,totalTrips*min(time),lambda m:sum(int(m/t) for t in time). while l<=r: if trip==totalTrips: return m-min(m%t for t in time).
+
+Iteration - Left-Right spread
+5. Longest Palindromic Substring | while c-e>=0 and c+e<len(s) and s[c-e]==s[c+e]: if 2*e+1>ar-al+1: al, ar = c-e, c+e
+647. Palindromic Substrings | same as 5.
+696. Count Binary Substrings | match.start(0) for match in re.finditer(pattern,s)
+*214. Shortest Palindrome | similar as 5.
 
 Iteration - Monte Carlo
 169. Majority Element | sample x, L.count(x)
