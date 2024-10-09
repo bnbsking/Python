@@ -426,6 +426,7 @@ Iteration or naive 0
 2540. Minimum Common Value
 2582. Pass the Pillow | time %= (n-1)*2. return time + 1 if time <= n-1 else n - time % (n-1)
 2678. Number of Senior Citizens
+2696. Minimum String Length After Removing Substrings
 2816. Double a Number Represented as a Linked List | reverse twice ll.
 2864. Maximum Odd Binary Number
 2971. Find Polygon With the Largest Perimeter
@@ -547,6 +548,7 @@ Iteration
 1497. Check If Array Pairs Are Divisible by k | L=[0]*k. for x in arr: L[x%k] += 1.
 1503. Last Moment Before All Ants Fall Out of a Plank | max( max(left) if left else 0, n-min(right) if right else 0 ). (don't trace ant-i but switch id while collision)
 1509. Minimum Difference Between Largest and Smallest Value in Three Moves | bubble sort. min(max4-min0, max3-min1, max2-min2, max1-min3)
+1813. Sentence Similarity III | return common_prefix_length + common_suffix_length >= min(L1, L2)
 1980. Find Unique Binary String | return "".join( str(int(L[i][i]=="0")) for i in range(len(L)) ) # diagnoal algorithm
 1992. Find All Groups of Farmland | add switchD (i,j)->(i,j+rect)
 149*. Max Points on a Line | use determinant, O(n^3)
@@ -616,6 +618,7 @@ Iteration - Left-Right
 1011. Capacity To Ship Packages Within D Days | def isValid(capacity). l,r=max(weights),sum(weights). while l<=r.
 1482. Minimum Number of Days to Make m Bouquets | acc_bouquets, acc_continuous, can_collect_in_mid_days = 0, 0, False. for day in bloomDay:...
 1552. Magnetic Force Between Two Balls
+1963. Minimum Number of Swaps to Make the String Balanced | L,l,r,ldiff,rdiff,ans=list(s),0,len(s)-1,0,0,0. while l<r: while l<r:... while l<r:...
 2187. Minimum Time to Complete Trips | l,r,f=0,totalTrips*min(time),lambda m:sum(int(m/t) for t in time). while l<=r: if trip==totalTrips: return m-min(m%t for t in time).
 
 Iteration - Monte Carlo
