@@ -541,6 +541,7 @@ Iteration
 978. Longest Turbulent Subarray | ans, acc_up, acc_do, next_act = 1, 1, 1, "". for i in range(1, len(arr)): if larger/smaller/equal x next_act=down/up/"".
 986. Interval List Intersections | ans, startj = [], 0. for fs, fe in fL: for j in range(startj, len(sL)): ss, se = sL[j]. if fs > se: startj+=1 elif fe >= ss: .... (like 223.)
 991. Broken Calculator | like 650 but backward (end to start, x to / and - to +). ans=0. while startValue<target: if target%2: target += 1 else: target //= 2. ans += 1
+1005. Maximize Sum Of Array After K Negations | L.sort(). idx=bisect.bisect_left(L,0). flip first min(idx,k) elements. if k remains sort again.
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1248. Count Number of Nice Subarrays | collect odd_indices. for i in range(len(odd_indices)-k+1): ans+=l*r. return ans
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
@@ -852,7 +853,7 @@ Stack
 150. Evaluate Reverse Polish Notation | complete version 227. 224.
 155. Min Stack | a stack store (val,min)
 224*. Basic Calculator
-227. Basic Calculator II | totally 3 steps
+227. Basic Calculator II | same as 224. totally 3 steps
 316. Remove Duplicate Letters | stack is final answer, (not-strict) increasing is regular. lastIdx, stack, stackS. while stack and stack[-1]>c and appears_later:
 402. Remove K Digits | stack is final answer, increasing as possible is regular. stack=[]. while stack and k and stack[-1]>x. Exceptions: leading 0s, k>0, empty str
 456. 132 Pattern | stack,secondmax=[],-inf. (reverse iter 2->3 needs to update secondmax, so decreasing is regular). for x in reversed(nums): if x<secondmax: return True. while stack and stack[-1]<x: secondmax = stack.pop()
@@ -861,6 +862,7 @@ Stack
 739. Daily Temperatures | decrease is regular. stack=[ith_day]. while stack and tmp[stack[-1]]<tmp[i]: prev_i=stack.pop(). ans[prev_i]=i-prev_i
 856. Score of Parentheses | append if c="(" else (stack[-1]="1" if stack[-1]=="(" else merge. while can merge: merge)
 901. Online Stock Span | eaten = 1. while self.stack and self.stack[-1][0]<=price: eaten += self.stack.pop()[1]. self.stack.append([price, eaten])
+1006. Clumsy Factorial | same as 224.
 1081. Smallest Subsequence of Distinct Characters | same as 316
 1190. Reverse Substrings Between Each Pair of Parentheses | multilevel stack
 1381. Design a Stack With Increment Operation | stack[val, acc_bias]
