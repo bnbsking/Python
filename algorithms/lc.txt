@@ -247,6 +247,7 @@ Heap0
 1845. Seat Reservation Manager
 1921. Eliminate Maximum Number of Monsters
 1962. Remove Stones to Minimize the Total
+2530. Maximal Score After Applying K Operations
 3075. Maximize Happiness of Selected Children
 
 Heap
@@ -542,6 +543,7 @@ Iteration
 986. Interval List Intersections | ans, startj = [], 0. for fs, fe in fL: for j in range(startj, len(sL)): ss, se = sL[j]. if fs > se: startj+=1 elif fe >= ss: .... (like 223.)
 991. Broken Calculator | like 650 but backward (end to start, x to / and - to +). ans=0. while startValue<target: if target%2: target += 1 else: target //= 2. ans += 1
 1005. Maximize Sum Of Array After K Negations | L.sort(). idx=bisect.bisect_left(L,0). flip first min(idx,k) elements. if k remains sort again.
+1007. Minimum Domino Rotations For Equal Row | for a, b in zip(tops, bottoms): S &= {a, b}. for ele in S: ans = min(ans, sum(x!=ele for x in tops), sum(x!=ele for x in bottoms))
 1232. Check If It Is a Straight Line | use determinants instead of slopes
 1248. Count Number of Nice Subarrays | collect odd_indices. for i in range(len(odd_indices)-k+1): ans+=l*r. return ans
 1291. Sequential Digits | dl, dh = int(log(low)/log(10))+1, int(log(high)/log(10))+1. L, x, diff = [], int("".join( str(i) for i in range(1,1+dl) )), int("1"*dl). for di in range(dl, dh+1): for j in range(10-di):
