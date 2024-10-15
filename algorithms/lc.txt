@@ -381,6 +381,7 @@ Iteration or naive 0
 999. Available Captures for Rook
 1002. Find Common Characters
 1003. Check If Word Is Valid After Substitutions
+1009. Complement of Base 10 Integer
 1051. Height Checker
 1122. Relative Sort Array
 1137. N-th Tribonacci Number
@@ -471,6 +472,7 @@ Iteration i with start (passed ptr not current) -> for if else
 826. Most Profit Assigning Work | sort(zip(diff,prof)) -> change prof to curr_max_prof -> start=0. for loading in sorted(workers): if L[start][0]<=loading:...
 904. Fruit Into Baskets | a, b, start_a, ans = None, None, None, 0
 905. Sort Array By Parity | like 283.
+2938. Separate Black and White Balls
 
 Iteration i with start and accum: sliding window -> for sum while
 <209.> Minimum Size Subarray Sum | start,acc,ans=0,0,len(L). for i in range(len(L)): acc+=L[i], while acc>=target: ans=min(ans,end-start+1), sumv-=nums[start], start+=1.
@@ -818,6 +820,7 @@ Recursion return
 955. Delete Columns to Make Sorted II | | irregular_idx(s1,s2)->idx. f(L)->None. for if idx!=-1: f([s[:idx]+s[idx+1:] for s in L])
 979. Distribute Coins in Binary Tree | | self.ans=0. f(T) -> exceed_or_lack coins. def f(T=root): if T: l,r=f(T.left),f(T.right). self.ans+=abs(l)+abs(r). return T.val-1+l+r. else: return 0.
 983. Minimum Cost For Tickets | C1 | f(i=0)->ans.
+1008. Construct Binary Search Tree from Preorder Traversal | | Same as 105. 
 1325. Delete Leaves With a Given Value | | f(T)->T. simpler than 450. def f(T): if T: T.left,T.right=f(T.left),f(T.right). return None if T.left is None and T.right is None and T.val==target else T.
 2807. Insert Greatest Common Divisors in Linked List | | gcd(a,b)->x. ll.
 25*. Reverse Nodes in k-Group | | split all sublists -> call 206. -> connect
