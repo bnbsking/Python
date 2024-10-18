@@ -177,6 +177,7 @@ Hash 0
 970. Powerful Integers
 997. Find the Town Judge
 1002. Find Common Characters | ans &= Counter(word)
+1010. Pairs of Songs With Total Durations Divisible by 60
 1160. Find Words That Can Be Formed by Characters
 1207. Unique Number of Occurrences
 1347. Minimum Number of Steps to Make Two Strings Anagram | sum((Counter-Counter).values())
