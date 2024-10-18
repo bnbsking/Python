@@ -392,6 +392,7 @@ Iteration or naive 0
 1331. Rank Transform of an Array
 1351. Count Negative Numbers in a Sorted Matrix
 1380. Lucky Numbers in a Matrix
+1405. Longest Happy String | like 984.
 1441. Build an Array With Stack Operations
 1460. Make Two Arrays Equal by Reversing Subarrays | find same value at index j and reverse L[i:j+1]
 1464. Maximum Product of Two Elements in an Array
@@ -761,6 +762,7 @@ Recursion non-return
 1361. Validate Binary Tree Nodes | | if all(ele<2 for ele in inL) and inL.count(0)==1: root, visitS = inL.index(0), set(range(n)). def g(i=root).
 1367. Linked List in Binary Tree | C1 | f(T=root,i=0). self.ans=False. if i == len(L): self.ans = True. ... f(T.left, i+1), f(T.right, i+1), f(T.left, 0), f(T.right, 0)
 1530. Number of Good Leaf Nodes Pairs | E1 | f(T,path=[]). (LCA like 235.)
+2044. Count Number of Maximum Bitwise-OR Subsets | E1 | f(i=0, acc=0)
 2096. Step-By-Step Directions From a Binary Tree Node to Another | E1 | f(T,path=[]). (LCA like 235.)
 2305. Fair Distribution of Cookies | C1D1E1 | backtracking and memorization. self.ans,visitS,_=float('inf'),set(),cookies.sort(). def f(L=[0]*k, start=0): key=(tuple(sorted(L)),start) if key not in visitS: ...
 2597. The Number of Beautiful Subsets | E1 | L.sort(). self.ans=0. def f(start=0, path=set()): self.ans+=1. for i in range(start, len(L)): if L[i]-k not in path: f(i+1, path|{nums[i]}).
